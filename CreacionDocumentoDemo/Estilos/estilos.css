@@ -1,0 +1,49 @@
+﻿body {
+    background-color: #D8C99B;
+    text-align: center;
+}
+#Image1{
+    float:none;
+}
+#container{
+    width:100%;
+    text-align: center;
+}
+h1 {
+    color: #4C3B07;
+}
+h2 {
+    color: #4C3B07;
+    font-size: 20px;
+}
+#controles {
+    text-align: center;
+    float: none;
+    clear: both;
+}
+hr {
+    border: 1px solid #83654C;
+    width: 50%;
+}
+#TextBox2, #TextBox1 {
+    padding: 10px;
+    border-radius: 25px;
+}
+#Button1 {
+    padding: 0.3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: #A68970;
+    text-align: center;
+    transition: all 0.2s;
+    height: 30px;
+    width: 120px;
+    font-size: 15px;
+}
+    #Button1:hover {
+        background-color: #BBA38E;
+    }
+
