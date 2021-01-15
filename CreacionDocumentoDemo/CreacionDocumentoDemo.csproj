@@ -72,12 +72,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Estilos\estilos.css" />
+    <Content Include="Formulario\Practicas.aspx" />
     <Content Include="Formulario\ValidacionDatos.aspx" />
     <Content Include="Images\EscudoUTA.jpg" />
     <Content Include="Images\EscudoUTA.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formulario\Practicas.aspx.cs">
+      <DependentUpon>Practicas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\Practicas.aspx.designer.cs">
+      <DependentUpon>Practicas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\ValidacionDatos.aspx.cs">
       <DependentUpon>ValidacionDatos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
