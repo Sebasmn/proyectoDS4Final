@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="Inicio"  description="Pagina principal">
+    <siteMapNode url="" title="Menu1" description="Desc">
+      <siteMapNode url="" title ="SubMenu1" description="Desc"/>
+      <siteMapNode url="" title ="SubMenu2" description="Desc"/>
+      <siteMapNode url="" title ="SubMenu3" description="Desc"/>
+    </siteMapNode>
+    <siteMapNode url="" title="Menu1"  description="Desc">
+      <siteMapNode url="" title ="SubMenu1" description="Desc"/>
+      <siteMapNode url="" title ="SubMenu2" description="Desc"/>
+    </siteMapNode>
+    <siteMapNode url="" title="Menu2" description="Desc">
+      <siteMapNode url="" title ="SubMenu1" description="Desc"/>
+      <siteMapNode url="" title ="SubMenu2" description="Desc">
+        <siteMapNode url="" title="SubMenuSubMenu1"  description="Desc" />
+        <siteMapNode url="" title="SubMenuSubMenu2"  description="Desc" />
+      </siteMapNode>
+      <siteMapNode url="SubMenu3" title ="Marco Legal" description="Desc"/>
+    </siteMapNode>
+    <siteMapNode url="" title="Menu3" description="Desc">
+      <siteMapNode url="" title="SubMenu1" description="Desc" />
+      <siteMapNode url="" title="SubMenu2"  description="Desc" />
+    </siteMapNode>
+    <siteMapNode url="" title="Menu4"  description="Desc" />
+    <siteMapNode url="" title="Menu5"  description="Desc" />
+  </siteMapNode>
+</siteMap>

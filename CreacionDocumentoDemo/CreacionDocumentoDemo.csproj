@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Estilos\estilos.css" />
+    <Content Include="Formulario\Inicio.aspx" />
     <Content Include="Formulario\Practicas.aspx" />
     <Content Include="Formulario\ValidacionDatos.aspx" />
     <Content Include="Images\EscudoUTA.jpg" />
@@ -100,12 +101,26 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formulario\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\Practicas.aspx.cs">
       <DependentUpon>Practicas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Formulario\Practicas.aspx.designer.cs">
       <DependentUpon>Practicas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Principal.Master.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\Principal.Master.designer.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ValidacionDatos.aspx.cs">
       <DependentUpon>ValidacionDatos.aspx</DependentUpon>
@@ -124,6 +139,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Formulario\Principal.Master" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -135,6 +151,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
