@@ -81,7 +81,14 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">COORDINADOR D
                 <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">De mi consideración<o:p></o:p></span></p>
             <p class="auto-style1">
                 <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">Consejo Directivo de la Facultad de Ingeniería en Sistemas, Electrónica e Industrial, en Sesión Ordinaria del día</span><span style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">Consejo Directivo de la Facultad de Ingeniería en Sistemas, Electrónica e Industrial, en Sesión</span><span style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp; </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
+                <asp:DropDownList ID="ddlSesion" runat="server">
+                </asp:DropDownList>
+                </span><span style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp; </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;del día</span><span style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
                 <asp:DropDownList ID="ddlDia" runat="server">
@@ -95,10 +102,29 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">COORDINADOR D
             </p>
             <p class="auto-style1">
                 <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">del 2019</span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">, conoció el acuerdo 1363-CAF-FISEI-2019, de fecha noviembre 05, 2019, </span><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">suscrito por el Ingeniero Julio Cuji Rodríguez, Presidente de Consejo Académico de Facultad Encargado, quien sugiere se apruebe el informe de cumplimiento de Prácticas Preprofesionales de el/la señor/ita<asp:TextBox ID="txtNombreEstu1" 
-    EnableViewState="true"
-    runat="server" Height="16px" Width="223px"></asp:TextBox>
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">del
+                <asp:TextBox ID="txtAnio" placeholder="Año" runat="server"></asp:TextBox>
+                </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">, conoció el acuerdo 1363-CAF-FISEI-2019, de fecha <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
+                <asp:DropDownList ID="ddlMes0" runat="server">
+                </asp:DropDownList>
+                </span> </span><span style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">&nbsp; </span></span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
+                <asp:DropDownList ID="ddlDia0" runat="server">
+                </asp:DropDownList>
+                </span></span><span style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">&nbsp;</span></span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">, <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
+                <asp:TextBox ID="txtAnio0" placeholder="Año" runat="server"></asp:TextBox>
+                </span>, </span><span lang="ES-TRAD" style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">suscrito por el</span><span style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">/la</span><span lang="ES-TRAD" style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> Ingeniero</span><span style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">/a</span><span lang="ES-TRAD" style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
+                <asp:TextBox ID="txtPresidente" placeholder="Ejm: Ing Julio Cuji " runat="server"></asp:TextBox>
+                , Presidente de Consejo Académico de Facultad Encargado, quien sugiere se apruebe el informe de cumplimiento de Prácticas Preprofesionales de el/la señor/ita<asp:TextBox ID="txtNombreEstu1" runat="server" placeholder="Nombres y Apellidos Estudiante" EnableViewState="true" Height="16px" Width="223px"></asp:TextBox>
                 </span>
             </p>
             <p class="auto-style1">
@@ -106,16 +132,19 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">suscrito por 
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">, </span></b><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">estudiante de la carrera de</span><span style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> </span><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;<span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;<span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtCarrera1" runat="server" Height="16px" Width="234px"></asp:TextBox>
                 </span>. Al respecto, RESOLVIÓ:<o:p></o:p></span></p>
             <p class="MsoNormal">
                 <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">APROBAR, </span></b><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">EL INFORME DE CUMPLIMIENTO DE PRÁCTICAS PREPROFESIONALES DE EL/LA SEÑOR/ITA <span lang="ES-TRAD" style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma">
                 <asp:TextBox ID="txtNombreEstu2" runat="server"
                     EnableViewState="true"
+                    placeholder="Nombres y Apellidos Estudiante"
                     Height="16px" Width="223px"></asp:TextBox>
                 </span>&nbsp;ESTUDIANTE DE LA CARRERA DE
-                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-&nbsp;(<asp:TextBox ID="TextBox4" runat="server" Height="22px" Width="44px"></asp:TextBox>
+                <asp:TextBox ID="txtCarrera2" 
+                    placeholder="Ejm: INGENIERIA EN SISTEMAS COMP. E INFORMATICOS"
+                    runat="server" Height="16px" Width="352px"></asp:TextBox>
+&nbsp;(<asp:TextBox ID="txtHoras" runat="server" Height="22px" Width="44px"></asp:TextBox>
                 HORAS), BAJO EL SIGUIENTE DETALLE:<o:p></o:p></span></p>
             <p class="auto-style1">
                 <o:p></o:p>
@@ -128,38 +157,59 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;<span s
             <p class="MsoNormal">
                 <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:
 106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">REMITIR, </span></b><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma">LA DOCUMENTACIÓN ORIGINAL A LA QUE SE HACE REFERENCIA EN EL PÁRRAFO QUE ANTECEDE A LA COORDINACIÓN DE LA CARRERA DE INGENIERÍA EN </span><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif">ELECTRÓNICA Y COMUNICACIONES</span><span style="font-size:9.0pt;line-height:106%;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> PARA SU CORRESPONDIENTE ARCHIVO.<o:p></o:p></span></p>
-            <span style="font-size:9.0pt;line-height:106%;
+Tahoma">LA DOCUMENTACIÓN ORIGINAL A LA QUE SE HACE REFERENCIA EN EL PÁRRAFO QUE ANTECEDE A LA COORDINACIÓN DE LA CARRERA DE </span><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma;"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">
+                <asp:TextBox ID="txtCarrera3" runat="server" 
+                     placeholder="Ejm: INGENIERIA EN SISTEMAS COMP. E INFORMATICOS"
+                    Height="16px" Width="352px"></asp:TextBox>
+                &nbsp; </span>PARA SU CORRESPONDIENTE ARCHIVO.</span><p class="MsoNormal">
+                    <span style="font-size:9.0pt;line-height:106%;
 font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
 minor-latin;mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC;mso-fareast-language:
 EN-US;mso-bidi-language:AR-SA">Atentamente,<br />
-            <br />
-            <br />
-            <p class="MsoNormal">
-                <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma;mso-bidi-font-weight:bold">Ing. Carlos Sánchez</span><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma">, <span style="mso-bidi-font-weight:bold">Mg. </span></span>
-            </p>
-            <p class="MsoNormal">
-                <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma"><span style="mso-bidi-font-weight:bold">
-                <asp:DropDownList ID="DropDownList2" runat="server">
-                </asp:DropDownList>
-                <o:p></o:p></span></span>
-            </p>
-            <p class="auto-style1" style="tab-stops: center 212.6pt right 425.2pt;">
-                <span style="font-size:9.0pt;
+                    <br />
+                    </span>
+                    <p class="MsoNormal">
+                        <span style="font-size:9.0pt;line-height:106%;
+font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">
+                        <br />
+                        <p class="MsoNormal">
+                            <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma;"><span style="mso-bidi-font-weight:bold">
+                            <asp:DropDownList ID="ddlPresidente" runat="server">
+                            </asp:DropDownList>
+                            </span></span>
+                            <p class="auto-style1" style="tab-stops: center 212.6pt right 425.2pt;">
+                                <span style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;mso-bidi-font-weight:
-bold">PRESIDENTE SUBROGANTE<o:p></o:p></span></p>
-            </span>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+bold">PRESIDENTE SUBROGANTE<p></p>
+                                </span>
+                                <p>
+                                </p>
+                                <p class="MsoNormal">
+                                    <span style="font-size:7.0pt;mso-bidi-font-size:9.0pt;
+line-height:115%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;
+mso-bidi-font-weight:bold">Cc:<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp; </span>Ing. Hernando Buenaño, Presidente de la Comisión de Prácticas Pre Profesionales de la Carrera de Ingeniería </span><span style="font-size:7.0pt;mso-bidi-font-size:
+9.0pt;line-height:115%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">en Sistemas Computacionales e Informáticos</span><p class="MsoNormal">
+                                        <span style="font-size:7.0pt;mso-bidi-font-size:9.0pt;
+line-height:115%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="mso-spacerun:yes">&nbsp;&nbsp;</span>Ing. Edisson Jordán, Coordinador de Vinculación con la Sociedad FISEI</span><p class="MsoNormal">
+                                            <span style="font-size:7.0pt;
+mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>Estudiante</span><br />
+                                            <br />
+                                        </p>
+                                    </p>
+                                </p>
+                            </p>
+                        </p>
+                        </span>
+                    </p>
+                </p>
+            </p>
           
         </div>
+                  <asp:Button ID="Button4" runat="server" Height="49px" Text="Generar Documento" Width="172px" OnClick="Button4_Click" />
+
                    </ContentTemplate>
         </asp:UpdatePanel>
         <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="221px" Width="849px">

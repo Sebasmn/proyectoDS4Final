@@ -56,6 +56,14 @@ hr {
     text-align: left;
     padding: 25px;
 }
+#txtCarrera1, #txtCarrera2 {
+    width: auto;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+#documento * {
+    font-size: 9px;
+}
     #txtFechaHeader{
         float:left;
         margin-left:5px;
