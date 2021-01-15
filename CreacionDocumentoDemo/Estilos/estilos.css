@@ -47,3 +47,28 @@ hr {
         background-color: #BBA38E;
     }
 
+    /*Seccion: Prácticas Prepofesionales*/
+#documento {
+    background-color: white;
+    margin-left: 250px;
+    margin-right:250px;
+    border: 30px;
+    text-align: left;
+    padding: 25px;
+}
+    #txtFechaHeader{
+        float:left;
+        margin-left:5px;
+    }
+#panelModalBusquedaEst {
+    border-radius: 25px;
+    border: 3px groove #807569;
+    background-color: #D8C99B;
+}
+#GridView1{
+    font-size:10px;
+}
+#botonSeleccionar{
+    color:darkred;
+}
+
