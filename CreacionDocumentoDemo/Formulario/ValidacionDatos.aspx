@@ -25,7 +25,7 @@
             <asp:Image ID="Image1"  runat="server" Height="105px" ImageAlign="TextTop" ImageUrl="~/Images/EscudoUTA.png" Width="100px" />
             <br />
             <h1>Facultad de Ingeniería en Sistemas, Electrónica e Industrial</h1>
-            <h2>Sistema de Manejo de Archivos Prueba</h2>
+            <h2>Sistema de Manejo de Archivos Prueba12</h2>
             <hr />
             <br />
             <div id="controles">
