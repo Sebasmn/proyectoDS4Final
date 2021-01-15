@@ -24,6 +24,16 @@ p
     margin-bottom: 10px;
     line-height: 1.6em;
 }
+.btnBuscar {
+    border-radius: 2em;
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: #A68970;
+    text-align: center;
+    width: auto;
+    padding: 2px;
+    font-size: 15px;
+}
 
 
         .auto-style1 {
@@ -41,7 +51,7 @@ p
         <br />
         <br />
         <br />
-        <asp:Button ID="Button1" runat="server" Text="Buscar Estudiante" />
+        <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante" Height="27px" Width="312px" CssClass="btnBuscar"  />
         <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Always" runat="server">
               <ContentTemplate>
 
@@ -124,22 +134,23 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> Ingeniero</s
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">/a</span><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
                 <asp:TextBox ID="txtPresidente" placeholder="Ejm: Ing Julio Cuji " runat="server"></asp:TextBox>
-                , Presidente de Consejo Académico de Facultad Encargado, quien sugiere se apruebe el informe de cumplimiento de Prácticas Preprofesionales de el/la señor/ita<asp:TextBox ID="txtNombreEstu1" runat="server" placeholder="Nombres y Apellidos Estudiante" EnableViewState="true" Height="16px" Width="223px"></asp:TextBox>
+                , Presidente de Consejo Académico de Facultad Encargado, quien sugiere se apruebe el informe de cumplimiento de Prácticas Preprofesionales de el/la señor/ita<asp:TextBox ID="txtNombreEstu1" runat="server" placeholder="Nombres y Apellidos Estudiante" EnableViewState="true" Height="16px" Width="223px" ToolTip="Busque un estudiante"></asp:TextBox>
                 </span>
-            </p>
-            <p class="auto-style1">
-                <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;
+                <span style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;</span><b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">, </span></b><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">estudiante de la carrera de</span><span style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> </span><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;<span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtCarrera1" runat="server" Height="16px" Width="234px"></asp:TextBox>
-                </span>. Al respecto, RESOLVIÓ:<o:p></o:p></span></p>
+                </span>. Al respecto, RESOLVIÓ:<p></p>
+                </span>
+            </p>
             <p class="MsoNormal">
                 <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">APROBAR, </span></b><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">EL INFORME DE CUMPLIMIENTO DE PRÁCTICAS PREPROFESIONALES DE EL/LA SEÑOR/ITA <span lang="ES-TRAD" style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma">
                 <asp:TextBox ID="txtNombreEstu2" runat="server"
                     EnableViewState="true"
                     placeholder="Nombres y Apellidos Estudiante"
-                    Height="16px" Width="223px"></asp:TextBox>
+                    Height="16px" Width="223px" ToolTip="Busque un estudiante"></asp:TextBox>
                 </span>&nbsp;ESTUDIANTE DE LA CARRERA DE
                 <asp:TextBox ID="txtCarrera2" 
                     placeholder="Ejm: INGENIERIA EN SISTEMAS COMP. E INFORMATICOS"
@@ -259,7 +270,7 @@ mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"
             
         </asp:Panel>
         <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1"
-            TargetControlID="Button1"
+            TargetControlID="btnBuscar"
             CancelControlID="Button3"
             PopupControlID="panelModalBusquedaEst" 
             runat="server"></ajaxToolkit:ModalPopupExtender>

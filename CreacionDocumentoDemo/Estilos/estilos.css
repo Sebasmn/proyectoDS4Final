@@ -43,18 +43,18 @@ hr {
     width: 120px;
     font-size: 15px;
 }
-    #Button1:hover {
-        background-color: #BBA38E;
-    }
+
+   
 
     /*Seccion: Prácticas Prepofesionales*/
+
 #documento {
     background-color: white;
-    margin-left: 250px;
-    margin-right:250px;
+    margin-left: 290px;
+    margin-right:290px;
     border: 30px;
     text-align: left;
-    padding: 25px;
+    padding: 35px;
 }
 #txtCarrera1, #txtCarrera2 {
     width: auto;
@@ -62,7 +62,7 @@ hr {
     padding-right: 3px;
 }
 #documento * {
-    font-size: 9px;
+    font-size: 12px;
 }
     #txtFechaHeader{
         float:left;
@@ -78,5 +78,15 @@ hr {
 }
 #botonSeleccionar{
     color:darkred;
+}
+.btnBuscar {
+    border-radius: 2em;
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: #A68970;
+    text-align: center;
+    width: auto;
+    padding: 2px;
+    font-size: 15px;
 }
 
