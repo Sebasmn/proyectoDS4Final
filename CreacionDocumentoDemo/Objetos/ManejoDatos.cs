@@ -1,8 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using Word = Microsoft.Office.Interop.Word;
 using System.Linq;
+using System.Text;
 using System.Web;
 using MySqlConnector;
+using System.Reflection;
+using System.IO;
+using CreacionDocumentoDemo.Objetos;
 /// <summary>
 /// Descripción breve de ManejoDatos
 /// </summary>
@@ -58,7 +65,7 @@ public class ManejoDatos
             reader.Close();
             conn.Close();
         }
-        catch (Exception e)
+        catch (Exception )
         {
 
         }
@@ -98,7 +105,7 @@ public class ManejoDatos
             reader.Close();
             conn.Close();
         }
-        catch (Exception e )
+        catch (Exception  )
         {
 
         }
@@ -143,4 +150,166 @@ public class ManejoDatos
         return estudiante;
     }
 
+    public  string obtenerSiguienteResolución()
+    {
+        int NUMERO=0;
+        try
+        {
+            MySqlConnection conn = this.GetConnectionString();
+            
+            MySqlCommand command = new MySqlCommand("obtenerResolucion", conn);
+            command.CommandType = CommandType.StoredProcedure;
+            conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                NUMERO = Convert.ToInt32(reader["NUMERO"]);
+
+            }
+            reader.Close();
+            conn.Close();
+        }
+        catch (Exception )
+        {
+            
+        }
+
+        string salida = String.Format("{0:D4}", NUMERO+1);
+        return salida;
+    }
+
+    public  bool guardarResolucion(Resolucion resolucion)
+    {
+        bool guardado = false;
+        MySqlConnection myConnection = this.GetConnectionString();
+        myConnection.Open();
+        MySqlTransaction myTrans = myConnection.BeginTransaction();
+        try
+        {
+            MySqlCommand myCommand = new MySqlCommand("guardarResolucion", myConnection, myTrans);
+            myCommand.CommandType = CommandType.StoredProcedure;
+            myCommand.Parameters.AddWithValue("CODIGO", resolucion.Codigo);
+            myCommand.Parameters.AddWithValue("UBICACION", resolucion.Ubicacion);
+            myCommand.Parameters.AddWithValue("IDCONSEJO", resolucion.IDConsejo);
+
+            int n = myCommand.ExecuteNonQuery();
+            //Guardar en generador
+            myCommand.CommandText = "guardarGenerador";
+            myCommand.Parameters.Clear();
+            myCommand.ExecuteNonQuery();
+            CreateWordDocument(resolucion.Plantilla, resolucion.Ubicacion,resolucion.Editables,resolucion.Datos);
+            myTrans.Commit();
+            guardado = true;
+        }
+        catch (Exception e)
+        {
+            try
+            {
+                myTrans.Rollback();
+            }
+            catch (SqlException ex)
+            {
+            }
+        }
+        return guardado;
+    }
+    private bool CreateWordDocument(object filename, object SaveAs,List<string> datos , List<string> editables)
+    {
+        Word.Application wordApp = new Word.Application();
+        object missing = Missing.Value;
+        Word.Document myWordDoc = null;
+        bool guardado = false;
+        if (File.Exists((string)filename))
+        {
+            object readOnly = false;
+            object isVisible = false;
+            wordApp.Visible = false;
+
+            myWordDoc = wordApp.Documents.Open(ref filename, ref missing, ref readOnly,
+                                    ref missing, ref missing, ref missing,
+                                    ref missing, ref missing, ref missing,
+                                    ref missing, ref missing, ref missing,
+                                    ref missing, ref missing, ref missing, ref missing);
+            myWordDoc.Activate();
+
+
+            for (int i = 0; i < datos.Count; i++)
+            {
+                this.FindAndReplace(wordApp, editables.ElementAt(i), datos.ElementAt(i));
+
+            }
+            //find and replace
+           /* this.FindAndReplace(wordApp, "<fecha>", datos.ElementAt(0));
+            this.FindAndReplace(wordApp, "<secuencia>", datos.ElementAt(1));
+            this.FindAndReplace(wordApp, "<anioReso>", datos.ElementAt(2));
+
+
+            this.FindAndReplace(wordApp, "<coordinador>", ddlCoordinador.SelectedValue.ToString());
+            this.FindAndReplace(wordApp, "<sesion>", ddlSesion.SelectedValue.ToString());
+            this.FindAndReplace(wordApp, "<dia>", ddlDia.SelectedValue.ToString());
+            this.FindAndReplace(wordApp, "<mes>", ddlMes.SelectedValue.ToString());
+            this.FindAndReplace(wordApp, "<anio>", txtAnio.Text);
+            this.FindAndReplace(wordApp, "<acuerdo>", txtAcuerdo.Text);
+
+            this.FindAndReplace(wordApp, "<mes1>", ddlMes0.SelectedValue.ToString());
+            this.FindAndReplace(wordApp, "<dia1>", ddlDia0.SelectedValue.ToString());
+            this.FindAndReplace(wordApp, "<anio1>", txtAnio0.Text);
+
+            this.FindAndReplace(wordApp, "<presidente>", txtPresidente.Text);
+            this.FindAndReplace(wordApp, "<nombre>", txtNombreEstu1.Text);
+            this.FindAndReplace(wordApp, "<carrera>", txtCarrera1.Text);
+            this.FindAndReplace(wordApp, "<horas>", txtHoras.Text);
+
+            this.FindAndReplace(wordApp, "<presidenteSub>", ddlPresidente.SelectedValue.ToString());
+            this.FindAndReplace(wordApp, "<presiComision>", txtCarrera4.Text);
+            this.FindAndReplace(wordApp, "<coorVinculacion>", txtCarrera5.Text);
+
+            guardado = true;
+
+            //this.FindAndReplace(wordApp, "<carrera>", txtAnio.Text);*/
+
+        }
+        else
+        {
+
+        }
+
+        //Save as
+        myWordDoc.SaveAs(ref SaveAs, ref missing, ref missing, ref missing,
+                        ref missing, ref missing, ref missing,
+                        ref missing, ref missing, ref missing,
+                        ref missing, ref missing, ref missing,
+                        ref missing, ref missing, ref missing);
+
+        myWordDoc.Close();
+        wordApp.Quit();
+        return guardado;
+    }
+    private void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
+    {
+        object matchCase = true;
+        object matchWholeWord = true;
+        object matchWildCards = false;
+        object matchSoundLike = false;
+        object nmatchAllforms = false;
+        object forward = true;
+        object format = false;
+        object matchKashida = false;
+        object matchDiactitics = false;
+        object matchAlefHamza = false;
+        object matchControl = false;
+        object read_only = false;
+        object visible = true;
+        object replace = 2;
+        object wrap = 1;
+
+        wordApp.Selection.Find.Execute(ref ToFindText,
+            ref matchCase, ref matchWholeWord,
+            ref matchWildCards, ref matchSoundLike,
+            ref nmatchAllforms, ref forward,
+            ref wrap, ref format, ref replaceWithText,
+            ref replace, ref matchKashida,
+            ref matchDiactitics, ref matchAlefHamza,
+            ref matchControl);
+    }
 }

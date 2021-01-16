@@ -162,6 +162,8 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
 
                 this.FindAndReplace(wordApp, "<memo>", txtMemo.Text.ToString());
                 this.FindAndReplace(wordApp, "<diaMemo>", ddlDia0.SelectedValue.ToString());
+                this.FindAndReplace(wordApp, "<numDiaMemo>", ddlDia1.SelectedValue.ToString());
+
                 this.FindAndReplace(wordApp, "<nombreMesMemo>", ddlMes0.SelectedValue.ToString());
                 this.FindAndReplace(wordApp, "<anioMemo>", txtAnio0.Text.ToString());
 

@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Reflection;
 using System.IO;
+using CreacionDocumentoDemo.Objetos;
 
 namespace CreacionDocumentoDemo.Formulario
 {
@@ -126,81 +127,110 @@ namespace CreacionDocumentoDemo.Formulario
 
         protected void Button4_Click(object sender, EventArgs e)
         {
+         
+
+                List<string> datos = new List<string>();
+
+                datos.Add(txtFechaHeader.Text);
+                datos.Add(txtAnio1.Text);
+                datos.Add(txtAnio2.Text);
+
+                datos.Add(ddlCoordinador.SelectedValue.ToString());
+                datos.Add(ddlSesion.SelectedValue.ToString());
+                datos.Add(ddlDia.SelectedValue.ToString());
+
+                datos.Add(ddlMes.SelectedValue.ToString());
+                datos.Add(txtAnio.Text);
+                datos.Add(txtAcuerdo.Text);
+
+                datos.Add(ddlMes0.SelectedValue.ToString());
+                datos.Add(ddlDia0.SelectedValue.ToString());
+                datos.Add(txtAnio0.Text);
+
+                datos.Add(txtPresidente.Text);
+                datos.Add(txtNombreEstu1.Text);
+                datos.Add(txtCarrera1.Text);
+
+                datos.Add(txtHoras.Text);
+                datos.Add(ddlPresidente.SelectedValue.ToString());
+                datos.Add(txtCarrera4.Text);
+
+                datos.Add(txtCarrera5.Text);
+
+                List<string> editables = new List<string>();
+
+                editables.Add("<fecha>");
+                editables.Add("<secuencia>");
+                editables.Add("<anioReso>");
+
+                editables.Add("<coordinador>");
+                editables.Add("<sesion>");
+                editables.Add("<dia>");
+
+                editables.Add("<mes>");
+                editables.Add("<anio>");
+                editables.Add("<acuerdo>");
+
+                editables.Add("<mes1>");
+                editables.Add("<dia1>");
+                editables.Add("<anio1>");
+
+                editables.Add("<presidente>");
+                editables.Add("<nombre>");
+                editables.Add("<carrera>");
+
+                editables.Add("<horas>");
+                editables.Add("<presidenteSub>");
+                editables.Add("<presiComision>");
+
+                editables.Add("<coorVinculacion>");
+
             
             StringBuilder sb1 = new StringBuilder();
             sb1.Append(@"D:\Documentos\Pruebas\");
             StringBuilder sb2 = new StringBuilder();
-            //  sb2.Append(textBox_Nombre.Text);
-            sb2.Append("Practicas001FJ");
+            sb2.Append("Resolucion");
+
+            sb2.Append(txtAnio1.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio2.Text);
+            StringBuilder codigo = new StringBuilder();
+            codigo.Append(txtAnio1.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio2.Text);
             sb1.Append(sb2.ToString());
             sb1.Append(".docx");
-            CreateWordDocument(@"D:\Documentos\OficiosPlantilla\Sistemas\practicasPrepo.docx", sb1.ToString());
+            string resolucion = codigo.ToString();
+            string  ruta = sb1.ToString();
+            
+            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\APROBACION_PRACTICASPP.docx";
+            //continuar = CreateWordDocument(plantilla, sb1.ToString());
+             ManejoDatos mysql = new ManejoDatos();
+            Resolucion resol = new Resolucion();
+            resol.Ubicacion = ruta;
+            resol.Editables = editables;
+            resol.Datos = datos;
+            resol.Codigo = resolucion;
+            resol.Plantilla = plantilla;
+            resol.IDConsejo = 20;
+
+             bool guardado = mysql.guardarResolucion(resol);
+
+            if (guardado)
+                {
+                    Label2.Text = "Documento Generado y Guardado";
+                }
+            
+          
+
         }
-        private void CreateWordDocument(object filename, object SaveAs)
+
+      
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            Word.Application wordApp = new Word.Application();
-            object missing = Missing.Value;
-            Word.Document myWordDoc = null;
 
-            if (File.Exists((string)filename))
-            {
-                object readOnly = false;
-                object isVisible = false;
-                wordApp.Visible = false;
+        }
 
-                myWordDoc = wordApp.Documents.Open(ref filename, ref missing, ref readOnly,
-                                        ref missing, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing, ref missing);
-                myWordDoc.Activate();
-
-                //find and replace
-                this.FindAndReplace(wordApp, "<fecha>", txtFechaHeader.Text);
-                this.FindAndReplace(wordApp, "<secuencia>", txtAnio1.Text);
-                this.FindAndReplace(wordApp, "<anioReso>", txtAnio2.Text);
-
-
-                this.FindAndReplace(wordApp, "<coordinador>", ddlCoordinador.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<sesion>", ddlSesion.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<dia>", ddlDia.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<mes>", ddlMes.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<anio>", txtAnio.Text);
-                this.FindAndReplace(wordApp, "<acuerdo>", txtAcuerdo.Text);
-
-                this.FindAndReplace(wordApp, "<mes1>", ddlMes0.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<dia1>", ddlDia0.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<anio1>", txtAnio0.Text);
-
-                this.FindAndReplace(wordApp, "<presidente>", txtPresidente.Text);
-                this.FindAndReplace(wordApp, "<nombre>", txtNombreEstu1.Text);
-                this.FindAndReplace(wordApp, "<carrera>", txtCarrera1.Text);
-                this.FindAndReplace(wordApp, "<horas>", txtHoras.Text);
-
-                this.FindAndReplace(wordApp, "<presidenteSub>", ddlPresidente.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<presiComision>", txtCarrera4.Text);
-                this.FindAndReplace(wordApp, "<coorVinculacion>", txtCarrera5.Text);
-
-
-
-                //this.FindAndReplace(wordApp, "<carrera>", txtAnio.Text);
-
-            }
-            else
-            {
-                //MessageBox.Show("File not Found!");
-            }
-
-            //Save as
-            myWordDoc.SaveAs(ref SaveAs, ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing);
-
-            myWordDoc.Close();
-            wordApp.Quit();
-
+        protected void btnNumeroResolucion_Click(object sender, EventArgs e)
+        {
+            generarNumeroResolucion();
         }
         private void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
         {
@@ -229,10 +259,113 @@ namespace CreacionDocumentoDemo.Formulario
                 ref matchDiactitics, ref matchAlefHamza,
                 ref matchControl);
         }
-
-        protected void btnBuscar_Click(object sender, EventArgs e)
+        private bool CreateWordDocument(object filename, object SaveAs)
         {
+            Word.Application wordApp = new Word.Application();
+            object missing = Missing.Value;
+            Word.Document myWordDoc = null;
+            bool guardado = false;
+            if (File.Exists((string)filename))
+            {
+                object readOnly = false;
+                object isVisible = false;
+                wordApp.Visible = false;
 
+                myWordDoc = wordApp.Documents.Open(ref filename, ref missing, ref readOnly,
+                                        ref missing, ref missing, ref missing,
+                                        ref missing, ref missing, ref missing,
+                                        ref missing, ref missing, ref missing,
+                                        ref missing, ref missing, ref missing, ref missing);
+                myWordDoc.Activate();
+
+                //find and replace
+                List<string> datos = new List<string>();
+                List<string > editables = new List<string>();
+             
+                this.FindAndReplace(wordApp, "<fecha>", txtFechaHeader.Text);  
+
+                this.FindAndReplace(wordApp, "<secuencia>", txtAnio1.Text);
+               
+
+                this.FindAndReplace(wordApp, "<anioReso>", txtAnio2.Text);
+                
+
+                this.FindAndReplace(wordApp, "<coordinador>", ddlCoordinador.SelectedValue.ToString());
+                
+
+                this.FindAndReplace(wordApp, "<sesion>", ddlSesion.SelectedValue.ToString());
+                
+
+                this.FindAndReplace(wordApp, "<dia>", ddlDia.SelectedValue.ToString());
+                
+
+                this.FindAndReplace(wordApp, "<mes>", ddlMes.SelectedValue.ToString());
+               
+
+
+                this.FindAndReplace(wordApp, "<anio>", txtAnio.Text);
+                ;
+                this.FindAndReplace(wordApp, "<acuerdo>", txtAcuerdo.Text);
+                
+
+                this.FindAndReplace(wordApp, "<mes1>", ddlMes0.SelectedValue.ToString());
+                
+
+
+                this.FindAndReplace(wordApp, "<dia1>", ddlDia0.SelectedValue.ToString());
+                
+
+                this.FindAndReplace(wordApp, "<anio1>", txtAnio0.Text);
+                
+
+                this.FindAndReplace(wordApp, "<presidente>", txtPresidente.Text);
+              
+
+                this.FindAndReplace(wordApp, "<nombre>", txtNombreEstu1.Text);
+              
+
+                this.FindAndReplace(wordApp, "<carrera>", txtCarrera1.Text);
+                
+
+                this.FindAndReplace(wordApp, "<horas>", txtHoras.Text);
+                
+
+
+                this.FindAndReplace(wordApp, "<presidenteSub>", ddlPresidente.SelectedValue.ToString());
+                
+
+                this.FindAndReplace(wordApp, "<presiComision>", txtCarrera4.Text);
+               
+
+                this.FindAndReplace(wordApp, "<coorVinculacion>", txtCarrera5.Text);
+                
+
+                guardado = true;
+
+                //this.FindAndReplace(wordApp, "<carrera>", txtAnio.Text);
+
+            }
+            else
+            {
+
+            }
+
+            //Save as
+            myWordDoc.SaveAs(ref SaveAs, ref missing, ref missing, ref missing,
+                            ref missing, ref missing, ref missing,
+                            ref missing, ref missing, ref missing,
+                            ref missing, ref missing, ref missing,
+                            ref missing, ref missing, ref missing);
+
+            myWordDoc.Close();
+            wordApp.Quit();
+            return guardado;
+        }
+        private void generarNumeroResolucion()
+        {
+            ManejoDatos mysql = new ManejoDatos();
+            string resolucion= mysql.obtenerSiguienteResolución();
+            txtAnio1.Text = resolucion;
         }
     }
 }

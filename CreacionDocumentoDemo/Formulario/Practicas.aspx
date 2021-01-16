@@ -55,13 +55,20 @@ p
 <body>
     
     <form id="form1" runat="server">
+        &nbsp;&nbsp;&nbsp;
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <br />
         <br />
         <br />
-        <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante" 
-            Height="27px"
-            Width="312px" CssClass="btnBuscar" OnClick="btnBuscar_Click"  />
+        <asp:Panel ID="menuOpciones" runat="server">
+            <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante" 
+            CssClass="btnBuscar" OnClick="btnBuscar_Click"  />
+
+            <asp:Button ID="btnNumeroResolucion" runat="server" Text="Generar Número Resolución" 
+            CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click"  />
+
+        </asp:Panel>
+        
         <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Always" runat="server">
               <ContentTemplate>
         <div id="documento">
@@ -297,6 +304,20 @@ mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"
                                                             </p>
                                                             <p>
                                                             </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
                                                         </p>
                                                     </p>
                                                 </p>
@@ -305,6 +326,16 @@ mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"
                                     </p>
                                 </p>
                                 </span>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
                                 <p>
                                 </p>
                                 <p>
@@ -359,6 +390,8 @@ mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"
                   <asp:Button ID="Button4"
                       runat="server" Height="49px" 
                       Text="Generar Documento" Width="172px" OnClick="Button4_Click" />
+
+                   <asp:Label ID="Label2" runat="server" Text="Bienvenido:"></asp:Label>
 
                    </ContentTemplate>
         </asp:UpdatePanel>
