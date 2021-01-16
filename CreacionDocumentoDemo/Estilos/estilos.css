@@ -77,9 +77,11 @@ hr {
     border-radius: 25px;
     border: 3px groove #807569;
     background-color: #D8C99B;
+    margin:auto;
 }
-#GridView1{
-    font-size:12px;
+#GridView1 {
+    font-size: 12px;
+    margin: auto;
 }
 #botonSeleccionar{
     color:darkred;

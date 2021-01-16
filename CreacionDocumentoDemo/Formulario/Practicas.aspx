@@ -291,7 +291,9 @@ mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"
                       Width="172px" OnClick="Button4_Click" />
 
                    <asp:Label ID="Label2" runat="server" Text="Bienvenido:"></asp:Label>
-
+                  <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
+            TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
+            runat="server" />
                    </ContentTemplate>
         </asp:UpdatePanel>
         <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="221px" Width="849px">
@@ -346,9 +348,7 @@ mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"
             PopupControlID="panelModalBusquedaEst" 
             runat="server"></ajaxToolkit:ModalPopupExtender>
 
-        <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
-            TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
-            runat="server" />
+        
 
     </form>
 </body>
