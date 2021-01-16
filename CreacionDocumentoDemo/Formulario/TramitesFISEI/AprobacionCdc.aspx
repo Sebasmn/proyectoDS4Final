@@ -189,7 +189,7 @@ mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">PRESIDENTA</span></div>
    
                        <asp:Button ID="Button4"
                       runat="server" Height="49px" 
-                      Text="Generar Documento" Width="172px"  />
+                      Text="Generar Documento" Width="172px" OnClick="Button4_Click"  />
 
                    </ContentTemplate>
         </asp:UpdatePanel>
