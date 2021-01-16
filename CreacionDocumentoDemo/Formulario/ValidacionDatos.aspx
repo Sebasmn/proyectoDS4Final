@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ValidacionDatos.aspx.cs" Inherits="CreacionDocumentoDemo.Formulario.ValidacionDatos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"
+    CodeBehind="ValidacionDatos.aspx.cs" Inherits="CreacionDocumentoDemo.Formulario.ValidacionDatos" %>
 
 <!DOCTYPE html>
 

@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CreacionDocumentoDemo.Formulario
+namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
 {
 
 
-    public partial class Practicas
+    public partial class AprobacionCdc
     {
 
         /// <summary>
@@ -114,13 +114,13 @@ namespace CreacionDocumentoDemo.Formulario
         protected global::System.Web.UI.WebControls.TextBox txtAnio;
 
         /// <summary>
-        /// Control ddlMes0.
+        /// Control txtMemo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMes0;
+        protected global::System.Web.UI.WebControls.TextBox txtMemo;
 
         /// <summary>
         /// Control ddlDia0.
@@ -132,6 +132,15 @@ namespace CreacionDocumentoDemo.Formulario
         protected global::System.Web.UI.WebControls.DropDownList ddlDia0;
 
         /// <summary>
+        /// Control ddlMes0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMes0;
+
+        /// <summary>
         /// Control txtAnio0.
         /// </summary>
         /// <remarks>
@@ -141,13 +150,31 @@ namespace CreacionDocumentoDemo.Formulario
         protected global::System.Web.UI.WebControls.TextBox txtAnio0;
 
         /// <summary>
-        /// Control txtPresidente.
+        /// Control txtCoordinador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPresidente;
+        protected global::System.Web.UI.WebControls.TextBox txtCoordinador;
+
+        /// <summary>
+        /// Control txtNumeroEjemp.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroEjemp;
+
+        /// <summary>
+        /// Control txtDirector.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDirector;
 
         /// <summary>
         /// Control txtNombreEstu1.
@@ -159,13 +186,31 @@ namespace CreacionDocumentoDemo.Formulario
         protected global::System.Web.UI.WebControls.TextBox txtNombreEstu1;
 
         /// <summary>
-        /// Control txtCarrera1.
+        /// Control txtCedula.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCarrera1;
+        protected global::System.Web.UI.WebControls.TextBox txtCedula;
+
+        /// <summary>
+        /// Control txtDirector0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDirector0;
+
+        /// <summary>
+        /// Control txtDecana.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDecana;
 
         /// <summary>
         /// Control txtNombreEstu2.
@@ -177,58 +222,22 @@ namespace CreacionDocumentoDemo.Formulario
         protected global::System.Web.UI.WebControls.TextBox txtNombreEstu2;
 
         /// <summary>
-        /// Control txtCarrera2.
+        /// Control txtCedula0.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCarrera2;
+        protected global::System.Web.UI.WebControls.TextBox txtCedula0;
 
         /// <summary>
-        /// Control txtHoras.
+        /// Control txtPresidente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHoras;
-
-        /// <summary>
-        /// Control txtCarrera3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCarrera3;
-
-        /// <summary>
-        /// Control ddlPresidente.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPresidente;
-
-        /// <summary>
-        /// Control txtCarrera4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCarrera4;
-
-        /// <summary>
-        /// Control txtCarrera5.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCarrera5;
+        protected global::System.Web.UI.WebControls.TextBox txtPresidente;
 
         /// <summary>
         /// Control Button4.

@@ -50,11 +50,11 @@ hr {
 
 #documento {
     background-color: white;
-    margin-left: 290px;
-    margin-right:290px;
+    margin-left: 410px;
+    margin-right: 410px;
     border: 30px;
     text-align: left;
-    padding: 35px;
+    padding: 55px;
 }
 #txtCarrera1, #txtCarrera2 {
     width: auto;
@@ -62,7 +62,12 @@ hr {
     padding-right: 3px;
 }
 #documento * {
-    font-size: 12px;
+    font-size: 13px;
+    
+
+}
+#documento {
+    font-size: 13px;
 }
     #txtFechaHeader{
         float:left;
@@ -89,4 +94,23 @@ hr {
     padding: 2px;
     font-size: 15px;
 }
+#txtAnio, #txtAnio1, #txtAnio1 {
+    width: 45px;
+}
+.noBorder {
+    -webkit-appearance: none;
+    text-align: center;
+    width: auto;
+    padding-left: 2px;
+    padding-right: 2px;
+    border: 0px;
+    box-shadow: none;
+    border-bottom: 1px solid;
+}
+    .noBorder:focus {
+        box-shadow: none;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid;
+    }
 

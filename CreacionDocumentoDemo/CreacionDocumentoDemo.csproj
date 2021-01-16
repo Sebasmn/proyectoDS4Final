@@ -95,6 +95,7 @@
     <Content Include="Estilos\estilos.css" />
     <Content Include="Formulario\Inicio.aspx" />
     <Content Include="Formulario\Practicas.aspx" />
+    <Content Include="Formulario\TramitesFISEI\AprobacionCdc.aspx" />
     <Content Include="Formulario\ValidacionDatos.aspx" />
     <Content Include="Images\EscudoUTA.jpg" />
     <Content Include="Images\EscudoUTA.png" />
@@ -121,6 +122,13 @@
     </Compile>
     <Compile Include="Formulario\Principal.Master.designer.cs">
       <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\TramitesFISEI\AprobacionCdc.aspx.cs">
+      <DependentUpon>AprobacionCdc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\TramitesFISEI\AprobacionCdc.aspx.designer.cs">
+      <DependentUpon>AprobacionCdc.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ValidacionDatos.aspx.cs">
       <DependentUpon>ValidacionDatos.aspx</DependentUpon>
