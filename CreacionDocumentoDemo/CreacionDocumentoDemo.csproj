@@ -98,6 +98,7 @@
     <Content Include="Formulario\TramitesFISEI\AprobacionCdc.aspx" />
     <Content Include="Formulario\TramitesFISEI\ReconocimientoCultFisica.aspx" />
     <Content Include="Formulario\ValidacionDatos.aspx" />
+    <Content Include="Formulario\Vinculacion\ModeloCartasCompromiso.aspx" />
     <Content Include="Images\EscudoUTA.jpg" />
     <Content Include="Images\EscudoUTA.png" />
     <Content Include="Web.config" />
@@ -144,6 +145,13 @@
     </Compile>
     <Compile Include="Formulario\ValidacionDatos.aspx.designer.cs">
       <DependentUpon>ValidacionDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Vinculacion\ModeloCartasCompromiso.aspx.cs">
+      <DependentUpon>ModeloCartasCompromiso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\Vinculacion\ModeloCartasCompromiso.aspx.designer.cs">
+      <DependentUpon>ModeloCartasCompromiso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Objetos\Estudiante.cs" />
     <Compile Include="Objetos\ManejoDatos.cs" />
