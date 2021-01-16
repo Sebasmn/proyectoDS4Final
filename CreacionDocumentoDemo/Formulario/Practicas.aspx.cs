@@ -28,7 +28,7 @@ namespace CreacionDocumentoDemo.Formulario
             if (!IsPostBack)
             {
                 List<String> datos = new List<string>();
-                datos.Add("Clay Aldaz");
+                datos.Add("Clay Aldas");
                 datos.Add("Pedrito");
                 datos.Add("Maria Chavez");
 
@@ -218,6 +218,11 @@ namespace CreacionDocumentoDemo.Formulario
                 ref replace, ref matchKashida,
                 ref matchDiactitics, ref matchAlefHamza,
                 ref matchControl);
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

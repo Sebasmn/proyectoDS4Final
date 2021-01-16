@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace CreacionDocumentoDemo.Formulario.Vinculacion
 {
-    public partial class ModeloCartasCompromiso : System.Web.UI.Page
+    public partial class CartaCompromiso : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void btnPrueba_Click(object sender, EventArgs e)
-        {
-            ModalPopupExtender1.Show();
         }
     }
 }

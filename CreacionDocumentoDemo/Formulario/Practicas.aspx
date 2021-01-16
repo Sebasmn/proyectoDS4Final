@@ -61,7 +61,7 @@ p
         <br />
         <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante" 
             Height="27px"
-            Width="312px" CssClass="btnBuscar"  />
+            Width="312px" CssClass="btnBuscar" OnClick="btnBuscar_Click"  />
         <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Always" runat="server">
               <ContentTemplate>
         <div id="documento">
