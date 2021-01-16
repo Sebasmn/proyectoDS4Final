@@ -126,14 +126,15 @@ namespace CreacionDocumentoDemo.Formulario
 
         protected void Button4_Click(object sender, EventArgs e)
         {
+            
             StringBuilder sb1 = new StringBuilder();
             sb1.Append(@"D:\Documentos\Pruebas\");
             StringBuilder sb2 = new StringBuilder();
             //  sb2.Append(textBox_Nombre.Text);
-            sb2.Append("Practicas001");
+            sb2.Append("Practicas001FJ");
             sb1.Append(sb2.ToString());
             sb1.Append(".docx");
-            CreateWordDocument(@"D:\Documentos\OficiosPlantilla\Sistemas\PracticasPrepofesionales.docx", sb1.ToString());
+            CreateWordDocument(@"D:\Documentos\OficiosPlantilla\Sistemas\practicasPrepo.docx", sb1.ToString());
         }
         private void CreateWordDocument(object filename, object SaveAs)
         {
@@ -156,25 +157,34 @@ namespace CreacionDocumentoDemo.Formulario
 
                 //find and replace
                 this.FindAndReplace(wordApp, "<fecha>", txtFechaHeader.Text);
+                this.FindAndReplace(wordApp, "<secuencia>", txtAnio1.Text);
+                this.FindAndReplace(wordApp, "<anioReso>", txtAnio2.Text);
+
+
                 this.FindAndReplace(wordApp, "<coordinador>", ddlCoordinador.SelectedValue.ToString());
                 this.FindAndReplace(wordApp, "<sesion>", ddlSesion.SelectedValue.ToString());
-
-                this.FindAndReplace(wordApp, "<nombre>", txtNombreEstu1.Text);
-                this.FindAndReplace(wordApp, "<carrera>", txtCarrera1.Text);
-
                 this.FindAndReplace(wordApp, "<dia>", ddlDia.SelectedValue.ToString());
                 this.FindAndReplace(wordApp, "<mes>", ddlMes.SelectedValue.ToString());
                 this.FindAndReplace(wordApp, "<anio>", txtAnio.Text);
+                this.FindAndReplace(wordApp, "<acuerdo>", txtAcuerdo.Text);
 
-
-                this.FindAndReplace(wordApp, "<dia1>", ddlDia0.SelectedValue.ToString());
                 this.FindAndReplace(wordApp, "<mes1>", ddlMes0.SelectedValue.ToString());
+                this.FindAndReplace(wordApp, "<dia1>", ddlDia0.SelectedValue.ToString());
                 this.FindAndReplace(wordApp, "<anio1>", txtAnio0.Text);
 
                 this.FindAndReplace(wordApp, "<presidente>", txtPresidente.Text);
+                this.FindAndReplace(wordApp, "<nombre>", txtNombreEstu1.Text);
+                this.FindAndReplace(wordApp, "<carrera>", txtCarrera1.Text);
                 this.FindAndReplace(wordApp, "<horas>", txtHoras.Text);
+
+                this.FindAndReplace(wordApp, "<presidenteSub>", ddlPresidente.SelectedValue.ToString());
+                this.FindAndReplace(wordApp, "<presiComision>", txtCarrera4.Text);
+                this.FindAndReplace(wordApp, "<coorVinculacion>", txtCarrera5.Text);
+
+
+
                 //this.FindAndReplace(wordApp, "<carrera>", txtAnio.Text);
-       
+
             }
             else
             {

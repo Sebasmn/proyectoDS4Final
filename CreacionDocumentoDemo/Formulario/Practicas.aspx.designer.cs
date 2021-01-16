@@ -69,6 +69,15 @@ namespace CreacionDocumentoDemo.Formulario
         protected global::System.Web.UI.WebControls.TextBox txtAnio1;
 
         /// <summary>
+        /// Control txtAnio2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAnio2;
+
+        /// <summary>
         /// Control ddlCoordinador.
         /// </summary>
         /// <remarks>
@@ -112,6 +121,15 @@ namespace CreacionDocumentoDemo.Formulario
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAnio;
+
+        /// <summary>
+        /// Control txtAcuerdo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAcuerdo;
 
         /// <summary>
         /// Control ddlMes0.
