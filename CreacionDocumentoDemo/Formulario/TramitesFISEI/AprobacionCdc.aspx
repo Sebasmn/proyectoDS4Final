@@ -13,10 +13,7 @@
     <link rel="stylesheet" href="../../Estilos/estilos.css"  type="text/css" />
 
     <style type="text/css">
-        .auto-style1 {
-            height: 1241px;
-        }
-    p.MsoBodyText
+        p.MsoBodyText
 	{margin:0cm;
 	text-align:justify;
 	font-size:10.0pt;
@@ -66,8 +63,10 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC">
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
           <asp:TextBox ID="txtAnio1" runat="server" placeholder="Ejm: 0209" CssClass="noBorder"></asp:TextBox>
-          </span></span>-P-CD-FISEI-UTA-2020 </span>
-          <p class="MsoNormal" style="margin-bottom:0cm">
+          </span></span>-P-CD-FISEI-UTA-<span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtAnio2" runat="server" CssClass="noBorder" placeholder="Ejm: 2020"></asp:TextBox>
+          </span></span>&nbsp;</span><p class="MsoNormal" style="margin-bottom:0cm">
               <span style="font-size:9.0pt;
 line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
               </span>
@@ -99,9 +98,15 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC">Consejo Directivo de la Fac
                                       <asp:DropDownList ID="ddlSesion" runat="server">
                                       </asp:DropDownList>
                                       </span><span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;</span>de fecha <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;</span>de fecha</span> <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                      <asp:DropDownList ID="ddlDia" runat="server">
+                                      <asp:DropDownList ID="ddlDia2" runat="server">
+                                      </asp:DropDownList>
+                                      </span><span style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">, </span></span>&nbsp;<span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:DropDownList ID="ddlDia" runat="server">
                                       </asp:DropDownList>
                                       </span>&nbsp;<span style="mso-spacerun:yes">&nbsp;</span>de <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
@@ -109,22 +114,28 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC">Consejo Directivo de la Fac
                                       </asp:DropDownList>
                                       </span>&nbsp;del <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                      <asp:TextBox ID="txtAnio" runat="server" placeholder="Ej: 2020" CssClass="noBorder"></asp:TextBox>
+                                      <asp:TextBox ID="txtAnio" runat="server" CssClass="noBorder" placeholder="Ej: 2020"></asp:TextBox>
                                       </span>&nbsp;</span><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-ansi-language:ES-EC">,</span><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"> conoció el Memorando Nro. <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
                                       <asp:TextBox ID="txtMemo" runat="server" placeholder="Ejm: UTA-UVS-FISEI-2020-0073-M" CssClass="noBorder"></asp:TextBox>
-                                      </span></span>&nbsp;, de fecha <span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+                                      </span></span>&nbsp;, de fecha&nbsp; <span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
                                       <asp:DropDownList ID="ddlDia0" runat="server">
                                       </asp:DropDownList>
-                                      </span></span>&nbsp;de <span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+                                      </span></span>&nbsp; <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
+                                      <asp:DropDownList ID="ddlDia1" runat="server">
+                                      </asp:DropDownList>
+                                      </span></span><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;</span></span></span>de <span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
                                       <asp:DropDownList ID="ddlMes0" runat="server">
                                       </asp:DropDownList>
-                                      </span></span>&nbsp;de <span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+                                      </span></span>&nbsp; de <span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
                                       <asp:TextBox ID="txtAnio0" runat="server" placeholder="Ejm: 2020" CssClass="noBorder"></asp:TextBox>
                                       </span></span>, suscrito por el/la Ingeniero <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
@@ -144,7 +155,7 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
                                       </span>&nbsp;con c.c. <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                      <asp:TextBox ID="txtCedula" runat="server" EnableViewState="true" Height="16px" placeholder="1805214551" ToolTip="Busque un estudiante" Width="122px" CssClass="noBorder"></asp:TextBox>
+                                      <asp:TextBox ID="txtCedula" runat="server" EnableViewState="true" Height="16px" placeholder="Ejm:1805214551" ToolTip="Busque un estudiante" Width="122px" CssClass="noBorder"></asp:TextBox>
                                       </span></span>. Al respecto RESUELVE:</span><p class="MsoBodyText">
                                           &nbsp;<p class="MsoNormal">
                                               <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;

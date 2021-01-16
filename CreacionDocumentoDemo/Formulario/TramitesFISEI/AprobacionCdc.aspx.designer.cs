@@ -69,6 +69,15 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
         protected global::System.Web.UI.WebControls.TextBox txtAnio1;
 
         /// <summary>
+        /// Control txtAnio2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAnio2;
+
+        /// <summary>
         /// Control ddlCoordinador.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlSesion;
+
+        /// <summary>
+        /// Control ddlDia2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDia2;
 
         /// <summary>
         /// Control ddlDia.
@@ -130,6 +148,15 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlDia0;
+
+        /// <summary>
+        /// Control ddlDia1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDia1;
 
         /// <summary>
         /// Control ddlMes0.

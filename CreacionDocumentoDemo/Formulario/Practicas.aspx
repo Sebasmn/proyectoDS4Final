@@ -80,8 +80,13 @@ Tahoma">Resolución <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:TextBox ID="txtAnio1" runat="server" CssClass="noBorder" placeholder="0209"></asp:TextBox>
-                </span></span></span>-P-CD-FISEI-UTA-2019<o:p></o:p></span></p>
+                <asp:TextBox ID="txtAnio1" runat="server" CssClass="noBorder" placeholder="0209" style="height: 19px"></asp:TextBox>
+                </span></span></span>-P-CD-FISEI-UTA-&nbsp; <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
+                <asp:TextBox ID="txtAnio2" runat="server"  CssClass="noBorder" placeholder="Ej:2020"></asp:TextBox>
+                </span></span></span></span></p>
             <p class="MsoNormal">
                 <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma">Ingeniero Mg.<o:p></o:p></span></p>
@@ -125,7 +130,9 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">COORDINADOR D
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;</span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">del
                 <asp:TextBox ID="txtAnio" runat="server" CssClass="noBorder" placeholder="Año"></asp:TextBox>
-                </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">, conoció el acuerdo 1363-CAF-FISEI-2019, de fecha <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+                </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">, conoció el acuerdo</span><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">&nbsp;<span lang="ES-TRAD" style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtAcuerdo" runat="server"  CssClass="noBorder" placeholder="Ejm: 1363-CAF-FISEI-2019 "></asp:TextBox>
+                </span>&nbsp;</span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">, de fecha <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
                 <asp:DropDownList ID="ddlMes0" runat="server" CssClass="noBorder">
                 </asp:DropDownList>
@@ -220,7 +227,7 @@ mso-bidi-font-weight:bold">Cc:<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&n
                                                 <span style="font-size:9.0pt;line-height:106%;
 font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
 minor-latin;mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC;mso-fareast-language:
-EN-US;mso-bidi-language:AR-SA"><span class="auto-style3">Presidente de la Comisión de Prácticas Pre Profesionales de&nbsp;&nbsp; </span></span><span style="font-size:7.0pt;mso-bidi-font-size:9.0pt;
+EN-US;mso-bidi-language:AR-SA"><span class="auto-style3">Presidente de la Comisión de Prácticas Pre Profesionales&nbsp; </span></span><span style="font-size:7.0pt;mso-bidi-font-size:9.0pt;
 line-height:115%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;
 mso-bidi-font-weight:bold">de la Carrera de Ingeniería </span><span style="font-size:7.0pt;mso-bidi-font-size:
 9.0pt;line-height:115%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">en Sistemas&nbsp; Computacionales e Informáticos</span><p class="MsoNormal">
@@ -262,6 +269,34 @@ mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"
                                                             </p>
                                                             <p>
                                                             </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
                                                         </p>
                                                     </p>
                                                 </p>
@@ -270,6 +305,26 @@ mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"
                                     </p>
                                 </p>
                                 </span>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
                                 <p>
                                 </p>
                                 <p>
