@@ -213,7 +213,7 @@ public class ManejoDatos
         }
         return guardado;
     }
-    private bool CreateWordDocument(object filename, object SaveAs,List<string> datos , List<string> editables)
+    public  bool CreateWordDocument(object filename, object SaveAs,List<string> editables, List<string> datos)
     {
         Word.Application wordApp = new Word.Application();
         object missing = Missing.Value;
@@ -238,36 +238,8 @@ public class ManejoDatos
                 this.FindAndReplace(wordApp, editables.ElementAt(i), datos.ElementAt(i));
 
             }
-            //find and replace
-           /* this.FindAndReplace(wordApp, "<fecha>", datos.ElementAt(0));
-            this.FindAndReplace(wordApp, "<secuencia>", datos.ElementAt(1));
-            this.FindAndReplace(wordApp, "<anioReso>", datos.ElementAt(2));
-
-
-            this.FindAndReplace(wordApp, "<coordinador>", ddlCoordinador.SelectedValue.ToString());
-            this.FindAndReplace(wordApp, "<sesion>", ddlSesion.SelectedValue.ToString());
-            this.FindAndReplace(wordApp, "<dia>", ddlDia.SelectedValue.ToString());
-            this.FindAndReplace(wordApp, "<mes>", ddlMes.SelectedValue.ToString());
-            this.FindAndReplace(wordApp, "<anio>", txtAnio.Text);
-            this.FindAndReplace(wordApp, "<acuerdo>", txtAcuerdo.Text);
-
-            this.FindAndReplace(wordApp, "<mes1>", ddlMes0.SelectedValue.ToString());
-            this.FindAndReplace(wordApp, "<dia1>", ddlDia0.SelectedValue.ToString());
-            this.FindAndReplace(wordApp, "<anio1>", txtAnio0.Text);
-
-            this.FindAndReplace(wordApp, "<presidente>", txtPresidente.Text);
-            this.FindAndReplace(wordApp, "<nombre>", txtNombreEstu1.Text);
-            this.FindAndReplace(wordApp, "<carrera>", txtCarrera1.Text);
-            this.FindAndReplace(wordApp, "<horas>", txtHoras.Text);
-
-            this.FindAndReplace(wordApp, "<presidenteSub>", ddlPresidente.SelectedValue.ToString());
-            this.FindAndReplace(wordApp, "<presiComision>", txtCarrera4.Text);
-            this.FindAndReplace(wordApp, "<coorVinculacion>", txtCarrera5.Text);
-
+         
             guardado = true;
-
-            //this.FindAndReplace(wordApp, "<carrera>", txtAnio.Text);*/
-
         }
         else
         {
@@ -311,5 +283,35 @@ public class ManejoDatos
             ref replace, ref matchKashida,
             ref matchDiactitics, ref matchAlefHamza,
             ref matchControl);
+    }
+
+    public List<string> getCarreras()
+    {
+        List<string> estudiante = new List<string>();
+        try
+        {
+            MySqlConnection conn = this.GetConnectionString();
+            string sql = "SELECT * " +
+                          "FROM `Carreras` ";
+
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            //command.Parameters.AddWithValue("@CEDULA", cedula);
+            conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+             
+                estudiante.Add(reader["NombreCarrera"].ToString());
+
+            }
+            reader.Close();
+            conn.Close();
+        }
+        catch (Exception e)
+        {
+
+        }
+        return estudiante;
     }
 }

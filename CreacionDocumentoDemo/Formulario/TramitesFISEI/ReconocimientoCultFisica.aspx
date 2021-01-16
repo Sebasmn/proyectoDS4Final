@@ -83,19 +83,19 @@ p.MsoHeader
             <p class="MsoNormal" style="text-align:justify">
                 &nbsp;</p>
             <p class="MsoNormal" style="text-align:justify">
+                &nbsp;</p>
+            <p class="MsoNormal" style="text-align:justify">
                 <span lang="ES" style="font-size:
-9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif">Resolución</span><span style="font-size:
-9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif"> </span><span lang="ES" style="font-size:
+9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif">Resolución</span><span lang="ES" style="font-size:
 9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:TextBox ID="txtSecuencia" runat="server" CssClass="noBorder" placeholder="0209" style="height: 19px"></asp:TextBox>
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtSecuencia" runat="server" CssClass="auto-style1" Height="16px" placeholder="0209" Width="53px"></asp:TextBox>
                 </span></span></span>-P-CD-FISEI-UTA-</span><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtAnio2" runat="server"  CssClass="noBorder" placeholder="Ej:2020"></asp:TextBox>
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtAnio2" runat="server" CssClass="auto-style1" Height="16px" placeholder="Ej:2020" Width="58px"></asp:TextBox>
                 </span></span></span></span>
             </p>
             <p class="MsoNormal" style="text-align:justify">
@@ -343,6 +343,7 @@ mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"><span style="mso-spacerun
                   <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
             TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
             runat="server" />
+                  <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
                 </ContentTemplate>
         </asp:UpdatePanel>
                    </p>
@@ -392,6 +393,13 @@ mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"><span style="mso-spacerun
             </asp:UpdatePanel>
             
         </asp:Panel>
+
+
+        <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1"
+            TargetControlID="btnBuscar"
+            CancelControlID="Button3"
+            PopupControlID="panelModalBusquedaEst" 
+            runat="server"></ajaxToolkit:ModalPopupExtender>
     </form>
 </body>
 </html>

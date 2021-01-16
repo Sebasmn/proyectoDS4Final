@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CreacionDocumentoDemo.Objetos;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -113,19 +114,86 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            ManejoDatos datos = new ManejoDatos();
+            // List<Estudiante> listado =  
+            var bs1 = new BindingSource();
+            bs1.DataSource = datos.getEstudiantesBusqueda(TextBox1.Text);
+            GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
+            GridView1.PageIndex = e.NewPageIndex;
+            GridView1.DataBind();
+            Label1.Text = "Correcto";
 
+            GridView1.DataBind();
         }
 
         protected void Button4_Click(object sender, EventArgs e)
         {
+
+            //
+            List<string> datos = new List<string>();
+            List<string> editables = new List<string>();
+
+            editables.Add("<fecha>"); datos.Add(txtFechaHeader.Text);
+            editables.Add("<secuencia>"); datos.Add(txtAnio1.Text);
+            editables.Add("<anioReso>"); datos.Add(txtAnio2.Text);
+
+            editables.Add("<coordinador>"); datos.Add(ddlCoordinador.SelectedValue.ToString());
+            editables.Add("<sesion>"); datos.Add(ddlSesion.SelectedValue.ToString());
+            editables.Add("<nombreDia>"); datos.Add(ddlDia2.SelectedValue.ToString());
+
+
+            editables.Add("<numeroDia>"); datos.Add(ddlDia.SelectedValue.ToString());
+            editables.Add("<nombreMes>"); datos.Add(ddlMes.SelectedValue.ToString());
+            editables.Add("<anio>"); datos.Add(txtAnio0.Text);
+
+
+
+            editables.Add("<memo>"); datos.Add(txtMemo.Text);
+            editables.Add("<diaMemo>"); datos.Add(ddlDia0.SelectedValue.ToString());
+            editables.Add("<numDiaMemo>"); datos.Add(ddlDia1.SelectedValue.ToString());
+
+            editables.Add("<nombreMesMemo>"); datos.Add(ddlMes0.SelectedValue.ToString());
+            editables.Add("<anioMemo>"); datos.Add(txtAnio0.Text);
+            editables.Add("<ejemplares>"); datos.Add(txtNumeroEjemp.Text);
+
+            editables.Add("<tutor>"); datos.Add(txtDirector.Text);
+            editables.Add("<nombre>"); datos.Add(txtNombreEstu1.Text);
+            editables.Add("<cedula>"); datos.Add(txtCedula.Text);
+
+
+            editables.Add("<decano>"); datos.Add(txtDecana.Text);
+            editables.Add("<presidente>"); datos.Add(txtPresidente.Text);
+            //
             StringBuilder sb1 = new StringBuilder();
             sb1.Append(@"D:\Documentos\Pruebas\");
             StringBuilder sb2 = new StringBuilder();
-            //  sb2.Append(textBox_Nombre.Text);
-            sb2.Append("Aprobacion001FJ");
+            sb2.Append("Resolucion");
+
+            sb2.Append(txtAnio1.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio2.Text);
+            StringBuilder codigo = new StringBuilder();
+            codigo.Append(txtAnio1.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio2.Text);
             sb1.Append(sb2.ToString());
             sb1.Append(".docx");
-            CreateWordDocument(@"D:\Documentos\OficiosPlantilla\Sistemas\aprobacioncdc.docx", sb1.ToString());
+            string resolucion = codigo.ToString();
+            string ruta = sb1.ToString();
+
+            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\aprobacioncdc.docx";
+            //continuar = CreateWordDocument(plantilla, sb1.ToString());
+            ManejoDatos mysql = new ManejoDatos();
+            Resolucion resol = new Resolucion();
+            resol.Ubicacion = ruta;
+            resol.Editables = editables;
+            resol.Datos = datos;
+            resol.Codigo = resolucion;
+            resol.Plantilla = plantilla;
+            resol.IDConsejo = 20;
+
+            bool guardado = mysql.guardarResolucion(resol);
+
+            if (guardado)
+            {
+                Label2.Text = "Documento Generado y Guardado";
+            }
         }
 
         private void CreateWordDocument(object filename, object SaveAs)
@@ -148,33 +216,36 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
                 myWordDoc.Activate();
 
                 //find and replace
-                this.FindAndReplace(wordApp, "<fecha>", txtFechaHeader.Text);
-                this.FindAndReplace(wordApp, "<secuencia>", txtAnio1.Text);
-                this.FindAndReplace(wordApp, "<anioReso>", txtAnio2.Text);
+                List<string> datos = new List<string>();
+                List<string> editables = new List<string>();
+               
+                this.FindAndReplace(wordApp, "<fecha>", txtFechaHeader.Text); editables.Add("<fecha>"); datos.Add(txtFechaHeader.Text);
+                this.FindAndReplace(wordApp, "<secuencia>", txtAnio1.Text); editables.Add("<secuencia>"); datos.Add(txtAnio1.Text);
+                this.FindAndReplace(wordApp, "<anioReso>", txtAnio2.Text); editables.Add("<anioReso>"); datos.Add(txtAnio2.Text);
 
 
-                this.FindAndReplace(wordApp, "<coordinador>", ddlCoordinador.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<sesion>", ddlSesion.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<nombreDia>", ddlDia2.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<numeroDia>", ddlDia.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<nombreMes>", ddlMes.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<anio>", txtAnio0.Text);
+                this.FindAndReplace(wordApp, "<coordinador>", ddlCoordinador.SelectedValue.ToString());         editables.Add("<coordinador>"); datos.Add(ddlCoordinador.SelectedValue.ToString());
+                this.FindAndReplace(wordApp, "<sesion>", ddlSesion.SelectedValue.ToString());                   editables.Add("<sesion>"); datos.Add(ddlSesion.SelectedValue.ToString());
+                this.FindAndReplace(wordApp, "<nombreDia>", ddlDia2.SelectedValue.ToString());          editables.Add("<nombreDia>"); datos.Add(ddlDia2.SelectedValue.ToString());
+                this.FindAndReplace(wordApp, "<numeroDia>", ddlDia.SelectedValue.ToString());            editables.Add("<numeroDia>"); datos.Add(ddlDia.SelectedValue.ToString());
+                this.FindAndReplace(wordApp, "<nombreMes>", ddlMes.SelectedValue.ToString());       editables.Add("<nombreMes>"); datos.Add(ddlMes.SelectedValue.ToString());
+                this.FindAndReplace(wordApp, "<anio>", txtAnio0.Text);                                                  editables.Add("<anio>");  datos.Add(txtAnio0.Text);
 
-                this.FindAndReplace(wordApp, "<memo>", txtMemo.Text.ToString());
-                this.FindAndReplace(wordApp, "<diaMemo>", ddlDia0.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<numDiaMemo>", ddlDia1.SelectedValue.ToString());
+                this.FindAndReplace(wordApp, "<memo>", txtMemo.Text.ToString());                            editables.Add("<memo>"); datos.Add(txtMemo.Text);
+                this.FindAndReplace(wordApp, "<diaMemo>", ddlDia0.SelectedValue.ToString());            editables.Add("<diaMemo>"); datos.Add(ddlDia0.SelectedValue.ToString());
+                this.FindAndReplace(wordApp, "<numDiaMemo>", ddlDia1.SelectedValue.ToString());         editables.Add("<numDiaMemo>"); datos.Add(ddlDia1.SelectedValue.ToString());
 
-                this.FindAndReplace(wordApp, "<nombreMesMemo>", ddlMes0.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<anioMemo>", txtAnio0.Text.ToString());
+                this.FindAndReplace(wordApp, "<nombreMesMemo>", ddlMes0.SelectedValue.ToString()); editables.Add("<nombreMesMemo>"); datos.Add(ddlMes0.SelectedValue.ToString());
+                this.FindAndReplace(wordApp, "<anioMemo>", txtAnio0.Text.ToString());                       editables.Add("<anioMemo>"); datos.Add(txtAnio0.Text);
 
 
-                this.FindAndReplace(wordApp, "<ejemplares>", txtNumeroEjemp.Text);
-                this.FindAndReplace(wordApp, "<tutor>", txtDirector.Text);
-                this.FindAndReplace(wordApp, "<nombre>", txtNombreEstu1.Text);
-                this.FindAndReplace(wordApp, "<cedula>", txtCedula.Text);
+                this.FindAndReplace(wordApp, "<ejemplares>", txtNumeroEjemp.Text);          editables.Add("<ejemplares>"); datos.Add(txtNumeroEjemp.Text);
+                this.FindAndReplace(wordApp, "<tutor>", txtDirector.Text);                              editables.Add("<tutor>"); datos.Add(txtDirector.Text);
+                this.FindAndReplace(wordApp, "<nombre>", txtNombreEstu1.Text);                  editables.Add("<nombre>"); datos.Add(txtNombreEstu1.Text);
+                this.FindAndReplace(wordApp, "<cedula>", txtCedula.Text);                           editables.Add("<cedula>"); datos.Add(txtCedula.Text);
 
-                this.FindAndReplace(wordApp, "<decano>", txtDecana.Text);
-                this.FindAndReplace(wordApp, "<presidente >", txtPresidente.Text);
+                this.FindAndReplace(wordApp, "<decano>", txtDecana.Text);                   editables.Add("<decano>"); datos.Add(txtDecana.Text);
+                this.FindAndReplace(wordApp, "<presidente >", txtPresidente.Text);                  editables.Add("<presidente>"); datos.Add(txtPresidente.Text);
             }
             else
             {
@@ -218,6 +289,17 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
                 ref replace, ref matchKashida,
                 ref matchDiactitics, ref matchAlefHamza,
                 ref matchControl);
+        }
+
+        protected void btnNumeroResolucion_Click(object sender, EventArgs e)
+        {
+            generarNumeroResolucion();
+        }
+        private void generarNumeroResolucion()
+        {
+            ManejoDatos mysql = new ManejoDatos();
+            string resolucion = mysql.obtenerSiguienteResolución();
+            txtAnio1.Text = resolucion;
         }
     }
 }

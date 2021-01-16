@@ -1,9 +1,12 @@
-﻿using System;
+﻿using CreacionDocumentoDemo.Objetos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
 {
@@ -19,7 +22,9 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
 
         private void cargarDatos()
         {
-           
+            List<string> carreras = new ManejoDatos().getCarreras();
+            ddlCarreras.DataSource = carreras;
+            ddlCarreras.DataBind();
                 List<String> datos = new List<string>();
                 datos.Add("lunes");
                 datos.Add("martes");
@@ -93,39 +98,117 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            ManejoDatos datos = new ManejoDatos();
+            // List<Estudiante> listado =  
+            var bs1 = new BindingSource();
+            bs1.DataSource = datos.getEstudiantesBusqueda(TextBox1.Text);
+            GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
+            GridView1.PageIndex = e.NewPageIndex;
+            GridView1.DataBind();
+            Label1.Text = "Correcto";
 
+            GridView1.DataBind();
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
+            panelModalBusquedaEst.Visible = true;
+            ModalPopupExtender1.Show();
+            Label1.Text = "Buscando";
+            ManejoDatos datos = new ManejoDatos();
+            // List<Estudiante> listado =  
+            var bs1 = new BindingSource();
+            bs1.DataSource = datos.getEstudiantesBusqueda(TextBox1.Text);
+            GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
+            GridView1.DataBind();
+            Label1.Text = "Correcto";
         }
 
         protected void Button4_Click(object sender, EventArgs e)
         {
             List<string> editables = new List<string>();
-            editables.Add("<fecha>");
-            editables.Add("<secuencia>");
-            editables.Add("<anioReso>");
+            List<string> datos = new List<string>();
+            editables.Add("<fecha>"); datos.Add(txtFechaHeader.Text);
+            editables.Add("<secuencia>"); datos.Add(txtSecuencia.Text);
+            editables.Add("<anioReso>"); datos.Add(txtAnio2.Text);
 
-            editables.Add("<coordinador>");
-            editables.Add("<fecha>");
-            editables.Add("<fecha>");
+            editables.Add("<coordinador>"); datos.Add(txtCoordinador.Text);
+            editables.Add("<carreraCoor>"); datos.Add(ddlCarreras.SelectedValue);
+            editables.Add("<sesion>"); datos.Add(ddlSesion.SelectedValue);
 
-            editables.Add("<fecha>");
-            editables.Add("<fecha>");
-            editables.Add("<fecha>");
-
-
-            editables.Add("<fecha>");
-            editables.Add("<fecha>");
-            editables.Add("<fecha>");
+            editables.Add("<nombreDia>"); datos.Add(ddlNombreDia.SelectedValue);
+            editables.Add("<numeroDia>"); datos.Add(ddlNumeroDia.SelectedValue);
+            editables.Add("<nombreMes>"); datos.Add(ddlMes.SelectedValue);
 
 
+            editables.Add("<anioSesion>"); datos.Add(txtAnio.Text);
+            editables.Add("<acuerdo>"); datos.Add(txtAcuerdo.Text);
+            editables.Add("<nombreMes1>"); datos.Add(ddlMes0.SelectedValue);
+
+            editables.Add("<numeroDia1>"); datos.Add(ddlNumeroDia0.SelectedValue);
+            editables.Add("<anioAcuerdo>"); datos.Add(txtAnio3.Text);
+            editables.Add("<presidenteConsejo>"); datos.Add(txtPresidente.Text);
+
+
+            editables.Add("<estudiante>"); datos.Add(txtNombreEstu1.Text);
+            editables.Add("<cedula>"); datos.Add(txtCedula.Text);
+            editables.Add("<carrera>"); datos.Add(txtCarrera1.Text);
+
+            editables.Add("<carrera1>"); datos.Add(txtCarrera2.Text);
+            editables.Add("<facultad>"); datos.Add(txtFacultad.Text);
+            editables.Add("<presidente1>"); datos.Add(txtPresidente1.Text);
+
+            //
+            StringBuilder sb1 = new StringBuilder();
+            sb1.Append(@"D:\Documentos\Pruebas\");
+            StringBuilder sb2 = new StringBuilder();
+            sb2.Append("Resolucion");
+
+            sb2.Append(txtSecuencia.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio2.Text);
+            StringBuilder codigo = new StringBuilder();
+            codigo.Append(txtSecuencia.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio2.Text);
+            sb1.Append(sb2.ToString());
+            sb1.Append(".docx");
+            string resolucion = codigo.ToString();
+            string ruta = sb1.ToString();
+            //
+
+            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\CulturaFisica.docx";
+            //continuar = CreateWordDocument(plantilla, sb1.ToString());
+            ManejoDatos mysql = new ManejoDatos();
+            Resolucion resol = new Resolucion();
+            resol.Ubicacion = ruta;
+            resol.Editables = editables;
+            resol.Datos = datos;
+            resol.Codigo = resolucion;
+            resol.Plantilla = plantilla;
+            resol.IDConsejo = 30;
+
+            bool guardado = mysql.guardarResolucion(resol);
+
+            if (guardado)
+            {
+                Label2.Text = "Documento Generado y Guardado";
+            }
 
         }
 
         protected void btnNumeroResolucion_Click(object sender, EventArgs e)
+        {
+            generarNumeroResolucion();
+        }
+        private void generarNumeroResolucion()
+        {
+            ManejoDatos mysql = new ManejoDatos();
+            string resolucion = mysql.obtenerSiguienteResolución();
+            txtSecuencia.Text = resolucion;
+        }
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

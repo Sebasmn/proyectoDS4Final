@@ -47,6 +47,10 @@
         <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante" 
             Height="27px"
             Width="312px" CssClass="btnBuscar"  />
+
+            <asp:Button ID="btnNumeroResolucion" runat="server" Text="Generar Número Resolución" 
+            CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click" Height="29px" Width="272px"  />
+
         <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Always" runat="server">
               <ContentTemplate>
 
@@ -201,6 +205,8 @@ mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">PRESIDENTA</span></div>
                        <asp:Button ID="Button4"
                       runat="server" Height="49px" 
                       Text="Generar Documento" Width="172px" OnClick="Button4_Click"  />
+
+                   <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
 
                    </ContentTemplate>
         </asp:UpdatePanel>
