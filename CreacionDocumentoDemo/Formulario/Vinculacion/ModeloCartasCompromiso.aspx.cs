@@ -13,5 +13,10 @@ namespace CreacionDocumentoDemo.Formulario.Vinculacion
         {
 
         }
+
+        protected void btnPrueba_Click(object sender, EventArgs e)
+        {
+            ModalPopupExtender1.Show();
+        }
     }
 }
