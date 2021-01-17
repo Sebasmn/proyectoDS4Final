@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ActualizacionConocimientos.aspx.cs" Inherits="CreacionDocumentoDemo.Formulario.CAF.ActualizacionConocimientos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" 
+    CodeBehind="ActualizacionConocimientos.aspx.cs" 
+    Inherits="CreacionDocumentoDemo.Formulario.CAF.ActualizacionConocimientos" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <!DOCTYPE html>
 

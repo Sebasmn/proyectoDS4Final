@@ -96,12 +96,16 @@
     <Content Include="Formulario\CAF\ActualizacionConocimientos.aspx" />
     <Content Include="Formulario\Inicio.aspx" />
     <Content Include="Formulario\Practicas.aspx" />
+    <Content Include="Formulario\Titulacion\ArticuloAcademico.aspx" />
+    <Content Include="Formulario\Titulacion\ExamenComplexivo.aspx" />
+    <Content Include="Formulario\Titulacion\PropuestaTitulacion.aspx" />
+    <Content Include="Formulario\Titulacion\PropuestaTitulacionProrrogaGratuita.aspx" />
+    <Content Include="Formulario\Titulacion\ProyectoInvestigacion.aspx" />
     <Content Include="Formulario\TramitesFISEI\AprobacionCdc.aspx" />
     <Content Include="Formulario\TramitesFISEI\Prueba.aspx" />
     <Content Include="Formulario\TramitesFISEI\ReconocimientoCultFisica.aspx" />
     <Content Include="Formulario\TramitesFISEI\Reingreso.aspx" />
     <Content Include="Formulario\ValidacionDatos.aspx" />
-    <Content Include="Formulario\Vinculacion\CartaCompromiso.aspx" />
     <Content Include="Images\EscudoUTA.jpg" />
     <Content Include="Images\EscudoUTA.png" />
     <Content Include="Web.config" />
@@ -134,6 +138,36 @@
     </Compile>
     <Compile Include="Formulario\Principal.Master.designer.cs">
       <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\ArticuloAcademico.aspx.cs">
+      <DependentUpon>ArticuloAcademico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\ArticuloAcademico.aspx.designer.cs">
+      <DependentUpon>ArticuloAcademico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\ExamenComplexivo.aspx.cs">
+      <DependentUpon>ExamenComplexivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\ExamenComplexivo.aspx.designer.cs">
+      <DependentUpon>ExamenComplexivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\PropuestaTitulacion.aspx.cs">
+      <DependentUpon>PropuestaTitulacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\PropuestaTitulacion.aspx.designer.cs">
+      <DependentUpon>PropuestaTitulacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\PropuestaTitulacionProrrogaGratuita.aspx.cs">
+      <DependentUpon>PropuestaTitulacionProrrogaGratuita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\PropuestaTitulacionProrrogaGratuita.aspx.designer.cs">
+      <DependentUpon>PropuestaTitulacionProrrogaGratuita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\ProyectoInvestigacion.aspx.cs">
+      <DependentUpon>ProyectoInvestigacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\ProyectoInvestigacion.aspx.designer.cs">
+      <DependentUpon>ProyectoInvestigacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formulario\TramitesFISEI\AprobacionCdc.aspx.cs">
       <DependentUpon>AprobacionCdc.aspx</DependentUpon>
@@ -169,13 +203,6 @@
     </Compile>
     <Compile Include="Formulario\ValidacionDatos.aspx.designer.cs">
       <DependentUpon>ValidacionDatos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario\Vinculacion\CartaCompromiso.aspx.cs">
-      <DependentUpon>CartaCompromiso.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formulario\Vinculacion\CartaCompromiso.aspx.designer.cs">
-      <DependentUpon>CartaCompromiso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Objetos\Estudiante.cs" />
     <Compile Include="Objetos\ManejoDatos.cs" />
@@ -213,7 +240,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Formulario\Vinculacion\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
