@@ -205,7 +205,7 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
 
             if (guardado)
             {
-                Label2.Text = "Documento Generado y Guardado";
+                labelEstado.Text = "Documento Generado y Guardado";
             }
         }
     }

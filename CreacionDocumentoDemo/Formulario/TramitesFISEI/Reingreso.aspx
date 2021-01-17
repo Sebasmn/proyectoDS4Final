@@ -43,26 +43,7 @@ p.MsoHeader
 	font-size:11.0pt;
 	font-family:"Calibri",sans-serif;
 	}
-        .auto-style1 {
-            -webkit-appearance: none;
-            text-align: center;
-            padding-left: 2px;
-            padding-right: 2px;
-            box-shadow: none;
-            border-left-style: none;
-            border-left-color: inherit;
-            border-left-width: 0px;
-            border-right-style: none;
-            border-right-color: inherit;
-            border-right-width: 0px;
-            border-top-style: none;
-            border-top-color: inherit;
-            border-top-width: 0px;
-            border-bottom-style: solid;
-            border-bottom-color: inherit;
-            border-bottom-width: 1px;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -301,7 +282,7 @@ Tahoma"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
                       runat="server" Height="49px" 
                       Text="Generar Documento"
                       Width="172px" OnClick="Button4_Click" />
-        <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+        &nbsp;<asp:Label ID="labelEstado" runat="server"></asp:Label>
         <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
             TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
             runat="server" />
