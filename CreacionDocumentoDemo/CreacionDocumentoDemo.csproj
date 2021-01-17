@@ -106,6 +106,7 @@
     <Content Include="Formulario\Titulacion\ArticuloAcademico.aspx" />
     <Content Include="Images\EscudoUTA.jpg" />
     <Content Include="Images\EscudoUTA.png" />
+    <Content Include="Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +193,13 @@
     </Compile>
     <Compile Include="Formulario\Titulacion\ArticuloAcademico.aspx.designer.cs">
       <DependentUpon>ArticuloAcademico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Objetos\Estudiante.cs" />
     <Compile Include="Objetos\ManejoDatos.cs" />

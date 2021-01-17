@@ -208,5 +208,10 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
                 labelEstado.Text = "Documento Generado y Guardado";
             }
         }
+
+        protected void txtFecha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

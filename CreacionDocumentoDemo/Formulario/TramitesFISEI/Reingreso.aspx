@@ -60,7 +60,7 @@ p.MsoHeader
 
         <div id="documento">
             <p class="MsoBodyText" style="margin-bottom:0cm">
-              <asp:TextBox ID="txtFecha" placeholder="Ambato,15 de Enero del 2021" CssClass="noBorder" runat="server"></asp:TextBox>
+              <asp:TextBox ID="txtFecha" placeholder="Ambato,15 de Enero del 2021" CssClass="noBorder" runat="server" OnTextChanged="txtFecha_TextChanged"></asp:TextBox>
             </p>
             <p class="MsoBodyText" style="margin-bottom:0cm">
                 &nbsp;</p>
@@ -208,73 +208,111 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style=
                                       <asp:TextBox ID="txtPeriodo" runat="server" placeholder="junio-enero/2020" CssClass="noBorder"></asp:TextBox>
                                       </span></span></span></span></span>, PARA APROBAR LAS ASIGNATURAS CONFORME A LA MALLA CURRICULAR VIGENTE, EN BASE A LO ESTABLECIDO EN EL ART. 95 DEL REGLAMENTO DE REGIMEN ACADÉMICO DEL CES QUE TEXTUALMENTE DICE:<i style="mso-bidi-font-style:
 normal"> “Cada IES es responsable de definir las fechas, plazos y condiciones en los que se llevarán a cabo los procesos de reingreso, que no podrán exceder los diez (10) años a partir del último período académico en el que se produjo la interrupción de estudios. Si un estudiante reingresa a una carrera o programa que no se encuentre vigente y que su estado corresponda a “no vigente habilitado para registro de títulos”, las IES podrán implementar un plan de reingreso que garantice al estudiante la culminación de los estudiantes, alcanzando los objetivos del aprendizaje y cumpliendo con el perfil de egreso”</i>, SIEMPRE Y CUANDO EXISTAN CUPOS DISPONIBLES.<o:p></o:p></span></p>
-                    </p>
-                    <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
-                <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma"><o:p>&nbsp;</o:p></span></p>
-            <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
-                <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma"><o:p>&nbsp;</o:p></span></p>
-            <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
-                <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:
-106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">REMITIR,LA DOCUMENTACIÓN ORIGINAL A LA QUE SE HACE REFERENCIA A LA COORDINACIÓN DE LA CARRERA DE INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS PARA SU CORRESPONDIENTE ARCHIVO.<o:p></o:p></span></p>
-            <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
-                <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma"><o:p>&nbsp;</o:p></span></p>
-            <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
-                <span style="font-size:10.0pt;mso-bidi-font-size:8.5pt;line-height:106%;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1"><o:p>&nbsp;</o:p></span></p>
-            <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
-                <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma">Atentamente,<o:p></o:p></span></p>
-            <p class="MsoBodyTextFirstIndent2" style="margin:0cm;text-align:justify;
+                    <p>
+                </p>
+                <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
+                    <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma">
+                    <p>&nbsp;</p>
+                    </span>
+                </p>
+                <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
+                    <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma">
+                    <p>&nbsp;</p>
+                    </span>
+                </p>
+                <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
+                    <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:
+106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">REMITIR,LA DOCUMENTACIÓN ORIGINAL A LA QUE SE HACE REFERENCIA A LA COORDINACIÓN DE LA CARRERA DE INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS PARA SU CORRESPONDIENTE ARCHIVO.<p></p>
+                    </span></b>
+                </p>
+                <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
+                    <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma">
+                    <p>&nbsp;</p>
+                    </span>
+                </p>
+                <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
+                    <span style="font-size:10.0pt;mso-bidi-font-size:8.5pt;line-height:106%;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">
+                    <p>&nbsp;</p>
+                    </span>
+                </p>
+                <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
+                    <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma">Atentamente,<p></p>
+                    </span>
+                </p>
+                <p class="MsoBodyTextFirstIndent2" style="margin:0cm;text-align:justify;
 text-indent:0cm;line-height:normal">
-                <span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><o:p>&nbsp;</o:p></span></p>
-            <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify;mso-pagination:
+                    <span style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
+                    <p>&nbsp;</p>
+                    </span>
+                </p>
+                <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify;mso-pagination:
 none">
-                <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
-mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"><o:p>&nbsp;</o:p></span></p>
-            <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify;mso-pagination:
+                    <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">
+                    <p>&nbsp;</p>
+                    </span>
+                </p>
+                <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify;mso-pagination:
 none">
-                <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
-mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"><o:p>&nbsp;</o:p></span></p>
-            <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify;mso-pagination:
+                    <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">
+                    <p>&nbsp;</p>
+                    </span>
+                </p>
+                <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify;mso-pagination:
 none">
-                <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
-mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"><o:p>&nbsp;</o:p></spa&nbsp;</o:p></span></p>
-            <p class="MsoBodyText" style="margin-bottom:0cm;text-indent:.05pt;line-height:
+                    <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">
+                    <p>&nbsp;</p>
+                    </spa&nbsp;</o:p>
+                    </span>
+                </p>
+                <p class="MsoBodyText" style="margin-bottom:0cm;text-indent:.05pt;line-height:
 115%">
-                                                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+                    <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma"><b style="mso-bidi-font-weight:
 normal"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                                      <asp:TextBox ID="txtPresidente" runat="server" EnableViewState="true" Height="16px" placeholder="Ing. Pilar Urrutia U., Mg." ToolTip="Busque un estudiante" Width="132px" CssClass="noBorder"></asp:TextBox>
-                                                      </span></span></b></span>
-                                                  </p>
-            <p class="MsoHeader" style="text-align:justify;text-indent:.05pt;line-height:
+                    <asp:TextBox ID="txtPresidente" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ing. Pilar Urrutia U., Mg." ToolTip="Busque un estudiante" Width="132px"></asp:TextBox>
+                    </span></span></b></span>
+                </p>
+                <p class="MsoHeader" style="text-align:justify;text-indent:.05pt;line-height:
 115%">
-                <span style="font-size:9.0pt;line-height:115%;font-family:&quot;Cambria&quot;,serif;
-mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">PRESIDENTE  </p>
-            
-            <p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+                    <span style="font-size:9.0pt;line-height:115%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">PRESIDENTE </span>
+                </p>
+                <p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:18.0pt;text-align:justify;text-indent:-18.0pt">
-                <span style="font-size:8.0pt;mso-bidi-font-size:9.0pt;line-height:106%;font-family:
+                    <span style="font-size:8.0pt;mso-bidi-font-size:9.0pt;line-height:106%;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">cc:<span style="mso-tab-count:
 1">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:8.0pt;mso-bidi-font-size:9.0pt;
 line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:&quot;Arial Unicode MS&quot;;
-mso-bidi-font-family:Tahoma">Presidente de Consejo Académico de Facultad<o:p></o:p></span></p>
-            <p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+mso-bidi-font-family:Tahoma">Presidente de Consejo Académico de Facultad<p></p>
+                    </span>
+                </p>
+                <p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:18.0pt;text-align:justify;text-indent:-18.0pt">
-                <span style="font-size:8.0pt;mso-bidi-font-size:9.0pt;line-height:106%;font-family:
+                    <span style="font-size:8.0pt;mso-bidi-font-size:9.0pt;line-height:106%;font-family:
 &quot;Cambria&quot;,serif;mso-fareast-font-family:&quot;Arial Unicode MS&quot;;mso-bidi-font-family:
-Tahoma"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Estudiante</span><span style="font-size:9.0pt;line-height:106%"><o:p></o:p></span></p>
-            <p class="MsoNormal">
-                <o:p>&nbsp;</o:p></p>
-            <p class="MsoNormal">
-                <o:p>&nbsp;</o:p></p>
+Tahoma"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Estudiante</span><span style="font-size:9.0pt;line-height:106%"><p></p>
+                    </span>
+                </p>
+                <p class="MsoNormal">
+                    <p>&nbsp;</p>
+                </p>
+                <p class="MsoNormal">
+                    <p>&nbsp;</p>
+                </p>
+                    </p>
         </div>
+                  </span></b></b></span></b></span>
           </ContentTemplate>
         </asp:UpdatePanel>
 
