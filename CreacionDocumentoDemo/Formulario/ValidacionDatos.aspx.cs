@@ -23,7 +23,7 @@ namespace CreacionDocumentoDemo.Formulario
         protected void Button1_Click(object sender, EventArgs e)
         {
             StringBuilder sb1 = new StringBuilder();
-            sb1.Append(@"C:\Users\franc\Documents\Oficios\");
+            sb1.Append(@"C:\Documents\Oficios\");
                 
            /* SqlConnection sqlConnection = new SqlConnection(Properties.Settings.Default.conecta);
             sqlConnection.Open();

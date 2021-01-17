@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Estilos\estilos.css" />
+    <Content Include="Formulario\CAF\ActualizacionConocimientos.aspx" />
     <Content Include="Formulario\Inicio.aspx" />
     <Content Include="Formulario\Practicas.aspx" />
     <Content Include="Formulario\Titulacion\ProyectoInvestigacion.aspx" />
@@ -100,6 +101,7 @@
     <Content Include="Formulario\TramitesFISEI\AprobacionCdc.aspx" />
     <Content Include="Formulario\TramitesFISEI\Prueba.aspx" />
     <Content Include="Formulario\TramitesFISEI\ReconocimientoCultFisica.aspx" />
+    <Content Include="Formulario\TramitesFISEI\Reingreso.aspx" />
     <Content Include="Formulario\ValidacionDatos.aspx" />
     <Content Include="Formulario\Titulacion\ArticuloAcademico.aspx" />
     <Content Include="Images\EscudoUTA.jpg" />
@@ -107,6 +109,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formulario\CAF\ActualizacionConocimientos.aspx.cs">
+      <DependentUpon>ActualizacionConocimientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\CAF\ActualizacionConocimientos.aspx.designer.cs">
+      <DependentUpon>ActualizacionConocimientos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -163,6 +172,13 @@
     <Compile Include="Formulario\TramitesFISEI\ReconocimientoCultFisica.aspx.designer.cs">
       <DependentUpon>ReconocimientoCultFisica.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\TramitesFISEI\Reingreso.aspx.cs">
+      <DependentUpon>Reingreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\TramitesFISEI\Reingreso.aspx.designer.cs">
+      <DependentUpon>Reingreso.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\ValidacionDatos.aspx.cs">
       <DependentUpon>ValidacionDatos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -213,6 +229,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

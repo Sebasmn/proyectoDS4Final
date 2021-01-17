@@ -199,7 +199,7 @@ namespace CreacionDocumentoDemo.Formulario
             string resolucion = codigo.ToString();
             string  ruta = sb1.ToString();
             
-            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\APROBACION_PRACTICASPP.docx";
+            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\practicasPrepo.docx";
             //continuar = CreateWordDocument(plantilla, sb1.ToString());
              ManejoDatos mysql = new ManejoDatos();
             Resolucion resol = new Resolucion();
