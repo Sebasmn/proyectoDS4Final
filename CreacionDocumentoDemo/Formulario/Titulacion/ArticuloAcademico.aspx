@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ArticuloAcademico.aspx.cs" Inherits="CreacionDocumentoDemo.Formulario.Vinculacion.CartaCompromiso" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ArticuloAcademico.aspx.cs" 
+    Inherits="CreacionDocumentoDemo.Formulario.Titulacion.ArticuloAcademico" %>
 
 <!DOCTYPE html>
 

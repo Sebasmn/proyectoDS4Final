@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CreacionDocumentoDemo.Formulario.Vinculacion
+namespace CreacionDocumentoDemo.Formulario.Titulacion
 {
 
 
-    public partial class CartaCompromiso
+    public partial class PropuestaTitulacion
     {
 
         /// <summary>

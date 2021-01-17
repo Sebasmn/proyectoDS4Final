@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PropuestaTitulacion.aspx.cs" Inherits="CreacionDocumentoDemo.Formulario.Vinculacion.CartaCompromiso" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"   CodeBehind="PropuestaTitulacion.aspx.cs"   Inherits="CreacionDocumentoDemo.Formulario.Titulacion.PropuestaTitulacion" %>
 
 <!DOCTYPE html>
 

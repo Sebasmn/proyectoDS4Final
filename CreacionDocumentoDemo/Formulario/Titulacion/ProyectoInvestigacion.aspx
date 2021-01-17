@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProyectoInvestigacion.aspx.cs" Inherits="CreacionDocumentoDemo.Formulario.Vinculacion.CartaCompromiso" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"
+    CodeBehind="ProyectoInvestigacion.aspx.cs"
+    Inherits="CreacionDocumentoDemo.Formulario.Titulacion.ProyectoInvestigacion" %>
 
 <!DOCTYPE html>
 

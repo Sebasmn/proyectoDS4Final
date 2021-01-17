@@ -44,8 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\franc\OneDrive\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
@@ -96,14 +95,15 @@
     <Content Include="Formulario\CAF\ActualizacionConocimientos.aspx" />
     <Content Include="Formulario\Inicio.aspx" />
     <Content Include="Formulario\Practicas.aspx" />
+    <Content Include="Formulario\Titulacion\ArticuloAcademico.aspx" />
+    <Content Include="Formulario\Titulacion\ExamenComplexivo.aspx" />
+    <Content Include="Formulario\Titulacion\PropuestaTitulacion.aspx" />
     <Content Include="Formulario\Titulacion\PropuestaTitulacionProrrogaGratuita.aspx" />
     <Content Include="Formulario\Titulacion\ProyectoInvestigacion.aspx" />
-    <Content Include="Formulario\Titulacion\ExamenComplexivo.aspx" />
     <Content Include="Formulario\TramitesFISEI\AprobacionCdc.aspx" />
     <Content Include="Formulario\TramitesFISEI\ReconocimientoCultFisica.aspx" />
     <Content Include="Formulario\TramitesFISEI\Reingreso.aspx" />
     <Content Include="Formulario\ValidacionDatos.aspx" />
-    <Content Include="Formulario\Titulacion\ArticuloAcademico.aspx" />
     <Content Include="Images\EscudoUTA.jpg" />
     <Content Include="Images\EscudoUTA.png" />
     <Content Include="Login.aspx" />
@@ -138,6 +138,27 @@
     <Compile Include="Formulario\Principal.Master.designer.cs">
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\Titulacion\ArticuloAcademico.aspx.cs">
+      <DependentUpon>ArticuloAcademico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\ArticuloAcademico.aspx.designer.cs">
+      <DependentUpon>ArticuloAcademico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\ExamenComplexivo.aspx.cs">
+      <DependentUpon>ExamenComplexivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\ExamenComplexivo.aspx.designer.cs">
+      <DependentUpon>ExamenComplexivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\PropuestaTitulacion.aspx.cs">
+      <DependentUpon>PropuestaTitulacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\PropuestaTitulacion.aspx.designer.cs">
+      <DependentUpon>PropuestaTitulacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\Titulacion\PropuestaTitulacionProrrogaGratuita.aspx.cs">
       <DependentUpon>PropuestaTitulacionProrrogaGratuita.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,13 +172,6 @@
     </Compile>
     <Compile Include="Formulario\Titulacion\ProyectoInvestigacion.aspx.designer.cs">
       <DependentUpon>ProyectoInvestigacion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario\Titulacion\ExamenComplexivo.aspx.cs">
-      <DependentUpon>ExamenComplexivo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formulario\Titulacion\ExamenComplexivo.aspx.designer.cs">
-      <DependentUpon>ExamenComplexivo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formulario\TramitesFISEI\AprobacionCdc.aspx.cs">
       <DependentUpon>AprobacionCdc.aspx</DependentUpon>
@@ -186,13 +200,6 @@
     </Compile>
     <Compile Include="Formulario\ValidacionDatos.aspx.designer.cs">
       <DependentUpon>ValidacionDatos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario\Titulacion\ArticuloAcademico.aspx.cs">
-      <DependentUpon>ArticuloAcademico.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formulario\Titulacion\ArticuloAcademico.aspx.designer.cs">
-      <DependentUpon>ArticuloAcademico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
