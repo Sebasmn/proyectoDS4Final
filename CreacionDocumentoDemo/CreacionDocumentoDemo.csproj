@@ -98,6 +98,7 @@
     <Content Include="Formulario\TramitesFISEI\AprobacionCdc.aspx" />
     <Content Include="Formulario\TramitesFISEI\Prueba.aspx" />
     <Content Include="Formulario\TramitesFISEI\ReconocimientoCultFisica.aspx" />
+    <Content Include="Formulario\TramitesFISEI\Reingreso.aspx" />
     <Content Include="Formulario\ValidacionDatos.aspx" />
     <Content Include="Formulario\Vinculacion\CartaCompromiso.aspx" />
     <Content Include="Images\EscudoUTA.jpg" />
@@ -146,6 +147,13 @@
     </Compile>
     <Compile Include="Formulario\TramitesFISEI\ReconocimientoCultFisica.aspx.designer.cs">
       <DependentUpon>ReconocimientoCultFisica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\TramitesFISEI\Reingreso.aspx.cs">
+      <DependentUpon>Reingreso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\TramitesFISEI\Reingreso.aspx.designer.cs">
+      <DependentUpon>Reingreso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formulario\ValidacionDatos.aspx.cs">
       <DependentUpon>ValidacionDatos.aspx</DependentUpon>
