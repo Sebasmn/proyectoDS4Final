@@ -297,7 +297,14 @@ Tahoma"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
           </ContentTemplate>
         </asp:UpdatePanel>
 
-
+        <asp:Button ID="Button4"
+                      runat="server" Height="49px" 
+                      Text="Generar Documento"
+                      Width="172px" OnClick="Button4_Click" />
+        <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+        <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
+            TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
+            runat="server" />
          <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="221px" Width="849px">
             <asp:TextBox ID="TextBox1" 
                 runat="server"
@@ -344,6 +351,7 @@ Tahoma"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
             </asp:UpdatePanel>
             
         </asp:Panel>
+        
         <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1"
             TargetControlID="btnBuscar"
             CancelControlID="Button3"
