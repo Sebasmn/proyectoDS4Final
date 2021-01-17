@@ -36,7 +36,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager> <asp:Panel ID="menuOpciones" runat="server">
+            <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante"   CssClass="btnBuscar" OnClick="btnBuscar_Click"  />
+
+            <asp:Button ID="btnNumeroResolucion" runat="server" Text="Generar Número Resolución" 
+            CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click"  />
+        </asp:Panel>
         <br />
         <br />
         <br />
