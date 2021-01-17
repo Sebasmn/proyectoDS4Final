@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Estilos\estilos.css" />
+    <Content Include="Formulario\CAF\ActualizacionConocimientos.aspx" />
     <Content Include="Formulario\Inicio.aspx" />
     <Content Include="Formulario\Practicas.aspx" />
     <Content Include="Formulario\TramitesFISEI\AprobacionCdc.aspx" />
@@ -106,6 +107,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formulario\CAF\ActualizacionConocimientos.aspx.cs">
+      <DependentUpon>ActualizacionConocimientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\CAF\ActualizacionConocimientos.aspx.designer.cs">
+      <DependentUpon>ActualizacionConocimientos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -205,6 +213,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
