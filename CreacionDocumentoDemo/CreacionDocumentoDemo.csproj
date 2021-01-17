@@ -96,10 +96,10 @@
     <Content Include="Formulario\CAF\ActualizacionConocimientos.aspx" />
     <Content Include="Formulario\Inicio.aspx" />
     <Content Include="Formulario\Practicas.aspx" />
+    <Content Include="Formulario\Titulacion\PropuestaTitulacionProrrogaGratuita.aspx" />
     <Content Include="Formulario\Titulacion\ProyectoInvestigacion.aspx" />
     <Content Include="Formulario\Titulacion\ExamenComplexivo.aspx" />
     <Content Include="Formulario\TramitesFISEI\AprobacionCdc.aspx" />
-    <Content Include="Formulario\TramitesFISEI\Prueba.aspx" />
     <Content Include="Formulario\TramitesFISEI\ReconocimientoCultFisica.aspx" />
     <Content Include="Formulario\TramitesFISEI\Reingreso.aspx" />
     <Content Include="Formulario\ValidacionDatos.aspx" />
@@ -137,6 +137,13 @@
     <Compile Include="Formulario\Principal.Master.designer.cs">
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\Titulacion\PropuestaTitulacionProrrogaGratuita.aspx.cs">
+      <DependentUpon>PropuestaTitulacionProrrogaGratuita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\PropuestaTitulacionProrrogaGratuita.aspx.designer.cs">
+      <DependentUpon>PropuestaTitulacionProrrogaGratuita.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\Titulacion\ProyectoInvestigacion.aspx.cs">
       <DependentUpon>ProyectoInvestigacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -157,13 +164,6 @@
     </Compile>
     <Compile Include="Formulario\TramitesFISEI\AprobacionCdc.aspx.designer.cs">
       <DependentUpon>AprobacionCdc.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario\TramitesFISEI\Prueba.aspx.cs">
-      <DependentUpon>Prueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formulario\TramitesFISEI\Prueba.aspx.designer.cs">
-      <DependentUpon>Prueba.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formulario\TramitesFISEI\ReconocimientoCultFisica.aspx.cs">
       <DependentUpon>ReconocimientoCultFisica.aspx</DependentUpon>
