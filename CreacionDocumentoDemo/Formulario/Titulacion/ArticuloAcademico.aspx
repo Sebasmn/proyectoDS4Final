@@ -79,6 +79,25 @@ p.MsoBodyText
             border-top-color: inherit;
             border-top-width: 0px;
         }
+        .auto-style2 {
+            -webkit-appearance: none;
+            text-align: left;
+            font-size: 12px;
+            width: auto;
+            padding-left: 2px;
+            padding-right: 2px;
+            box-shadow: none;
+            border-bottom: 1px solid #795B3B;
+            border-left-style: none;
+            border-left-color: inherit;
+            border-left-width: 0px;
+            border-right-style: none;
+            border-right-color: inherit;
+            border-right-width: 0px;
+            border-top-style: none;
+            border-top-color: inherit;
+            border-top-width: 0px;
+        }
         </style>
 </head>
 <body>
@@ -165,7 +184,7 @@ mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">del día
 Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                  <asp:DropDownList ID="ddlNombreDia" runat="server" CssClass="noBorder">
+                                  <asp:DropDownList ID="ddlNombreDia" runat="server" CssClass="auto-style2">
                                   </asp:DropDownList>
                                   </span></span></span></b></span></span></span> <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
