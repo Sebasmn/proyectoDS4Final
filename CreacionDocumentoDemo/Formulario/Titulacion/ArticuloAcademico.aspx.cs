@@ -41,15 +41,6 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             ddlNumeroDia.DataBind();
 
             ddlNumeroDia0.DataSource = numerosMes;
-            List<int> numeros = new List<int>();
-            for (int i = 1; i < 32; i++)
-            {
-                numeros.Add(i);
-            }
-            ddlNumeroDia.DataSource = numeros;
-            ddlNumeroDia.DataBind();
-
-            ddlNumeroDia0.DataSource = numeros;
             ddlNumeroDia0.DataBind();
 
             //Meses
