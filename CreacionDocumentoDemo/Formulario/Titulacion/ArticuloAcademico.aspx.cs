@@ -19,6 +19,8 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
 
         private void cargarDatos()
         {
+            ManejoDatos md = new ManejoDatos();
+
             //Sesion
             List<string> sesion = new List<string>();
             sesion.Add("Ordinaria");
@@ -28,14 +30,8 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
 
 
             //Nombres de Dias
-            List<string> dias = new List<string>();
-            dias.Add("lunes");
-            dias.Add("martes");
-            dias.Add("miércoles");
-            dias.Add("jueves");
-            dias.Add("viernes");
-            dias.Add("sábado");
-            dias.Add("domingo");
+           
+            List<string> dias = md.ObtenerDiasSemana();
             ddlNombreDia.DataSource = dias;
             ddlNombreDia.DataBind();
 
@@ -53,19 +49,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             ddlNumeroDia0.DataBind();
 
             //Meses
-            List<string> meses = new List<string>();
-            meses.Add("enero");
-            meses.Add("febrero");
-            meses.Add("marzo");
-            meses.Add("abril");
-            meses.Add("mayo");
-            meses.Add("junio");
-            meses.Add("julio");
-            meses.Add("agosto");
-            meses.Add("septiembre");
-            meses.Add("octubre");
-            meses.Add("noviembre");
-            meses.Add("diciembre");
+            List<string> meses = md.ObtenerMeses();
 
             ddlMes.DataSource = meses;
             ddlMes.DataBind();
@@ -75,9 +59,14 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             //Carreras
             ManejoDatos datos = new ManejoDatos();
             List<string> modelo = datos.getCarreras();
-            ddlCarrera.DataSource = modelo;
+            List<string> modeloMin = datos.GetCarrerasMinuscula();
+            List<string> carrerasF = datos.GetCarrerasFooter();
+            ddlCarrera.DataSource = modeloMin;
             ddlCarrera.DataBind();
-            
+            ddlCarrera0.DataSource = modelo;
+            ddlCarrera0.DataBind();
+            ddlCarreras.DataSource = carrerasF;
+            ddlCarreras.DataBind();
         }
         protected void btnBuscar_Click(object sender, EventArgs e)
         {

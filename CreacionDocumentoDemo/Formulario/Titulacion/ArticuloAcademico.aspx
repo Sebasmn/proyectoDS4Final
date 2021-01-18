@@ -222,7 +222,7 @@ normal"> <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria
 Tahoma"><b><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                  <asp:TextBox ID="txtNombreEstu" runat="server" CssClass="auto-style1" EnableViewState="true" Height="16px" placeholder="Luis Andres Loor M." ToolTip="Busque un estudiante" Width="313px"></asp:TextBox>
+                                  <asp:TextBox ID="txtNombreEstu" runat="server" CssClass="auto-style1" EnableViewState="true" Height="16px" placeholder="Seleccionar estudiante" ToolTip="Busque un estudiante" Width="313px"></asp:TextBox>
                                   </span></span></b></span></span></b></span>, estudiante de la Carrera de
                 <asp:DropDownList ID="ddlCarrera" runat="server">
                 </asp:DropDownList>
@@ -242,7 +242,7 @@ normal"> <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria
 Tahoma"><b><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                  <asp:TextBox ID="txtNombreEstu0" runat="server" CssClass="auto-style1" EnableViewState="true" Height="16px" placeholder="Luis Andres Loor M." ToolTip="Busque un estudiante" Width="313px"></asp:TextBox>
+                                  <asp:TextBox ID="txtNombreEstu0" runat="server" CssClass="auto-style1" EnableViewState="true" Height="16px" placeholder="Seleccionar estudiante" ToolTip="Busque un estudiante" Width="313px"></asp:TextBox>
                                   </span></span></b></span></span></b></span></span></span>, ESTUDIANTE DE LA CARRERA DE <span style="mso-bookmark: _Hlk61627263"><span lang="ES-EC" style="font-size: 10.0pt; line-height: 106%; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma">
                 <asp:DropDownList ID="ddlCarrera0" runat="server">
                 </asp:DropDownList>
@@ -262,7 +262,7 @@ normal"> <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria
 Tahoma"><b><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                  <asp:TextBox ID="txtNombreEstu1" runat="server" CssClass="auto-style1" EnableViewState="true" Height="16px" placeholder="Luis Andres Loor M." ToolTip="Busque un estudiante" Width="313px"></asp:TextBox>
+                                  <asp:TextBox ID="txtNombreEstu1" runat="server" CssClass="auto-style1" EnableViewState="true" Height="16px" placeholder="Seleccionar estudiante" ToolTip="Busque un estudiante" Width="313px"></asp:TextBox>
                                   </span></span></b></span></span></b></span></span></span></span><b style="mso-bidi-font-weight:normal">, </b>QUE PARA INICIAR EL PROCESO DE TITULACIÓN DEBERÁ ESTAR LEGALMENTE MATRICULADO EN DÉCIMO NIVEL Y DEBERÁ ADJUNTAR LOS CERTIFICADOS DE HABER CUMPLIDO CON: VINCULACIÓN CON LA COLECTIVIDAD, APROBACIÓN DEL IDIOMA EXTRANJERO, APROBACIÓN DE CULTURA FÍSICA Y PRÁCTICAS PREPROFESIONALES, Y ADEMÁS DEBERÁ ANEXAR LOS SIGUIENTES DOCUMENTOS:<o:p></o:p></span></span></p>
             <p class="MsoNoSpacing" style="margin-left:36.0pt;text-align:justify">
                 <span style="mso-bookmark:_Hlk61627263"><span lang="ES-TRAD" style="font-family:&quot;Cambria&quot;,serif;
@@ -328,7 +328,7 @@ bold">PRESIDENTA<o:p></o:p></span></span></p>
                 <span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:8.0pt;line-height:106%;font-family:&quot;Tahoma&quot;,sans-serif">cc:
                       <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
-                      <asp:TextBox ID="txtCoordinador" runat="server" CssClass="noBorder" Height="16px" placeholder="Ing. Clay Aldás" Width="233px"></asp:TextBox>
+                      <asp:TextBox ID="txtCoordinador" runat="server" CssClass="auto-style1" Height="16px" placeholder="Ing. Clay Aldás" Width="166px"></asp:TextBox>
                       </span>
                   , Coordinador de las Carreras de </span>
                 <asp:DropDownList ID="ddlCarreras" runat="server">
