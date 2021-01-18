@@ -484,4 +484,42 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
         }
         return estudiante;
     }
+
+    public List<string> GetCarrerasMinuscula()
+    {
+        List<string> carreras = new List<string>();
+        try
+        {
+            carreras.Add("Ingeniería en Sistemas Computacionales e Informáticos");
+            carreras.Add("Ingeniería Electrónica y Comunicaciones");
+            carreras.Add("Ingeniería Industrial en Procesos de Automatización");
+            carreras.Add("Tecnologías de la Información");
+            carreras.Add("Telecomunicaciones");
+            carreras.Add("Software");
+            carreras.Add("Ingeniería Industrial");
+        }
+        catch (Exception e)
+        {
+
+            throw;
+        }
+        return carreras;
+    }
+
+    public List<string> GetCarrerasFooter()
+    {
+        List<string> carreras = new List<string>();
+        try
+        {
+            carreras.Add("Ingeniería en Sistemas Computacionales e Informáticos, Tecnologías de la Información y Software");
+            carreras.Add("Ingeniería en Electrónica y Comunicaciones y Telecomunicaciones");
+            carreras.Add("Ingeniería Industrial en Procesos de Automatización e Ingeniería Industrial");
+        }
+        catch (Exception e)
+        {
+
+            throw;
+        }
+        return carreras;
+    }
 }
