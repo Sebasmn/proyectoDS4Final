@@ -13,8 +13,13 @@
         <div id="contenedor">
             <asp:Label ID="Label1" runat="server" Text="Consejos"></asp:Label>
          
+            <br />
+            <br />
+            <br />
             <asp:Button ID="Button1" runat="server" Text="Button" />
+            <br />
             <asp:Button ID="Button2" runat="server" Text="Button" />
+            <asp:Button ID="Button3" runat="server" Text="Button" />
          
         </div>
     </form>
