@@ -32,6 +32,25 @@
         .auto-style2 {
             font-family: Cambria, serif;
         }
+        .auto-style3 {
+            -webkit-appearance: none;
+            text-align: left;
+            font-size: 12px;
+            font-weight: bold;
+            padding-left: 2px;
+            padding-right: 2px;
+            box-shadow: none;
+            border-bottom: 1px solid #795B3B;
+            border-left-style: none;
+            border-left-color: inherit;
+            border-left-width: 0px;
+            border-right-style: none;
+            border-right-color: inherit;
+            border-right-width: 0px;
+            border-top-style: none;
+            border-top-color: inherit;
+            border-top-width: 0px;
+        }
         </style>
 </head>
 <body>
@@ -46,7 +65,7 @@
         <br />
         <br />
         <div id="documento">
-            <asp:TextBox ID="txtFechaHeader"  placeholder="Ambato,21 de Febrero del 2020" runat="server" CssClass="noBorder" Height="16px" Width="233px"></asp:TextBox>
+            <asp:TextBox ID="txtFecha"  placeholder="Ambato,21 de Febrero del 2020" runat="server" CssClass="noBorder" Height="16px" Width="233px"></asp:TextBox>
             
             <p class="MsoNormal">
                 <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
@@ -54,18 +73,19 @@ Tahoma">Resolución <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:TextBox ID="txtAnio1" runat="server" CssClass="noBorder" placeholder="0209"></asp:TextBox>
-                </span></span></span>-P-CD-FISEI-UTA-2021</span></p>
+                <asp:TextBox ID="txtSecuencia" runat="server" CssClass="noBorder" placeholder="0209"></asp:TextBox>
+                </span></span></span>-P-CD-FISEI-UTA-<span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtAnio" runat="server" CssClass="auto-style3" placeholder="0209" Height="16px" Width="62px"></asp:TextBox>
+                </span></span></span></span></p>
             <p class="MsoNormal">
                 <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma">Ingeniero Mg.<o:p></o:p></span></p>
+Tahoma">Ingeniero/a Mg.<o:p></o:p></span></p>
             <p class="MsoNormal">
-                <o:p></o:p>
-                <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma">
-                <asp:DropDownList ID="ddlCoordinador" runat="server" CssClass="noBorder">
-                </asp:DropDownList>
-                </span>
+                <o:p>
+            <asp:TextBox ID="txtPresidente"  placeholder="Ambato,21 de Febrero del 2020" runat="server" CssClass="noBorder" Height="16px" Width="233px"></asp:TextBox>
+                </o:p>
             </p>
               <p class="MsoNormal">
                 <o:p><b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;
@@ -87,7 +107,7 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">PRESIDENTE DE
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;del día</span><span style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:DropDownList ID="ddlDia" runat="server" CssClass="noBorder">
+                <asp:DropDownList ID="ddlNombreDia" runat="server" CssClass="noBorder">
                 </asp:DropDownList>
                 </span><span style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;de </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
@@ -98,7 +118,7 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">PRESIDENTE DE
                 <span style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;</span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">del
-                <asp:TextBox ID="txtAnio" runat="server" CssClass="noBorder" placeholder="Año"></asp:TextBox>
+                <asp:TextBox ID="txtAnio3" runat="server" CssClass="noBorder" placeholder="Año"></asp:TextBox>
                 </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">, conoc</span><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">e</span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"> el acuerdo</span><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">&nbsp;<span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtAcuerdo" runat="server"  CssClass="noBorder" placeholder="Ejm: 1363-CAF-FISEI-2019 "></asp:TextBox>
                 </span>&nbsp;</span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">, de fecha <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
@@ -120,7 +140,7 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">/la</span><sp
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> Ingeniero</span><span style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">/a</span><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:TextBox ID="txtPresidente" runat="server" CssClass="noBorder" placeholder="Ejm: Ing Julio Cuji "></asp:TextBox>
+                <asp:TextBox ID="txtPresidente3" runat="server" CssClass="noBorder" placeholder="Ejm: Ing Julio Cuji "></asp:TextBox>
                 , Presidente de 
                 </span><span style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
@@ -136,7 +156,9 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">estudiante de
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">Ca</span><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">rrera de</span><span style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> </span><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;<span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtCarrera1" runat="server" CssClass="noBorder" Height="16px" placeholder="Ejm:Ing Sistemas Comp E Informáticos" Width="234px"></asp:TextBox>
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;<asp:DropDownList ID="ddlCarrera" runat="server">
+                </asp:DropDownList>
+                <span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif">
                 </span>. Al respecto, RE</span><span style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">SUELVE</span><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">:</span></p>
