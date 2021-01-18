@@ -152,13 +152,135 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
 
     public void generarActa(List<Aprobada> aprobadas)
     {
-        String plantillaActa = @"D:\Documentos\OficiosPlantilla\plantillaActa.docx";
-        String nombre = @"D:\Documentos\Actas\acta001.docx";
+        String plantillaActa = @"D:\Documentos\OficiosPlantilla\plantillaActa22.docx";
+        String nombre = @"D:\Documentos\Actas\actaFinal.docx";
         List<string> Editables = new List<string>();
         List<string> Datos = new List<string>();
-        CreateWordDocument(plantillaActa, nombre, Editables, Datos);
+        Editables.Add("<encabezado>"); Datos.Add("Encabezado asd");
+        Editables.Add("<ordenDia>"); Datos.Add("Orden Del Dia alasdasdkkasd \n kasdk");
+        
+        contruccionActa(plantillaActa, nombre, Editables, Datos,aprobadas);
     }
+    public bool contruccionActa(object filename, object SaveAs, List<string> editables, List<string> datos,List<Aprobada> resoluciones)
+    {
+        Word.Application wordApp = new Word.Application();
+        object missing = Missing.Value;
+        Word.Document myWordDoc = null;
+        bool guardado = false;
+        if (File.Exists((string)filename))
+        {
+            object readOnly = false;
+            object isVisible = false;
+            wordApp.Visible = false;
 
+            myWordDoc = wordApp.Documents.Open(ref filename, ref missing, ref readOnly,
+                                    ref missing, ref missing, ref missing,
+                                    ref missing, ref missing, ref missing,
+                                    ref missing, ref missing, ref missing,
+                                    ref missing, ref missing, ref missing, ref missing);
+            myWordDoc.Activate();
+
+
+            for (int i = 0; i < datos.Count; i++)
+            {
+                this.FindAndReplace(wordApp, editables.ElementAt(i), datos.ElementAt(i));
+
+            }
+            /*List<string> resoluciones = new List<string>();
+            resoluciones.Add(@"D:\Documentos\Pruebas\Resolucion0031-P-CD-FISEI-UTA-2021.docx");
+            resoluciones.Add(@"D:\Documentos\Pruebas\Resolucion0032-P-CD-FISEI-UTA-2020.docx");
+            resoluciones.Add(@"D:\Documentos\Pruebas\Resolucion0033-P-CD-FISEI-UTA-2021.docx");*/
+            foreach (var item in resoluciones)
+            {
+                myWordDoc.Content.InsertParagraphAfter();
+                //  myWordDoc.Content.Text += "RESOLUCION 456-UTA-CF-2020";
+              //  myWordDoc.Content.Text += "RESOLUCION " + item.Codigo;
+                myWordDoc.Content.InsertAfter("RESOLUCION " + item.Codigo);
+                myWordDoc.Content.InsertParagraphAfter();
+                //myWordDoc.Content.Ins
+                StringBuilder sb = new StringBuilder(ReadFileContent2(item.Ubicacion, "De mi consideración", "Atentamente"));
+                //sb.Append("\n");
+                myWordDoc.Content.InsertAfter(sb.ToString());
+                myWordDoc.Range().Find.ClearFormatting();
+            }
+
+            myWordDoc.Range().Find.ClearFormatting();
+
+            guardado = true;
+        }
+        else
+        {
+
+        }
+        myWordDoc.SaveAs(ref SaveAs, ref missing, ref missing, ref missing,
+                        ref missing, ref missing, ref missing,
+                        ref missing, ref missing, ref missing,
+                        ref missing, ref missing, ref missing,
+                        ref missing, ref missing, ref missing);
+
+        myWordDoc.Close();
+        wordApp.Quit();
+
+        return guardado;
+    }
+        private string ReadFileContent2(string path, string inicio, string fin)
+
+    {
+
+        int i = 0;
+
+        StringBuilder sb = new StringBuilder();
+
+        Word.Application wordApp = new Word.Application();
+
+        object file = path;
+
+        object nullobj = System.Reflection.Missing.Value;
+       // wordApp.Documents.Ope
+        Microsoft.Office.Interop.Word.Document doc = wordApp.Documents.Open
+
+                                                (ref file, ref nullobj,  true,
+
+                                                ref nullobj, ref nullobj, ref nullobj,
+
+                                                ref nullobj, ref nullobj, ref nullobj,
+
+                                                ref nullobj, ref nullobj, ref nullobj);
+
+        Microsoft.Office.Interop.Word.Paragraphs DocPar = doc.Paragraphs;
+
+        // Count number of paragraphs in the file
+
+        long parCount = DocPar.Count;
+
+        // Step through the paragraphs
+        int parrafo1 = 0;
+        int parrafo2 = 0;
+        for (int j = 1; j < parCount; j++)
+        {
+            if (DocPar[j].Range.Text.Contains(inicio))
+            {
+                parrafo1 = j;
+            }
+            if (DocPar[j].Range.Text.Contains(fin))
+            {
+                parrafo2 = j;
+            }
+        }
+
+        for (int a = parrafo1 + 1; a < parrafo2; a++)
+        {
+            sb.Append(DocPar[a].Range.Text);
+        }
+
+
+        doc.Close(ref nullobj, ref nullobj, ref nullobj);
+
+        wordApp.Quit(ref nullobj, ref nullobj, ref nullobj);
+
+        return (sb.ToString());
+
+    }
     public List<string> ObtenerMeses()
     {
         //Meses
