@@ -142,10 +142,43 @@ hr {
 }
 
 /*Formulario Para Creación de Consejo*/
-#contenedor {
+#contenedor1 {
     border: 1px groove;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 20px;
+    margin-right: 20px;
     background-color: #C5AB90;
-    height:300px;
+    padding: 30px;
+    min-height: 100px;
+    overflow: hidden;
 }
+
+#gvResoluciones{
+    float:left;
+    font-size:12px;
+}
+#gvAprobadas {
+    float: left;
+    margin-left:20px;
+    font-size: 12px;
+}
+.botonesConsejo {
+    padding: 0.3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: #A68970;
+    text-align: center;
+    transition: all 0.2s;
+    height: 30px;
+    width: auto;
+    overflow: hidden;
+    font-size: 15px;
+    float: right;
+    margin-right: 50px;
+    display: block;
+}
+    .botonesConsejo:hover {
+        background-color: #896E53;
+    }

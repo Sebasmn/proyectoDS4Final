@@ -10,6 +10,7 @@ using MySqlConnector;
 using System.Reflection;
 using System.IO;
 using CreacionDocumentoDemo.Objetos;
+using CreacionDocumentoDemo.Formulario;
 /// <summary>
 /// Descripción breve de ManejoDatos
 /// </summary>
@@ -30,6 +31,42 @@ public class ManejoDatos
         database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
         connection = new MySqlConnection(connectionString);
         return connection;
+    }
+
+    public List<Resolucion> ObtenerResoluciones(int consejo)
+    {
+
+        List<Resolucion> resoluciones = new List<Resolucion>();
+        try
+        {
+            MySqlConnection conn = this.GetConnectionString();
+            string sql = "SELECT * " +
+                          "FROM `RESOLUCIONES`  WHERE IDCONSEJO = " + consejo;
+
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            //command.Parameters.AddWithValue("@CEDULA", cedula);
+            conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Resolucion resol = new Resolucion();
+                resol.Ubicacion = reader["UBICACION"].ToString();
+                resol.Codigo = reader["CODIGO"].ToString();
+                resol.IDConsejo = Convert.ToInt32(reader["IDCONSEJO"].ToString());
+
+                resoluciones.Add(resol);
+
+            }
+            reader.Close();
+            conn.Close();
+        }
+        catch (Exception)
+        {
+
+        }
+        return resoluciones;
+
     }
 
     public List<string> ObtenerCarrerasDB()
@@ -111,6 +148,15 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
 
 
         return detalles;
+    }
+
+    public void generarActa(List<Aprobada> aprobadas)
+    {
+        String plantillaActa = @"D:\Documentos\OficiosPlantilla\plantillaActa.docx";
+        String nombre = @"D:\Documentos\Actas\acta001.docx";
+        List<string> Editables = new List<string>();
+        List<string> Datos = new List<string>();
+        CreateWordDocument(plantillaActa, nombre, Editables, Datos);
     }
 
     public List<string> ObtenerMeses()
