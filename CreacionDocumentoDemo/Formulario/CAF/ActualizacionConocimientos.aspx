@@ -62,10 +62,18 @@ Tahoma;color:black;mso-themecolor:text1"></span><p class="MsoNormal" style="text
                       <b style="mso-bidi-font-weight:
 normal"><span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-fareast-font-family:&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma;
-color:black;mso-themecolor:text1">COORDINADOR DE </span></b><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
-&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><b style="mso-bidi-font-weight:normal">
-                      <asp:TextBox ID="txtCarrerasCoor" runat="server" CssClass="noBorder" placeholder="Ejm: Ambato,15 de Enero del 2021" Width="350px"></asp:TextBox>
-                      </b></span>
+color:black;mso-themecolor:text1">COORDINADOR DE</span><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-fareast-font-family:&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma;
+color:black;mso-themecolor:text1"> LAS CARRERAS DE </span><span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-fareast-font-family:&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma;
+color:black;mso-themecolor:text1">&nbsp;</span></b></p>
+                  <p class="MsoNormal" style="text-align:justify">
+                      <b style="mso-bidi-font-weight:normal"><span style="font-size:10.0pt;
+line-height:115%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;
+color:black;mso-themecolor:text1">
+                      <asp:DropDownList ID="txtCarrerasCoorD" runat="server" CssClass="noBorder" Font-Bold="True" Font-Size="Smaller" Width="100%">
+                      </asp:DropDownList>
+                      </span></b>
                   </p>
                   <p class="MsoNormal">
                       <span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;
@@ -75,15 +83,8 @@ mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">FACULTAD DE INGENI
                           <p>
                   &nbsp;</p>
                           </span>
-                      </p>
-                      <p class="MsoNormal">
-                          <span lang="ES" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
-&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
                           <p>
-                  &nbsp;</p>
-                          </span>
-                      </p>
-                      <p>
+                          </p>
                       </p>
                       </span>
                       <p class="MsoNormal" style="text-align:justify;tab-stops:440.25pt">
@@ -91,19 +92,7 @@ mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">FACULTAD DE INGENI
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">Presente<span style="mso-spacerun:yes">&nbsp; </span></span>
                           <p class="MsoNormal" style="text-align:justify">
                               <span lang="ES" style="font-size:
-10.0pt;font-family:&quot;Cambria&quot;,serif">De mi consideración:<p class="MsoNormal">
-                                  <span lang="ES" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
-&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
-                                  <p>&nbsp;</p>
-                                  </span>
-                              </p>
-                              <p class="MsoNormal">
-                                  <span lang="ES" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
-&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
-                                  <p>&nbsp;</p>
-                                  </span>
-                              </p>
-                              <p>
+10.0pt;font-family:&quot;Cambria&quot;,serif">De mi consideración:<p>
                               </p>
                               </span>
                               <p class="MsoNormal" style="text-align:justify">
@@ -209,14 +198,23 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style=
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
                                       <p>&nbsp;</p>
                                       </span>
-                                  </p>
-                                  <p class="MsoNormal">
-                                      <span lang="ES" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+                                      <p>
+                                      </p>
+                                      <p class="MsoNormal">
+                                          <span lang="ES" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
-                                      <p>&nbsp;</p>
-                                      </span>
+                                          <p>
+                                              &nbsp;</p>
+                                          </span>
+                                          <p>
+                                          </p>
+                                          <br />
+                                          <p>
+                                          </p>
+                                          <p>
+                                          </p>
+                                      </p>
                                   </p>
-                                  <br />
                                   </span>
                                   <p class="MsoNormal" style="text-align:justify">
                                       <b style="mso-bidi-font-weight:
@@ -350,79 +348,112 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
                                           <p>&nbsp;</p>
                                           </span>
-                                      </p>
-                                      <p class="MsoNormal">
-                                          <span lang="ES" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+                                          <p>
+                                          </p>
+                                          <p class="MsoNormal">
+                                              <span lang="ES" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
-                                          <p>&nbsp;</p>
-                                          </span>
-                                      </p>
-                                      <p class="MsoNormal" style="text-align:justify">
-                                          &nbsp;<p class="MsoNormal" style="text-align:justify">
-                                              <b style="mso-bidi-font-weight:
+                                              <p>
+                                                  &nbsp;</p>
+                                              </span>
+                                              <p>
+                                              </p>
+                                              <p class="MsoNormal" style="text-align:justify">
+                                                  &nbsp;<p class="MsoNormal" style="text-align:justify">
+                                                      <b style="mso-bidi-font-weight:
 normal"><span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma">INDICAR</span></b><span lang="ES" style="font-size:
 10.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">, AL MENCIONADO ESTUDIANTE QUE EN EL PERÍODO ACADÉMICO SEÑALADO DEBERÁ <b>APROBAR LA ACTUALIZACIÓN DE CONOCIMIENTOS Y CULMINAR Y APROBAR EL TRABAJO DE TITULACIÓN.
-                                              <p>
-                                              </p>
-                                              </b></span>
-                                              <p class="MsoNormal" style="text-align:justify;mso-pagination:none">
-                                                  <b style="mso-bidi-font-weight:normal"><span lang="ES" style="font-size:10.0pt;
+                                                      <p>
+                                                      </p>
+                                                      </b></span>
+                                                      <p class="MsoNormal" style="text-align:justify;mso-pagination:none">
+                                                          <b style="mso-bidi-font-weight:normal"><span lang="ES" style="font-size:10.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:&quot;Arial Unicode MS&quot;;
 mso-bidi-font-family:Tahoma">AUTORIZAR</span></b><span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">, A LA SECRETARIA DE LAS CARRERAS DE </span><span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma">INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS, TECNOLOGÍAS DE LA INFORMACIÓN Y SOFTWARE, </span><span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">EMITA LA ORDEN Y VERIFIQUE EL PAGO DE CONFORMIDAD AL ARANCEL UNIVERSITARIO VIGENTE.<p>
-                                                  </p>
-                                                  </span>
-                                                  <p style="margin:0cm;text-align:justify;line-height:115%">
-                                                      <b><span lang="ES" style="font-size:10.0pt;line-height:115%;font-family:&quot;Cambria&quot;,serif;
+                                                          </p>
+                                                          </span>
+                                                          <p style="margin:0cm;text-align:justify;line-height:115%">
+                                                              <b><span lang="ES" style="font-size:10.0pt;line-height:115%;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma">SOLICITAR.</span></b><span lang="ES" style="font-size:10.0pt;line-height:115%;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma"> A <b><span style="mso-spacerun:yes">&nbsp;</span></b>LA SECRETARIA DE CARRERA QUE UNA VEZ SUPERADA LA EMERGENCIA SANITARIA POR COVID 19, VERIFIQUE QUE LOS DATOS Y DOCUMENTACIÓN CONSIGNADA PARA EL PRESENTE TRÁMITE ESTÉN COMPLETOS Y CUMPLA CON TODOS LOS REQUISITOS EXIGIDOS, CASO CONTRARIO INFORMARÁ EL PARTICULAR PARA LA APLICACIÓN DE LO DISPUESTO EN LA </span><span lang="ES-TRAD" style="font-size:10.0pt;line-height:115%;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1;mso-ansi-language:
 ES-TRAD">RESOLUCIÓN: CAU-P-229-2020, DE FECHA ABRIL 15, 2020, SUSCRITA POR LA DRA. MARY CRUZ, PRESIDENTA DE CONSEJO ACADÉMICO UNIVERSITARIO DE LA UTA, A TRAVÉS DE LA CUAL INDICA: “<i>AUTORIZAR</i> <i>A LAS DIFERENTES UNIDADES ACADÉMICAS, QUE DURANTE EL ESTADO DE EMERGENCIA, RECEPTEN LOS TRÁMITES ACADÉMICOS ENVIADOS POR MEDIOS ELECTRÓNICOS CON SUS RESPECTIVOS DOCUMENTOS DE RESPALDO; EN CASO DE QUE SE REQUIERA REGISTROS O DOCUMENTACIÓN QUE REPOSA EN LAS SECRETARIAS, TERMINADA LA EMERGENCIA, SE VERIFICARÁ LA VERACIDAD DE LOS MISMOS, SIN PERJUICIO DE LA NULIDAD DEL TRÁMITE DE NO PODER COMPROBAR EL CUMPLIMIENTO DE LOS REQUISITOS O VALIDEZ DEL EXPEDIENTE ENVIADO”.<p>
-                                                      </p>
-                                                      </i></span>
-                                                      <p class="MsoNormal" style="text-align:justify">
-                                                          <b style="mso-bidi-font-weight:
+                                                              </p>
+                                                              </i></span>
+                                                              <p class="MsoNormal" style="text-align:justify">
+                                                                  <b style="mso-bidi-font-weight:
 normal"><span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma">REMITIR, </span></b><span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">LOS DOCUMENTOS ORIGINALES CITADOS ANTERIORMENTE A LA COORDINACIÓN DE LAS CARRERAS DE INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS, TECNOLOGÍAS DE LA INFORMACIÓN Y SOFTWARE PARA SU CORRESPONDIENTE ARCHIVO.<p>
-                                                          </p>
-                                                          </span>
-                                                          <p class="MsoBodyTextFirstIndent2" style="margin:0cm;text-align:justify;
+                                                                  </p>
+                                                                  </span>
+                                                                  <p class="MsoBodyTextFirstIndent2" style="margin:0cm;text-align:justify;
 text-indent:0cm">
-                                                              <span style="font-size:10.0pt;line-height:106%;font-family:
+                                                                      <span style="font-size:10.0pt;line-height:106%;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">Atentamente,<p>
-                                                              </p>
-                                                              </span>
-                                                              <p class="MsoBodyText" style="text-indent:.05pt">
-                                                                  <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+                                                                      </p>
+                                                                      </span>
+                                                                      <p class="MsoBodyText" style="text-indent:.05pt">
+                                                                          <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                                                  <asp:TextBox ID="txtPresidente" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ing. Pilar Urrutia U., Mg." ToolTip="Busque un estudiante" Width="132px"></asp:TextBox>
-                                                                  </span></span></span></b></span>
-                                                              </p>
-                                                              <p class="MsoHeader" style="text-align:justify;text-indent:.05pt">
-                                                                  <span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;
+                                                                          <asp:TextBox ID="txtPresidente" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ing. Pilar Urrutia U., Mg." ToolTip="Busque un estudiante" Width="132px"></asp:TextBox>
+                                                                          </span></span></span></b></span>
+                                                                      </p>
+                                                                      <p class="MsoHeader" style="text-align:justify;text-indent:.05pt">
+                                                                          <span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;
 mso-bidi-font-weight:bold">PRESIDENTE/A</span><p class="MsoNormal">
-                                                                      <span lang="ES" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+                                                                              <span lang="ES" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">c.c. </span><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                                                      <asp:TextBox ID="txtPresiConsejo1" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ing. Pilar Urrutia U., Mg." ToolTip="Busque un estudiante" Width="132px"></asp:TextBox>
-                                                                      </span></span></span></b></span><span lang="ES" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+                                                                              <asp:TextBox ID="txtPresiConsejo1" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ing. Pilar Urrutia U., Mg." ToolTip="Busque un estudiante" Width="132px"></asp:TextBox>
+                                                                              </span></span></span></b></span><span lang="ES" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma">- Presidente de Consejo Académico de Facultad</span><p class="MsoBodyTextFirstIndent2" style="margin:0cm;text-align:justify;
 text-indent:0cm">
-                                                                          <span style="font-size:9.0pt;line-height:106%;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Estudiante </span><span style="font-size:9.0pt;mso-bidi-font-size:12.0pt;line-height:106%;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">
-                                                                          <p>
+                                                                                  <span style="font-size:9.0pt;line-height:106%;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Estudiante </span>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
                                                                           </p>
-                                                                          </span>
                                                                       </p>
                                                                   </p>
                                                               </p>
@@ -450,7 +481,7 @@ text-indent:0cm">
          <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
             TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
             runat="server" />
-         <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="221px" Width="849px">
+         <asp:Panel ID="panelModalBusquedaEst" runat="server" >
             <asp:TextBox ID="TextBox1" 
                 runat="server"
                 AutoPostBack="false"

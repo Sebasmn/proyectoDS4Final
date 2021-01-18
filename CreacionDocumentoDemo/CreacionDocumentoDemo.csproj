@@ -93,12 +93,16 @@
   <ItemGroup>
     <Content Include="Estilos\estilos.css" />
     <Content Include="Formulario\CAF\ActualizacionConocimientos.aspx" />
+    <Content Include="Formulario\CAF\Homologacion.aspx" />
+    <Content Include="Formulario\CAF\TerceraMatricula.aspx" />
+    <Content Include="Formulario\Consejo.aspx" />
     <Content Include="Formulario\Inicio.aspx" />
     <Content Include="Formulario\Practicas.aspx" />
     <Content Include="Formulario\Titulacion\ArticuloAcademico.aspx" />
     <Content Include="Formulario\Titulacion\ExamenComplexivo.aspx" />
     <Content Include="Formulario\Titulacion\PropuestaTitulacion.aspx" />
     <Content Include="Formulario\Titulacion\PropuestaTitulacionProrrogaGratuita.aspx" />
+    <Content Include="Formulario\Titulacion\ProrrogaPagada.aspx" />
     <Content Include="Formulario\Titulacion\ProyectoInvestigacion.aspx" />
     <Content Include="Formulario\TramitesFISEI\AprobacionCdc.aspx" />
     <Content Include="Formulario\TramitesFISEI\ReconocimientoCultFisica.aspx" />
@@ -116,6 +120,27 @@
     </Compile>
     <Compile Include="Formulario\CAF\ActualizacionConocimientos.aspx.designer.cs">
       <DependentUpon>ActualizacionConocimientos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\CAF\Homologacion.aspx.cs">
+      <DependentUpon>Homologacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\CAF\Homologacion.aspx.designer.cs">
+      <DependentUpon>Homologacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\CAF\TerceraMatricula.aspx.cs">
+      <DependentUpon>TerceraMatricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\CAF\TerceraMatricula.aspx.designer.cs">
+      <DependentUpon>TerceraMatricula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Consejo.aspx.cs">
+      <DependentUpon>Consejo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\Consejo.aspx.designer.cs">
+      <DependentUpon>Consejo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formulario\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
@@ -165,6 +190,13 @@
     </Compile>
     <Compile Include="Formulario\Titulacion\PropuestaTitulacionProrrogaGratuita.aspx.designer.cs">
       <DependentUpon>PropuestaTitulacionProrrogaGratuita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\ProrrogaPagada.aspx.cs">
+      <DependentUpon>ProrrogaPagada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\ProrrogaPagada.aspx.designer.cs">
+      <DependentUpon>ProrrogaPagada.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formulario\Titulacion\ProyectoInvestigacion.aspx.cs">
       <DependentUpon>ProyectoInvestigacion.aspx</DependentUpon>
@@ -244,7 +276,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Actas\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

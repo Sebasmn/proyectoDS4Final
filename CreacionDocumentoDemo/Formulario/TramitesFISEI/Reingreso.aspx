@@ -91,7 +91,7 @@ Tahoma"><o:p></o:p></span></p>
             <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
                 <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:
 106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:&quot;Arial Unicode MS&quot;;
-mso-bidi-font-family:Tahoma">COORDINADOR DE           <asp:TextBox ID="txtCarrerasCoor" placeholder="Ejm: Ambato,15 de Enero del 2021" CssClass="noBorder" runat="server"></asp:TextBox>
+mso-bidi-font-family:Tahoma">COORDINADOR DE           <asp:TextBox ID="txtCarrerasCoor" placeholder="" CssClass="noBorder" runat="server"></asp:TextBox>
             </p>
             <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
                 <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:

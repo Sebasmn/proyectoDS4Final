@@ -31,6 +31,130 @@ public class ManejoDatos
         connection = new MySqlConnection(connectionString);
         return connection;
     }
+
+    public List<string> ObtenerCarrerasDB()
+    {
+        List<string> estudiante = new List<string>();
+        try
+        {
+            MySqlConnection conn = this.GetConnectionString();
+            string sql = "SELECT * " +
+                          "FROM `Carreras` ";
+
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            //command.Parameters.AddWithValue("@CEDULA", cedula);
+            conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                estudiante.Add(reader["NombreCarrera"].ToString());
+               
+
+            }
+            reader.Close();
+            conn.Close();
+        }
+        catch (Exception)
+        {
+
+        }
+        return estudiante;
+
+    }
+
+    public List<string> ObtenerDiasMes()
+    {
+        List<string> numeros = new List<string>();
+        for (int i = 1; i < 32; i++)
+        {
+            numeros.Add(i.ToString());
+        }
+        return numeros;
+    }
+
+    public List<string> ObtenerCarrerasCoord()
+    {
+        List<string> opciones = new List<string>();
+        /*
+         LAS CARRERAS DE INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS, TECNOLOGÍAS DE LA INFORMACIÓN Y SOFTWARE 
+LAS CARRERAS DE INGENIERÍA EN ELECTRÓNICA Y COMUNICACIONES Y TELECOMUNICACIONES
+LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIERÍA INDUSTRIAL
+          */
+        opciones.Add("INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS, TECNOLOGÍAS DE LA INFORMACIÓN Y SOFTWARE");
+        opciones.Add("INGENIERÍA EN ELECTRÓNICA Y COMUNICACIONES Y TELECOMUNICACIONES");
+        opciones.Add("INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIERÍA INDUSTRIAL");
+        return opciones;
+    }
+
+    public List<string> ObtenerSecretarias()
+    {
+        List<string> opciones = new List<string>();
+        /*
+         LAS CARRERAS DE INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS, TECNOLOGÍAS DE LA INFORMACIÓN Y SOFTWARE 
+LAS CARRERAS DE INGENIERÍA EN ELECTRÓNICA Y COMUNICACIONES Y TELECOMUNICACIONES
+LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIERÍA INDUSTRIAL
+          */
+        opciones.Add("INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS ");
+        opciones.Add("INGENIERÍA EN ELECTRÓNICA Y COMUNICACIONES Y TELECOMUNICACIONES");
+        opciones.Add("INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIERÍA INDUSTRIAL");
+        return opciones;
+    }
+
+    public  List<string> DetallesSecretaria()
+    {
+        List<string> detalles = new List<string>();
+
+        detalles.Add("INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS");
+        detalles.Add("INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIERÍA INDUSTRIAL");
+        detalles.Add("INGENIERÍA EN ELECTRÓNICA Y COMUNICACIONES Y TELECOMUNICACIONES");
+
+
+        return detalles;
+    }
+
+    public List<string> ObtenerMeses()
+    {
+        //Meses
+        List<string> meses = new List<string>();
+        meses.Add("enero");
+        meses.Add("febrero");
+        meses.Add("marzo");
+        meses.Add("abril");
+        meses.Add("mayo");
+        meses.Add("junio");
+        meses.Add("julio");
+        meses.Add("agosto");
+        meses.Add("septiembre");
+        meses.Add("octubre");
+        meses.Add("noviembre");
+        meses.Add("diciembre");
+        return meses;
+    }
+
+    public List<string> ObtenerTipoSesion()
+    {
+        List<string> sesion = new List<string>();
+        sesion.Add("Ordinaria");
+        sesion.Add("Extraordinaria");
+        return sesion;
+    }
+    public List<string> ObtenerDiasSemana()
+    {
+        //Nombres de Dias
+        List<string> dias = new List<string>();
+        dias.Add("lunes");
+        dias.Add("martes");
+        dias.Add("miércoles");
+        dias.Add("jueves");
+        dias.Add("viernes");
+        dias.Add("sábado");
+        dias.Add("domingo");
+        return dias;
+
+
+    }
+
     public List<Estudiante> getEstudiantesBusqueda(string cedula)
     {
        List< Estudiante> estudiante = new List<Estudiante>();
