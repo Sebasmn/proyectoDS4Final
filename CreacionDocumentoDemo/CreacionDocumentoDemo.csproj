@@ -99,7 +99,6 @@
     <Content Include="Formulario\Inicio.aspx" />
     <Content Include="Formulario\Practicas.aspx" />
     <Content Include="Formulario\Titulacion\ArticuloAcademico.aspx" />
-    <Content Include="Formulario\Titulacion\ExamenComplexivo.aspx" />
     <Content Include="Formulario\Titulacion\PropuestaTitulacion.aspx" />
     <Content Include="Formulario\Titulacion\PropuestaTitulacionProrrogaGratuita.aspx" />
     <Content Include="Formulario\Titulacion\ProrrogaPagada.aspx" />
@@ -169,13 +168,6 @@
     </Compile>
     <Compile Include="Formulario\Titulacion\ArticuloAcademico.aspx.designer.cs">
       <DependentUpon>ArticuloAcademico.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario\Titulacion\ExamenComplexivo.aspx.cs">
-      <DependentUpon>ExamenComplexivo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formulario\Titulacion\ExamenComplexivo.aspx.designer.cs">
-      <DependentUpon>ExamenComplexivo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formulario\Titulacion\PropuestaTitulacion.aspx.cs">
       <DependentUpon>PropuestaTitulacion.aspx</DependentUpon>
