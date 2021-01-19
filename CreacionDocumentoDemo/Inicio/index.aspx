@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Bienvenido</title>
+    <link rel="icon" type="image/png" href="../Images/EscudoUTA.png"/>
     <link rel="stylesheet" href="../Estilos/inicio.css"  type="text/css" />
     
 </head>
@@ -15,7 +16,7 @@
 
             <br />
 
-            <asp:Label ID="labelTituloIndex" runat="server" Text="Bienvenido"></asp:Label>
+            <asp:Label ID="labelTituloIndex" runat="server" Text="RESOLUCIONES FISEI 2021"></asp:Label>
             <br />
             <br />
             <asp:Label ID="labelResol" runat="server" Text="Resoluciones Disponibles"></asp:Label>

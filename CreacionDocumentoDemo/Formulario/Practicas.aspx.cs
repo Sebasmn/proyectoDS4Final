@@ -78,6 +78,7 @@ namespace CreacionDocumentoDemo.Formulario
             }
         }
 
+
         protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
           
@@ -116,6 +117,7 @@ namespace CreacionDocumentoDemo.Formulario
         {
             txtNombreEstu1.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             txtNombreEstu2.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
+            ViewState["CEDULA_EST"] = GridView1.SelectedRow.Cells[1].Text;
             if (GridView1.SelectedRow.Cells[10].Text.Equals("SIST"))
             {
                 txtCarrera1.Text = "INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS";
@@ -209,7 +211,7 @@ namespace CreacionDocumentoDemo.Formulario
             resol.Codigo = resolucion;
             resol.Plantilla = plantilla;
             resol.IDConsejo = 20;
-
+            resol.Estudiante = ViewState["CEDULA_EST"].ToString();
              bool guardado = mysql.guardarResolucion(resol);
 
             if (guardado)

@@ -33,6 +33,38 @@ public class ManejoDatos
         return connection;
     }
 
+    public UsuariosSW obtenerLogin(string usuario, string clave)
+    {
+        UsuariosSW user = new UsuariosSW();
+        try
+        {
+            MySqlConnection conn = this.GetConnectionString();
+            string sql = "SELECT TIPO,CEDULA,CONCAT(NOMBRES,' ',APELLIDOS) AS NOMBRE " +
+                          "FROM `USUARIOS_SW`  WHERE CEDULA = @cedula AND CLAVE=@clave";
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            command.Parameters.AddWithValue("@cedula", usuario);
+            command.Parameters.AddWithValue("@clave", clave);
+            conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+             user = new UsuariosSW();
+            if (reader.Read())
+            {
+
+                user.Cedula = reader["CEDULA"].ToString();
+                user.Nombre = reader["NOMBRE"].ToString();
+                user.Tipo = reader["TIPO"].ToString();
+               
+            }
+            reader.Close();
+            conn.Close();
+        }
+        catch (Exception)
+        {
+
+        }
+        return user;
+    }
+
     public List<Resolucion> ObtenerResoluciones(int consejo)
     {
 
@@ -123,7 +155,40 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
         opciones.Add("INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIERÍA INDUSTRIAL");
         return opciones;
     }
+    public List<ResolucionVista> ObtenerResolucionesVista(string consejo)
+    {
 
+        List<ResolucionVista> resoluciones = new List<ResolucionVista>();
+        try
+        {
+            MySqlConnection conn = this.GetConnectionString();
+            string sql = "SELECT * " +
+                          "FROM `RESOLUCIONES`  WHERE IDCONSEJO = " + consejo;
+
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            //command.Parameters.AddWithValue("@CEDULA", cedula);
+            conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ResolucionVista resol = new ResolucionVista();
+                resol.Ubicacion = reader["UBICACION"].ToString();
+                resol.Codigo = reader["CODIGO"].ToString();
+                resol.Consejo = (reader["IDCONSEJO"].ToString());
+                resoluciones.Add(resol);
+
+            }
+            reader.Close();
+            conn.Close();
+        }
+        catch (Exception)
+        {
+
+        }
+        return resoluciones;
+
+    }
     public List<string> ObtenerSecretarias()
     {
         List<string> opciones = new List<string>();
@@ -483,6 +548,7 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
             myCommand.Parameters.AddWithValue("CODIGO", resolucion.Codigo);
             myCommand.Parameters.AddWithValue("UBICACION", resolucion.Ubicacion);
             myCommand.Parameters.AddWithValue("IDCONSEJO", resolucion.IDConsejo);
+            myCommand.Parameters.AddWithValue("ESTUDIANTE", resolucion.Estudiante);
 
             int n = myCommand.ExecuteNonQuery();
             //Guardar en generador

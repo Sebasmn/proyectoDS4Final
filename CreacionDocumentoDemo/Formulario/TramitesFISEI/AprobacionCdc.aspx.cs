@@ -19,6 +19,7 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
         {
             if (!IsPostBack)
             {
+                ManejarUsuario();
                 List<String> datos = new List<string>();
                 datos.Add("Clay Aldaz");
                 datos.Add("Pedrito");
@@ -78,7 +79,24 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
                 ddlMes.DataBind();
             }
         }
-
+        private void ManejarUsuario()
+        {
+            if (
+                 Session["USUARIOSW"] != null
+                )
+            {
+                UsuariosSW tipo = (UsuariosSW)Session["USUARIOSW"];
+                char userTipo = Convert.ToChar(tipo.Tipo);
+                if (userTipo != 'S')
+                {
+                    Response.Redirect("../../Inicio/Login.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("../../Inicio/Login.aspx");
+            }
+        }
         protected void Button3_Click(object sender, EventArgs e)
         {
 
@@ -187,7 +205,7 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             resol.Codigo = resolucion;
             resol.Plantilla = plantilla;
             resol.IDConsejo = 20;
-
+            resol.Estudiante = txtCedula.Text;
             bool guardado = mysql.guardarResolucion(resol);
 
             if (guardado)
