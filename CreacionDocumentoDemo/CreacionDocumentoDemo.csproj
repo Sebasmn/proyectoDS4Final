@@ -103,6 +103,7 @@
     <Content Include="Formulario\Titulacion\PropuestaTitulacion.aspx" />
     <Content Include="Formulario\Titulacion\PropuestaTitulacionProrroga.aspx" />
     <Content Include="Formulario\Titulacion\ProrrogaPagada.aspx" />
+    <Content Include="Formulario\Titulacion\ProyectoInvestigacion.aspx" />
     <Content Include="Formulario\TramitesFISEI\AprobacionCdc.aspx" />
     <Content Include="Formulario\TramitesFISEI\ReconocimientoCultFisica.aspx" />
     <Content Include="Formulario\TramitesFISEI\Reingreso.aspx" />
@@ -196,6 +197,13 @@
     </Compile>
     <Compile Include="Formulario\Titulacion\ProrrogaPagada.aspx.designer.cs">
       <DependentUpon>ProrrogaPagada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\ProyectoInvestigacion.aspx.cs">
+      <DependentUpon>ProyectoInvestigacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\ProyectoInvestigacion.aspx.designer.cs">
+      <DependentUpon>ProyectoInvestigacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formulario\TramitesFISEI\AprobacionCdc.aspx.cs">
       <DependentUpon>AprobacionCdc.aspx</DependentUpon>
