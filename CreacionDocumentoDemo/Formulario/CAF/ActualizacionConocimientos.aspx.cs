@@ -209,8 +209,9 @@ namespace CreacionDocumentoDemo.Formulario.CAF
             resol.Datos = datos;
             resol.Codigo = resolucion;
             resol.Plantilla = plantilla;
-            resol.IDConsejo = 20;
-            resol.IDConsejo =Convert.ToInt32( txtCodigoConsejoDestino.Text);
+          //  resol.IDConsejo = 20;
+          //  resol.IDConsejo =Convert.ToInt32( txtCodigoConsejoDestino.Text);
+            resol.IDConsejo = txtCodigoConsejoDestino.Text;
             resol.Estudiante = txtCedula.Text;
             bool guardado = mysql.guardarResolucion(resol);
 

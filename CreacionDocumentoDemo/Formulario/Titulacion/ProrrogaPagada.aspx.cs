@@ -166,8 +166,8 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             resol.Datos = datos;
             resol.Codigo = resolucion;
             resol.Plantilla = plantilla;
-            resol.IDConsejo = 20;
-
+            resol.IDConsejo = txtCodigoConsejoDestino.Text;
+          
             bool guardado = mysql.guardarResolucion(resol);
 
             if (guardado)

@@ -185,7 +185,8 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             resol.Datos = datos;
             resol.Codigo = resolucion;
             resol.Plantilla = plantilla;
-            resol.IDConsejo = 30;
+           // resol.IDConsejo = 30;
+            resol.IDConsejo = txtCodigoConsejoDestino.Text;
             resol.Estudiante = txtCedula.Text;
             bool guardado = mysql.guardarResolucion(resol);
 

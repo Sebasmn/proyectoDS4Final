@@ -187,9 +187,9 @@ namespace CreacionDocumentoDemo.Formulario.CAF
             resol.Datos = datos;
             resol.Codigo = resolucion;
             resol.Plantilla = plantilla;
-            resol.IDConsejo = 20;
+           // resol.IDConsejo = 20;
             resol.Estudiante = txtCedula.Text;
-
+            resol.IDConsejo = txtCodigoConsejoDestino.Text;
             bool guardado = mysql.guardarResolucion(resol);
 
             if (guardado)

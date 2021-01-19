@@ -9,53 +9,6 @@
     <link rel="stylesheet" href="../../Estilos/estilos.css"  type="text/css" />
     <style type="text/css">
 
- p.MsoNormal
-	{margin:0cm;
-	font-size:12.0pt;
-	font-family:"Times New Roman",serif;
-	}
-p.BodyText21
-	{margin:0cm;
-	text-align:justify;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	}
-p.MsoNoSpacing
-	{margin:0cm;
-	font-size:10.0pt;
-	font-family:"Times New Roman",serif;
-	}
-p.MsoBodyText
-	{margin:0cm;
-	text-align:justify;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	}
-p.MsoHeader
-	{margin:0cm;
-	tab-stops:center 212.6pt right 425.2pt;
-	font-size:12.0pt;
-	font-family:"Times New Roman",serif;
-	}
-        .auto-style1 {
-            -webkit-appearance: none;
-            text-align: center;
-            padding-left: 2px;
-            padding-right: 2px;
-            box-shadow: none;
-            border-left-style: none;
-            border-left-color: inherit;
-            border-left-width: 0px;
-            border-right-style: none;
-            border-right-color: inherit;
-            border-right-width: 0px;
-            border-top-style: none;
-            border-top-color: inherit;
-            border-top-width: 0px;
-            border-bottom-style: solid;
-            border-bottom-color: inherit;
-            border-bottom-width: 1px;
-        }
     </style>
 </head>
 <body>
@@ -71,7 +24,8 @@ p.MsoHeader
 
             <asp:Button ID="btnNumeroResolucion" runat="server" Text="Generar Número Resolución" 
             CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click"  />
-
+             <asp:Label ID="Label3" runat="server" Text="Consejo Destino:"></asp:Label>
+            <asp:TextBox ID="txtCodigoConsejoDestino" runat="server"></asp:TextBox>
         </asp:Panel>
          <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Always" runat="server">
               <ContentTemplate>

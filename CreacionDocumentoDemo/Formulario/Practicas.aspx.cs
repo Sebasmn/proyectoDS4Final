@@ -210,10 +210,10 @@ namespace CreacionDocumentoDemo.Formulario
             resol.Datos = datos;
             resol.Codigo = resolucion;
             resol.Plantilla = plantilla;
-            resol.IDConsejo = 20;
+           // resol.IDConsejo = 20;
             resol.Estudiante = ViewState["CEDULA_EST"].ToString();
              bool guardado = mysql.guardarResolucion(resol);
-
+            resol.IDConsejo = txtCodigoConsejoDestino.Text;
             if (guardado)
                 {
                     Label2.Text = "Documento Generado y Guardado";

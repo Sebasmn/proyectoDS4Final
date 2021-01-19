@@ -85,7 +85,7 @@ public class ManejoDatos
                 Resolucion resol = new Resolucion();
                 resol.Ubicacion = reader["UBICACION"].ToString();
                 resol.Codigo = reader["CODIGO"].ToString();
-                resol.IDConsejo = Convert.ToInt32(reader["IDCONSEJO"].ToString());
+                resol.IDConsejo = (reader["IDCONSEJO"].ToString());
 
                 resoluciones.Add(resol);
 

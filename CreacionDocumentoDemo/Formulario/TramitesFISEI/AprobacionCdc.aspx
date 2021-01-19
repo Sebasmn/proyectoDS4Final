@@ -13,28 +13,7 @@
     <link rel="stylesheet" href="../../Estilos/estilos.css"  type="text/css" />
 
     <style type="text/css">
-        p.MsoBodyText
-	{margin:0cm;
-	text-align:justify;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	}
- p.MsoNormal
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:8.0pt;
-	margin-left:0cm;
-	line-height:106%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
-        .auto-style4 {
-            text-align: justify;
-            text-indent: .05pt;
-            font-size: 11.0pt;
-            font-family: Calibri, sans-serif;
-            margin: 0cm;
-        }
+       
     </style>
 </head>
 <body>
@@ -47,10 +26,12 @@
         <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante" 
             Height="27px"
             Width="312px" CssClass="btnBuscar"  />
-
+         <asp:Panel ID="menuOpciones" runat="server">
             <asp:Button ID="btnNumeroResolucion" runat="server" Text="Generar Número Resolución" 
             CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click" Height="29px" Width="272px"  />
-
+        <asp:Label ID="Label3" runat="server" Text="Consejo Destino:"></asp:Label>
+            <asp:TextBox ID="txtCodigoConsejoDestino" runat="server"></asp:TextBox>
+             </asp:Panel>
         <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Always" runat="server">
               <ContentTemplate>
 
