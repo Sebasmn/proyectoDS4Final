@@ -167,6 +167,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             resol.Plantilla = plantilla;
             resol.IDConsejo = txtCodigoConsejoDestino.Text;
             resol.Estudiante = ViewState["CEDULA_EST"].ToString();
+            resol.Secretaria = ((UsuariosSW)Session["USUARIOSW"]).Cedula;
 
             bool guardado = mysql.guardarResolucion(resol);
 

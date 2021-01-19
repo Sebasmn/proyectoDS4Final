@@ -7,83 +7,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Prorroga Gratuita</title>
     <link rel="stylesheet" href="../../Estilos/estilos.css"  type="text/css" />
-    <style type="text/css">
-
- p.MsoNormal
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:8.0pt;
-	margin-left:0cm;
-	line-height:105%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
-p
-	{margin-right:0cm;
-	margin-left:0cm;
-	font-size:12.0pt;
-	font-family:"Times New Roman",serif;
-	}
-p.MsoNoSpacing
-	{margin:0cm;
-	font-size:10.0pt;
-	font-family:"Times New Roman",serif;
-	}
-p.MsoBodyTextFirstIndent2
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:0cm;
-	margin-left:18.0pt;
-	text-indent:18.0pt;
-	font-size:12.0pt;
-	font-family:"Times New Roman",serif;
-	}
-p.MsoBodyText
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:6.0pt;
-	margin-left:0cm;
-	line-height:105%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
-p.MsoHeader
-	{margin:0cm;
-	tab-stops:center 212.6pt right 425.2pt;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
- table.MsoNormalTable
-	{line-height:107%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
-        .auto-style1 {
-            -webkit-appearance: none;
-            text-align: left;
-            font-size: 12px;
-            font-weight: bold;
-            padding-left: 2px;
-            padding-right: 2px;
-            box-shadow: none;
-            border-bottom: 1px solid #795B3B;
-            border-left-style: none;
-            border-left-color: inherit;
-            border-left-width: 0px;
-            border-right-style: none;
-            border-right-color: inherit;
-            border-right-width: 0px;
-            border-top-style: none;
-            border-top-color: inherit;
-            border-top-width: 0px;
-        }
-    </style>
+    
 </head>
 <body>
     <form id="form1" runat="server">
           <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:Panel ID="menuOpciones" runat="server">
             <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante"   CssClass="btnBuscar" OnClick="btnBuscar_Click"  />
+
+            <br />
 
             <asp:Button ID="btnNumeroResolucion" runat="server" Text="Generar Número Resolución" 
             CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click"  />
@@ -1049,7 +981,7 @@ mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;line-height:106%;font-
                 runat="server"
                 AutoPostBack="false"
                  placeholder="Buscar cedula/nombre"></asp:TextBox>
-               &nbsp;<asp:Button ID="Button3" runat="server" Text="Cancelar" OnClick="Button3_Click" />
+               &nbsp;<asp:Button ID="Button3" runat="server" Text="X" OnClick="Button3_Click" />
             <asp:UpdatePanel ID="upEstudiante" runat="server" ChildrenAsTriggers="true" UpdateMode="Always">
                 <ContentTemplate>
                  
