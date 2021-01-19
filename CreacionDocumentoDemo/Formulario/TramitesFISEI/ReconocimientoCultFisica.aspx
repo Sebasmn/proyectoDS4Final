@@ -120,7 +120,7 @@ mso-bidi-font-family:Tahoma"> Mg.<o:p></o:p></span></p>
                 <b style="mso-bidi-font-weight:
 normal"><span lang="ES" style="font-size:9.0pt;mso-bidi-font-size:8.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">COORDINADOR DE LA CARRERA DE
-                <asp:DropDownList ID="ddlCarreras" runat="server">
+                <asp:DropDownList ID="ddlCarreras" runat="server" CssClass="noBorder">
                 </asp:DropDownList>
                 <o:p></o:p></span></b>
             </p>
@@ -211,7 +211,7 @@ Tahoma">, de fecha <span lang="ES" style="font-size: 9.0pt; mso-bidi-font-size: 
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtPresidente" runat="server" CssClass="noBorder" placeholder="Ejm: Ing Julio Cuji "></asp:TextBox>
                 </span>&nbsp;, Presidente de Consejo Académico de Facultad, quien remite la solicitud del señor <b style="mso-bidi-font-weight:normal"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:TextBox ID="txtNombreEstu1" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Javier Chavez Loor" ToolTip="Busque un estudiante" Width="223px"></asp:TextBox>
+                <asp:TextBox ID="txtNombreEstu1" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Javier Chavez Loor" ToolTip="Busque un estudiante" Width="100%"></asp:TextBox>
                 </span>&nbsp;</b>con C.C.</span><span style="font-size:
 9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma"> </span><span lang="ES" style="font-size:
@@ -221,9 +221,9 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span style="font-size:9.0p
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtCedula" runat="server" EnableViewState="true" Height="16px" placeholder="Ejm:1805214551" ToolTip="Busque un estudiante" Width="122px" CssClass="noBorder"></asp:TextBox>
                                       </span></span></span>&nbsp;estudiante de la Carrera de <span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtCarrera1" runat="server" CssClass="noBorder" Height="16px" placeholder="Ejm:Ing Sistemas Comp E Informáticos" Width="234px"></asp:TextBox>
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtCarrera1" runat="server" CssClass="noBorder" Height="16px" placeholder="Ejm:Ing Sistemas Comp E Informáticos" Width="100%"></asp:TextBox>
                 </span></span>&nbsp;de la Universidad Técnica de Ambato, quien solicita la reconocimiento de la asignatura Cultura Física aprobada en la carrera de <span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtCarrera2" runat="server" CssClass="noBorder" Height="16px" placeholder="Ejm:Ing Sistemas Comp E Informáticos" Width="234px"></asp:TextBox>
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtCarrera2" runat="server" CssClass="noBorder" Height="16px" placeholder="Ejm:Ing Sistemas Comp E Informáticos" Width="100%"></asp:TextBox>
                 </span></span>. Al respecto RESUELVE:<o:p></o:p></span></p>
             <p class="MsoNormal" style="text-align:justify">
                 <span lang="ES" style="font-size:
@@ -236,7 +236,7 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="
 mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">APROBAR,</span></b><span lang="ES" style="font-size:9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma"> EL RECONOCIMIENTO DE LA ASIGNATURA: <b style="mso-bidi-font-weight:normal">CULTURA FÍSICA</b> APROBADA POR EL SEÑOR <b style="mso-bidi-font-weight:normal"><span lang="ES" style="font-size: 9.0pt; mso-bidi-font-size: 8.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma"><b style="mso-bidi-font-weight: normal"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:TextBox ID="txtNombreEstu2" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Javier Chavez Loor" ToolTip="Busque un estudiante" Width="223px"></asp:TextBox>
+                <asp:TextBox ID="txtNombreEstu2" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Javier Chavez Loor" ToolTip="Busque un estudiante" Width="100%"></asp:TextBox>
                 </span></b></span>&nbsp;<span style="mso-spacerun:yes">&nbsp;</span></b>CON C.C. NO. <b style="mso-bidi-font-weight:
 normal"><span lang="ES" style="font-size: 9.0pt; mso-bidi-font-size: 8.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"> <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
@@ -244,13 +244,13 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style=
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
                                       <asp:TextBox ID="txtCedula0" runat="server" EnableViewState="true" Height="16px" placeholder="Ejm:1805214551" ToolTip="Busque un estudiante" Width="122px" CssClass="noBorder"></asp:TextBox>
                                       </span></span></span></span>&nbsp;</b>EN LA CARRERA DE <span lang="ES" style="font-size: 9.0pt; mso-bidi-font-size: 8.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma"><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtCarrera3" runat="server" CssClass="noBorder" Height="16px" placeholder="Ejm:Ing Sistemas Comp E Informáticos" Width="234px"></asp:TextBox>
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtCarrera3" runat="server" CssClass="noBorder" Height="16px" placeholder="Ejm:Ing Sistemas Comp E Informáticos" Width="100%"></asp:TextBox>
                 </span></span></span>&nbsp;DE LA </span><span style="font-size:9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC">FACULTAD DE <span lang="ES" style="font-size: 9.0pt; mso-bidi-font-size: 8.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma"><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtFacultad" runat="server" CssClass="noBorder" Height="16px" placeholder="Ejm:Ing Sistemas Comp E Informáticos" Width="234px"></asp:TextBox>
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtFacultad" runat="server" CssClass="noBorder" Height="16px" placeholder="Nombre de Facultad" Width="100%"></asp:TextBox>
                 </span></span></span>&nbsp;</span><span lang="ES" style="font-size:9.0pt;mso-bidi-font-size:8.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">DE LA UNIVERSIDAD TÉCNICA DE AMBATO, PARA LA CARRERA DE <span lang="ES" style="font-size: 9.0pt; mso-bidi-font-size: 8.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma"><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtCarrera4" runat="server" CssClass="noBorder" Height="16px" placeholder="Ejm:Ing Sistemas Comp E Informáticos" Width="234px"></asp:TextBox>
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtCarrera4" runat="server" CssClass="noBorder" Height="16px" placeholder="Ejm:Ing Sistemas Comp E Informáticos" Width="100%"></asp:TextBox>
                 </span></span></span>, EN BASE A LA RESOLUCIÓN 0857-CU-P-2019 QUE INDICA: <i style="mso-bidi-font-style:normal">“AUTORIZAR A LOS ESTUDIANTES DE LA UNIVERSIDAD TÉCNICA DE AMBATO QUE SE CAMBIAN DE CARRERA O DE PLAN DE ESTUDIO Y QUE HAYAN RECIBIDO Y APROBADO LA ASIGNATURA DE CULTURA FÍSICA, EDUCACIÓN FÍSICA, EXPRESIÓN CORPORAL U OTRAS DENOMINACIONES, SE LES RECONOZCA LAS HORAS Y/O CRÉDITOS DE ESA ASIGNATURA EN LA NUEVA CARRERA O PROGRAMA INDEPENDIENTEMENTE DE LA DENOMINACIÓN” DE CONFORMIDAD CON EL ARTÍCULO 98 DEL REGLAMENTO DE RÉGIMEN ACADÉMICO DEL CES.<o:p></o:p></i></span></p>
             <p class="MsoNoSpacing" style="text-align:justify">
                 <b style="mso-bidi-font-weight:
@@ -266,7 +266,7 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">A LA </span><
 mso-fareast-font-family:&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">SECRETARIA DE LA CARRERA REALICE EL TRÁMITE PERTINENTE PARA QUE</span><span lang="ES" style="font-size:9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma"> SEA INGRESADO EL RECONOCIMIENTO DEL SEÑOR <b style="mso-bidi-font-weight:normal"><span lang="ES" style="font-size: 9.0pt; mso-bidi-font-size: 8.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma"><b style="mso-bidi-font-weight: normal"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:TextBox ID="txtNombreEstu3" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Javier Chavez Loor" ToolTip="Busque un estudiante" Width="223px"></asp:TextBox>
+                <asp:TextBox ID="txtNombreEstu3" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Javier Chavez Loor" ToolTip="Busque un estudiante" Width="100%"></asp:TextBox>
                 </span></b></span>&nbsp;</b>CON C.C. NO. <b style="mso-bidi-font-weight:normal"><span lang="ES" style="font-size: 9.0pt; mso-bidi-font-size: 8.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"> <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;

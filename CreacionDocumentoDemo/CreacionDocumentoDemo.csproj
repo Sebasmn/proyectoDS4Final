@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Estilos\estilos.css" />
+    <Content Include="Estilos\inicio.css" />
     <Content Include="Formulario\CAF\ActualizacionConocimientos.aspx" />
     <Content Include="Formulario\CAF\Homologacion.aspx" />
     <Content Include="Formulario\CAF\TerceraMatricula.aspx" />
@@ -110,6 +111,7 @@
     <Content Include="Formulario\ValidacionDatos.aspx" />
     <Content Include="Images\EscudoUTA.jpg" />
     <Content Include="Images\EscudoUTA.png" />
+    <Content Include="Inicio\index.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -232,6 +234,13 @@
     </Compile>
     <Compile Include="Formulario\ValidacionDatos.aspx.designer.cs">
       <DependentUpon>ValidacionDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

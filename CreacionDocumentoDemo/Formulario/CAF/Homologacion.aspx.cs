@@ -27,7 +27,9 @@ namespace CreacionDocumentoDemo.Formulario.CAF
             sesion.Add("Extraordinaria");
             ddlSesion.DataSource = sesion;
             ddlSesion.DataBind();
-
+            ManejoDatos md = new ManejoDatos();
+            txtCarrerasCoorD.DataSource = md.ObtenerCarrerasCoord();
+            txtCarrerasCoorD.DataBind();
 
             //Nombres de Dias
             List<string> dias = new List<string>();
@@ -122,7 +124,7 @@ namespace CreacionDocumentoDemo.Formulario.CAF
             editables.Add("<anio>"); datos.Add(txtAnio.Text);
 
             editables.Add("<coordinador>"); datos.Add(txtCoordinador.Text);
-            editables.Add("<carrerasCoor>"); datos.Add(txtCarrerasCoor.Text);
+            editables.Add("<carrerasCoor>"); datos.Add(txtCarrerasCoorD.SelectedValue.ToString());
             editables.Add("<sesion>"); datos.Add(ddlSesion.SelectedValue.ToString());
 
             editables.Add("<nombreDia>"); datos.Add(ddlNombreDia.SelectedValue.ToString());
@@ -199,8 +201,10 @@ namespace CreacionDocumentoDemo.Formulario.CAF
         {
             txtNombreEstu1.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             txtNombreEstu2.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
+            txtNombreEstu3.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             txtCedula.Text = GridView1.SelectedRow.Cells[1].Text;
             txtCedula0.Text = GridView1.SelectedRow.Cells[1].Text;
+            txtCedula1.Text=GridView1.SelectedRow.Cells[1].Text;
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
