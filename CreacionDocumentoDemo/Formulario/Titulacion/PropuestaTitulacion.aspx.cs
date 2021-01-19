@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace CreacionDocumentoDemo.Formulario.Titulacion
 {
@@ -89,6 +90,64 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
         protected void txtNombreEstu0_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            
+        }
+
+        protected void GridView1_SelectedIndexChanging1(object sender, GridViewSelectEventArgs e)
+        {
+            
+        }
+
+        protected void Button2_Click1(object sender, EventArgs e)
+        {
+            panelModalBusquedaEst.Visible = true;
+            ModalPopupExtender1.Show();
+            Label1.Text = "Buscando";
+            ManejoDatos datos = new ManejoDatos();
+            // List<Estudiante> listado =  
+            var bs1 = new BindingSource();
+            bs1.DataSource = datos.getEstudiantesBusqueda(TextBox1.Text);
+            GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
+            GridView1.DataBind();
+            Label1.Text = "Correcto";
+        }
+
+        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+            txtNombreEstu.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
+            txtNombreEstu0.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
+        }
+
+        protected void GridView1_SelectedIndexChanging2(object sender, GridViewSelectEventArgs e)
+        {
+            
+        }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ManejoDatos datos = new ManejoDatos();
+            var bs1 = new System.Windows.Forms.BindingSource();
+            bs1.DataSource = datos.getEstudiantesBusqueda(TextBox1.Text);
+            GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
+            GridView1.PageIndex = e.NewPageIndex;
+            GridView1.DataBind();
+            Label1.Text = "Correcto";
+
+            GridView1.DataBind();
         }
     }
 }

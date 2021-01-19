@@ -103,6 +103,7 @@
     <Content Include="Formulario\Titulacion\ExamenComplexivo.aspx" />
     <Content Include="Formulario\Titulacion\PropuestaTitulacion.aspx" />
     <Content Include="Formulario\Titulacion\PropuestaTitulacionProrroga.aspx" />
+    <Content Include="Formulario\Titulacion\ProrrogaGratuita.aspx" />
     <Content Include="Formulario\Titulacion\ProrrogaPagada.aspx" />
     <Content Include="Formulario\Titulacion\ProyectoInvestigacion.aspx" />
     <Content Include="Formulario\TramitesFISEI\AprobacionCdc.aspx" />
@@ -194,6 +195,13 @@
     </Compile>
     <Compile Include="Formulario\Titulacion\PropuestaTitulacionProrroga.aspx.designer.cs">
       <DependentUpon>PropuestaTitulacionProrroga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\ProrrogaGratuita.aspx.cs">
+      <DependentUpon>ProrrogaGratuita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario\Titulacion\ProrrogaGratuita.aspx.designer.cs">
+      <DependentUpon>ProrrogaGratuita.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formulario\Titulacion\ProrrogaPagada.aspx.cs">
       <DependentUpon>ProrrogaPagada.aspx</DependentUpon>
