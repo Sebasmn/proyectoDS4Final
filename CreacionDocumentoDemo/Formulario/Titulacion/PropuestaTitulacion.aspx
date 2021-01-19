@@ -1,11 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"   CodeBehind="PropuestaTitulacion.aspx.cs"   Inherits="CreacionDocumentoDemo.Formulario.Titulacion.PropuestaTitulacion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PropuestaTitulacion.aspx.cs" Inherits="CreacionDocumentoDemo.Formulario.Titulacion.PropuestaTitulacion" %>
+
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Prácticas Prepofesionales</title>
+    <title>Propuesta Titulación</title>
      <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
 
     <style type="text/css">
@@ -24,19 +25,98 @@
             padding: 2px;
             font-size: 15px;
         }
+        p.MsoNormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	}
+p.MsoNoSpacing
+	{margin:0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;
+	}
+p.MsoHeader
+	{margin:0cm;
+	tab-stops:center 212.6pt right 425.2pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	}
+p.MsoBodyTextFirstIndent2
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:18.0pt;
+	text-indent:18.0pt;
+	line-height:106%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	}
+p.MsoBodyText
+	{margin:0cm;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;
+	}
         .auto-style1 {
-            font-family: Cambria, serif;
-            font-size: 9pt;
+            text-align: justify;
+            text-indent: -21.25pt;
+            line-height: 106%;
+            font-size: 11.0pt;
+            font-family: Calibri, sans-serif;
+            margin-left: 36.0pt;
+            margin-right: 0cm;
+            margin-top: 0cm;
+            margin-bottom: 8.0pt;
         }
         .auto-style2 {
-            font-family: Cambria, serif;
+            text-align: justify;
+            line-height: 106%;
+            font-size: 11.0pt;
+            font-family: Calibri, sans-serif;
+            margin-left: 36.0pt;
+            margin-right: 0cm;
+            margin-top: 0cm;
+            margin-bottom: 0cm;
         }
         .auto-style3 {
+            text-align: justify;
+            text-indent: -18.0pt;
+            line-height: 106%;
+            font-size: 11.0pt;
+            font-family: Calibri, sans-serif;
+            margin-left: 36.0pt;
+            margin-right: 0cm;
+            margin-top: 0cm;
+            margin-bottom: 0cm;
+        }
+        .auto-style4 {
+            line-height: 106%;
+            font-size: 11.0pt;
+            font-family: Calibri, sans-serif;
+            margin-left: 36.0pt;
+            margin-right: 0cm;
+            margin-top: 0cm;
+            margin-bottom: 0cm;
+        }
+        .auto-style5 {
+            text-align: justify;
+            line-height: 106%;
+            font-size: 11.0pt;
+            font-family: Calibri, sans-serif;
+            margin-left: 36.0pt;
+            margin-right: 0cm;
+            margin-top: 0cm;
+            margin-bottom: 8.0pt;
+        }
+        .auto-style6 {
             -webkit-appearance: none;
-            text-align: center;
+            text-align: left;
+            font-size: 12px;
+            font-weight: bold;
             padding-left: 2px;
             padding-right: 2px;
             box-shadow: none;
+            border-bottom: 1px solid #795B3B;
             border-left-style: none;
             border-left-color: inherit;
             border-left-width: 0px;
@@ -46,247 +126,460 @@
             border-top-style: none;
             border-top-color: inherit;
             border-top-width: 0px;
-            border-bottom-style: solid;
-            border-bottom-color: inherit;
-            border-bottom-width: 1px;
+        }
+        .auto-style7 {
+            text-align: justify;
+            text-indent: -18.0pt;
+            line-height: 106%;
+            font-size: 11.0pt;
+            font-family: Calibri, sans-serif;
+            margin-left: 36.0pt;
+            margin-right: 0cm;
+            margin-top: 0cm;
+            margin-bottom: 8.0pt;
         }
         </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-        &nbsp;&nbsp;&nbsp;
+    <form id="form2" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:Panel ID="menuOpciones" runat="server">
+            <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante"   CssClass="btnBuscar" OnClick="btnBuscar_Click"  />
+
+            <asp:Button ID="btnNumeroResolucion" runat="server" Text="Generar Número Resolución" 
+            CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click"  />
+        </asp:Panel>
         <br />
         <br />
         <br />
         <div id="documento">
-            <asp:TextBox ID="txtFechaHeader"  placeholder="Ambato,21 de Febrero del 2020" runat="server" CssClass="noBorder" Height="16px" Width="233px"></asp:TextBox>
-            
-            <p class="MsoNormal">
-                <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma">Resolución <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
-mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+            <p class="MsoBodyText">
+                  <asp:TextBox ID="txtFecha" runat="server" CssClass="auto-style6" placeholder="Ambato,15 de Enero del 2021" Height="16px" Width="191px"></asp:TextBox>
+              </p>
+            <p class="MsoBodyText">
+                <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma">Resolución
+                <span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1"> <span style="font-size:
+10.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;color:black;
+mso-themecolor:text1"><span style="font-size:9.0pt;
+line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span lang="ES" style="font-size:
+9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:TextBox ID="txtAnio1" runat="server" CssClass="noBorder" placeholder="0209"></asp:TextBox>
-                </span></span></span>-P-CD-FISEI-UTA-2021</span></p>
-            <p class="MsoNormal">
-                <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma">Ingeniero Mg.<o:p></o:p></span></p>
-            <p class="MsoNormal">
-                <o:p></o:p>
-                <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma">
-                <asp:DropDownList ID="ddlCoordinador" runat="server" CssClass="noBorder">
-                </asp:DropDownList>
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtSecuencia" runat="server" CssClass="noBorder" Height="16px" placeholder="0209" Width="53px"></asp:TextBox>
+                  </span></span></span></span></span></span>
+                </span></span>
+                -P-CD-FISEI-UTA-<span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1"><span lang="ES" style="font-size:
+10.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;color:black;
+mso-themecolor:text1"><span style="font-size:9.0pt;
+line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtAnio" runat="server" CssClass="noBorder" placeholder="2020"></asp:TextBox>
+                  </span></span></span></span>
+                </span></span>
                 </span>
             </p>
-              <p class="MsoNormal">
-                <o:p><b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">PRESIDENTE DE LA UNIDAD DE TITULACIÓN<o:p></o:p></span></b></o:p></p>
+            <p class="MsoBodyText">
+                <span style="font-size:9.0pt;
+line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;
+mso-ansi-language:ES"><o:p>&nbsp;</o:p></span></p>
+            <p class="MsoBodyText">
+                <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma">Ingeniero<o:p></o:p></span></p>
+            <p class="MsoBodyText">
+                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
+                      <asp:TextBox ID="txtPresidente" runat="server" CssClass="noBorder" Height="16px" placeholder="Carlos Sánchez" Width="233px"></asp:TextBox>
+                      </span>
+                  </p>
+            <p class="MsoBodyText">
+                <b style="mso-bidi-font-weight:
+normal"><span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">PRESIDENTE DE LA UNIDAD DE TITULACIÓN<o:p></o:p></span></b></p>
+            <p class="MsoBodyText">
+                <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma">FACULTAD DE </span><span style="font-size:9.0pt;line-height:106%;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;mso-ansi-language:ES">INGENIERÍA EN SISTEMAS, ELECTRÓNICA E INDUSTRIAL</span><span lang="ES-EC" style="font-size:
+9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><o:p></o:p></span></p>
+            <p class="MsoBodyText">
+                <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma">Presente.-<o:p></o:p></span></p>
+            <p class="MsoBodyText">
+                <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma"><o:p>&nbsp;</o:p></span></p>
+            <p class="MsoBodyText">
+                <span lang="ES-EC" style="font-size:9.0pt;
+line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><o:p>&nbsp;</o:p></span></p>
+            <p class="MsoBodyText">
+                <span lang="ES-EC" style="font-size:9.0pt;
+line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">De mi consideración:<o:p></o:p></span></p>
+            <p class="MsoBodyText">
+                <span lang="ES-EC" style="font-size:9.0pt;
+line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><o:p>&nbsp;</o:p></span></p>
+            <p class="MsoBodyText">
+                <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">Consejo Directivo de la Facultad de Ingeniería en Sistemas, Electrónica e Industrial, en Sesión
+                <span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">
+                <asp:DropDownList ID="ddlSesion" runat="server">
+                </asp:DropDownList>
+                </span></span>
+            &nbsp;de fecha</span><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"> <span lang="ES-EC" style="font-size: 9.0pt; line-height: 106%; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma">
+                <span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">
+                <asp:DropDownList ID="ddlNombreDia" runat="server">
+                </asp:DropDownList>
+                </span></span>
+                </span>&nbsp;<span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1"><asp:DropDownList ID="ddlNumeroDia" runat="server">
+                </asp:DropDownList>
+                </span></span>
+                </span><span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">&nbsp;de
+                <span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">
+                <asp:DropDownList ID="ddlMes" runat="server">
+                </asp:DropDownList>
+                </span></span>
+            &nbsp;del <span lang="ES-EC" style="font-size: 9.0pt; line-height: 106%; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma">
+                <span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1"><span lang="ES" style="font-size:
+10.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;color:black;
+mso-themecolor:text1"><span style="font-size:9.0pt;
+line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtAnio0" runat="server" CssClass="auto-style6" placeholder="2020" Height="16px" Width="58px"></asp:TextBox>
+                  </span></span></span></span>
+                </span></span>
+                </span>, conoce el Acuerdo</span><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">
+                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
+                      <asp:TextBox ID="txtAcuerdo" runat="server" CssClass="noBorder" Height="16px" placeholder="UTA-UVS-FISEI-2020-0073-M" Width="233px"></asp:TextBox>
+                      </span>
+                  </span><span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">&nbsp;, de fecha <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">
+                <span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">
+                <asp:DropDownList ID="ddlMes0" runat="server">
+                </asp:DropDownList>
+                </span></span>
+                </span>&nbsp;<span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"><span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1"><asp:DropDownList ID="ddlNumeroDia0" runat="server">
+                </asp:DropDownList>
+                </span></span>
+                </span></span><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"> <span style="mso-bookmark:_Hlk61627263"><span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">,</span></span></span></span><span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"> <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">
+                <span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1"><span lang="ES" style="font-size:
+10.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;color:black;
+mso-themecolor:text1"><span style="font-size:9.0pt;
+line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtAnio1" runat="server" CssClass="auto-style6" placeholder="2020" Height="16px" Width="58px"></asp:TextBox>
+                  </span></span></span></span>
+                </span></span>
+                </span>, suscrito por el 
+                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
+                      <asp:TextBox ID="txtPresidente0" runat="server" CssClass="noBorder" Height="16px" placeholder="Ingeniero Mg. Carlos Sánchez" Width="233px"></asp:TextBox>
+                      </span>
+                  , Presidente de la Unidad de Titulación de la Facultad, quien sugiere se apruebe la Propuesta de Trabajo de Titulación bajo la Modalidad <b>Proyecto de Investigación</b> presentado por el/la señor/ita</span><span style="font-size:9.0pt;line-height:106%;
+font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:&quot;Arial Unicode MS&quot;;
+mso-bidi-font-family:Tahoma"> </span><span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">  
+                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
+                      <asp:TextBox ID="txtNombreEstu" runat="server" CssClass="noBorder" Height="16px" placeholder="Seleccionar estudiante" Width="233px"></asp:TextBox>
+                      </span>
+                  </span><span lang="ES-EC" style="font-size:9.0pt;line-height:106%;
+font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:&quot;Arial Unicode MS&quot;;
+mso-bidi-font-family:Tahoma"> <b style="mso-bidi-font-weight:normal">,</b></span><span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"> estudiante de la Carrera de 
+                </span> 
+                <span style="mso-bookmark:_Hlk61627263"><span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">
+                <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"> &nbsp;</span></span><span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"><asp:DropDownList ID="ddlCarrera" runat="server">
+                </asp:DropDownList>
+                </span></span></span><span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"> . Al respecto, RESUELVE:</span><span style="font-size:9.0pt;line-height:106%;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;mso-ansi-language:ES"><o:p></o:p></span></p>
             <p class="MsoNormal">
-                <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
-&quot;Arial Unicode MS&quot;;mso-bidi-font-weight:bold">FACULTAD DE INGENIERÍA EN SISTEMAS, ELECTRÓNICA E INDUSTRIAL<o:p></o:p></span></p>
-            <p class="auto-style1">
-                <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">Presente.-</span></p>
+                <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"><o:p>&nbsp;</o:p></span></p>
+            <p class="auto-style1" style="mso-add-space: auto; mso-list: l0 level1 lfo1">
+                <![if !supportLists]><span lang="ES-EC" style="font-size:9.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol"><span style="mso-list:Ignore">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><b style="mso-bidi-font-weight:normal"><span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma">APROBAR </span></b><span lang="ES-EC" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">LA PROPUESTA DE TRABAJO DE TITULACIÓN: <b style="mso-bidi-font-weight:normal">“<span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtTema" runat="server" CssClass="auto-style6" Height="16px" placeholder="Ingresar tema de titulación" Width="533px"></asp:TextBox>
+                      </span>
+                  </span>”, </b></span><span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">PRESENTADO POR EL/LA SEÑOR/ITA <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">  
+                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
+                      <asp:TextBox ID="txtNombreEstu0" runat="server" CssClass="noBorder" Height="16px" placeholder="Seleccionar estudiante" Width="233px"></asp:TextBox>
+                      </span>
+                  </span>, ESTUDIANTE DE DÉCIMO SEMESTRE EN EL PERÍODO ACADÉMICO <span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"> <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">  
+                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
+                      <asp:TextBox ID="txtPeriodo" runat="server" CssClass="noBorder" Height="16px" placeholder="SEPTIEMBRE/2019-FEBRERO/2020" Width="233px"></asp:TextBox>
+                      </span>
+                  </span></span>&nbsp;DE LA CARRERA DE</span><span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"> <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">  
+                <span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">
+                <asp:DropDownList ID="ddlCarrera0" runat="server">
+                </asp:DropDownList>
+                </span></span></span></span><span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">, BAJO LA MODALIDAD DE </span><b style="mso-bidi-font-weight:normal"><span lang="ES-EC" style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">PROYECTO DE INVESTIGACIÓN</span><span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">,</span></b><span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"> </span><span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">AUTORIZANDO EL REGISTRO CORRESPONDIENTE EN LA CARPETA ESTUDIANTIL.<o:p></o:p></span></p>
             <p class="MsoNormal">
-                <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">De mi consideración:</span></p>
-            <p class="auto-style1">
-                <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">Consejo Directivo de la Facultad de Ingeniería en Sistemas, Electrónica e Industrial, en Sesión</span><span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp; </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:DropDownList ID="ddlSesion" runat="server" CssClass="noBorder">
+                <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-fareast-font-family:&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><o:p>&nbsp;</o:p></span></p>
+            <p class="MsoNoSpacing">
+                <![if !supportLists]><span lang="ES-TRAD" style="font-size:9.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol"><span style="mso-list:Ignore">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><b style="mso-bidi-font-weight:normal"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma">DESIGNAR,</span></b><span lang="ES-TRAD" style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> COMO TUTOR DEL PROYECTO DE INVESTIGACIÓN AL <b style="mso-bidi-font-weight:normal"><span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">  
+                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
+                      <asp:TextBox ID="txtTutor" runat="server" CssClass="noBorder" Height="16px" placeholder="INGENIERO FRANKLIN SALAZAR" Width="233px"></asp:TextBox>
+                      </span>
+                  </span>.<o:p></o:p></b></span></p>
+            <p class="auto-style2" style="mso-add-space: auto;">
+                <b style="mso-bidi-font-weight:normal"><span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><o:p>&nbsp;</o:p></span></b></p>
+            <p class="auto-style3" style="mso-add-space: auto; mso-list: l1 level1 lfo2">
+                <![if !supportLists]><span lang="ES-EC" style="font-size:9.0pt;line-height:105%;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol"><span style="mso-list:Ignore">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><b style="mso-bidi-font-weight:normal"><span lang="ES-EC" style="font-size:9.0pt;line-height:105%;font-family:&quot;Cambria&quot;,serif;
+mso-fareast-font-family:&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">INDICAR, </span></b><span lang="ES-EC" style="font-size:9.0pt;line-height:105%;font-family:
+&quot;Cambria&quot;,serif;mso-fareast-font-family:&quot;Arial Unicode MS&quot;;mso-bidi-font-family:
+Tahoma">AL ESTUDIANTE QUE DEBE CONCLUIR Y APROBAR LA OPCIÓN DE TITULACIÓN ESCOGIDA EN EL PERÍODO ACADÉMICO <span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"> <span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"> <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">  
+                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
+                      <asp:TextBox ID="txtPeriodo0" runat="server" CssClass="noBorder" Height="16px" placeholder="SEPTIEMBRE/2019-FEBRERO/2020" Width="233px"></asp:TextBox>
+                      </span>
+                  </span></span></span>. CASO CONTRARIO SE ACOGERÁ A LO DISPUESTO EN </span><span lang="ES-EC" style="font-size:9.0pt;
+line-height:105%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">LA RESOLUCIÓN <span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"> <span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"> <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">  
+                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
+                      <asp:TextBox ID="txtResolucion" runat="server" CssClass="noBorder" Height="16px" placeholder="CAU-P-080-2020" Width="233px"></asp:TextBox>
+                      </span>
+                  </span></span></span>, DE FECHA <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"> <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">
+                <span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">
+                <asp:DropDownList ID="ddlMes1" runat="server">
                 </asp:DropDownList>
-                </span><span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp; </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;del día</span><span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:DropDownList ID="ddlDia" runat="server" CssClass="noBorder">
+                </span></span>
+                </span></span>&nbsp;<span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"><span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1"><asp:DropDownList ID="ddlNumeroDia1" runat="server">
                 </asp:DropDownList>
-                </span><span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;de </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:DropDownList ID="ddlMes" runat="server" CssClass="noBorder">
+                </span></span>
+                </span>, <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">
+                <span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1"><span lang="ES" style="font-size:
+10.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;color:black;
+mso-themecolor:text1"><span style="font-size:9.0pt;
+line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtAnio2" runat="server" CssClass="auto-style6" placeholder="2020" Height="16px" Width="58px"></asp:TextBox>
+                  </span></span></span></span>
+                </span></span>
+                </span>, EMITIDA POR CONSEJO ACADÉMICO UNIVERSITARIO DE LA UNIVERSIDAD TÉCNICA DE AMBATO, Y AL MEMORANDO <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">  
+                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
+                      <asp:TextBox ID="txtMemorando" runat="server" CssClass="noBorder" Height="16px" placeholder="UTA-DAC-2020-0084-M" Width="233px"></asp:TextBox>
+                      </span>
+                  </span>, DE FECHA</span><span style="font-size:9.0pt;
+line-height:105%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"><span lang="ES-EC" style="font-size:9.0pt;
+line-height:105%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1"><asp:DropDownList ID="ddlNumeroDia2" runat="server">
                 </asp:DropDownList>
+                </span></span>
+                </span><span style="mso-bookmark:_Hlk61627263"><span style="font-size:9.0pt;
+line-height:105%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">&nbsp;</span></span></span></span></span><span lang="ES-EC" style="font-size:9.0pt;
+line-height:105%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">DE <span lang="ES-EC" style="font-size:9.0pt;
+line-height:105%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"> 
+                <span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">
+                <asp:DropDownList ID="ddlMes2" runat="server">
+                </asp:DropDownList>
+                </span></span>
+                </span></span>&nbsp;DE
+                <span style="mso-bookmark:_Hlk61627263"><span lang="ES-EC" style="font-size:9.0pt;
+line-height:105%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">
+                <span style="font-size:9.0pt;
+line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span lang="ES-EC" style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1"><span lang="ES" style="font-size:
+10.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;color:black;
+mso-themecolor:text1"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtAnio3" runat="server" CssClass="auto-style6" placeholder="2020" Height="16px" Width="58px"></asp:TextBox>
+                  </span></span></span>
+                </span></span>
+                </span></span></span>
                 </span>
-                <span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;</span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">del
-                <asp:TextBox ID="txtAnio" runat="server" CssClass="noBorder" placeholder="Año"></asp:TextBox>
-                </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">, conoc</span><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">e&nbsp;&nbsp;&nbsp; </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">&nbsp;el acuerdo</span><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">&nbsp;<span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtAcuerdo" runat="server"  CssClass="noBorder" placeholder="Ejm: 1363-CAF-FISEI-2019 "></asp:TextBox>
-                </span>&nbsp;</span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">, de fecha <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:DropDownList ID="ddlMes0" runat="server" CssClass="noBorder">
-                </asp:DropDownList>
-                </span></span><span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">&nbsp; </span></span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:DropDownList ID="ddlDia0" runat="server" CssClass="noBorder">
-                </asp:DropDownList>
-                </span></span><span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">&nbsp;</span></span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">, <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:TextBox ID="txtAnio0" runat="server" CssClass="noBorder" placeholder="Año" Width="30px"></asp:TextBox>
-                </span>, </span><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">suscrito por el</span><span style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">/la</span><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> Ingeniero</span><span style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">/a</span><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:TextBox ID="txtPresidente" runat="server" CssClass="noBorder" placeholder="Ejm: Ing Julio Cuji "></asp:TextBox>
-                , Presidente de 
-                </span><span style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                la 
-                Unidad de Titulación de esta Unidad Académica, quien sugiere se apruebe la Propuesta de Trabajo de Titulación bajo la Modalidad&nbsp; <b><b style="mso-bidi-font-weight:normal">Proyecto de Investigación</b></b> presentado por
-                </span><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                el/la señor/ita<asp:TextBox ID="txtNombreEstu1" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Javier Chavez Loor" ToolTip="Busque un estudiante" Width="223px"></asp:TextBox>
-                </span><span style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;</span><b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">, </span></b><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">estudiante de la </span><span style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">Ca</span><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">rrera de</span><span style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> </span><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;<span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtCarrera1" runat="server" CssClass="noBorder" Height="16px" placeholder="Ejm:Ing Sistemas Comp E Informáticos" Width="234px"></asp:TextBox>
-                </span>. Al respecto, RE</span><span style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">SUELVE</span><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">:</span></p>
-             <p>
-            </p>
-          
-            </span>
-            <p class="MsoNormal">
-                <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">* APROBAR, </span></b>
-                LA PROPUESTA DE TRABAJO DE TITULACIÓN:<span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;"> "<span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;"><asp:TextBox ID="txtTemaTesis" placeholder="Ejm:Ing Sistemas Comp E Informáticos" runat="server" CssClass="noBorder" Height="16px" Width="352px"></asp:TextBox>
-                </span>&quot;, PRESENTADO POR EL/LA SEÑOR/ITA <span lang="ES-TRAD" style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma">
-                <asp:TextBox ID="txtNombreEstu2" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Javier Chavez Loor" ToolTip="Busque un estudiante" Width="223px"></asp:TextBox>
-                </span>&nbsp;, ESTUDIANTE DE <span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;"> <span lang="ES-TRAD" style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma">
-                <asp:TextBox ID="txtNumeroSemestre" runat="server" CssClass="auto-style3" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Javier Chavez Loor" ToolTip="Busque un estudiante" Width="169px"></asp:TextBox>
-                </span> <span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma">
-                &nbsp;SEMESTRE EN EL PERÍODO ACADÉMICO</span></span> <span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;"> 
-                <asp:TextBox ID="txtPerAca" placeholder="Ejm:Ing Sistemas Comp E Informáticos" runat="server" CssClass="auto-style3" Height="16px" Width="297px"></asp:TextBox>
-                &nbsp;DE LA </span>CARRERA DE
-                <asp:TextBox ID="txtCarrera2" placeholder="Ejm:Ing Sistemas Comp E Informáticos" runat="server" CssClass="noBorder" Height="16px" Width="352px"></asp:TextBox>
-                &nbsp;, BAJO LA MODALIDAD DE
-                <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">PROYECTO DE INVESTIGACIÓN</span></b>, AUTORIZANDO EL RESGISTRO CORRESPONDIENTE EN LA CARPETA ESTUDIANTIL.</span><p class="MsoNormal">
-                        <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:
-106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">* DESIGNAR, </span></b><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma">COMO TUTOR DEL PROYECTO DE INVESTIGACIÓN AL <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:
-106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">INGENIERO <span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;"> 
-                <asp:TextBox ID="txtNombreIngeniero" placeholder="Ejm:Ing Sistemas Comp E Informáticos" runat="server" CssClass="auto-style3" Height="17px" Width="247px"></asp:TextBox>
-                &nbsp;.</span></span></b></span><p class="MsoNormal">
-                        <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:
-106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">* INDICAR, </span></b><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma">AL ESTUDIANTE QUE DEBE CONCLUIR Y APROBAR LA OPCIÓN DE TITULACIÓN ESCOGIDA EN EL PERÍODO ACADÉMICO&nbsp; <span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;"> <span lang="ES-TRAD" style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma">
-                <asp:TextBox ID="txtPeriodoAcademico" runat="server" CssClass="auto-style3" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Javier Chavez Loor" ToolTip="Ingrese Período académico" Width="273px"></asp:TextBox>
-                </span> <span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma">
-                &nbsp;. POR LO QUE, SE ACOGERÁ A LO DISPUESTO EN LA RESOLUCIÓN <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma"> <span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;"> <span lang="ES-TRAD" style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma">
-                <asp:TextBox ID="txtCodigoResolucion" runat="server" CssClass="auto-style3" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Javier Chavez Loor" ToolTip="Ingrese número y código de resolución" Width="273px"></asp:TextBox>
-                </span>&nbsp;, DE FECHA <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:DropDownList ID="ddlMes1" runat="server" CssClass="noBorder">
-                </asp:DropDownList>
-                </span>
-                        <span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                &nbsp;<span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:DropDownList ID="ddlDia1" runat="server" CssClass="noBorder">
-                </asp:DropDownList>
-                </span>&nbsp;<span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">, </span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"> <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:TextBox ID="txtAnio2" runat="server" CssClass="noBorder" placeholder="Año" Width="30px"></asp:TextBox>
-                </span> </span>&nbsp;, EMITIDA POR CONSEJO ACADÉMICO UNIVERSITARIO DE LA UNIVERSIDAD TÉCNICA DE AMBATO, Y AL MEMORANDO <span lang="ES-TRAD" style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma">
-                <asp:TextBox ID="txtMemorando" runat="server" CssClass="auto-style3" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Javier Chavez Loor" ToolTip="Ingrese código de memorando" Width="273px"></asp:TextBox>
-                </span>, DE FECHA&nbsp; <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:DropDownList ID="ddlDia2" runat="server" CssClass="noBorder">
-                </asp:DropDownList>
-                </span>&nbsp;DE <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:DropDownList ID="ddlMes2" runat="server" CssClass="noBorder">
-                </asp:DropDownList>
-                </span>
-                &nbsp;DE&nbsp; <span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"> <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:TextBox ID="txtAnio3" runat="server" CssClass="noBorder" placeholder="Año" Width="30px"></asp:TextBox>
-                </span> </span><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">&nbsp;, SUSCRITO POR <span lang="ES-TRAD" style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma">
-                <asp:TextBox ID="txtPersonaEncargada" runat="server" CssClass="auto-style3" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Javier Chavez Loor" ToolTip="Ingrese " Width="224px"></asp:TextBox>
-                </span>&nbsp;, ANALISTA JURÍDICA DE LA DIRECCIÓN ACADÉMICA DE LA UNIVERSIDAD TÉCNICA DE AMBATO</span></span></span></span></span></span>.</span><p class="MsoNormal">
-                        <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:
-106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">* INDICAR, </span></b><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma">AL INTERESADO/A QUE DEBERÁ PRESENTAR LOS INFORMES MENSUALES EN LA SECRETARÍA DE LA UNIDAD DE TITULACIÓN HASTA QUE CONCLUYA LA MISMA.&nbsp;&nbsp;&nbsp; </span>
-            <p class="MsoNormal">
-                        <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:
-106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">* COMUNICAR, </span></b><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma">QUE LOS DOCUMENTOS ORIGINALES CITADOS EN EL PÁRRAFO QUE ANTECEDE REPOSAN EN LOS ARCHIVOS DE LA SECRETARÍA DE LA UNIDAD DE TITULACIÓN DE LA FISEI.&nbsp;&nbsp;&nbsp; </span><p class="MsoNormal">
-                        &nbsp;<p class="MsoNormal">
-                            <span style="font-size:9.0pt;line-height:106%;
-font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
-minor-latin;mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC;mso-fareast-language:
-EN-US;mso-bidi-language:AR-SA">Atentamente,<br />
-                            <br />
-                            </span>
-                            <p class="MsoNormal">
-                                <span style="font-size:9.0pt;line-height:106%;
-font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
-minor-latin;mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC;mso-fareast-language:
-EN-US;mso-bidi-language:AR-SA">
-                                <br />
-                                <p class="MsoNormal">
-                                    <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma;"><span style="mso-bidi-font-weight:bold">
-                                    <asp:DropDownList ID="ddlPresidente" runat="server" CssClass="noBorder">
-                                    </asp:DropDownList>
-                                    &nbsp;&nbsp;&nbsp;
-                                    </span></span>
-                                    <p class="auto-style1" style="tab-stops: center 212.6pt right 425.2pt;">
-                                        <span style="font-size:9.0pt;
+                <span style="mso-bookmark:_Hlk61627263"><span style="font-size:9.0pt;
+line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span style="font-size:9.0pt;
+line-height:105%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">
+                <span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1"><span style="font-size:
+10.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;color:black;
+mso-themecolor:text1"><span style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;
+line-height:105%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">,</span></span></span></span></span></span></span></span></span><span lang="ES-EC" style="font-size:9.0pt;
+line-height:105%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> SUSCRITO POR LA AB. FABIOLA COPO, ANALISTA JURÍDICA DE LA DIRECCIÓN ACADÉMICA DE LA UNIVERSIDAD TÉCNICA DE AMBATO.<b style="mso-bidi-font-weight:normal"><o:p></o:p></b></span></p>
+            <p class="auto-style4" style="mso-add-space: auto">
+                <b style="mso-bidi-font-weight:normal"><span lang="ES-EC" style="font-size:
+9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><o:p>&nbsp;</o:p></span></b></p>
+            <p class="auto-style7" style="mso-add-space: auto; mso-list: l0 level1 lfo1">
+                <![if !supportLists]><span lang="ES-EC" style="font-size:9.0pt;line-height:105%;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol"><span style="mso-list:Ignore">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><b style="mso-bidi-font-weight:normal"><span lang="ES-EC" style="font-size:9.0pt;line-height:105%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">AUTORIZAR, </span></b><span lang="ES-EC" style="font-size:9.0pt;line-height:105%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma;mso-bidi-font-weight:bold">LA SOLICITUD DE </span><b style="mso-bidi-font-weight:
+normal"><span lang="ES-EC" style="font-size:9.0pt;line-height:105%;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">PRÓRROGA GRATUITA</span></b><span lang="ES-EC" style="font-size:9.0pt;line-height:105%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"> PARA EL PERÍODO ACADÉMICO</span><span style="font-size:9.0pt;line-height:105%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"> </span><b style="mso-bidi-font-weight:normal"><span lang="ES-EC" style="font-size:9.0pt;line-height:105%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma"><span lang="ES-EC" style="font-size:9.0pt;line-height:105%;font-family:
+&quot;Cambria&quot;,serif;mso-fareast-font-family:&quot;Arial Unicode MS&quot;;mso-bidi-font-family:
+Tahoma"> <span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"> <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">  
+                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
+                      <asp:TextBox ID="txtPeriodo1" runat="server" CssClass="noBorder" Height="16px" placeholder="SEPTIEMBRE/2019-FEBRERO/2020" Width="233px"></asp:TextBox>
+                      </span>
+                  </span></span> </span>.<o:p></o:p></span></b></p>
+            <p class="auto-style3" style="mso-add-space: auto; mso-pagination: none; mso-list: l1 level1 lfo2">
+                <![if !supportLists]><span lang="ES-EC" style="font-size:9.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol"><span style="mso-list:Ignore">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><b style="mso-bidi-font-weight:normal"><span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma">INDICAR, </span></b><span lang="ES-EC" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">AL INTERESADO/A QUE DEBERÁ PRESENTAR LOS INFORMES MENSUALES EN LA SECRETARÍA DE LA UNIDAD DE TITULACIÓN HASTA QUE CONCLUYA LA MISMA.<o:p></o:p></span></p>
+            <p class="auto-style5" style="mso-add-space: auto; mso-pagination: none">
+                <span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="mso-spacerun:yes">&nbsp;</span><o:p></o:p></span></p>
+            <p class="MsoNoSpacing">
+                <span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><o:p>&nbsp;</o:p></span></p>
+            <p class="MsoNoSpacing">
+                <![if !supportLists]><span lang="ES-TRAD" style="font-size:9.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol"><span style="mso-list:Ignore">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><b style="mso-bidi-font-weight:normal"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma">COMUNICAR,</span></b><span lang="ES-TRAD" style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> QUE LOS DOCUMENTOS ORIGINALES CITADOS EN EL PÁRRAFO QUE ANTECEDE REPOSAN EN LOS ARCHIVOS DE LA SECRETARÍA DE LA UNIDAD DE TITULACIÓN DE LA FISEI.<o:p></o:p></span></p>
+            <p class="MsoNoSpacing">
+                <span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><o:p>&nbsp;</o:p></span></p>
+            <p class="MsoBodyTextFirstIndent2">
+                <span lang="ES-EC" style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">Atentamente,<o:p></o:p></span></p>
+            <p class="MsoBodyTextFirstIndent2">
+                <span lang="ES-EC" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;mso-bidi-font-weight:
-bold">PRESIDENTA</span><p class="MsoNormal">
-                                            <span style="font-size:7.0pt;mso-bidi-font-size:9.0pt;
-line-height:115%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;
-mso-bidi-font-weight:bold">Cc:<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma;"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif">
-                                            <asp:TextBox ID="txtCarrera4" runat="server" CssClass="noBorder" Height="17px" placeholder="Ejm: Ing. Julio Jordán" Width="116px"></asp:TextBox>
-                                            </span></span></span>
-                                            <p class="MsoNormal">
-                                                <span style="font-size: 8.0pt; font-family: &quot;Tahoma&quot;,sans-serif">(Secretaria Unidad de Titulación anexo carpeta con documentación original completa) </span><span style="font-size: 8.0pt; mso-bidi-font-size: 12.0pt; font-family: &quot;Tahoma&quot;,sans-serif"><span style="mso-spacerun: yes"><span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;"> 
-                <asp:TextBox ID="txtCarrera5" placeholder="Ejm:Ing Sistemas Comp E Informáticos" runat="server" CssClass="auto-style3" Height="16px" Width="199px"></asp:TextBox>
-                </span>&nbsp;&nbsp;(Secretaria de la Carrera de Ingeniería en Sistemas Computacionales e Informáticos)</span></span></p>
-            <p class="MsoNormal">
-                                <span style="font-size:9.0pt;line-height:106%;
-font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
-minor-latin;mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC;mso-fareast-language:
-EN-US;mso-bidi-language:AR-SA">
-                                                <span style="font-size: 8.0pt; mso-bidi-font-size: 12.0pt; font-family: &quot;Tahoma&quot;,sans-serif"><span style="mso-spacerun: yes"><span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;"> 
-                <asp:TextBox ID="txtCarrera6" placeholder="Ejm:Ing Sistemas Comp E Informáticos" runat="server" CssClass="auto-style3" Height="16px" Width="199px"></asp:TextBox>
-                                                -Tutor</span></span></span></span></p>
-                                            <p class="auto-style2">
-                                                <span style="font-size: 8.0pt; mso-bidi-font-size: 12.0pt; font-family: &quot;Tahoma&quot;,sans-serif; mso-fareast-font-family: &quot;Times New Roman&quot;; mso-ansi-language: ES; mso-fareast-language: ES; mso-bidi-language: AR-SA">Estudiante</span></p>
-                                    </p>
-                                </p>
-                                </span>
-                            </p>
-                        </p>
-                    </p>
-                </p>
+bold"><o:p>&nbsp;</o:p></span></p>
+            <p class="MsoBodyTextFirstIndent2">
+                <span lang="ES-EC" style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;mso-bidi-font-weight:
+bold"><o:p>&nbsp;</o:p></span></p>
+            <p class="MsoBodyTextFirstIndent2">
+                <span lang="ES-EC" style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;mso-bidi-font-weight:
+bold"><o:p>&nbsp;</o:p></span></p>
+            <p class="MsoBodyTextFirstIndent2">
+                <span lang="ES-EC" style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;mso-bidi-font-weight:
+bold"><o:p>&nbsp;</o:p></span></p>
+            <p class="MsoHeader">
+                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
+                      <asp:TextBox ID="txtPresidente1" runat="server" CssClass="noBorder" Height="16px" placeholder="Ing. Pilar Urrutia, Mg." Width="233px"></asp:TextBox>
+                      </span>
+                  </p>
+            <p class="MsoHeader">
+                <span lang="ES-EC" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma;mso-bidi-font-weight:bold">PRESIDENTA <o:p></o:p></span>
             </p>
+            <p class="MsoHeader">
+                <span lang="ES-EC" style="font-size:7.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>Cc:<span style="mso-bidi-font-weight:bold"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
+                      <asp:TextBox ID="txtSecretariaU" runat="server" CssClass="noBorder" Height="16px" placeholder="Ab. Elena Arcos" Width="233px"></asp:TextBox>
+                      </span>
+                </span>&nbsp;<span style="mso-spacerun:yes">&nbsp;</span>(Secretaria Unidad de Titulación anexo carpeta con documentación original completa)<o:p></o:p></span></span></p>
+            <p class="MsoNoSpacing">
+                <span lang="ES-TRAD" style="font-size:7.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;
+mso-bidi-font-weight:bold"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-bidi-font-weight:bold"><span lang="ES-EC" style="font-size:7.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"><span style="mso-spacerun:yes"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtSecretariaCarrera" runat="server" CssClass="noBorder" Height="16px" placeholder="Lcda. Gabriela Flores" Width="233px"></asp:TextBox>
+                      </span>
+                </span></span></span></span>
+                <span style="mso-bidi-font-weight:bold"><span style="mso-spacerun:yes">
+                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
+                <span style="font-size:7.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">
+                <span style="font-size:7.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;
+mso-bidi-font-weight:bold">&nbsp;</span></span></span></span></span><span lang="ES-TRAD" style="font-size:7.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;
+mso-bidi-font-weight:bold">(Secretaria de la Carrera de Ingeniera en Sistemas Computacionales e Informáticos)<span style="mso-spacerun:yes">&nbsp; </span><o:p></o:p></span>
+            </p>
+            <p class="MsoNoSpacing">
+                <span lang="ES-TRAD" style="font-size:7.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;
+mso-bidi-font-weight:bold"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;<b style="mso-bidi-font-weight:normal"><span lang="ES-TRAD" style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtTutor0" runat="server" CssClass="noBorder" Height="16px" placeholder="INGENIERO FRANKLIN SALAZAR" Width="233px"></asp:TextBox>
+                  </span>
+                      </span>
+                  </span></b> </span> <b style="mso-bidi-font-weight:normal">  
+                      <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
+                <span style="font-size:7.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;
+mso-bidi-font-weight:bold"><span style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"> <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">  
+                      &nbsp;</span></span></span></span></b><span lang="ES-TRAD" style="font-size:7.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma">-Tutor<o:p></o:p></span></p>
+            <p class="MsoNormal">
+                <span lang="ES-EC" style="font-size:7.0pt;line-height:106%;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Estudiante</span><span lang="ES-EC"><o:p></o:p></span></p>
+            <p class="MsoNormal" style="text-align:justify">
+                  &nbsp;</p>
         </div>
     </form>
 </body>
