@@ -1059,7 +1059,7 @@ mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;line-height:106%;font-
                         BorderColor="#DEBA84" BorderStyle="None" 
                         BorderWidth="1px" 
                         CellPadding="3" 
-                        CellSpacing="2" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                        CellSpacing="2" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnPageIndexChanging="GridView1_PageIndexChanging">
                         <Columns>
                             <asp:TemplateField ShowHeader="False">
                                 <ItemTemplate>

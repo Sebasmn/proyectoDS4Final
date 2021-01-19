@@ -448,7 +448,7 @@ mso-bidi-font-weight:bold">PRESIDENTA<p></p>
             <asp:UpdatePanel ID="upEstudiante" runat="server" ChildrenAsTriggers="true" UpdateMode="Always">
                 <ContentTemplate>
                  
-             <asp:Button ID="Button2" runat="server" Text="Buscar"/>
+             <asp:Button ID="Button2" runat="server" Text="Buscar" OnClick="Button2_Click"/>
                     <asp:GridView ID="GridView1" runat="server" 
                         AllowPaging="True" 
                         PageSize="3" Width="763px" 
@@ -456,7 +456,7 @@ mso-bidi-font-weight:bold">PRESIDENTA<p></p>
                         BorderColor="#DEBA84" BorderStyle="None" 
                         BorderWidth="1px" 
                         CellPadding="3" 
-                        CellSpacing="2">
+                        CellSpacing="2" OnPageIndexChanging="GridView1_PageIndexChanging" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                         <Columns>
                             <asp:TemplateField ShowHeader="False">
                                 <ItemTemplate>
