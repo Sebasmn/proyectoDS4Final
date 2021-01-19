@@ -104,6 +104,8 @@ p.MsoBodyText
 
             <asp:Button ID="btnNumeroResolucion" runat="server" Text="Generar Número Resolución" 
             CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click"  />
+            <asp:Label ID="Label2" runat="server" Text="Consejo Destino:"></asp:Label>
+            <asp:TextBox ID="txtCodigoConsejoDestino" runat="server"></asp:TextBox>
         </asp:Panel>
         <br />
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">

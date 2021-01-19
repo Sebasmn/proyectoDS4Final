@@ -110,6 +110,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             txtNombreEstu1.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             txtNombreEstu2.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             txtNombreEstu3.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
+            ViewState["CEDULA_EST"] = GridView1.SelectedRow.Cells[1].Text;
         }
         private void generarNumeroResolucion()
         {

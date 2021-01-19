@@ -101,6 +101,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             txtNombreEstu.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             txtNombreEstu0.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             txtNombreEstu1.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
+            ViewState["CEDULA_EST"] = GridView1.SelectedRow.Cells[1].Text;
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)

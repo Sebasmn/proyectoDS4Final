@@ -132,6 +132,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
         {
             txtNombreEstu.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             txtNombreEstu0.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
+            ViewState["CEDULA_EST"] = GridView1.SelectedRow.Cells[1].Text;
         }
 
         protected void GridView1_SelectedIndexChanging2(object sender, GridViewSelectEventArgs e)
@@ -222,7 +223,8 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             resol.Datos = datos;
             resol.Codigo = resolucion;
             resol.Plantilla = plantilla;
-            resol.IDConsejo = 20;
+            resol.IDConsejo = txtCodigoConsejoDestino.Text;
+            resol.Estudiante = ViewState["CEDULA_EST"].ToString();
 
             bool guardado = mysql.guardarResolucion(resol);
 
