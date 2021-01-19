@@ -12,6 +12,7 @@ namespace CreacionDocumentoDemo.Objetos
         public string Plantilla { get; set; }
         public string IDConsejo { get; set; }
         public string Estudiante { get; set; }
+        public string Secretaria { get; set; }
         public List<string> Editables { get; set; }
         public List<string> Datos { get; set; }
         public Resolucion()
