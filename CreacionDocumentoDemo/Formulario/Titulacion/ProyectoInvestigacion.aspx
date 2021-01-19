@@ -369,7 +369,7 @@ mso-bidi-font-weight:bold">PRESIDENTA<p></p>
            <asp:Button ID="Button4"
                       runat="server" Height="49px" 
                       Text="Generar Documento"
-                      Width="172px" />
+                      Width="172px" OnClick="Button4_Click" />
          <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
             TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
             runat="server" />
