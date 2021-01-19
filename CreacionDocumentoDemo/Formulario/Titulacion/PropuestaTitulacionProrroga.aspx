@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Propuesta Titulación</title>
+    <title>Propuesta Titulación con Prorroga</title>
      <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
 
     <style type="text/css">
@@ -592,7 +592,7 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="
            <asp:Button ID="Button4"
                       runat="server" Height="49px" 
                       Text="Generar Documento"
-                      Width="172px" />
+                      Width="172px" OnClick="Button4_Click" />
          <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
             TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
             runat="server" />

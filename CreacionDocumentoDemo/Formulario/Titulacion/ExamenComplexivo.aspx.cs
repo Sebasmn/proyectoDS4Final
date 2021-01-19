@@ -1,6 +1,8 @@
-﻿using System;
+﻿using CreacionDocumentoDemo.Objetos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -111,6 +113,75 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             txtNombreEstu.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             txtNombreEstu0.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             txtNombreEstu1.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            /*Editables Y Datos*/
+            List<string> editables = new List<string>();
+            List<string> datos = new List<string>();
+
+            editables.Add("<fecha>"); datos.Add(txtFecha.Text);
+            editables.Add("<secuencia>"); datos.Add(txtSecuencia.Text);
+            editables.Add("<anio0>"); datos.Add(txtAnio.Text);
+
+            editables.Add("<presidente>"); datos.Add(txtPresidente.Text);
+            editables.Add("<sesion>"); datos.Add(ddlSesion.SelectedValue.ToString());
+            editables.Add("<nombredia>"); datos.Add(ddlNombreDia.SelectedValue.ToString());
+
+
+
+            editables.Add("<numerodia>"); datos.Add(ddlNumeroDia.SelectedValue.ToString());
+            editables.Add("<nombremes>"); datos.Add(ddlMes.SelectedValue.ToString());
+            editables.Add("<anio>"); datos.Add(txtAnio0.Text);
+
+            editables.Add("<acuerdo>"); datos.Add(txtAcuerdo.Text);
+            editables.Add("<nombremes1>"); datos.Add(ddlMes0.SelectedValue.ToString());
+            editables.Add("<numerodia1>"); datos.Add(ddlNumeroDia0.SelectedValue.ToString());
+
+
+            editables.Add("<anio1>"); datos.Add(txtAnio1.Text);
+            editables.Add("<presidente1>"); datos.Add(txtPresidente0.Text);
+            editables.Add("<estudiante>"); datos.Add(txtNombreEstu.Text);
+
+            editables.Add("<carrera>"); datos.Add(ddlCarrera.SelectedValue.ToString());
+            editables.Add("<estudiante1>"); datos.Add(txtNombreEstu0.Text);
+            editables.Add("<carrera1>"); datos.Add(ddlCarrera0.SelectedValue.ToString());
+
+            editables.Add("<estudiante2>"); datos.Add(txtNombreEstu1.Text);
+            editables.Add("<presidenta>"); datos.Add(txtPresidente1.Text);
+            editables.Add("<coordinadorcar>"); datos.Add(txtCoordinador.Text);
+            editables.Add("<carreras>"); datos.Add(ddlCarreras.SelectedValue.ToString());
+            /**/
+            StringBuilder sb1 = new StringBuilder();
+            sb1.Append(@"D:\Documentos\Pruebas\");
+            StringBuilder sb2 = new StringBuilder();
+            sb2.Append("Resolucion");
+
+            sb2.Append(txtSecuencia.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio.Text);
+            StringBuilder codigo = new StringBuilder();
+            codigo.Append(txtSecuencia.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio.Text);
+            sb1.Append(sb2.ToString());
+            sb1.Append(".docx");
+            string resolucion = codigo.ToString();
+            string ruta = sb1.ToString();
+
+            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\Titulacion\AprobacionModalidadExamenComplexivo.docx";
+            ManejoDatos mysql = new ManejoDatos();
+            Resolucion resol = new Resolucion();
+            resol.Ubicacion = ruta;
+            resol.Editables = editables;
+            resol.Datos = datos;
+            resol.Codigo = resolucion;
+            resol.Plantilla = plantilla;
+            resol.IDConsejo = 20;
+
+            bool guardado = mysql.guardarResolucion(resol);
+
+            if (guardado)
+            {
+                labelEstado.Text = "Documento Generado y Guardado";
+            }
         }
     }
 }
