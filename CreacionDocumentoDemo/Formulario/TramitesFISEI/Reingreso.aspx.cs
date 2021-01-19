@@ -165,7 +165,7 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             editables.Add("<acuerdo>"); datos.Add(txtAcuerdo.Text);
             editables.Add("<nombreMes1>"); datos.Add(ddlMes0.SelectedValue.ToString());
 
-            editables.Add("<numeroDia>"); datos.Add(ddlDiaNum0.SelectedValue.ToString());
+            editables.Add("<numeroDia1>"); datos.Add(ddlDiaNum0.SelectedValue.ToString());
             editables.Add("<anio1>"); datos.Add(txtAnio2.Text);
             editables.Add("<presiCoor>"); datos.Add(txtPresiCoord.Text);
 

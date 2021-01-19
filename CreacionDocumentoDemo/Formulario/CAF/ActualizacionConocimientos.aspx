@@ -326,7 +326,7 @@ normal"><span lang="ES" style="font-size:
 Tahoma"><b><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                      <asp:TextBox ID="txtSuscriptor" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Luis Andres Loor M." ToolTip="Busque un estudiante" Width="223px"></asp:TextBox>
+                                      <asp:TextBox ID="txtSuscriptor" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Dr.  Elena Loor M." ToolTip="Busque un estudiante" Width="223px"></asp:TextBox>
                                       </span></span></b></span></span></span></b></span><b style="mso-bidi-font-weight:
 normal"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
@@ -342,7 +342,7 @@ normal"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&
 Tahoma"><b><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                      <asp:TextBox ID="txtCargoSuscriptor" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Luis Andres Loor M." ToolTip="Busque un estudiante" Width="223px"></asp:TextBox>
+                                      <asp:TextBox ID="txtCargoSuscriptor" runat="server" CssClass="noBorder" EnableViewState="true" Width="100%"  placeholder="ANALISTA JURÍDICA DE LA DIRECCIÓN ACADÉMICA DE LA UTA" ToolTip="Busque un estudiante"></asp:TextBox>
                                       </span></span></b></span></span></b></span>.<b style="mso-bidi-font-weight:normal"></b></span><p class="MsoNormal">
                                           <span lang="ES" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">

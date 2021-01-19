@@ -1,0 +1,46 @@
+﻿body {
+    background-color: #D8C99B;
+    text-align:center;
+}
+/*Estilos Index*/
+#tituloIndex {
+    float: left;
+    border: 5px solid;
+    border-color: #B19271;
+    width: 90%;
+    height:auto;
+    margin-right: 50px;
+    margin-left: 50px;
+    padding: 22px;
+    padding-top:5px;
+}
+
+#labelTituloIndex {
+    font-size: 35px;
+    color: #6E5943;
+}
+
+#panelResoluciones {
+    float:left;
+    padding: 20px;
+}
+#labelResol {
+    float: left;
+    font-size: 26px;
+    color: #643B11;
+    margin-left: 30px;
+}
+
+.resoluciones {
+    float: left;
+    text-decoration:none;
+    width: 270px;
+    text-align: left;
+    color: #A6621F;
+    font-size: 17px;
+    margin-left: 10px;
+}
+    .resoluciones:hover {
+        color: darkred;
+      
+    }

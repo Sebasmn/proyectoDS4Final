@@ -196,9 +196,9 @@ namespace CreacionDocumentoDemo.Formulario.CAF
             StringBuilder sb2 = new StringBuilder();
             sb2.Append("Resolucion");
 
-            sb2.Append(txtSecuencia.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio1.Text);
+            sb2.Append(txtSecuencia.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio.Text);
             StringBuilder codigo = new StringBuilder();
-            codigo.Append(txtSecuencia.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio1.Text);
+            codigo.Append(txtSecuencia.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio.Text);
             sb1.Append(sb2.ToString());
             sb1.Append(".docx");
             string resolucion = codigo.ToString();

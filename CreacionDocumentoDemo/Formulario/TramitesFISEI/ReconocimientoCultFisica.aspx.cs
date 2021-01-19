@@ -85,13 +85,16 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             txtNombreEstu1.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             txtNombreEstu2.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             txtNombreEstu3.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
-
+            txtCedula.Text = GridView1.SelectedRow.Cells[1].Text;
+            txtCedula0.Text = GridView1.SelectedRow.Cells[1].Text;
+            txtCedula1.Text = GridView1.SelectedRow.Cells[1].Text;
 
             if (GridView1.SelectedRow.Cells[10].Text.Equals("SIST"))
             {
                 txtCarrera1.Text = "INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS";
                 txtCarrera4.Text = "INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS";
               //  txtCarrera3.Text = "INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS";
+             
             }
             ViewState["CorreoUTA"] = GridView1.SelectedRow.Cells[6].Text;
         }

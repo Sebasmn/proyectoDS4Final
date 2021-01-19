@@ -105,13 +105,20 @@ mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1"><o:p></o:p></span>
             <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
                 <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:
 106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:&quot;Arial Unicode MS&quot;;
-mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">COORDINADOR DE </span></b>
-                <b><span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"> <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
-&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><b style="mso-bidi-font-weight:normal">
-                      <asp:TextBox ID="txtCarrerasCoor" runat="server" CssClass="noBorder" placeholder="LAS CARRERAS DE INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS, TECNOLOGÍAS DE LA INFORMACIÓN Y SOFTWARE" Width="350px"></asp:TextBox>
-                      </b></span>
-                  </span></b>
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">COORDINADOR DE LAS CARRERAS DE </span></b>
             </p>
+            <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
+                &nbsp;</p>
+            <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
+                <b style="mso-bidi-font-weight:normal"><span style="font-size:10.0pt;
+line-height:115%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;
+color:black;mso-themecolor:text1">
+                <asp:DropDownList ID="txtCarrerasCoorD" runat="server" CssClass="noBorder" Font-Bold="True" Font-Size="Smaller" Width="100%">
+                </asp:DropDownList>
+                </span></b>
+            </p>
+            <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
+                &nbsp;</p>
             <p class="MsoNormal" style="margin-bottom:0cm">
                 <span style="font-size:9.0pt;
 line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;
@@ -232,7 +239,7 @@ mso-bidi-font-family:Tahoma;font-style:normal"> <span lang="ES" style="font-size
 Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                  <asp:TextBox ID="txtPresiConsejo" runat="server" CssClass="noBorder" placeholder="Ing. Edisson Patricio Jordán"></asp:TextBox>
+                                  <asp:TextBox ID="txtPresiConsejo" runat="server" CssClass="noBorder" placeholder="Ing. Edisson Patricio Jordán" Width="100%"></asp:TextBox>
                                   </span></span></span></span></b></span></span> </span></em>&nbsp;, Presidente de Consejo Académico de Facultad, quien remite con fines de aprobación el informe de homologación de las asignaturas aprobadas en la Carrera de&nbsp; <span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma"><em><span style="font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;font-style:normal"><span style="mso-spacerun:yes"><span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
 mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:
@@ -254,7 +261,7 @@ normal"><span lang="ES" style="font-size:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma"><b><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtNombreEstu1" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Luis Andres Loor M." ToolTip="Busque un estudiante" Width="223px"></asp:TextBox>
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtNombreEstu1" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Luis Andres Loor M." ToolTip="Busque un estudiante" Width="100%"></asp:TextBox>
                                   </span></span></b></span></span></span> </b> </span></span></em></span>
                 <b style="mso-bidi-font-weight:normal">&nbsp;</b>con C.C. No.&nbsp; <span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma"><em><span style="font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;font-style:normal"><span style="mso-spacerun:yes"><span style="font-size:
@@ -319,7 +326,7 @@ normal"><span lang="ES" style="font-size:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma"><b><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtNombreEstu2" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Luis Andres Loor M." ToolTip="Busque un estudiante" Width="223px"></asp:TextBox>
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtNombreEstu2" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Luis Andres Loor M." ToolTip="Busque un estudiante" Width="100%"></asp:TextBox>
                                   </span></span></b></span></span></span> </b> </span></span></em></span>
                 </span><b style="mso-bidi-font-weight:normal">&nbsp;</b>CON C.C. NO. <span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma"><span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma"><em><span style="font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;font-style:normal"><span style="mso-spacerun:yes"><span style="font-size:
@@ -400,7 +407,7 @@ normal"><span lang="ES" style="font-size:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma"><b><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtNombreEstu3" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Luis Andres Loor M." ToolTip="Busque un estudiante" Width="223px"></asp:TextBox>
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtNombreEstu3" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Luis Andres Loor M." ToolTip="Busque un estudiante" Width="100%"></asp:TextBox>
                                   </span></span></b></span></span></span> </b> </span></span></em></span>
                 </span></span><b style="mso-bidi-font-weight:normal">&nbsp;</b>CON C.C. NO. <span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma"><span lang="ES-TRAD" style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma"><span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma"><em><span style="font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;font-style:normal"><span style="mso-spacerun:yes"><span style="font-size:
