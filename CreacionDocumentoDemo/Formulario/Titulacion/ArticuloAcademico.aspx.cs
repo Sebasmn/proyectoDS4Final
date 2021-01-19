@@ -84,5 +84,35 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
         {
 
         }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button3_Click1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button2_Click1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

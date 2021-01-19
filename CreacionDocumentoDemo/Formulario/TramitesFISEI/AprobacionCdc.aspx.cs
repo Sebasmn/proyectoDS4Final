@@ -301,5 +301,10 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             string resolucion = mysql.obtenerSiguienteResolución();
             txtAnio1.Text = resolucion;
         }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
