@@ -235,7 +235,7 @@ namespace CreacionDocumentoDemo.Formulario.CAF
             resol.IDConsejo = txtCodigoConsejoDestino.Text;
             resol.Estudiante = txtCedula.Text;
             bool guardado = mysql.guardarResolucion(resol);
-
+            resol.Secretaria = ((UsuariosSW)Session["USUARIOSW"]).Cedula;
             if (guardado)
             {
                 labelEstado.Text = "Documento Generado y Guardado";

@@ -213,6 +213,7 @@ namespace CreacionDocumentoDemo.Formulario
            // resol.IDConsejo = 20;
             resol.Estudiante = ViewState["CEDULA_EST"].ToString();
              bool guardado = mysql.guardarResolucion(resol);
+            resol.Secretaria = ((UsuariosSW)Session["USUARIOSW"]).Cedula;
             resol.IDConsejo = txtCodigoConsejoDestino.Text;
             if (guardado)
                 {
