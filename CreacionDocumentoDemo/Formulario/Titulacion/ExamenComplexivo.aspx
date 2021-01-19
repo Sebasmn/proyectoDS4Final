@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Prácticas Prepofesionales</title>
+    <title>Examen Complexivo</title>
      <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
 
     <style type="text/css">

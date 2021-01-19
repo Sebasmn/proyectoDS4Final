@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Prácticas Prepofesionales</title>
+    <title>Artículo Académico</title>
      <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
 
     <style type="text/css">
@@ -243,7 +243,7 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style=
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
                                   <asp:TextBox ID="txtNombreEstu" runat="server" CssClass="auto-style1" EnableViewState="true" Height="16px" placeholder="Seleccionar estudiante" ToolTip="Busque un estudiante" Width="313px"></asp:TextBox>
                                   </span></span></b></span></span></b></span>, estudiante de la Carrera de
-                <asp:DropDownList ID="ddlCarrera" runat="server">
+                <asp:DropDownList ID="ddlCarrera" runat="server" OnSelectedIndexChanged="ddlCarrera_SelectedIndexChanged">
                 </asp:DropDownList>
                 . Al respecto, RESUELVE: <span style="color:black;mso-themecolor:text1"><o:p></o:p></span></span></span>
             </p>

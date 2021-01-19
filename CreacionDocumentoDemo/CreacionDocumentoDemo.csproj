@@ -102,7 +102,7 @@
     <Content Include="Formulario\Titulacion\ArticuloAcademico.aspx" />
     <Content Include="Formulario\Titulacion\ExamenComplexivo.aspx" />
     <Content Include="Formulario\Titulacion\PropuestaTitulacion.aspx" />
-    <Content Include="Formulario\Titulacion\PropuestaTitulacionProrrogaGratuita.aspx" />
+    <Content Include="Formulario\Titulacion\PropuestaTitulacionProrroga.aspx" />
     <Content Include="Formulario\Titulacion\ProrrogaPagada.aspx" />
     <Content Include="Formulario\Titulacion\ProyectoInvestigacion.aspx" />
     <Content Include="Formulario\TramitesFISEI\AprobacionCdc.aspx" />
@@ -186,12 +186,12 @@
     <Compile Include="Formulario\Titulacion\PropuestaTitulacion.aspx.designer.cs">
       <DependentUpon>PropuestaTitulacion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\Titulacion\PropuestaTitulacionProrrogaGratuita.aspx.cs">
-      <DependentUpon>PropuestaTitulacionProrrogaGratuita.aspx</DependentUpon>
+    <Compile Include="Formulario\Titulacion\PropuestaTitulacionProrroga.aspx.cs">
+      <DependentUpon>PropuestaTitulacionProrroga.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Formulario\Titulacion\PropuestaTitulacionProrrogaGratuita.aspx.designer.cs">
-      <DependentUpon>PropuestaTitulacionProrrogaGratuita.aspx</DependentUpon>
+    <Compile Include="Formulario\Titulacion\PropuestaTitulacionProrroga.aspx.designer.cs">
+      <DependentUpon>PropuestaTitulacionProrroga.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formulario\Titulacion\ProrrogaPagada.aspx.cs">
       <DependentUpon>ProrrogaPagada.aspx</DependentUpon>

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CreacionDocumentoDemo.Formulario.Titulacion
 {
-    public partial class ProyectoInvestigacion : System.Web.UI.Page
+    public partial class PropuestaTitulacion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,7 +16,6 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
                 cargarDatos();
             }
         }
-
         private void cargarDatos()
         {
             ManejoDatos md = new ManejoDatos();
@@ -42,6 +41,10 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
 
             ddlNumeroDia0.DataSource = numerosMes;
             ddlNumeroDia0.DataBind();
+            ddlNumeroDia1.DataSource = numerosMes;
+            ddlNumeroDia1.DataBind();
+            ddlNumeroDia2.DataSource = numerosMes;
+            ddlNumeroDia2.DataBind();
 
             //Meses
             List<string> meses = md.ObtenerMeses();
@@ -50,21 +53,22 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             ddlMes.DataBind();
             ddlMes0.DataSource = meses;
             ddlMes0.DataBind();
+            ddlMes1.DataSource = meses;
+            ddlMes1.DataBind();
+            ddlMes2.DataSource = meses;
+            ddlMes2.DataBind();
 
 
             //Carreras
             ManejoDatos datos = new ManejoDatos();
             List<string> modelo = datos.getCarreras();
             List<string> modeloMin = datos.GetCarrerasMinuscula();
-            List<string> modeloCarr = datos.GetCarrerasFooter();
+            List<string> carrerasF = datos.GetCarrerasFooter();
             ddlCarrera.DataSource = modeloMin;
             ddlCarrera.DataBind();
             ddlCarrera0.DataSource = modelo;
             ddlCarrera0.DataBind();
-            ddlCarreras.DataSource = modeloCarr;
-            ddlCarreras.DataBind();
         }
-
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
 
@@ -80,5 +84,6 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             string resolucion = mysql.obtenerSiguienteResolución();
             txtSecuencia.Text = resolucion;
         }
+
     }
 }

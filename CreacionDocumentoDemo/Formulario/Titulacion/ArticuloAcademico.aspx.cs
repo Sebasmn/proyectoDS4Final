@@ -79,5 +79,10 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             string resolucion = mysql.obtenerSiguienteResolución();
             txtSecuencia.Text = resolucion;
         }
+
+        protected void ddlCarrera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

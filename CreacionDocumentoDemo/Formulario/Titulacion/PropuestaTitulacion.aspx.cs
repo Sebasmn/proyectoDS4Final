@@ -7,9 +7,86 @@ using System.Web.UI.WebControls;
 
 namespace CreacionDocumentoDemo.Formulario.Titulacion
 {
-    public partial class PropuestaTitulacion : System.Web.UI.Page
+    public partial class PropuestaTitulacion1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                cargarDatos();
+            }
+        }
+
+        private void cargarDatos()
+        {
+            ManejoDatos md = new ManejoDatos();
+
+            //Sesion
+            List<string> sesion = new List<string>();
+            sesion.Add("Ordinaria");
+            sesion.Add("Extraordinaria");
+            ddlSesion.DataSource = sesion;
+            ddlSesion.DataBind();
+
+
+            //Nombres de Dias
+            List<string> dias = md.ObtenerDiasSemana();
+            ddlNombreDia.DataSource = dias;
+            ddlNombreDia.DataBind();
+
+
+            //Dias del mes
+            List<string> numerosMes = md.ObtenerDiasMes();
+            ddlNumeroDia.DataSource = numerosMes;
+            ddlNumeroDia.DataBind();
+
+            ddlNumeroDia0.DataSource = numerosMes;
+            ddlNumeroDia0.DataBind();
+            ddlNumeroDia1.DataSource = numerosMes;
+            ddlNumeroDia1.DataBind();
+            ddlNumeroDia2.DataSource = numerosMes;
+            ddlNumeroDia2.DataBind();
+
+            //Meses
+            List<string> meses = md.ObtenerMeses();
+
+            ddlMes.DataSource = meses;
+            ddlMes.DataBind();
+            ddlMes0.DataSource = meses;
+            ddlMes0.DataBind();
+            ddlMes1.DataSource = meses;
+            ddlMes1.DataBind();
+            ddlMes2.DataSource = meses;
+            ddlMes2.DataBind();
+
+
+            //Carreras
+            ManejoDatos datos = new ManejoDatos();
+            List<string> modelo = datos.getCarreras();
+            List<string> modeloMin = datos.GetCarrerasMinuscula();
+            ddlCarrera.DataSource = modeloMin;
+            ddlCarrera.DataBind();
+            ddlCarrera0.DataSource = modelo;
+            ddlCarrera0.DataBind();
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnNumeroResolucion_Click(object sender, EventArgs e)
+        {
+            generarNumeroResolucion();
+        }
+        private void generarNumeroResolucion()
+        {
+            ManejoDatos mysql = new ManejoDatos();
+            string resolucion = mysql.obtenerSiguienteResolución();
+            txtSecuencia.Text = resolucion;
+        }
+
+        protected void txtNombreEstu0_TextChanged(object sender, EventArgs e)
         {
 
         }
