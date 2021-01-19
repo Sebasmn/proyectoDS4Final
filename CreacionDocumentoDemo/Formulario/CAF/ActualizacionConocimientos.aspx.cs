@@ -37,7 +37,7 @@ namespace CreacionDocumentoDemo.Formulario.CAF
             }
             else
             {
-                Response.Redirect("../../Inicio/Login.aspx");
+                Response.Redirect("../../Inicio/Login.Xaspx");
             }
         }
         private void cargarDatos()
