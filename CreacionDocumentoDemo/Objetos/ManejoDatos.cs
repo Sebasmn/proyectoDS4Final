@@ -549,7 +549,7 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
             myCommand.Parameters.AddWithValue("UBICACION", resolucion.Ubicacion);
             myCommand.Parameters.AddWithValue("IDCONSEJO", resolucion.IDConsejo);
             myCommand.Parameters.AddWithValue("ESTUDIANTE", resolucion.Estudiante);
-            
+            myCommand.Parameters.AddWithValue("SECRETARIA", resolucion.Secretaria);
             int n = myCommand.ExecuteNonQuery();
             //Guardar en generador
             myCommand.CommandText = "guardarGenerador";
