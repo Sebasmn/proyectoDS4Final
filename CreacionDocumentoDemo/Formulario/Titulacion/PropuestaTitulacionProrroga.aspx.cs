@@ -16,7 +16,26 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
         {
             if (!IsPostBack)
             {
+                ManejarUsuario();
                 cargarDatos();
+            }
+        }
+        private void ManejarUsuario()
+        {
+            if (
+                 Session["USUARIOSW"] != null
+                )
+            {
+                UsuariosSW tipo = (UsuariosSW)Session["USUARIOSW"];
+                char userTipo = Convert.ToChar(tipo.Tipo);
+                if (userTipo != 'S')
+                {
+                    Response.Redirect("../../Inicio/Login.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("../../Inicio/Login.aspx");
             }
         }
         private void cargarDatos()
@@ -166,6 +185,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             editables.Add("<numerodia3>"); datos.Add(ddlNumeroDia2.SelectedValue.ToString());
             editables.Add("<nombremes3>"); datos.Add(ddlMes2.SelectedValue.ToString());
             editables.Add("<anio3>"); datos.Add(txtAnio3.Text);
+            editables.Add("<periodoacademico1>"); datos.Add(txtAnio3.Text);
             editables.Add("<presidenta>"); datos.Add(txtPresidente1.Text);
             editables.Add("<secretariau>"); datos.Add(txtSecretariaU.Text);
             editables.Add("<secretariacarrera>"); datos.Add(txtSecretariaCarrera.Text);
