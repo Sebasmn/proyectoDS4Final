@@ -203,6 +203,7 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             resol.Estudiante = txtCedula.Text;
             bool guardado = mysql.guardarResolucion(resol);
             resol.IDConsejo = txtCodigoConsejoDestino.Text;
+            resol.Secretaria = ((UsuariosSW)Session["USUARIOSW"]).Cedula;
             if (guardado)
             {
                 labelEstado.Text = "Documento Generado y Guardado";

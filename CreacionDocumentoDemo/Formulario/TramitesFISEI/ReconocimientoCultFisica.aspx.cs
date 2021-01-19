@@ -188,6 +188,7 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
            // resol.IDConsejo = 30;
             resol.IDConsejo = txtCodigoConsejoDestino.Text;
             resol.Estudiante = txtCedula.Text;
+            resol.Secretaria = ((UsuariosSW)Session["USUARIOSW"]).Cedula;
             bool guardado = mysql.guardarResolucion(resol);
 
             if (guardado)

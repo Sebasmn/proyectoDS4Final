@@ -190,6 +190,7 @@ namespace CreacionDocumentoDemo.Formulario.CAF
            // resol.IDConsejo = 20;
             resol.Estudiante = txtCedula.Text;
             resol.IDConsejo = txtCodigoConsejoDestino.Text;
+            resol.Secretaria = ((UsuariosSW)Session["USUARIOSW"]).Cedula;
             bool guardado = mysql.guardarResolucion(resol);
 
             if (guardado)
