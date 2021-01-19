@@ -9,40 +9,7 @@
     <link rel="stylesheet" href="../../Estilos/estilos.css"  type="text/css" />
     <style type="text/css">
 
- p.MsoNormal
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:8.0pt;
-	margin-left:0cm;
-	line-height:106%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
-p.BodyText21
-	{margin:0cm;
-	text-align:justify;
-	font-size:10.0pt;
-	font-family:"Arial",sans-serif;
-	}
-p.MsoNoSpacing
-	{margin:0cm;
-	font-size:10.0pt;
-	font-family:"Times New Roman",serif;
-	}
-        .auto-style1 {
-            text-indent: .05pt;
-            text-align: justify;
-            font-size: 10.0pt;
-            font-family: Arial, sans-serif;
-            margin: 0cm;
-        }
-        .auto-style2 {
-            text-align: justify;
-            text-indent: .05pt;
-            font-size: 11.0pt;
-            font-family: Calibri, sans-serif;
-            margin: 0cm;
-        }
+
     </style>
 </head>
 <body>
@@ -506,7 +473,7 @@ EN-US;mso-bidi-language:AR-SA;mso-bidi-font-weight:bold">Estudiante</span><p cla
                 AutoPostBack="false"
                  placeholder="Buscar cedula/nombre"
                 OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
-               &nbsp;<asp:Button ID="Button3" runat="server" Text="Cancelar" OnClick="Button3_Click" />
+               &nbsp;<asp:Button ID="Button3" runat="server" Text="X" OnClick="Button3_Click" />
             <asp:UpdatePanel ID="upEstudiante" runat="server" ChildrenAsTriggers="true" UpdateMode="Always">
                 <ContentTemplate>
                  

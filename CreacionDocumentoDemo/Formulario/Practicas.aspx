@@ -17,58 +17,7 @@
         };
         </script>
     <style type="text/css">
-p
-{
-    margin-bottom: 10px;
-    line-height: 1.6em;
-}
-.btnBuscar {
-    border-radius: 2em;
-    text-decoration: none;
-    color: whitesmoke;
-    background-color: #A68970;
-    text-align: center;
-    width: auto;
-    padding: 2px;
-    font-size: 15px;
-}
 
-
-        .auto-style1 {
-            text-align: justify;
-            font-size: 11.0pt;
-            font-family: Calibri, sans-serif;
-            margin: 0cm;
-        }
-        .auto-style2 {
-            width: 114px;
-         
-        }
-        .auto-style3 {
-            font-size: 7pt;
-        }
-        .auto-style5 {
-            font-size: 9pt;
-        }
-        .auto-style6 {
-            -webkit-appearance: none;
-            text-align: center;
-            padding-left: 2px;
-            padding-right: 2px;
-            box-shadow: none;
-            border-left-style: none;
-            border-left-color: inherit;
-            border-left-width: 0px;
-            border-right-style: none;
-            border-right-color: inherit;
-            border-right-width: 0px;
-            border-top-style: none;
-            border-top-color: inherit;
-            border-top-width: 0px;
-            border-bottom-style: solid;
-            border-bottom-color: inherit;
-            border-bottom-width: 1px;
-        }
     </style>
 </head>
 <body>
@@ -260,7 +209,7 @@ mso-bidi-font-weight:bold">de la Carrera de Ingeniería </span><span style="font
                                                     <span class="auto-style5">C</span>c:<p class="MsoNormal">
                                                         <span style="font-size:7.0pt;
 mso-bidi-font-size:9.0pt;line-height:115%; font-family:&quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma;"><span style="mso-spacerun:yes">
-                                                        <asp:TextBox ID="txtCarrera5" runat="server" CssClass="auto-style6" Height="22px" placeholder="Ejm: Ing Andres López" Width="158px"></asp:TextBox>
+                                                        <asp:TextBox ID="txtCarrera5" runat="server" CssClass="noBorder" Height="22px" placeholder="Ejm: Ing Andres López" Width="158px"></asp:TextBox>
                                                         </span></span>
                                                         <p class="MsoNormal">
                                                             <span style="font-size:7.0pt;
@@ -268,6 +217,20 @@ mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"
                                                                 <span style="font-size:7.0pt;
 mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif">Estudiante</span><br />
                                                                 <br />
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
+                                                            </p>
+                                                            <p>
                                                             </p>
                                                         </p>
                                                     </p>
@@ -277,18 +240,22 @@ mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"
                                     </p>
                                 </p>
                                 </span>
-                            </p>
-                        </p>
-                    </p>
-                </p>
-            </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                                </p>
+                                <p>
+                      
           
         </div>
                   <asp:Button ID="Button4"
                       runat="server" Height="49px" 
                       Text="Generar Documento"
-                      
-                      Width="172px" OnClick="Button4_Click" />
+                     OnClick="Button4_Click" CssClass="btnBuscar" />
 
                    <asp:Label ID="Label2" runat="server" Text="Bienvenido:"></asp:Label>
                   <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"

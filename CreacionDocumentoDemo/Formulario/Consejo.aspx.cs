@@ -15,8 +15,10 @@ namespace CreacionDocumentoDemo.Formulario
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+          
             if (!IsPostBack)
             {
+                ManejarUsuario();
                 if (Session["ResolucionesAprobadas"] != null)
                 {
                     actualizarAprobadas();
@@ -30,11 +32,28 @@ namespace CreacionDocumentoDemo.Formulario
             }
             
         }
-
+        private void ManejarUsuario()
+        {
+            if (
+                 Session["USUARIOSW"] != null
+                )
+            {
+                UsuariosSW tipo = (UsuariosSW)Session["USUARIOSW"];
+                char userTipo = Convert.ToChar(tipo.Tipo);
+                if (userTipo != 'C')
+                {
+                    Response.Redirect("Login.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+        }
         private void cargarResoluciones()
         {
             ManejoDatos datos = new ManejoDatos();
-            List<Resolucion> resoluciones =datos.ObtenerResoluciones(30);
+            List<ResolucionVista> resoluciones =datos.ObtenerResolucionesVista("30");
             var bs1 = new BindingSource();
             bs1.DataSource = resoluciones;
             gvResoluciones.DataSource = bs1; //<-- notes it takes the entire bindingSource

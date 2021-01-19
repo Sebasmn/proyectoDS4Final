@@ -44,15 +44,19 @@ hr {
     font-size: 15px;
 }
 
-   
+#txtCodigoConsejoDestino {
+    margin-top: 10px;
+    text-align:center;
+    margin-bottom: 10px;
+} 
 
     /*Seccion: Prácticas Prepofesionales*/
 
 #documento {
     background-color: white;
-    margin-left: 410px;
-    margin-right: 410px;
-    line-height:20px;
+    margin-left: 380px;
+    margin-right: 380px;
+    line-height: 20px;
     border: 30px;
     text-align: left;
     padding: 55px;
@@ -63,27 +67,59 @@ hr {
     padding-right: 3px;
 }
 #documento * {
-    font-size: 13px;
-    
-
+    font-size: 12px;
+    line-height: 16px;
 }
 #documento {
-    font-size: 13px;
+    font-size: 16px;
 }
     #txtFechaHeader{
         float:left;
         margin-left:5px;
     }
+
 #panelModalBusquedaEst {
     border-radius: 25px;
-    border: 3px groove #807569;
+    border: 3px groove #6B3906;
     background-color: #D8C99B;
     margin: auto;
-    width: auto;
-    padding: 8px;
-    height:221px;
+    text-align:center;
+    width: 600px;
+    padding: 15px;
+    height: 221px;
     width: 900px;
 }
+
+    #panelModalBusquedaEst > #Button3 {
+        border-radius: 2em;
+        border-color: #A85E15;
+        text-decoration: none;
+        color: whitesmoke;
+        background-color: #6B3906;
+        text-align: center;
+        font-size: 13px;
+        width: 45px;
+        height: 45px;
+        float: right;
+        border-radius: 50%;
+        margin-top: -25px;
+        padding: -20px;
+        margin-right: -20px;
+    }
+#upEstudiante > #Button2 {
+    border-radius: 2em;
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: #6B3906;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 13px;
+}
+    #upEstudiante > #Button2:hover {
+        background-color: #9A6734;
+    }
+
 #GridView1 {
     font-size: 12px;
     margin: auto;
@@ -91,28 +127,36 @@ hr {
 #botonSeleccionar{
     color:darkred;
 }
+*:focus {
+    outline: none;
+}
 .btnBuscar {
     border-radius: 2em;
     text-decoration: none;
     color: whitesmoke;
-    background-color: #A68970;
+    background-color: #6B3906;
     text-align: center;
-    margin-bottom:20px;
-    padding: 2px;
-    font-size: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 13px;
 }
+    .btnBuscar:hover {
+        background-color: #A45D15;
+    }
+
 #txtAnio, #txtAnio1, #txtAnio1 {
     width: 45px;
 }
 .noBorder {
     -webkit-appearance: none;
     text-align: left;
-    font-size: 12px;
+    font-size: 8px;
     font-weight: bold;
     width: auto;
     padding-left: 2px;
     padding-right: 2px;
     border: 0px;
+    background-color: #E7E1DB;
     box-shadow: none;
     border-bottom: 1px solid #795B3B;
     border-bottom-color: #795B3B;
@@ -181,6 +225,52 @@ hr {
 }
     .botonesConsejo:hover {
         background-color: #896E53;
+    }
+
+    /*Estilos Login*/
+    #bodyLogin{
+        text-align:center;
+    }
+#formularioLogin {
+    width: 30%;
+    margin: auto;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    border: 2.5px solid;
+    border-radius: 11px;
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-bottom-color: #B36F0E;
+    border-top-color: #B36F0E;
+    border-right-color: #86540D;
+    border-left-color: #86540D;
+    clear: both;
+}
+#escudoLogin{
+    position:relative;
+    width:80px;
+    height:80px;
+}
+.inputLogin{
+    border:none;
+    text-align:center;
+}
+.botonLogin {
+    width: 100px;
+    height: 30px;
+    border: none;
+    background-color: rgba(112, 72, 14,0.8);
+    background-color: #7C4F0E;
+    color: #DAD4CB;
+    font-weight: 700;
+    border-radius: 10px;
+}
+    .botonLogin:hover {
+        border-bottom: 1px solid;
+        border-left: 0.5px solid;
+        border-right: 0.5px solid;
+        background-color: #865919;
     }
 
    

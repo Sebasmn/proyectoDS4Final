@@ -5,24 +5,27 @@
 /*Estilos Index*/
 #tituloIndex {
     float: left;
-    border: 5px solid;
-    border-color: #B19271;
+    border: 3.2px solid;
+    border-color: #916941;
+    border-top: none;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     width: 90%;
-    height:auto;
+    height: auto;
     margin-right: 50px;
     margin-left: 50px;
     padding: 22px;
-    padding-top:5px;
+    padding-top: 5px;
 }
 
 #labelTituloIndex {
     font-size: 35px;
-    color: #6E5943;
+    color: #784715;
 }
 
 #panelResoluciones {
     float:left;
-    padding: 20px;
+    padding: 5px;
 }
 #labelResol {
     float: left;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CreacionDocumentoDemo.Objetos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,8 +12,30 @@ namespace CreacionDocumentoDemo.Inicio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-                    }
-
+            if (!IsPostBack)
+            {
+                ManejarUsuario();
+            }
+           
+          }
+        private void ManejarUsuario()
+        {
+            if (
+                 Session["USUARIOSW"] != null
+                )
+            {
+                UsuariosSW tipo = (UsuariosSW)Session["USUARIOSW"];
+                char userTipo = Convert.ToChar(tipo.Tipo);
+                if (userTipo!='S')
+                {
+                    Response.Redirect("Login.aspx");
+                }
+            }
+            else 
+            {
+                Response.Redirect("Login.aspx");
+            }
+        }
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
             Page.ClientScript.RegisterStartupScript(

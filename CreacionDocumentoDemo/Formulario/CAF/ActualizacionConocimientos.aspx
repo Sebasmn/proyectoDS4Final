@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Actualización Conocimientos</title>
        <link rel="stylesheet" href="../../Estilos/estilos.css"  type="text/css" />
+           
     <style type="text/css">
   
     </style>
@@ -19,6 +20,9 @@
 
             <asp:Button ID="btnNumeroResolucion" runat="server" Text="Generar Número Resolución" 
             CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click"  />
+            <br />
+            <asp:Label ID="Label2" runat="server" Text="Consejo Destino:"></asp:Label>
+            <asp:TextBox ID="txtCodigoConsejoDestino" runat="server"></asp:TextBox>
         </asp:Panel>
         <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Always" runat="server">
               <ContentTemplate>

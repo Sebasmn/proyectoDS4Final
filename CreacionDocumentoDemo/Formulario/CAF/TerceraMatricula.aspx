@@ -9,37 +9,7 @@
      <link rel="stylesheet" href="../../Estilos/estilos.css"  type="text/css" />
     <style type="text/css">
 
- p.MsoNormal
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:8.0pt;
-	margin-left:0cm;
-	line-height:106%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
-p
-	{margin-right:0cm;
-	margin-left:0cm;
-	font-size:12.0pt;
-	font-family:"Times New Roman",serif;
-	}
-p.MsoBodyTextFirstIndent2
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:8.0pt;
-	margin-left:18.0pt;
-	text-indent:18.0pt;
-	line-height:106%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
-p.MsoHeader
-	{margin:0cm;
-	tab-stops:center 212.6pt right 425.2pt;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
+
     </style>
 </head>
 <body>
@@ -94,7 +64,7 @@ line-height:106%;font-family:&quot;Cambria&quot;,serif">Ingeniero, Mg.<o:p></o:p
                       </span>
                   </p>
             <p class="MsoNormal">
-                <b><span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif">COORDINADOR DE <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+                <b><span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif">COORDINADOR DE LAS CARRERAS DE <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><b style="mso-bidi-font-weight:normal">
                       <asp:TextBox ID="txtCarrerasCoor" runat="server" CssClass="noBorder" placeholder="LAS CARRERAS DE INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS, TECNOLOGÍAS DE LA INFORMACIÓN Y SOFTWARE" Width="350px"></asp:TextBox>
                       </b></span>
@@ -441,10 +411,16 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style=
 Tahoma;mso-bidi-font-weight:bold"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Estudiante</span><span style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif"><p></p>
                             </span>
+                            <p>
+                            </p>
                         </p>
                         </span></span></span>
+                        <p>
+                        </p>
                     </p>
                     </span>
+                    <p>
+                    </p>
                 </p>
 
         </div>
