@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CreacionDocumentoDemo.Formulario.Titulacion
 {
-    public partial class PropuestaTitulacion1 : System.Web.UI.Page
+    public partial class PropuestaTitulacion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,7 +16,6 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
                 cargarDatos();
             }
         }
-
         private void cargarDatos()
         {
             ManejoDatos md = new ManejoDatos();
@@ -64,12 +63,12 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             ManejoDatos datos = new ManejoDatos();
             List<string> modelo = datos.getCarreras();
             List<string> modeloMin = datos.GetCarrerasMinuscula();
+            List<string> carrerasF = datos.GetCarrerasFooter();
             ddlCarrera.DataSource = modeloMin;
             ddlCarrera.DataBind();
             ddlCarrera0.DataSource = modelo;
             ddlCarrera0.DataBind();
         }
-
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
 
@@ -85,5 +84,6 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             string resolucion = mysql.obtenerSiguienteResolución();
             txtSecuencia.Text = resolucion;
         }
+
     }
 }

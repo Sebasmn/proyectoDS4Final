@@ -11,17 +11,17 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
 {
 
 
-    public partial class PropuestaTitulacion1
+    public partial class PropuestaTitulacion
     {
 
         /// <summary>
-        /// Control form1.
+        /// Control form2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
 
         /// <summary>
         /// Control ScriptManager1.
@@ -328,6 +328,15 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAnio3;
+
+        /// <summary>
+        /// Control txtPeriodo1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPeriodo1;
 
         /// <summary>
         /// Control txtPresidente1.
