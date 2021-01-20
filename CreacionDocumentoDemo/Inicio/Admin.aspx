@@ -8,7 +8,16 @@
     <title>Administrador</title>
     <link rel="icon" type="image/png" href="../Images/EscudoUTA.png"/>
     <link rel="stylesheet" href="../Estilos/inicio.css"  type="text/css" />
-    
+    <style>
+        #opcionesLabel{
+            float:left;
+            margin-left:10px;
+        }
+        .labels{
+            float:left;
+            width:320px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -31,6 +40,11 @@
             <asp:ImageButton ID="ImageButton3" runat="server" Height="176px" ImageUrl="~/Images/cerrar.png" Width="205px" OnClick="ImageButton3_Click" />
             <br />
             <br />
+            <div id="opcionesLabel">
+                <asp:Label ID="Label1"       CssClass="labels"   runat="server" Text="Usuarios"></asp:Label>
+                <asp:Label ID="Label2" CssClass="labels" runat="server" Text="Crear Consejos"></asp:Label>
+                <asp:Label ID="Label3" CssClass="labels" runat="server" Text="Cerrar Sesión"></asp:Label>
+            </div>
             <br />
             <br />
             <br />
