@@ -14,12 +14,12 @@
     <form id="form2" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <asp:Panel ID="menuOpciones" runat="server">
-            <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante"   CssClass="btnBuscar" OnClick="btnBuscar_Click"  />
-
+            <asp:Image ID="escudoLogin" runat="server" ImageUrl="~/Images/EscudoUTA.png" />
+            <h1>Resolución para Propuesta de Titulación con Prorroga</h1>
+            <hr />
+            <asp:Button ID="btnBuscar" runat="server" CssClass="btnBuscar" OnClick="btnBuscar_Click" Text="Buscar Estudiante" />
+            &nbsp;<asp:Button ID="btnNumeroResolucion" runat="server" CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click" Text="Generar Número Resolución" />
             <br />
-
-            <asp:Button ID="btnNumeroResolucion" runat="server" Text="Generar Número Resolución" 
-            CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click"  />
             <asp:Label ID="Label2" runat="server" Text="Consejo Destino:"></asp:Label>
             <asp:TextBox ID="txtCodigoConsejoDestino" runat="server"></asp:TextBox>
         </asp:Panel>
