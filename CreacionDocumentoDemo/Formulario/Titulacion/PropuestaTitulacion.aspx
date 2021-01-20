@@ -7,117 +7,6 @@
     <title>Propuesta Titulación</title>
      <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
 
-    <style type="text/css">
-        p
-        {
-            margin-bottom: 10px;
-            line-height: 1.6em;
-        }
-        .btnBuscar {
-            border-radius: 2em;
-            text-decoration: none;
-            color: whitesmoke;
-            background-color: #A68970;
-            text-align: center;
-            width: auto;
-            padding: 2px;
-            font-size: 15px;
-        }
-        p.MsoBodyText
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:6.0pt;
-	margin-left:0cm;
-	line-height:106%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
- p.MsoNormal
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:8.0pt;
-	margin-left:0cm;
-	line-height:106%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
-p.MsoListParagraph
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:8.0pt;
-	margin-left:36.0pt;
-	line-height:106%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
-p.MsoNoSpacing
-	{margin:0cm;
-	font-size:10.0pt;
-	font-family:"Times New Roman",serif;
-	}
-p.MsoListParagraphCxSpFirst
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:0cm;
-	margin-left:36.0pt;
-	line-height:106%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
-p.MsoListParagraphCxSpMiddle
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:0cm;
-	margin-left:36.0pt;
-	line-height:106%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
-p.MsoListParagraphCxSpLast
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:8.0pt;
-	margin-left:36.0pt;
-	line-height:106%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
-p.MsoBodyTextFirstIndent2
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:8.0pt;
-	margin-left:18.0pt;
-	text-indent:18.0pt;
-	line-height:106%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
-p.MsoHeader
-	{margin:0cm;
-	tab-stops:center 212.6pt right 425.2pt;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;
-	}
-        .auto-style6 {
-            -webkit-appearance: none;
-            text-align: left;
-            font-size: 12px;
-            font-weight: bold;
-            padding-left: 2px;
-            padding-right: 2px;
-            box-shadow: none;
-            border-bottom: 1px solid #795B3B;
-            border-left-style: none;
-            border-left-color: inherit;
-            border-left-width: 0px;
-            border-right-style: none;
-            border-right-color: inherit;
-            border-right-width: 0px;
-            border-top-style: none;
-            border-top-color: inherit;
-            border-top-width: 0px;
-        }
-        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -126,6 +15,8 @@ p.MsoHeader
         <br />
         <asp:Panel ID="menuOpciones" runat="server">
             <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante"   CssClass="btnBuscar" OnClick="btnBuscar_Click"  />
+
+            <br />
 
             <asp:Button ID="btnNumeroResolucion" runat="server" Text="Generar Número Resolución" 
             CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click"  />
@@ -548,7 +439,7 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="
                 runat="server"
                 AutoPostBack="false"
                  placeholder="Buscar cedula/nombre"></asp:TextBox>
-               &nbsp;<asp:Button ID="Button3" runat="server" Text="Cancelar" />
+               &nbsp;<asp:Button ID="Button3" runat="server" Text="X" />
             <asp:UpdatePanel ID="upEstudiante" runat="server" ChildrenAsTriggers="true" UpdateMode="Always">
                 <ContentTemplate>
                  

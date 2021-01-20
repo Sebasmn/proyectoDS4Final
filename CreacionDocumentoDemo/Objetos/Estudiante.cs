@@ -15,7 +15,6 @@ public class Estudiante
     public string Telefono { get; set; }
     public string Correo { get; set; }
     public string CorreoUTA { get; set; }
-    public string FechaNacimiento { get; set; }
     public string Matricula { get; set; }
     public string Folio { get; set; }
     public string Carrera { get; set; }
