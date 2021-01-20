@@ -934,4 +934,281 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
         }
         return carreras;
     }
+    public void GuardarEstudiantes(Estudiante estudiante, string celular,string fecha)
+    {
+        int cnt = 0;
+        MySqlConnection con = this.GetConnectionString();
+        if (buscarEstudiantesPorCedula(estudiante.Cedula) == 1)
+        {
+            string Sqlstr = @"INSERT INTO Estudiantes (CEDULA,APELLIDOS,NOMBRES,TELEFONO,CELULAR,CORREO,CORREOUTA,FECHA_NACIMIENTO,MATRICULA,FOLIO,CARRERA) 
+                            values(@cedula,@apellidos,@nombres,@telefono,@celular,@correo,@correoU,@fechaN,@matricula,@folio,@carrera)";
+            MySqlCommand cmd = new MySqlCommand(Sqlstr, con);
+            con.Open();
+            cmd.Parameters.AddWithValue("cedula", estudiante.Cedula);
+
+            cmd.Parameters.AddWithValue("nombres", estudiante.Nombres);
+            cmd.Parameters.AddWithValue("apellidos", estudiante.Apellidos);
+            cmd.Parameters.AddWithValue("carrera", estudiante.Carrera);
+            cmd.Parameters.AddWithValue("correo", estudiante.Correo);
+            cmd.Parameters.AddWithValue("correoU", estudiante.CorreoUTA);
+            cmd.Parameters.AddWithValue("folio", estudiante.Folio);
+            cmd.Parameters.AddWithValue("matricula", estudiante.Matricula);
+            cmd.Parameters.AddWithValue("telefono", estudiante.Telefono);
+            cmd.Parameters.AddWithValue("fechaN", fecha);
+            cmd.Parameters.AddWithValue("celular", celular);
+
+            int i = cmd.ExecuteNonQuery();
+
+            con.Close();
+            if (i > 0)
+            {
+                cnt++;
+
+            }
+        }
+
+
+
+    }
+
+    private int buscarEstudiantesPorCedula(string cedula)
+    {
+
+
+        try
+        {
+            int resultado = 0;
+            MySqlConnection conn = this.GetConnectionString();
+            string sql = "SELECT COUNT(*) FROM `Estudiantes` WHERE CEDULA ='" + cedula + "'";
+
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            //command.Parameters.AddWithValue("@CEDULA", cedula);
+            conn.Open();
+            if (Convert.ToInt32(command.ExecuteScalar()) == 0)
+            {
+                resultado = 1;
+            }
+            else
+            {
+                resultado = 0;
+            }
+
+
+            conn.Close();
+            return resultado;
+
+        }
+        catch (Exception)
+        {
+            return 2;
+        }
+
+
+    }
+
+    public List<UsuarioEntity> getUsuariosBusqueda(string cedula)
+    {
+        List<UsuarioEntity> usuarios = new List<UsuarioEntity>();
+        try
+        {
+            MySqlConnection conn = this.GetConnectionString();
+            string sql = "SELECT * FROM `USUARIOS_SW` WHERE CEDULA LIKE '%" + cedula + "%'";
+
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            //command.Parameters.AddWithValue("@CEDULA", cedula);
+            conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                UsuarioEntity usuario1 = new UsuarioEntity();
+                usuario1.Nombres = reader["Nombres"].ToString();
+                usuario1.Apellidos = reader["Apellidos"].ToString();
+                usuario1.Cedula = reader["Cedula"].ToString();
+                usuario1.Correo = reader["Correo"].ToString();
+                usuario1.Tipo = reader["Tipo"].ToString();
+                usuario1.Clave = reader["Clave"].ToString();
+                usuario1.Correo = reader["Correo"].ToString();
+                usuarios.Add(usuario1);
+
+            }
+            reader.Close();
+            conn.Close();
+        }
+        catch (Exception)
+        {
+
+        }
+        return usuarios;
+    }
+    public List<UsuarioEntity> getUsuarios()
+    {
+        List<UsuarioEntity> usuarios = new List<UsuarioEntity>();
+        try
+        {
+            MySqlConnection conn = this.GetConnectionString();
+            string sql = "SELECT * " +
+                          "FROM `Usuarios_SW` ";
+
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            //command.Parameters.AddWithValue("@CEDULA", cedula);
+            conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                UsuarioEntity usuario1 = new UsuarioEntity();
+                usuario1.Nombres = reader["Nombres"].ToString();
+                usuario1.Apellidos = reader["Apellidos"].ToString();
+                usuario1.Cedula = reader["Cedula"].ToString();
+                usuario1.Correo = reader["Correo"].ToString();
+                usuario1.Tipo = reader["Tipo"].ToString();
+                usuario1.Clave = reader["Clave"].ToString();
+                usuario1.Correo = reader["Correo"].ToString();
+                usuarios.Add(usuario1);
+
+
+            }
+            reader.Close();
+            conn.Close();
+        }
+        catch (Exception)
+        {
+
+        }
+        return usuarios;
+    }
+
+    public bool guardarDatosUsuario(UsuarioEntity usuario)
+    {
+        bool guardado = false;
+        MySqlConnection myConnection = this.GetConnectionString();
+        myConnection.Open();
+        MySqlTransaction myTrans = myConnection.BeginTransaction();
+        try
+        {
+            string sql = "INSERT INTO USUARIOS_SW (CEDULA,NOMBRES,APELLIDOS,TIPO,CLAVE,CORREO) VALUES (@cedula,@nombres,@apellidos,@tipo,@clave,@correo)";
+            MySqlCommand myCommand = new MySqlCommand(sql, myConnection, myTrans);
+            myCommand.CommandType = CommandType.Text;
+            myCommand.Parameters.AddWithValue("cedula", usuario.Cedula);
+            myCommand.Parameters.AddWithValue("nombres", usuario.Nombres);
+            myCommand.Parameters.AddWithValue("apellidos", usuario.Apellidos);
+            myCommand.Parameters.AddWithValue("tipo", usuario.Tipo);
+            myCommand.Parameters.AddWithValue("clave", usuario.Clave);
+            myCommand.Parameters.AddWithValue("correo", usuario.Correo);
+
+            int n = myCommand.ExecuteNonQuery();
+            myTrans.Commit();
+            guardado = true;
+        }
+        catch (Exception e)
+        {
+            try
+            {
+                myTrans.Rollback();
+            }
+            catch (SqlException ex)
+            {
+            }
+        }
+        return guardado;
+    }
+    public bool actualizarDatosUsuario(UsuarioEntity usuario)
+    {
+        bool guardado = false;
+        MySqlConnection myConnection = this.GetConnectionString();
+        myConnection.Open();
+        MySqlTransaction myTrans = myConnection.BeginTransaction();
+        try
+        {
+            string sql = "UPDATE USUARIOS_SW SET NOMBRES=@nombres, APELLIDOS=@apellido,TIPO=@tipo,CLAVE=@clave,CORREO=@correo WHERE CEDULA=@cedula";
+            MySqlCommand myCommand = new MySqlCommand(sql, myConnection, myTrans);
+            myCommand.CommandType = CommandType.Text;
+            myCommand.Parameters.AddWithValue("cedula", usuario.Cedula);
+            myCommand.Parameters.AddWithValue("nombres", usuario.Nombres);
+            myCommand.Parameters.AddWithValue("apellidos", usuario.Apellidos);
+            myCommand.Parameters.AddWithValue("tipo", usuario.Tipo);
+            myCommand.Parameters.AddWithValue("clave", usuario.Clave);
+            myCommand.Parameters.AddWithValue("correo", usuario.Correo);
+
+            int n = myCommand.ExecuteNonQuery();
+            myTrans.Commit();
+            guardado = true;
+        }
+        catch (Exception e)
+        {
+            try
+            {
+                myTrans.Rollback();
+            }
+            catch (SqlException ex)
+            {
+            }
+        }
+        return guardado;
+    }
+
+    public bool eliminarUsuario(string cedula)
+    {
+        bool guardado = false;
+        MySqlConnection myConnection = this.GetConnectionString();
+        myConnection.Open();
+        MySqlTransaction myTrans = myConnection.BeginTransaction();
+        try
+        {
+            string sql = "DELETE FROM USUARIOS_SW WHERE CEDULA=@cedula";
+            MySqlCommand myCommand = new MySqlCommand(sql, myConnection, myTrans);
+            myCommand.CommandType = CommandType.Text;
+            myCommand.Parameters.AddWithValue("cedula", cedula);
+
+
+            int n = myCommand.ExecuteNonQuery();
+            myTrans.Commit();
+            guardado = true;
+        }
+        catch (Exception e)
+        {
+            try
+            {
+                myTrans.Rollback();
+            }
+            catch (SqlException ex)
+            {
+            }
+        }
+        return guardado;
+    }
+    public List<Roles> getTiposUsuarios()
+    {
+        List<Roles> rol = new List<Roles>();
+        try
+        {
+            MySqlConnection conn = this.GetConnectionString();
+            string sql = "SELECT * FROM `TIPOS_USUARIO`";
+
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            //command.Parameters.AddWithValue("@CEDULA", cedula);
+            conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Roles rol1 = new Roles();
+                rol1.ID = reader["ID"].ToString();
+                rol1.Descripcion = reader["NOMBRE"].ToString();
+
+                rol.Add(rol1);
+
+
+            }
+            reader.Close();
+            conn.Close();
+            return rol;
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+
+    }
 }
