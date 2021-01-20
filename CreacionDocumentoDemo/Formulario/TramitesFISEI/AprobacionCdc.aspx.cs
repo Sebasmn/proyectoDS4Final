@@ -20,13 +20,7 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             if (!IsPostBack)
             {
                 ManejarUsuario();
-                List<String> datos = new List<string>();
-                datos.Add("Clay Aldaz");
-                datos.Add("Pedrito");
-                datos.Add("Maria Chavez");
-
-                ddlCoordinador.DataSource = datos;
-                ddlCoordinador.DataBind();
+             
 
                 List<String> nombresDias = new List<string>();
                 nombresDias.Add("lunes");
@@ -155,7 +149,7 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             editables.Add("<secuencia>"); datos.Add(txtAnio1.Text);
             editables.Add("<anioReso>"); datos.Add(txtAnio2.Text);
 
-            editables.Add("<coordinador>"); datos.Add(ddlCoordinador.SelectedValue.ToString());
+            editables.Add("<coordinador>"); datos.Add(txtCoordinador0.Text.ToString());
             editables.Add("<sesion>"); datos.Add(ddlSesion.SelectedValue.ToString());
             editables.Add("<nombreDia>"); datos.Add(ddlDia2.SelectedValue.ToString());
 
@@ -208,108 +202,27 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             resol.IDConsejo = txtCodigoConsejoDestino.Text;
             resol.Estudiante = txtCedula.Text;
             resol.Secretaria = ((UsuariosSW)Session["USUARIOSW"]).Cedula;
-            bool guardado = mysql.guardarResolucion(resol);
-
-            if (guardado)
+            bool verificado = mysql.verificarDatos(editables, datos);
+            if (verificado)
             {
-                Label2.Text = "Documento Generado y Guardado";
-            }
-        }
-
-        private void CreateWordDocument(object filename, object SaveAs)
-        {
-            Word.Application wordApp = new Word.Application();
-            object missing = Missing.Value;
-            Word.Document myWordDoc = null;
-
-            if (File.Exists((string)filename))
-            {
-                object readOnly = false;
-                object isVisible = false;
-                wordApp.Visible = false;
-
-                myWordDoc = wordApp.Documents.Open(ref filename, ref missing, ref readOnly,
-                                        ref missing, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing, ref missing);
-                myWordDoc.Activate();
-
-                //find and replace
-                List<string> datos = new List<string>();
-                List<string> editables = new List<string>();
-               
-                this.FindAndReplace(wordApp, "<fecha>", txtFechaHeader.Text); editables.Add("<fecha>"); datos.Add(txtFechaHeader.Text);
-                this.FindAndReplace(wordApp, "<secuencia>", txtAnio1.Text); editables.Add("<secuencia>"); datos.Add(txtAnio1.Text);
-                this.FindAndReplace(wordApp, "<anioReso>", txtAnio2.Text); editables.Add("<anioReso>"); datos.Add(txtAnio2.Text);
-
-
-                this.FindAndReplace(wordApp, "<coordinador>", ddlCoordinador.SelectedValue.ToString());         editables.Add("<coordinador>"); datos.Add(ddlCoordinador.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<sesion>", ddlSesion.SelectedValue.ToString());                   editables.Add("<sesion>"); datos.Add(ddlSesion.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<nombreDia>", ddlDia2.SelectedValue.ToString());          editables.Add("<nombreDia>"); datos.Add(ddlDia2.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<numeroDia>", ddlDia.SelectedValue.ToString());            editables.Add("<numeroDia>"); datos.Add(ddlDia.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<nombreMes>", ddlMes.SelectedValue.ToString());       editables.Add("<nombreMes>"); datos.Add(ddlMes.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<anio>", txtAnio0.Text);                                                  editables.Add("<anio>");  datos.Add(txtAnio0.Text);
-
-                this.FindAndReplace(wordApp, "<memo>", txtMemo.Text.ToString());                            editables.Add("<memo>"); datos.Add(txtMemo.Text);
-                this.FindAndReplace(wordApp, "<diaMemo>", ddlDia0.SelectedValue.ToString());            editables.Add("<diaMemo>"); datos.Add(ddlDia0.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<numDiaMemo>", ddlDia1.SelectedValue.ToString());         editables.Add("<numDiaMemo>"); datos.Add(ddlDia1.SelectedValue.ToString());
-
-                this.FindAndReplace(wordApp, "<nombreMesMemo>", ddlMes0.SelectedValue.ToString()); editables.Add("<nombreMesMemo>"); datos.Add(ddlMes0.SelectedValue.ToString());
-                this.FindAndReplace(wordApp, "<anioMemo>", txtAnio0.Text.ToString());                       editables.Add("<anioMemo>"); datos.Add(txtAnio0.Text);
-
-
-                this.FindAndReplace(wordApp, "<ejemplares>", txtNumeroEjemp.Text);          editables.Add("<ejemplares>"); datos.Add(txtNumeroEjemp.Text);
-                this.FindAndReplace(wordApp, "<tutor>", txtDirector.Text);                              editables.Add("<tutor>"); datos.Add(txtDirector.Text);
-                this.FindAndReplace(wordApp, "<nombre>", txtNombreEstu1.Text);                  editables.Add("<nombre>"); datos.Add(txtNombreEstu1.Text);
-                this.FindAndReplace(wordApp, "<cedula>", txtCedula.Text);                           editables.Add("<cedula>"); datos.Add(txtCedula.Text);
-
-                this.FindAndReplace(wordApp, "<decano>", txtDecana.Text);                   editables.Add("<decano>"); datos.Add(txtDecana.Text);
-                this.FindAndReplace(wordApp, "<presidente >", txtPresidente.Text);                  editables.Add("<presidente>"); datos.Add(txtPresidente.Text);
+                bool guardado = mysql.guardarResolucion(resol);
+                if (guardado)
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Resolucion creada !')", true);
+                    // Label2.Text = "Documento Generado y Guardado";
+                }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha producido un error en los datos')", true);
+                    // Label2.Text = "Ha ocurrido un error en los datos";
+                }
             }
             else
             {
-                //MessageBox.Show("File not Found!");
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Llenar TODOS los campos correctamente')", true);
             }
-
-            //Save as
-            myWordDoc.SaveAs(ref SaveAs, ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing,
-                            ref missing, ref missing, ref missing);
-
-            myWordDoc.Close();
-            wordApp.Quit();
-
         }
-        private void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
-        {
-            object matchCase = true;
-            object matchWholeWord = true;
-            object matchWildCards = false;
-            object matchSoundLike = false;
-            object nmatchAllforms = false;
-            object forward = true;
-            object format = false;
-            object matchKashida = false;
-            object matchDiactitics = false;
-            object matchAlefHamza = false;
-            object matchControl = false;
-            object read_only = false;
-            object visible = true;
-            object replace = 2;
-            object wrap = 1;
 
-            wordApp.Selection.Find.Execute(ref ToFindText,
-                ref matchCase, ref matchWholeWord,
-                ref matchWildCards, ref matchSoundLike,
-                ref nmatchAllforms, ref forward,
-                ref wrap, ref format, ref replaceWithText,
-                ref replace, ref matchKashida,
-                ref matchDiactitics, ref matchAlefHamza,
-                ref matchControl);
-        }
 
         protected void btnNumeroResolucion_Click(object sender, EventArgs e)
         {

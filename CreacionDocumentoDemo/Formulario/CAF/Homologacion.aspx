@@ -15,11 +15,20 @@
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:Image ID="escudoLogin" runat="server" 
+                    ImageUrl="~/Images/EscudoUTA.png"
+                    />
+            <h1>
+               Resolución para Homologación
+                
+            </h1>
+            <hr />
     <asp:Panel ID="menuOpciones" runat="server">
             <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante"   CssClass="btnBuscar" OnClick="btnBuscar_Click"  />
 
             <asp:Button ID="btnNumeroResolucion" runat="server" Text="Generar Número Resolución" 
             CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click"  />
+            <br />
         <asp:Label ID="Label2" runat="server" Text="Consejo Destino:"></asp:Label>
             <asp:TextBox ID="txtCodigoConsejoDestino" runat="server"></asp:TextBox>
         </asp:Panel>
@@ -74,12 +83,7 @@ mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1"><o:p></o:p></span>
             <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
                 <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:
 106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:&quot;Arial Unicode MS&quot;;
-mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">COORDINADOR DE LAS CARRERAS DE </span></b>
-            </p>
-            <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
-                &nbsp;</p>
-            <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
-                <b style="mso-bidi-font-weight:normal"><span style="font-size:10.0pt;
+mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">COORDINADOR DE LAS CARRERAS DE </span><span style="font-size:10.0pt;
 line-height:115%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;
 color:black;mso-themecolor:text1">
                 <asp:DropDownList ID="txtCarrerasCoorD" runat="server" CssClass="noBorder" Font-Bold="True" Font-Size="Smaller" Width="100%">
@@ -258,7 +262,7 @@ Tahoma"><b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line
 Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                  <asp:DropDownList ID="ddlCarreras0" runat="server" CssClass="noBorder">
+                                  <asp:DropDownList ID="ddlCarreras0" runat="server" CssClass="noBorder" Width="100%">
                                   </asp:DropDownList>
                                   </span></span></span></b>
                                   </span>
@@ -336,27 +340,6 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span style="font-size:10.0
 Tahoma"><span style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
                                   <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">&nbsp;</span></span></span></span></span></b></span></span></span></span></em></span></span><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">, CONFORME AL SIGUIENTE DETALLE:<o:p></o:p></span></p>
-            <p class="MsoNoSpacing" style="text-align:justify">
-                <o:p></o:p>
-            </p>
-            <p class="MsoNoSpacing" style="text-align:justify">
-                <o:p></o:p>
-            </p>
-            <p class="MsoNoSpacing" style="text-align:justify">
-                <o:p></o:p>
-            </p>
-            <p class="MsoNoSpacing" style="text-align:justify">
-                <o:p></o:p>
-            </p>
-            <p class="MsoNoSpacing" style="text-align:justify">
-                <o:p></o:p>
-            </p>
-            <p class="MsoNoSpacing" style="text-align:justify">
-                <o:p></o:p>
-            </p>
-            <p class="MsoNoSpacing" style="text-align:justify">
-                <o:p></o:p>
-            </p>
             <p class="MsoNoSpacing" style="text-align:justify">
                 <o:p></o:p>
             </p>

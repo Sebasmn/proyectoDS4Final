@@ -15,9 +15,13 @@
     
     <form id="form1"  runat="server">
           <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <br />
-        <br />
-        <br />
+<asp:Image ID="escudoLogin" runat="server" 
+                    ImageUrl="~/Images/EscudoUTA.png"
+                    />
+            <h1>
+               Resolución para Reconocimiento de Cultura Física 
+            </h1>
+            <hr />
         <asp:Panel ID="menuOpciones" runat="server">
             <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante" 
             CssClass="btnBuscar" OnClick="btnBuscar_Click"  />
@@ -34,10 +38,6 @@
             <p class="MsoNormal" style="text-align:justify">
             <asp:TextBox ID="txtFechaHeader"  placeholder="Ambato,21 de Febrero del 2020" runat="server" CssClass="noBorder" Height="16px" Width="233px"></asp:TextBox>
             </p>
-            <p class="MsoNormal" style="text-align:justify">
-                &nbsp;</p>
-            <p class="MsoNormal" style="text-align:justify">
-                &nbsp;</p>
             <p class="MsoNormal" style="text-align:justify">
                 <span lang="ES" style="font-size:
 9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif">Resolución</span><span lang="ES" style="font-size:
@@ -240,8 +240,19 @@ mso-ansi-language:ES-EC"><o:p>&nbsp;</o:p></span></p>
             <p class="MsoNormal" style="text-align:justify;mso-pagination:none">
                 <b style="mso-bidi-font-weight:normal"><span lang="ES" style="font-size:9.0pt;
 mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">INFORMAR, </span></b><span lang="ES" style="font-size:9.0pt;mso-bidi-font-size:8.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">QUE LOS DOCUMENTOS ORIGINALES CITADOS EN EL PÁRRAFO QUE ANTECEDE REPOSAN EN LA COORDINACIÓN DE LA </span><span lang="ES" style="font-size:9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif">CARRERA DE </span><span lang="ES" style="font-size:9.0pt;mso-bidi-font-size:8.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">INGENIERÍA EN ELECTRÓNICA Y COMUNICACIONES.<o:p></o:p></span></p>
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">QUE LOS DOCUMENTOS ORIGINALES CITADOS EN EL PÁRRAFO QUE ANTECEDE REPOSAN EN LA COORDINACIÓN DE LA </span><span lang="ES" style="font-size:9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif">CARRERA DE <span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"><em><span style="font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;font-style:normal"><span style="mso-spacerun:yes"><span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:
+Tahoma;mso-ansi-language:ES-EC;mso-fareast-language:EN-US;mso-bidi-language:
+AR-SA"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma"><b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
+                <asp:DropDownList ID="ddlCarreras0" runat="server" CssClass="noBorder">
+                </asp:DropDownList>
+                </span></span></span></b></span></span></span></span></span></em></span> </span></p>
             <p class="MsoNormal" style="text-align:justify;mso-pagination:none">
                 <span lang="ES" style="font-size:9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma"><o:p>&nbsp;</o:p></span></p>
@@ -297,8 +308,7 @@ mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"><span style="mso-spacerun
                   <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
             TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
             runat="server" />
-                  <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-                </ContentTemplate>
+                  </ContentTemplate>
         </asp:UpdatePanel>
                    </p>
         <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="221px" Width="849px">
@@ -307,7 +317,7 @@ mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"><span style="mso-spacerun
                 AutoPostBack="false"
                  placeholder="Buscar cedula/nombre"
                 OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
-               &nbsp;<asp:Button ID="Button3" runat="server" Text="Cancelar" />
+               &nbsp;<asp:Button ID="Button3" runat="server" Text="X" />
             <asp:UpdatePanel ID="upEstudiante" runat="server" ChildrenAsTriggers="true" UpdateMode="Always">
                 <ContentTemplate>
                  

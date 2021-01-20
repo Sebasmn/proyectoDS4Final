@@ -33,6 +33,15 @@ namespace CreacionDocumentoDemo.Formulario.CAF
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
+        /// Control escudoLogin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image escudoLogin;
+
+        /// <summary>
         /// Control menuOpciones.
         /// </summary>
         /// <remarks>
@@ -123,13 +132,13 @@ namespace CreacionDocumentoDemo.Formulario.CAF
         protected global::System.Web.UI.WebControls.TextBox txtCoordinador;
 
         /// <summary>
-        /// Control txtCarrerasCoor.
+        /// Control ddlIndex.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCarrerasCoor;
+        protected global::System.Web.UI.WebControls.DropDownList ddlIndex;
 
         /// <summary>
         /// Control ddlSesion.

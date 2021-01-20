@@ -28,17 +28,7 @@ namespace CreacionDocumentoDemo.Formulario
             }
             if (!IsPostBack)
             {
-                List<String> datos = new List<string>();
-                datos.Add("Clay Aldas");
-                datos.Add("Pedrito");
-                datos.Add("Maria Chavez");
-
-                ddlCoordinador.DataSource = datos;
-                ddlCoordinador.DataBind();
-
-                ddlPresidente.DataSource = datos;
-                ddlPresidente.DataBind();
-
+          
                 List<String> dias = new List<string>();
                 for (int i = 1; i <= 31; i++)
                 {
@@ -75,6 +65,25 @@ namespace CreacionDocumentoDemo.Formulario
                 ddlMes.DataBind();
                 ddlMes0.DataSource = meses;
                 ddlMes0.DataBind();
+                ManejoDatos mysql = new ManejoDatos();
+                dropDownCoord.DataSource = mysql.ObtenerCarrerasCoord();
+                dropDownCoord.DataBind();
+
+                List<string> modelo = mysql.getCarreras();
+                ddlExCarreras.DataSource = modelo;
+                ddlExCarreras.DataBind();
+                ddlExCarreras0.DataSource = modelo;
+                ddlExCarreras0.DataBind();
+
+                List<string> carreas= mysql.getCarreras();
+                List<string> carreasMin = new List<string>();
+         
+                foreach (string  item in carreas)
+                {
+                    carreasMin.Add(item.ToLower());
+                }
+                ddlCarreraComsion.DataSource = carreasMin;
+                ddlCarreraComsion.DataBind();
             }
         }
 
@@ -120,88 +129,62 @@ namespace CreacionDocumentoDemo.Formulario
             ViewState["CEDULA_EST"] = GridView1.SelectedRow.Cells[1].Text;
             if (GridView1.SelectedRow.Cells[10].Text.Equals("SIST"))
             {
-                txtCarrera1.Text = "INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS";
-                txtCarrera2.Text = "INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS";
-                txtCarrera3.Text = "INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS";
+                //txtCarrera1.Text = "INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS";
+              //txtCarrera2.Text = "INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS";
+              //  txtCarrera3.Text = "INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS";
             }
             ViewState["CorreoUTA"] = GridView1.SelectedRow.Cells[6].Text;
         }
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-         
 
                 List<string> datos = new List<string>();
-
-                datos.Add(txtFechaHeader.Text);
-                datos.Add(txtAnio1.Text);
-                datos.Add(txtAnio2.Text);
-
-                datos.Add(ddlCoordinador.SelectedValue.ToString());
-                datos.Add(ddlSesion.SelectedValue.ToString());
-                datos.Add(ddlDia.SelectedValue.ToString());
-
-                datos.Add(ddlMes.SelectedValue.ToString());
-                datos.Add(txtAnio.Text);
-                datos.Add(txtAcuerdo.Text);
-
-                datos.Add(ddlMes0.SelectedValue.ToString());
-                datos.Add(ddlDia0.SelectedValue.ToString());
-                datos.Add(txtAnio0.Text);
-
-                datos.Add(txtPresidente.Text);
-                datos.Add(txtNombreEstu1.Text);
-                datos.Add(txtCarrera1.Text);
-
-                datos.Add(txtHoras.Text);
-                datos.Add(ddlPresidente.SelectedValue.ToString());
-                datos.Add(txtCarrera4.Text);
-
-                datos.Add(txtCarrera5.Text);
-
                 List<string> editables = new List<string>();
 
-                editables.Add("<fecha>");
-                editables.Add("<secuencia>");
-                editables.Add("<anioReso>");
+                editables.Add("<fecha>"); datos.Add(txtFechaHeader.Text);
+            editables.Add("<secuencia>"); datos.Add(txtSecuencia.Text);
+            editables.Add("<anioReso>"); datos.Add(txtAnio2.Text);
 
-                editables.Add("<coordinador>");
-                editables.Add("<sesion>");
-                editables.Add("<dia>");
+            editables.Add("<coordinador>"); datos.Add(txtCoordinador.Text.ToString()); 
+            editables.Add("<carreraCoord>"); datos.Add(dropDownCoord.SelectedValue.ToString());
+            editables.Add("<sesion>"); datos.Add(ddlSesion.SelectedValue.ToString());
 
-                editables.Add("<mes>");
-                editables.Add("<anio>");
-                editables.Add("<acuerdo>");
+            editables.Add("<dia>"); datos.Add(ddlDia.SelectedValue.ToString());
+            editables.Add("<mes>"); datos.Add(ddlMes.SelectedValue.ToString());
+            editables.Add("<anio>"); datos.Add(txtAnio.Text);
+            editables.Add("<acuerdo>"); datos.Add(txtAcuerdo.Text);
 
-                editables.Add("<mes1>");
-                editables.Add("<dia1>");
-                editables.Add("<anio1>");
+            editables.Add("<mes1>"); datos.Add(ddlMes0.SelectedValue.ToString());
+            editables.Add("<dia1>"); datos.Add(ddlDia0.SelectedValue.ToString());
+            editables.Add("<anio1>"); datos.Add(txtAnio0.Text);
 
-                editables.Add("<presidente>");
-                editables.Add("<nombre>");
-                editables.Add("<carrera>");
+            editables.Add("<presidente>"); datos.Add(txtPresidente.Text);
+            editables.Add("<nombre>"); datos.Add(txtNombreEstu1.Text);
+            editables.Add("<carrera>"); datos.Add(ddlExCarreras.SelectedValue.ToString());
 
-                editables.Add("<horas>");
-                editables.Add("<presidenteSub>");
-                editables.Add("<presiComision>");
+            editables.Add("<horas>"); datos.Add(txtHoras.Text);
+            editables.Add("<presidenteSub>"); datos.Add(txtPresiComi.Text.ToString());
+            editables.Add("<presiComision>"); datos.Add(txtCarrera4.Text);
 
-                editables.Add("<coorVinculacion>");
+            editables.Add("<car1>"); datos.Add(ddlCarreraComsion.SelectedValue.ToString());
+            editables.Add("<coorVinculacion>"); datos.Add(txtCarrera5.Text);
 
-            
+
             StringBuilder sb1 = new StringBuilder();
             sb1.Append(@"D:\Documentos\Pruebas\");
             StringBuilder sb2 = new StringBuilder();
             sb2.Append("Resolucion");
 
-            sb2.Append(txtAnio1.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio2.Text);
+            sb2.Append(txtSecuencia.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio2.Text);
             StringBuilder codigo = new StringBuilder();
-            codigo.Append(txtAnio1.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio2.Text);
+            codigo.Append(txtSecuencia.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio2.Text);
             sb1.Append(sb2.ToString());
             sb1.Append(".docx");
             string resolucion = codigo.ToString();
             string  ruta = sb1.ToString();
             
-            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\practicasPrepo.docx";
+            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\practicas.docx";
             //continuar = CreateWordDocument(plantilla, sb1.ToString());
              ManejoDatos mysql = new ManejoDatos();
             Resolucion resol = new Resolucion();
@@ -210,17 +193,32 @@ namespace CreacionDocumentoDemo.Formulario
             resol.Datos = datos;
             resol.Codigo = resolucion;
             resol.Plantilla = plantilla;
-           // resol.IDConsejo = 20;
-            resol.Estudiante = ViewState["CEDULA_EST"].ToString();
-             bool guardado = mysql.guardarResolucion(resol);
             resol.Secretaria = ((UsuariosSW)Session["USUARIOSW"]).Cedula;
             resol.IDConsejo = txtCodigoConsejoDestino.Text;
-            if (guardado)
+            resol.Estudiante = ViewState["CEDULA_EST"].ToString();
+            
+            bool verificado = mysql.verificarDatos(editables, datos);
+            if (verificado)
+            {
+                bool guardado = mysql.guardarResolucion(resol);
+                if (guardado)
                 {
                     Label2.Text = "Documento Generado y Guardado";
                 }
-            
-          
+                else
+                {
+                    Label2.Text = "Ha ocurrido un error en los datos";
+                }
+            }
+            else
+            {
+                Label2.Text = "Llenar todos los campos correctamente...";
+            }
+            ///resol.IDConsejo=txtCodigoConsejoDestino.Text;
+
+
+
+
 
         }
 
@@ -287,13 +285,13 @@ namespace CreacionDocumentoDemo.Formulario
              
                 this.FindAndReplace(wordApp, "<fecha>", txtFechaHeader.Text);  
 
-                this.FindAndReplace(wordApp, "<secuencia>", txtAnio1.Text);
+                this.FindAndReplace(wordApp, "<secuencia>", txtSecuencia.Text);
                
 
                 this.FindAndReplace(wordApp, "<anioReso>", txtAnio2.Text);
-                
 
-                this.FindAndReplace(wordApp, "<coordinador>", ddlCoordinador.SelectedValue.ToString());
+                this.FindAndReplace(wordApp, "<coordinador>", txtCoordinador.Text.ToString());
+                //this.FindAndReplace(wordApp, "<coordinador>", ddlCoordinador.SelectedValue.ToString());
                 
 
                 this.FindAndReplace(wordApp, "<sesion>", ddlSesion.SelectedValue.ToString());
@@ -327,14 +325,14 @@ namespace CreacionDocumentoDemo.Formulario
                 this.FindAndReplace(wordApp, "<nombre>", txtNombreEstu1.Text);
               
 
-                this.FindAndReplace(wordApp, "<carrera>", txtCarrera1.Text);
+               // this.FindAndReplace(wordApp, "<carrera>", txtCarrera1.Text);
                 
 
                 this.FindAndReplace(wordApp, "<horas>", txtHoras.Text);
                 
 
 
-                this.FindAndReplace(wordApp, "<presidenteSub>", ddlPresidente.SelectedValue.ToString());
+                //this.FindAndReplace(wordApp, "<presidenteSub>", ddlPresidente.SelectedValue.ToString());
                 
 
                 this.FindAndReplace(wordApp, "<presiComision>", txtCarrera4.Text);
@@ -368,7 +366,7 @@ namespace CreacionDocumentoDemo.Formulario
         {
             ManejoDatos mysql = new ManejoDatos();
             string resolucion= mysql.obtenerSiguienteResolución();
-            txtAnio1.Text = resolucion;
+            txtSecuencia.Text = resolucion;
         }
     }
 }

@@ -43,29 +43,57 @@ namespace CreacionDocumentoDemo.Inicio
         {
             string usuario = TextBox1.Text;
             string clave = TextBox2.Text;
-            ManejoDatos datos = new ManejoDatos();
-            UsuariosSW tipo= datos.obtenerLogin(usuario,clave);
-                if (tipo.Tipo!=null  )
+            if (cbConsejo.Checked)
+            {
+                ManejoDatos datos = new ManejoDatos();
+                ConsejoDir consejo = datos.ObtenerLoginConsejo(usuario, clave);
+                if (consejo.Codigo!=null)
                 {
-                char userTipo = Convert.ToChar(tipo.Tipo);
-                Session["USUARIOSW"] = tipo;
+                   // Session["USUARIOSW"] = tipo;
+                    Session["CONSEJO"] = consejo;
+                    Response.Redirect("../Formulario/Consejo.aspx");
+                }
+                else
+                {
+                    //no se encontro usuario
+                    Label1.Text = "Usuario y/c clave incorrectas";
+                }
+            }
+            else
+            {
+                
+                ManejoDatos datos = new ManejoDatos();
+                UsuariosSW tipo = datos.obtenerLogin(usuario, clave);
+                if (tipo.Tipo != null)
+                {
+                    char userTipo = Convert.ToChar(tipo.Tipo);
+                    Session["USUARIOSW"] = tipo;
                     switch (userTipo)
                     {
                         case 'S': //Secretaria --> Menu Resoluciones
+
                             Response.Redirect("../Inicio/index.aspx");
                             break;
                         case 'A': //Admin --> Menu Admin
                             Response.Redirect("admin.aspx");
                             break;
-                        case 'C': //Consejo --> Menu Consejo
+                     /*   case 'C': //Consejo --> Menu Consejo
+                            Session["CONSEJO"] = TextBox1.Text;
                             Response.Redirect("../Formulario/Consejo.aspx");
-                            break;
+                            break;*/
 
                     }
                 }
+            }
+           
             
            
        
+        }
+
+        protected void cbConsejo_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

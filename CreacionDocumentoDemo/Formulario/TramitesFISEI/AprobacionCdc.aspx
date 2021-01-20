@@ -20,15 +20,20 @@
     
     <form id="form1" runat="server">
              <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:Image ID="escudoLogin" runat="server" 
+                    ImageUrl="~/Images/EscudoUTA.png"
+                    />
+            <h1>
+              Resolución para Act. de Conocimientos
+                
+            </h1>
+            <hr />
         <br />
-        <br />
-        <br />
-        <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante" 
-            Height="27px"
-            Width="312px" CssClass="btnBuscar"  />
          <asp:Panel ID="menuOpciones" runat="server">
+             <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante" CssClass="btnBuscar"  />
             <asp:Button ID="btnNumeroResolucion" runat="server" Text="Generar Número Resolución" 
-            CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click" Height="29px" Width="272px"  />
+            CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click"  />
+             <br />
         <asp:Label ID="Label3" runat="server" Text="Consejo Destino:"></asp:Label>
             <asp:TextBox ID="txtCodigoConsejoDestino" runat="server"></asp:TextBox>
              </asp:Panel>
@@ -47,7 +52,7 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC">
           Resolución <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-          <asp:TextBox ID="txtAnio1" runat="server" placeholder="Ejm: 0209" CssClass="noBorder"></asp:TextBox>
+          <asp:TextBox ID="txtAnio1" runat="server" placeholder="0209" CssClass="noBorder"></asp:TextBox>
           </span></span>-P-CD-FISEI-UTA-<span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtAnio2" runat="server" CssClass="noBorder" placeholder="Ejm: 2020"></asp:TextBox>
@@ -59,9 +64,8 @@ line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Taho
                   <span style="font-size:9.0pt;
 line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">Ingeniero, Mg.</span><p>
                       <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma">
-                      <asp:DropDownList ID="ddlCoordinador" runat="server">
-                      </asp:DropDownList>
+Tahoma; line-height: 106%; mso-fareast-font-family: &quot;Arial Unicode MS&quot;;">
+                      <asp:TextBox ID="txtCoordinador0" runat="server" CssClass="noBorder" Height="16px" placeholder="Ing. Carlos Sánchez, Mg." Width="233px"></asp:TextBox>
                       </span>
                   </p>
                   <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify;tab-stops:21.3pt">
@@ -126,17 +130,17 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style=
                                       </span></span>, suscrito por el/la Ingeniero <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                      <asp:TextBox ID="txtCoordinador" runat="server" placeholder="Ejm:Edisson Patricio Jordán" CssClass="noBorder"></asp:TextBox>
+                                      <asp:TextBox ID="txtCoordinador" runat="server" placeholder="Ejm:Edisson Patricio Jordán" CssClass="noBorder" Width="100%"></asp:TextBox>
                                       </span></span></span>, Coordinador de la Unidad de Vinculación – FISEI, quien con fines de aprobación y suscripción remite&nbsp; <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
                                       <asp:TextBox ID="txtNumeroEjemp" runat="server" Min="1" placeholder="Ej: 2" TextMode="Number" CssClass="noBorder" Width="40px"></asp:TextBox>
                                       </span></span></span>&nbsp;ejemplares de las cartas de compromiso realizadas con <span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 "><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma;">
-                                      <asp:TextBox ID="txtDirector" runat="server" placeholder="Ejm: Luis J.(cargo)" CssClass="noBorder"></asp:TextBox>
+                                      <asp:TextBox ID="txtDirector" runat="server" placeholder="Ejm: Luis J.(cargo)" CssClass="noBorder" Width="100%"></asp:TextBox>
                                       </span></span>, a favor del estudiante <span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                      <asp:TextBox ID="txtNombreEstu1" runat="server" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Andres Loor M." ToolTip="Busque un estudiante" Width="223px" CssClass="noBorder"></asp:TextBox>
+                                      <asp:TextBox ID="txtNombreEstu1" runat="server" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Andres Loor M." ToolTip="Busque un estudiante" Width="100%" CssClass="noBorder"></asp:TextBox>
                                       </span>&nbsp;con c.c. <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
@@ -148,16 +152,16 @@ line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Taho
 Tahoma">, LAS CARTAS DE COMPROMISO SUSCRITAS ENTRE&nbsp; <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                              <asp:TextBox ID="txtDirector0" runat="server" placeholder="Ejm: Luis (cargo)" CssClass="noBorder"></asp:TextBox>
+                                              <asp:TextBox ID="txtDirector0" runat="server" placeholder="Ejm: Luis (cargo)" CssClass="noBorder" Width="100%"></asp:TextBox>
                                               </span></span></span>, Y <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                              <asp:TextBox ID="txtDecana" runat="server" placeholder="LA INGENIERA PILAR URRUTIA" CssClass="noBorder"></asp:TextBox>
+                                              <asp:TextBox ID="txtDecana" runat="server" placeholder="Ejm: La Ing. Pilar Urrutia" CssClass="noBorder" Width="100%"></asp:TextBox>
                                               </span></span></span>, COMO DECANO/A&nbsp; DE LA FACULTAD DE INGENIERÍA EN SISTEMAS, ELECTRÓNICA E INDUSTRIAL, PARA LA REALIZACIÓN DE LAS PRÁCTICAS DE FORMACIÓN ACADÉMICA A FAVOR DEL ESTUDIANTE <b style="mso-bidi-font-weight:
 normal"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                              <asp:TextBox ID="txtNombreEstu2" runat="server" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Andres Loor M." ToolTip="Busque un estudiante" Width="223px" CssClass="noBorder"></asp:TextBox>
+                                              <asp:TextBox ID="txtNombreEstu2" runat="server" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Andres Loor M." ToolTip="Busque un estudiante" Width="100%" CssClass="noBorder"></asp:TextBox>
                                               </span></span>, CON C.C. <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
@@ -201,7 +205,7 @@ mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">PRESIDENTA</span></div>
                 AutoPostBack="false"
                  placeholder="Buscar cedula/nombre"
                 OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
-               &nbsp;<asp:Button ID="Button3" runat="server" Text="Cancelar" OnClick="Button3_Click" />
+               &nbsp;<asp:Button ID="Button3" runat="server" Text="X" OnClick="Button3_Click" />
             <asp:UpdatePanel ID="upEstudiante" runat="server" ChildrenAsTriggers="true" UpdateMode="Always">
                 <ContentTemplate>
                  

@@ -33,6 +33,9 @@
             <asp:TextBox ID="TextBox2" runat="server" required="true" placeholder="*********" CssClass="inputLogin" TextMode="Password"></asp:TextBox>
             <br />
             <br />
+            <asp:CheckBox ID="cbConsejo" runat="server" Font-Italic="True" Font-Size="9pt" OnCheckedChanged="cbConsejo_CheckedChanged" Text="Ingresar como consejo" />
+            <br />
+            <br />
             <asp:Button ID="botonLogin" runat="server" CssClass="botonLogin" Text="Ingresar" OnClick="botonLogin_Click" />
         </div>
     </form>

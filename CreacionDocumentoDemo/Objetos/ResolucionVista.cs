@@ -10,6 +10,7 @@ namespace CreacionDocumentoDemo.Objetos
         public string Ubicacion { get; set; }
         public string Codigo { get; set; }
         public string Consejo { get; set; }
+        public string Estudiante { get; set; }
         public ResolucionVista()
         {
 

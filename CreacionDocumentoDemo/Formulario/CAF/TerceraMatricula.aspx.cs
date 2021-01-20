@@ -187,7 +187,7 @@ namespace CreacionDocumentoDemo.Formulario.CAF
             editables.Add("<anio>"); datos.Add(txtAnio.Text);
 
             editables.Add("<coordinador>"); datos.Add(txtCoordinador.Text);
-            editables.Add("<carrerasCoor>"); datos.Add(txtCarrerasCoor.Text);
+            editables.Add("<carrerasCoor>"); datos.Add(ddlIndex.SelectedValue.ToString());
             editables.Add("<sesion>"); datos.Add(ddlSesion.SelectedValue.ToString());
 
             editables.Add("<nombreDia>"); datos.Add(ddlNombreDia.SelectedValue.ToString());
@@ -234,11 +234,25 @@ namespace CreacionDocumentoDemo.Formulario.CAF
            // resol.IDConsejo = 20;
             resol.IDConsejo = txtCodigoConsejoDestino.Text;
             resol.Estudiante = txtCedula.Text;
-            bool guardado = mysql.guardarResolucion(resol);
             resol.Secretaria = ((UsuariosSW)Session["USUARIOSW"]).Cedula;
-            if (guardado)
+            bool verificado = mysql.verificarDatos(editables, datos);
+            if (verificado)
             {
-                labelEstado.Text = "Documento Generado y Guardado";
+                bool guardado = mysql.guardarResolucion(resol);
+                if (guardado)
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Resolucion creada !')", true);
+                    // Label2.Text = "Documento Generado y Guardado";
+                }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha producido un error en los datos')", true);
+                    // Label2.Text = "Ha ocurrido un error en los datos";
+                }
+            }
+            else
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Llenar TODOS los campos correctamente')", true);
             }
         }
     }

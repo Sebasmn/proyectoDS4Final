@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Crear Nuevo Consejo</title>
     <link rel="stylesheet" href="../Estilos/estilos.css"  type="text/css" />
+ 
 </head>
 <body>
     <form id="form1" runat="server">
@@ -68,6 +69,16 @@
             <asp:Button ID="Button1" runat="server" Text="Terminar y Generar Acta" CssClass="botonesConsejo" OnClick="Button1_Click" Width="200px" />
            
             <asp:Button ID="Button2" runat="server" Text="Button" CssClass="botonesConsejo" />
+         
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
          
         </div>
     </form>

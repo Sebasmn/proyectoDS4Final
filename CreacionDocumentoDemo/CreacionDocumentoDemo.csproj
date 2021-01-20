@@ -273,6 +273,7 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Objetos\ConsejoDir.cs" />
     <Compile Include="Objetos\Estudiante.cs" />
     <Compile Include="Objetos\ManejoDatos.cs" />
     <Compile Include="Objetos\Resolucion.cs" />

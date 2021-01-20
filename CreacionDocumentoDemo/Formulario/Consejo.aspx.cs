@@ -15,10 +15,15 @@ namespace CreacionDocumentoDemo.Formulario
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+
+           // Session["CONSEJO"] = "CD-CF2020";
+          //  cargarResoluciones();
+
             if (!IsPostBack)
             {
-                ManejarUsuario();
+                   ManejarUsuario();
+                cargarResoluciones();
+                //   ManejarUsuario();
                 if (Session["ResolucionesAprobadas"] != null)
                 {
                     actualizarAprobadas();
@@ -26,34 +31,33 @@ namespace CreacionDocumentoDemo.Formulario
             }
             
 
-            if (!IsPostBack)
-            {
-                cargarResoluciones();
-            }
+           
             
         }
         private void ManejarUsuario()
         {
             if (
-                 Session["USUARIOSW"] != null
+                 Session["CONSEJO"] != null
                 )
             {
-                UsuariosSW tipo = (UsuariosSW)Session["USUARIOSW"];
-                char userTipo = Convert.ToChar(tipo.Tipo);
-                if (userTipo != 'C')
+                ConsejoDir consejo = (ConsejoDir)Session["CONSEJO"];
+                //char userTipo = Convert.ToChar(tipo.Tipo);
+                if (consejo.Codigo==null)
                 {
-                    Response.Redirect("Login.aspx");
+                    Response.Redirect("../Inicio/Login.aspx");
                 }
             }
             else
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("../Inicio/Login.aspx");
             }
         }
         private void cargarResoluciones()
         {
             ManejoDatos datos = new ManejoDatos();
-            List<ResolucionVista> resoluciones =datos.ObtenerResolucionesVista("30");
+            //   string idConsejo = Session["CONSEJO"].ToString();
+            string idConsejo = Session["CONSEJO"].ToString();
+            List<ResolucionVista> resoluciones =datos.ObtenerResolucionesVista(idConsejo);
             var bs1 = new BindingSource();
             bs1.DataSource = resoluciones;
             gvResoluciones.DataSource = bs1; //<-- notes it takes the entire bindingSource
@@ -94,7 +98,9 @@ namespace CreacionDocumentoDemo.Formulario
                 var clickedRow = clickedButton.NamingContainer as GridViewRow;
                 //now as the UserName is in the BoundField, access it using the cell index.
                 var clickedUserName = clickedRow.Cells[3].Text;
-                Aprobada aprobada = new Aprobada(clickedRow.Cells[3].Text, clickedRow.Cells[2].Text);
+                Aprobada aprobada = new Aprobada(clickedRow.Cells[3].Text, clickedRow.Cells[2].Text,
+                    clickedRow.Cells[5].Text
+                    );
                 // 3 ES EL CODIGO
                 //Button3.Text = clickedUserName.ToString();
                 if (Session["ResolucionesAprobadas"]==null)
@@ -122,11 +128,14 @@ namespace CreacionDocumentoDemo.Formulario
 
         private void actualizarAprobadas()
         {
-          
-            var bs1 = new BindingSource();
-            bs1.DataSource = ((List<Aprobada>)Session["ResolucionesAprobadas"]);
-            gvAprobadas.DataSource = bs1; //<-- notes it takes the entire bindingSource
-            gvAprobadas.DataBind();
+            if (Session["ResolucionesAprobadas"]!=null)
+            {
+                var bs1 = new BindingSource();
+                bs1.DataSource = ((List<Aprobada>)Session["ResolucionesAprobadas"]);
+                gvAprobadas.DataSource = bs1; //<-- notes it takes the entire bindingSource
+                gvAprobadas.DataBind();
+            }
+    
         }
 
         protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -154,7 +163,7 @@ namespace CreacionDocumentoDemo.Formulario
                 {
                      List<Aprobada> aprobadas = ((List<Aprobada>)Session["ResolucionesAprobadas"]);
                     ManejoDatos datos = new ManejoDatos();
-                     datos.generarActa(aprobadas);
+                     datos.generarActa(aprobadas,Session["CONSEJO"].ToString());
                 }
             }
         }
@@ -164,10 +173,12 @@ namespace CreacionDocumentoDemo.Formulario
     {
         public string Codigo { get; set; }
         public string Ubicacion { get; set; }
-        public Aprobada(string codigo,string path)
+        public string Estudiante { get; set; }
+        public Aprobada(string codigo,string path,string cedulaEstudiante)
         {
             this.Codigo = codigo;
             this.Ubicacion = path;
+            this.Estudiante = cedulaEstudiante;
         }
     }
 }
