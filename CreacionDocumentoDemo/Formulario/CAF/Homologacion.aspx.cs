@@ -18,7 +18,16 @@ namespace CreacionDocumentoDemo.Formulario.CAF
             {
                 ManejarUsuario();
                 cargarDatos();
+                controlTextBox();
             }
+        }
+        private void controlTextBox()
+        {
+            txtSecuencia.MaxLength = 4;
+            txtAnio.MaxLength = 4;
+            txtAnio1.MaxLength = 4;
+            txtAnio2.MaxLength = 4;
+            txtCedula.MaxLength = 10;
         }
         private void ManejarUsuario()
         {

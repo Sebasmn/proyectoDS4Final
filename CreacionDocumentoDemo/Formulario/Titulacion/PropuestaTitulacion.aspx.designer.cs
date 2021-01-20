@@ -42,6 +42,15 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
         protected global::System.Web.UI.WebControls.Panel menuOpciones;
 
         /// <summary>
+        /// Control escudoLogin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image escudoLogin;
+
+        /// <summary>
         /// Control btnBuscar.
         /// </summary>
         /// <remarks>

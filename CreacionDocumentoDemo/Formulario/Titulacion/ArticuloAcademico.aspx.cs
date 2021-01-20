@@ -18,7 +18,14 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             {
                 ManejarUsuario();
                 cargarDatos();
+                controlTextBox();
             }
+        }
+        private void controlTextBox()
+        {
+            txtSecuencia.MaxLength = 4;
+            txtAnio.MaxLength = 4;
+            txtAnio1.MaxLength = 4;
         }
         private void ManejarUsuario()
         {
@@ -169,11 +176,24 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             resol.Estudiante = ViewState["CEDULA_EST"].ToString();
             resol.Secretaria = ((UsuariosSW)Session["USUARIOSW"]).Cedula;
 
-            bool guardado = mysql.guardarResolucion(resol);
-
-            if (guardado)
+            bool verificado = mysql.verificarDatos(editables, datos);
+            if (verificado)
             {
-                labelEstado.Text = "Documento Generado y Guardado";
+                bool guardado = mysql.guardarResolucion(resol);
+                if (guardado)
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Resolucion creada !')", true);
+                    // Label2.Text = "Documento Generado y Guardado";
+                }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha producido un error en los datos')", true);
+                    // Label2.Text = "Ha ocurrido un error en los datos";
+                }
+            }
+            else
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Llenar TODOS los campos correctamente')", true);
             }
         }
 

@@ -31,6 +31,8 @@
             <asp:Label ID="Label2" runat="server" Text="Consejo Destino:"></asp:Label>
             <asp:TextBox ID="txtCodigoConsejoDestino" runat="server"></asp:TextBox>
 
+            <br />
+
         </asp:Panel>
         <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Always" runat="server">
               <ContentTemplate>
