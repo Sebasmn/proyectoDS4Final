@@ -8,10 +8,39 @@
     <title>Crear Nuevo Consejo</title>
     <link rel="stylesheet" href="../Estilos/estilos.css"  type="text/css" />
  
+    <style type="text/css">
+        .auto-style1 {
+            padding: 0.3em 1.2em;
+            border-radius: 2em;
+            box-sizing: border-box;
+            text-decoration: none;
+            color: whitesmoke;
+            background-color: #A68970;
+            text-align: center;
+            transition: all 0.2s;
+            width: auto;
+            overflow: hidden;
+            font-size: 15px;
+            float: right;
+            margin-right: 50px;
+            display: block;
+            margin-left: 0;
+            margin-top: 0;
+            margin-bottom: 0.3em;
+        }
+    </style>
+ 
 </head>
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:Image ID="escudoLogin" runat="server" 
+                    ImageUrl="~/Images/EscudoUTA.png"
+                    />
+            <h1>
+                Consulta de Resoluciones</h1>
+            <hr />
+
         <div id="contenedor1">
             <asp:Label ID="Label1" runat="server" Text="Consejos"></asp:Label>
          
@@ -68,7 +97,7 @@
           
             <asp:Button ID="Button1" runat="server" Text="Terminar y Generar Acta" CssClass="botonesConsejo" OnClick="Button1_Click" Width="200px" />
            
-            <asp:Button ID="Button2" runat="server" Text="Button" CssClass="botonesConsejo" />
+            <asp:Button ID="Button2" runat="server" Text="Salir" CssClass="auto-style1" OnClick="Button2_Click" />
          
             <br />
             <br />

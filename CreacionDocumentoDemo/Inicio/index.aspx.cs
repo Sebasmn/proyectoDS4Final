@@ -82,7 +82,62 @@ namespace CreacionDocumentoDemo.Inicio
         {
             Page.ClientScript.RegisterStartupScript(
             this.GetType(),
-            "OpenWindow", "window.open('../Formulario/TramitesFISEI/TerceraMatrícula.aspx','_newtab');", true);
+            "OpenWindow", "window.open('../Formulario/TramitesFISEI/TerceraMatricula.aspx','_newtab');", true);
+        }
+
+        protected void LinkButton8_Click(object sender, EventArgs e)
+        {
+            Page.ClientScript.RegisterStartupScript(
+            this.GetType(),
+            "OpenWindow", "window.open('../Formulario/Titulacion/ArticuloAcademico.aspx','_newtab');", true);
+        }
+
+        protected void LinkButton11_Click(object sender, EventArgs e)
+        {
+            Page.ClientScript.RegisterStartupScript(
+          this.GetType(),
+          "OpenWindow", "window.open('../Formulario/Titulacion/ExamenComplexivo.aspx','_newtab');", true);
+        }
+
+        protected void LinkButton13_Click(object sender, EventArgs e)
+        {
+            Page.ClientScript.RegisterStartupScript(
+        this.GetType(),
+        "OpenWindow", "window.open('../Formulario/Titulacion/PropuestaTitulacion.aspx','_newtab');", true);
+        }
+
+        protected void LinkButton9_Click(object sender, EventArgs e)
+        {
+            Page.ClientScript.RegisterStartupScript(
+            this.GetType(),
+            "OpenWindow", "window.open('../Formulario/Titulacion/PropuestaTitulacionProrroga.aspx','_newtab');", true);
+        }
+
+        protected void LinkButton12_Click(object sender, EventArgs e)
+        {
+            Page.ClientScript.RegisterStartupScript(
+   this.GetType(),
+   "OpenWindow", "window.open('../Formulario/Titulacion/ProrrogaGratuita.aspx','_newtab');", true);
+        }
+
+        protected void LinkButton14_Click(object sender, EventArgs e)
+        {
+            Page.ClientScript.RegisterStartupScript(
+  this.GetType(),
+  "OpenWindow", "window.open('../Formulario/Titulacion/ProrrogaPagadaN.aspx','_newtab');", true);
+        }
+
+        protected void LinkButton10_Click(object sender, EventArgs e)
+        {
+            Page.ClientScript.RegisterStartupScript(
+this.GetType(),
+"OpenWindow", "window.open('../Formulario/Titulacion/ProyectoInvestigacion.aspx','_newtab');", true);
+        }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
         }
     }
 }

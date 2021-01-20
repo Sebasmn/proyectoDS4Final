@@ -335,13 +335,14 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
         return detalles;
     }
 
-    public void generarActa(List<Aprobada> aprobadas, string consejo)
+    public bool generarActa(List<Aprobada> aprobadas, string consejo)
     {
+        bool guardado = false;
         String plantillaActa = @"D:\Documentos\OficiosPlantilla\actaModel.docx";
         List<string> Editables = new List<string>();
         List<string> Datos = new List<string>();
-        Editables.Add("<encabezado>"); Datos.Add("Encabezado asd");
-        Editables.Add("<ordenDia>"); Datos.Add("Orden Del Dia alasdasdkkasd \n kasdk");
+       /* Editables.Add("<encabezado>"); Datos.Add("Encabezado asd");*/
+       /* Editables.Add("<ordenDia>"); Datos.Add("Orden Del Dia alasdasdkkasd \n kasdk");*/
         MySqlConnection myConnection = this.GetConnectionString();
         myConnection.Open();
         MySqlTransaction myTrans = myConnection.BeginTransaction();
@@ -351,12 +352,14 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
             {
                 MySqlCommand myCommand = new MySqlCommand("aprobarResolucion", myConnection, myTrans);
                 myCommand.CommandType = CommandType.StoredProcedure;
-                myCommand.Parameters.AddWithValue("CODIGO", resolucion.Codigo);
+                myCommand.Parameters.AddWithValue("CODIGO1", resolucion.Codigo);
                bool notificado = notificarEstudiante(resolucion.Ubicacion,resolucion.Estudiante, myConnection, myTrans);
                 int n = myCommand.ExecuteNonQuery();
             }
             String nombre = @"D:\Documentos\Actas\";
             string acta = obtenerSiguienteActa();
+            Editables.Add("<acta>"); Datos.Add(acta);
+          
             StringBuilder nombreActa = new StringBuilder();
             StringBuilder codigoActa = new StringBuilder();
             codigoActa.Append(acta);
@@ -368,14 +371,15 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
 
             MySqlCommand comando = new MySqlCommand("guardarActa", myConnection, myTrans);
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("CODIGO", codigoActa);
+            comando.Parameters.AddWithValue("CODIGO", codigoActa.ToString());
             comando.Parameters.AddWithValue("UBICACION", nombreActa.ToString());
             comando.Parameters.AddWithValue("CONSEJO", consejo);
             int r = comando.ExecuteNonQuery();
             if (r>0)
             {
-                contruccionActa(plantillaActa, nombre, Editables, Datos, aprobadas);
+                contruccionActa(plantillaActa, nombreActa.ToString(), Editables, Datos, aprobadas);
                 myTrans.Commit();
+                guardado = true;
             }
         }
         catch (Exception e)
@@ -389,7 +393,7 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
             }
         }
        
-        //return guardado;
+        return guardado;
 
 
         

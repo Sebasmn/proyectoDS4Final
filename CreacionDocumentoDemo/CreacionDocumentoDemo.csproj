@@ -119,6 +119,7 @@
     <Content Include="Images\consejo.png" />
     <Content Include="Images\EscudoUTA.jpg" />
     <Content Include="Images\EscudoUTA.png" />
+    <Content Include="Images\salir.png" />
     <Content Include="Images\usuario.png" />
     <Content Include="ImportarDatos.aspx" />
     <Content Include="Inicio\Admin.aspx" />
