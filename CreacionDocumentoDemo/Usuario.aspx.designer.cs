@@ -24,6 +24,15 @@ namespace CreacionDocumentoDemo
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Control escudoLogin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image escudoLogin;
+
+        /// <summary>
         /// Control Label1.
         /// </summary>
         /// <remarks>

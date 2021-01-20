@@ -27,7 +27,7 @@ namespace CreacionDocumentoDemo
             string file_name = Path.GetFileName(userFileUpload.PostedFile.FileName);
             if (file_name == "")
             {
-                lblUploadFile.Text = "Please select excel file.";
+                lblUploadFile.Text = "Por favor seleccione un archivo excel";
                 lblUploadFile.ForeColor = System.Drawing.Color.Red;
             }
             else
@@ -44,20 +44,20 @@ namespace CreacionDocumentoDemo
                         userFileUpload.SaveAs(Server.MapPath("~/UserUploadedExcelFiles/" + "\\" + fname));
                         Session["name"] = fname;
 
-                        lblUploadFile.Text = "file uploaded Successfully.";
+                        lblUploadFile.Text = "Archivo subido exitosamente";
                         lblUploadFile.ForeColor = System.Drawing.Color.Green;
                         SaveData.Visible = true;
                         UploadButton.Visible = false;
                     }
                     else
                     {
-                        lblUploadFile.Text = "Please select excel file.";
+                        lblUploadFile.Text = "Por favor seleccione un archivo excel";
                         lblUploadFile.ForeColor = System.Drawing.Color.Red;
                     }
                 }
                 else
                 {
-                    lblUploadFile.Text = "Please select excel file.";
+                    lblUploadFile.Text = "Por favor seleccione un archivo excel";
                     lblUploadFile.ForeColor = System.Drawing.Color.Red;
                 }
 
