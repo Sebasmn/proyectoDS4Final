@@ -464,11 +464,10 @@ text-indent:0cm">
                       runat="server" Height="49px" 
                       Text="Generar Documento"
                       Width="172px" OnClick="Button4_Click" />
-        <asp:Label ID="labelEstado" runat="server"></asp:Label>
          <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
             TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
             runat="server" />
-         <asp:Panel ID="panelModalBusquedaEst" runat="server" >
+         <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="321px" >
             <asp:TextBox ID="TextBox1" 
                 runat="server"
                 AutoPostBack="false"
@@ -505,7 +504,6 @@ text-indent:0cm">
                         <SortedDescendingCellStyle BackColor="#F1E5CE" />
                         <SortedDescendingHeaderStyle BackColor="#93451F" />
                     </asp:GridView>
-                    <asp:Label ID="Label1" runat="server" Text="Correcto"></asp:Label>
                 </ContentTemplate>
                  <Triggers>
                          <asp:AsyncPostBackTrigger ControlID="GridView1" 

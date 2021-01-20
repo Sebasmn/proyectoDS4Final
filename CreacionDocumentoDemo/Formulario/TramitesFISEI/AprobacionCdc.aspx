@@ -203,7 +203,7 @@ mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">PRESIDENTA</span></div>
         </asp:UpdatePanel>
         <br />
         <br />
-         <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="221px" Width="849px">
+         <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="326px" Width="830px">
             <asp:TextBox ID="TextBox1" 
                 runat="server"
                 AutoPostBack="false"
@@ -245,7 +245,6 @@ mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">PRESIDENTA</span></div>
                         <SortedDescendingCellStyle BackColor="#F1E5CE" />
                         <SortedDescendingHeaderStyle BackColor="#93451F" />
                     </asp:GridView>
-                    <asp:Label ID="Label1" runat="server" Text="Correcto"></asp:Label>
                 </ContentTemplate>
                  <Triggers>
                          <asp:AsyncPostBackTrigger ControlID="GridView1" />

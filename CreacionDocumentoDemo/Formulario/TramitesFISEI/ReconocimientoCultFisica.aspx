@@ -345,7 +345,7 @@ mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"><span style="mso-spacerun
             TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
             runat="server" />
                    </p>
-        <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="280px" Width="843px">
+        <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="314px" Width="843px">
             <asp:TextBox ID="TextBox1" 
                 runat="server"
                 AutoPostBack="false"
