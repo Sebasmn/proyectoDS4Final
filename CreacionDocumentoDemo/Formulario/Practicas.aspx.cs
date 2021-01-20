@@ -196,25 +196,25 @@ namespace CreacionDocumentoDemo.Formulario
             resol.Secretaria = ((UsuariosSW)Session["USUARIOSW"]).Cedula;
             resol.IDConsejo = txtCodigoConsejoDestino.Text;
             resol.Estudiante = ViewState["CEDULA_EST"].ToString();
-            
             bool verificado = mysql.verificarDatos(editables, datos);
             if (verificado)
             {
                 bool guardado = mysql.guardarResolucion(resol);
                 if (guardado)
                 {
-                    Label2.Text = "Documento Generado y Guardado";
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Resolucion creada !')", true);
+                    // Label2.Text = "Documento Generado y Guardado";
                 }
                 else
                 {
-                    Label2.Text = "Ha ocurrido un error en los datos";
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha producido un error en los datos')", true);
+                    // Label2.Text = "Ha ocurrido un error en los datos";
                 }
             }
             else
             {
-                Label2.Text = "Llenar todos los campos correctamente...";
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Llenar TODOS los campos correctamente')", true);
             }
-            ///resol.IDConsejo=txtCodigoConsejoDestino.Text;
 
 
 

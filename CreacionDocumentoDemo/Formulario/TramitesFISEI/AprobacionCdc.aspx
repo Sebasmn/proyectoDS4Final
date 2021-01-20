@@ -189,9 +189,8 @@ mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">PRESIDENTA</span></div>
    
                        <asp:Button ID="Button4"
                       runat="server" Height="49px" 
-                      Text="Generar Documento" Width="172px" OnClick="Button4_Click"  />
+                      Text="Generar Documento" Width="172px" OnClick="Button4_Click" CssClass="btnBuscsar"  />
 
-                   <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
                     <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
             TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
             runat="server" />

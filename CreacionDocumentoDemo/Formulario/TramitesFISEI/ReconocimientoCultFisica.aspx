@@ -28,6 +28,7 @@
 
             <asp:Button ID="btnNumeroResolucion" runat="server" Text="Generar Número Resolución" 
             CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click"  />
+             <br />
              <asp:Label ID="Label3" runat="server" Text="Consejo Destino:"></asp:Label>
             <asp:TextBox ID="txtCodigoConsejoDestino" runat="server"></asp:TextBox>
         </asp:Panel>
@@ -44,12 +45,12 @@
 9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtSecuencia" runat="server" CssClass="auto-style1" Height="16px" placeholder="0209" Width="53px"></asp:TextBox>
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtSecuencia" runat="server" CssClass="noBorder" Height="16px" placeholder="0209" Width="53px"></asp:TextBox>
                 </span></span></span>-P-CD-FISEI-UTA-</span><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtAnio2" runat="server" CssClass="auto-style1" Height="16px" placeholder="Ej:2020" Width="58px"></asp:TextBox>
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtAnio2" runat="server" CssClass="noBorder" Height="16px" placeholder="Ej:2020" Width="58px"></asp:TextBox>
                 </span></span></span></span>
             </p>
             <p class="MsoNormal" style="text-align:justify">
@@ -160,9 +161,9 @@ Tahoma">, de fecha <span lang="ES" style="font-size: 9.0pt; mso-bidi-font-size: 
                 </asp:DropDownList>
                 </span></span>&nbsp;, <span lang="ES" style="font-size: 9.0pt; mso-bidi-font-size: 8.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:TextBox ID="txtAnio3" runat="server" CssClass="auto-style1" placeholder="Año" Height="16px" Width="62px"></asp:TextBox>
+                <asp:TextBox ID="txtAnio3" runat="server" CssClass="noBorder" placeholder="Año" Height="16px" Width="62px"></asp:TextBox>
                 </span></span>, suscrito por <span style="mso-spacerun:yes">&nbsp;</span><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtPresidente" runat="server" CssClass="noBorder" placeholder="Ejm: Ing Julio Cuji "></asp:TextBox>
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtPresidente" runat="server" CssClass="noBorder" placeholder="Ejm: Ing Julio Cuji " Width="100%"></asp:TextBox>
                 </span>&nbsp;, Presidente de Consejo Académico de Facultad, quien remite la solicitud del señor <b style="mso-bidi-font-weight:normal"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
                 <asp:TextBox ID="txtNombreEstu1" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ejm: Luis Javier Chavez Loor" ToolTip="Busque un estudiante" Width="100%"></asp:TextBox>
@@ -174,11 +175,29 @@ Tahoma">&nbsp;<span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><asp:TextBox ID="txtCedula" runat="server" EnableViewState="true" Height="16px" placeholder="Ejm:1805214551" ToolTip="Busque un estudiante" Width="122px" CssClass="noBorder"></asp:TextBox>
-                                      </span></span></span>&nbsp;estudiante de la Carrera de <span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtCarrera1" runat="server" CssClass="noBorder" Height="16px" placeholder="Ejm:Ing Sistemas Comp E Informáticos" Width="100%"></asp:TextBox>
-                </span></span>&nbsp;de la Universidad Técnica de Ambato, quien solicita la reconocimiento de la asignatura Cultura Física aprobada en la carrera de <span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtCarrera2" runat="server" CssClass="noBorder" Height="16px" placeholder="Ejm:Ing Sistemas Comp E Informáticos" Width="100%"></asp:TextBox>
-                </span></span>. Al respecto RESUELVE:<o:p></o:p></span></p>
+                                      </span></span></span>&nbsp;estudiante de la Carrera de <span lang="ES" style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif; mso-bidi-font-size: 8.0pt;"><span style="font-size: 10.0pt; font-family: &quot;Cambria&quot;,serif; line-height: 106%; mso-bidi-font-family: Tahoma;"><em><span style="font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;font-style:normal"><span style="mso-spacerun:yes"><span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:
+Tahoma;mso-ansi-language:ES-EC;mso-fareast-language:EN-US;mso-bidi-language:
+AR-SA"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma"><b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
+                <asp:DropDownList ID="ddlCarreras1" runat="server" CssClass="noBorder" Width="100%">
+                </asp:DropDownList>
+                </span></span></span></b></span></span></span></span></span></em>
+                </span></span></span></p>
+            <p class="MsoNormal" style="text-align:justify">
+                <span lang="ES" style="font-size:
+9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma">&nbsp;de la Universidad Técnica de Ambato, quien solicita la reconocimiento de la asignatura Cultura Física aprobada en la carrera de <span lang="ES-TRAD" style="font-size:9.0pt;
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif">
+                <asp:TextBox ID="txtCarrera2" runat="server" CssClass="noBorder" Height="16px" placeholder="Ejm:Ing Sistemas Comp E Informáticos" Width="100%"></asp:TextBox>
+                </span></span>. Al respecto RESUELVE:<p></p>
+                </span>
+            </p>
             <p class="MsoNormal" style="text-align:justify">
                 <span lang="ES" style="font-size:
 9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif"><o:p>&nbsp;</o:p></span></p>
@@ -203,9 +222,19 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC">FACULTAD DE <span lang="ES" style="font-size: 9.0pt; mso-bidi-font-size: 8.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtFacultad" runat="server" CssClass="noBorder" Height="16px" placeholder="Nombre de Facultad" Width="100%"></asp:TextBox>
                 </span></span></span>&nbsp;</span><span lang="ES" style="font-size:9.0pt;mso-bidi-font-size:8.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">DE LA UNIVERSIDAD TÉCNICA DE AMBATO, PARA LA CARRERA DE <span lang="ES" style="font-size: 9.0pt; mso-bidi-font-size: 8.0pt; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma"><span lang="ES-TRAD" style="font-size:9.0pt;
-font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="font-size: 9.0pt; font-family: &quot;Cambria&quot;,serif"><asp:TextBox ID="txtCarrera4" runat="server" CssClass="noBorder" Height="16px" placeholder="Ejm:Ing Sistemas Comp E Informáticos" Width="100%"></asp:TextBox>
-                </span></span></span>, EN BASE A LA RESOLUCIÓN 0857-CU-P-2019 QUE INDICA: <i style="mso-bidi-font-style:normal">“AUTORIZAR A LOS ESTUDIANTES DE LA UNIVERSIDAD TÉCNICA DE AMBATO QUE SE CAMBIAN DE CARRERA O DE PLAN DE ESTUDIO Y QUE HAYAN RECIBIDO Y APROBADO LA ASIGNATURA DE CULTURA FÍSICA, EDUCACIÓN FÍSICA, EXPRESIÓN CORPORAL U OTRAS DENOMINACIONES, SE LES RECONOZCA LAS HORAS Y/O CRÉDITOS DE ESA ASIGNATURA EN LA NUEVA CARRERA O PROGRAMA INDEPENDIENTEMENTE DE LA DENOMINACIÓN” DE CONFORMIDAD CON EL ARTÍCULO 98 DEL REGLAMENTO DE RÉGIMEN ACADÉMICO DEL CES.<o:p></o:p></i></span></p>
+font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">DE LA UNIVERSIDAD TÉCNICA DE AMBATO, PARA LA CARRERA DE <span lang="ES" style="font-size:9.0pt;mso-bidi-font-size:8.0pt;font-family:&quot;Cambria&quot;,serif"><span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma"><em><span style="font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;font-style:normal"><span style="mso-spacerun:yes"><span style="font-size:10.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-fareast-font-family:Calibri;mso-fareast-theme-font:minor-latin;mso-bidi-font-family:
+Tahoma;mso-ansi-language:ES-EC;mso-fareast-language:EN-US;mso-bidi-language:
+AR-SA"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
+&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma"><b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
+                <asp:DropDownList ID="ddlCarreras2" runat="server" CssClass="noBorder" Width="100%">
+                </asp:DropDownList>
+                </span></span></span></b></span></span></span></span></span></em></span></span>, EN BASE A LA RESOLUCIÓN 0857-CU-P-2019 QUE INDICA: <i style="mso-bidi-font-style:normal">“AUTORIZAR A LOS ESTUDIANTES DE LA UNIVERSIDAD TÉCNICA DE AMBATO QUE SE CAMBIAN DE CARRERA O DE PLAN DE ESTUDIO Y QUE HAYAN RECIBIDO Y APROBADO LA ASIGNATURA DE CULTURA FÍSICA, EDUCACIÓN FÍSICA, EXPRESIÓN CORPORAL U OTRAS DENOMINACIONES, SE LES RECONOZCA LAS HORAS Y/O CRÉDITOS DE ESA ASIGNATURA EN LA NUEVA CARRERA O PROGRAMA INDEPENDIENTEMENTE DE LA DENOMINACIÓN” DE CONFORMIDAD CON EL ARTÍCULO 98 DEL REGLAMENTO DE RÉGIMEN ACADÉMICO DEL CES.<o:p></o:p></i></span></p>
             <p class="MsoNoSpacing" style="text-align:justify">
                 <b style="mso-bidi-font-weight:
 normal"><span lang="ES-TRAD" style="font-size:9.0pt;mso-bidi-font-size:8.0pt;
@@ -299,7 +328,10 @@ mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"><span style="mso-spacerun
 
         </div>
         <p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; line-height: 115%; tab-stops: 21.3pt; margin-left: 18.0pt">
-                  <asp:Button ID="Button4"
+                  &nbsp;
+                  </ContentTemplate>
+        </asp:UpdatePanel>
+                   <asp:Button ID="Button4"
                       runat="server" Height="49px" 
                       Text="Generar Documento"
                       
@@ -308,10 +340,8 @@ mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"><span style="mso-spacerun
                   <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
             TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
             runat="server" />
-                  </ContentTemplate>
-        </asp:UpdatePanel>
                    </p>
-        <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="221px" Width="849px">
+        <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="280px" Width="843px">
             <asp:TextBox ID="TextBox1" 
                 runat="server"
                 AutoPostBack="false"
@@ -348,7 +378,6 @@ mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"><span style="mso-spacerun
                         <SortedDescendingCellStyle BackColor="#F1E5CE" />
                         <SortedDescendingHeaderStyle BackColor="#93451F" />
                     </asp:GridView>
-                    <asp:Label ID="Label1" runat="server" Text="Correcto"></asp:Label>
                 </ContentTemplate>
                  <Triggers>
                          <asp:AsyncPostBackTrigger ControlID="GridView1" 

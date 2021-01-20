@@ -36,7 +36,6 @@
                   
                     runat="server" CssClass="resoluciones" OnClick="LinkButton3_Click">&gt; Reingreso A Carrera</asp:LinkButton>
                 &nbsp;<asp:LinkButton ID="LinkButton4"
-                    OnClientClick="target ='_blank';"
                     runat="server" CssClass="resoluciones" OnClick="LinkButton4_Click">&gt; Reconocimiento Cultura Física</asp:LinkButton>
                 <br />
                 <br />

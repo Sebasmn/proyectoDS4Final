@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>ReIngreso</title>
+    <title>Re-Ingreso</title>
       <link rel="stylesheet" href="../../Estilos/estilos.css"  type="text/css" />
     <style type="text/css">
 
@@ -19,7 +19,7 @@
                     ImageUrl="~/Images/EscudoUTA.png"
                     />
             <h1>
-              Resolución para rReingreso a Carrera  
+              Resolución para Reingreso a Carrera  
             </h1>
             <hr />
         <asp:Panel ID="menuOpciones" runat="server">
@@ -27,6 +27,7 @@
 
             <asp:Button ID="btnNumeroResolucion" runat="server" Text="Generar Número Resolución" 
             CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click"  />
+             <br />
              <asp:Label ID="Label3" runat="server" Text="Consejo Destino:"></asp:Label>
             <asp:TextBox ID="txtCodigoConsejoDestino" runat="server"></asp:TextBox>
         </asp:Panel>
@@ -47,7 +48,7 @@ line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Taho
 Tahoma"> <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                <asp:TextBox ID="txtSecuencia" runat="server" placeholder="0209" Height="16px" Width="53px"></asp:TextBox>
+                <asp:TextBox ID="txtSecuencia" runat="server" placeholder="0209" Height="16px" Width="53px" CssClass="noBorder"></asp:TextBox>
                 </span></span></span></span>-P-CD-FISEI-UTA-<span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
@@ -67,7 +68,10 @@ Tahoma"><o:p></o:p></span></p>
             <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
                 <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:
 106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:&quot;Arial Unicode MS&quot;;
-mso-bidi-font-family:Tahoma">COORDINADOR DE LAS CARRERAS DE&nbsp;           <asp:TextBox ID="txtCarrerasCoor" placeholder=""  Width="100%" CssClass="noBorder" runat="server"></asp:TextBox>
+mso-bidi-font-family:Tahoma">COORDINADOR DE LAS CARRERAS DE&nbsp;        
+                    
+                    <asp:DropDownList ID="txtCarrerasCoorDI" runat="server" CssClass="noBorder" Font-Bold="True" Font-Size="Smaller" Width="100%">
+                </asp:DropDownList>
             </p>
             <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
                 <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
@@ -90,7 +94,7 @@ mso-bidi-font-family:Tahoma">COORDINADOR DE LAS CARRERAS DE&nbsp;           <asp
 line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><o:p>&nbsp;</o:p></span></p>
             <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
                 <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma">Consejo DirectivoConsejo Directivo de la Facultad de Ingeniería en Sistemas, Electrónica e Industrial, en Sesión
+Tahoma">Consejo Directivo de la Facultad de Ingeniería en Sistemas, Electrónica e Industrial, en Sesión
                                       <span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"> <span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
@@ -203,7 +207,10 @@ Tahoma">
                         </p>
                         <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify">
                             <b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:
-106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">REMITIR,LA DOCUMENTACIÓN ORIGINAL A LA QUE SE HACE REFERENCIA A LA COORDINACIÓN DE LA CARRERA DE INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS PARA SU CORRESPONDIENTE ARCHIVO.<p>
+106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">REMITIR,LA DOCUMENTACIÓN ORIGINAL A LA QUE SE HACE REFERENCIA A LA COORDINACIÓN DE LA CARRERA DE&nbsp;
+                            <asp:DropDownList ID="txtCarrerasCoorD" runat="server" CssClass="noBorder" Font-Bold="True" Font-Size="Smaller" Width="100%">
+                            </asp:DropDownList>
+                            &nbsp;PARA SU CORRESPONDIENTE ARCHIVO.<p>
                             </p>
                             </span></b>
                             <p>
@@ -229,98 +236,50 @@ Tahoma">
 Tahoma">Atentamente,<p>
                                         </p>
                                         </span>
+                                        <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
+mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">
+                                        <p>
+                                            &nbsp;</p>
+                                        <p>
+                                            &nbsp;</p>
+                                        </spa&nbsp;</o:p>
+                                        </span>
                                         <p>
                                         </p>
-                                        <p class="MsoBodyTextFirstIndent2" style="margin:0cm;text-align:justify;
-text-indent:0cm;line-height:normal">
+                                        <p class="MsoBodyText" style="text-indent:.05pt; line-height:115%; margin-bottom: 0cm;">
                                             <span style="font-size:9.0pt;font-family:
-&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                            <p>
-                                                &nbsp;</p>
-                                            </span>
-                                            <p>
-                                            </p>
-                                            <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify;mso-pagination:
-none">
-                                                <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
-mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">
-                                                <p>
-                                                    &nbsp;</p>
-                                                </span>
-                                                <p>
-                                                </p>
-                                                <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify;mso-pagination:
-none">
-                                                    <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
-mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">
-                                                    <p>
-                                                        &nbsp;</p>
-                                                    </span>
-                                                    <p>
-                                                    </p>
-                                                    <p class="MsoNormal" style="margin-bottom:0cm;text-align:justify;mso-pagination:
-none">
-                                                        <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;
-mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">
-                                                        <p>
-                                                            &nbsp;</p>
-                                                        </spa&nbsp;</o:p>
-                                                        </span>
-                                                        <p>
-                                                        </p>
-                                                        <p class="MsoBodyText" style="margin-bottom:0cm;text-indent:.05pt;line-height:
-115%">
-                                                            <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma"><b style="mso-bidi-font-weight:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma; line-height: 106%;">
+                                            <b style="mso-bidi-font-weight:
 normal"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                                            <asp:TextBox ID="txtPresidente" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ing. Pilar Urrutia U., Mg." ToolTip="Busque un estudiante" Width="132px"></asp:TextBox>
-                                                            </span></span></b></span>
-                                                        </p>
-                                                        <p class="MsoHeader" style="text-align:justify;text-indent:.05pt;line-height:
+                                            <asp:TextBox ID="txtPresidente" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ing. Pilar Urrutia U., Mg." ToolTip="Busque un estudiante" Width="132px"></asp:TextBox>
+                                            </span></span></b>
+                                            </span>
+                                        </p>
+                                        <p class="MsoHeader" style="text-align:justify;text-indent:.05pt;line-height:
 115%">
-                                                            <span style="font-size:9.0pt;line-height:115%;font-family:&quot;Cambria&quot;,serif;
+                                            <span style="font-size:9.0pt;line-height:115%;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">PRESIDENTE </span>
-                                                        </p>
-                                                        <p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+                                        </p>
+                                        <p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:18.0pt;text-align:justify;text-indent:-18.0pt">
-                                                            <span style="font-size:8.0pt;mso-bidi-font-size:9.0pt;line-height:106%;font-family:
+                                            <span style="font-size:8.0pt;mso-bidi-font-size:9.0pt;line-height:106%;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">cc:<span style="mso-tab-count:
 1">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:8.0pt;mso-bidi-font-size:9.0pt;
 line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:&quot;Arial Unicode MS&quot;;
 mso-bidi-font-family:Tahoma">Presidente de Consejo Académico de Facultad<p>
-                                                            </p>
-                                                            </span>
-                                                            <p>
-                                                            </p>
-                                                            <p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+                                            </p>
+                                            </span>
+                                            <p>
+                                            </p>
+                                            <p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:18.0pt;text-align:justify;text-indent:-18.0pt">
-                                                                <span style="font-size:8.0pt;mso-bidi-font-size:9.0pt;line-height:106%;font-family:
+                                                <span style="font-size:8.0pt;mso-bidi-font-size:9.0pt;line-height:106%;font-family:
 &quot;Cambria&quot;,serif;mso-fareast-font-family:&quot;Arial Unicode MS&quot;;mso-bidi-font-family:
 Tahoma"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Estudiante</span><span style="font-size:9.0pt;line-height:106%"><p>
-                                                                </p>
-                                                                </span>
-                                                                <p>
-                                                                </p>
-                                                                <p class="MsoNormal">
-                                                                    <p>
-                                                                        &nbsp;</p>
-                                                                    <p>
-                                                                    </p>
-                                                                    <p class="MsoNormal">
-                                                                        <p>
-                                                                            &nbsp;</p>
-                                                                        <p>
-                                                                        </p>
-                                                                        <p>
-                                                                        </p>
-                                                                    </p>
-                                                                </p>
-                                                            </p>
-                                                        </p>
-                                                    </p>
                                                 </p>
+                                                </span>
                                             </p>
                                         </p>
                                     </p>
@@ -338,12 +297,11 @@ Tahoma"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
         <asp:Button ID="Button4"
                       runat="server" Height="49px" 
                       Text="Generar Documento"
-                      Width="172px" OnClick="Button4_Click" />
-        &nbsp;<asp:Label ID="labelEstado" runat="server"></asp:Label>
-        <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
+                      Width="172px" OnClick="Button4_Click" CssClass="btnBuscar" />
+        &nbsp;<ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
             TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
             runat="server" />
-         <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="221px" Width="849px">
+         <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="290px" Width="843px">
             <asp:TextBox ID="TextBox1" 
                 runat="server"
                 AutoPostBack="false"
