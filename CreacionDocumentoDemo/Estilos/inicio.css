@@ -23,11 +23,11 @@
     color: #784715;
 }
 
-#panelResoluciones {
+.panelResoluciones {
     float:left;
     padding: 5px;
 }
-#labelResol {
+.labelResol {
     float: left;
     font-size: 26px;
     color: #643B11;

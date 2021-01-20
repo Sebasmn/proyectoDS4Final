@@ -56,7 +56,7 @@ namespace CreacionDocumentoDemo.Formulario
         {
             ManejoDatos datos = new ManejoDatos();
             //   string idConsejo = Session["CONSEJO"].ToString();
-            string idConsejo = Session["CONSEJO"].ToString();
+            string idConsejo = ((ConsejoDir)Session["CONSEJO"]).Codigo;
             List<ResolucionVista> resoluciones =datos.ObtenerResolucionesVista(idConsejo);
             var bs1 = new BindingSource();
             bs1.DataSource = resoluciones;
@@ -163,9 +163,25 @@ namespace CreacionDocumentoDemo.Formulario
                 {
                      List<Aprobada> aprobadas = ((List<Aprobada>)Session["ResolucionesAprobadas"]);
                     ManejoDatos datos = new ManejoDatos();
-                     datos.generarActa(aprobadas,Session["CONSEJO"].ToString());
+                    bool guardado =  datos.generarActa(aprobadas,((ConsejoDir)Session["CONSEJO"]).Codigo);
+                    if (guardado)
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Resolucion creada !')", true);
+                        cargarResoluciones();
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha producido un erro !')", true);
+
+                    }
                 }
             }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("../Inicio/Login.aspx");
         }
     }
 

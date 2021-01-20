@@ -35,5 +35,17 @@ namespace CreacionDocumentoDemo.Inicio
                 Response.Redirect("Login.aspx");
             }
         }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("../Admin/CrearConsejo.aspx");
+    
+        }
+
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("../Usuario.aspx");
+
+        }
     }
 }
