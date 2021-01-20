@@ -74,11 +74,18 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
 
             //Carreras
             ManejoDatos datos = new ManejoDatos();
-            ddlCarreras.DataSource= datos.getCarreras();
+            var x = datos.getCarreras();
+            txtCarrerasCoorD.DataSource = x;
+            txtCarrerasCoorD.DataBind();
+            ddlCarreras.DataSource = x;
             ddlCarreras.DataBind();
-            ddlCarreras1.DataSource = datos.getCarreras();
+            ddlCarreras1.DataSource = x;
             ddlCarreras1.DataBind();
 
+           x.AddRange(datos.GetCarrerasBanner());
+            txtCarrerasCoorDI.DataSource = x;
+            txtCarrerasCoorDI.DataBind();
+        
         }
 
         protected void btnNumeroResolucion_Click(object sender, EventArgs e)
@@ -153,7 +160,7 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             editables.Add("<anio>"); datos.Add(txtAnio.Text);
 
             editables.Add("<coordinador>"); datos.Add(txtCoordinador.Text);
-            editables.Add("<carreras>"); datos.Add(txtCarrerasCoor.Text);
+            editables.Add("<carreras>"); datos.Add(txtCarrerasCoorDI.SelectedValue.ToString());
             editables.Add("<sesion>"); datos.Add(ddlSesion.Text);
 
 
@@ -175,7 +182,7 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
 
             editables.Add("<periodoAcadem>"); datos.Add(txtPeriodo.Text);
             editables.Add("<presidente>"); datos.Add(txtPresidente.Text);
-
+            editables.Add("<referencia>"); datos.Add(txtCarrerasCoorD.SelectedValue.ToString());
             /******************/
             StringBuilder sb1 = new StringBuilder();
             sb1.Append(@"D:\Documentos\Pruebas\");

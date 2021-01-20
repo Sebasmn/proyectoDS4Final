@@ -249,13 +249,13 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
         protected global::System.Web.UI.WebControls.TextBox txtCedula;
 
         /// <summary>
-        /// Control txtCarrera1.
+        /// Control ddlCarreras1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCarrera1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCarreras1;
 
         /// <summary>
         /// Control txtCarrera2.
@@ -303,13 +303,13 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
         protected global::System.Web.UI.WebControls.TextBox txtFacultad;
 
         /// <summary>
-        /// Control txtCarrera4.
+        /// Control ddlCarreras2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCarrera4;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCarreras2;
 
         /// <summary>
         /// Control txtNombreEstu3.
@@ -427,15 +427,6 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-
-        /// <summary>
-        /// Control Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
         /// Control ModalPopupExtender1.
