@@ -41,7 +41,6 @@
             <hr />
 
         <div id="contenedor1">
-            <asp:Label ID="Label1" runat="server" Text="Consejos"></asp:Label>
          
          
             <asp:GridView ID="gvResoluciones" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" Height="154px" Width="317px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowCommand="GridView1_RowCommand" CellSpacing="2">
@@ -95,6 +94,11 @@
             <asp:Button ID="Button1" runat="server" Text="Terminar y Generar Acta" CssClass="auto-style2" OnClick="Button1_Click" Width="206px" BackColor="#87540E" Font-Bold="True" Height="61px" />
            
             <asp:Button ID="Button2" runat="server" Text="Salir" CssClass="auto-style2" OnClick="Button2_Click" BackColor="#87540E" Font-Bold="True" Height="42px" Width="209px" />
+         
+            <br />
+            <br />
+            <br />
+            <br />
          
             <br />
             <br />

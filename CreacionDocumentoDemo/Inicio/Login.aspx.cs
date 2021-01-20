@@ -56,7 +56,8 @@ namespace CreacionDocumentoDemo.Inicio
                 else
                 {
                     //no se encontro usuario
-                    Label1.Text = "Usuario y/c clave incorrectas";
+                    // Label1.Text = "Usuario y/c clave incorrectas";
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Usuario y/o clave incorrectas !')", true);
                 }
             }
             else
@@ -83,6 +84,10 @@ namespace CreacionDocumentoDemo.Inicio
                             break;*/
 
                     }
+                }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Usuario y/o clave incorrectas !')", true);
                 }
             }
            

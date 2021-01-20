@@ -224,7 +224,9 @@ mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold">PRESIDENTA</span></div>
                             <asp:TemplateField ShowHeader="False">
                                 <ItemTemplate>
                                     <asp:Button ID="botonSeleccionar" 
-                                        runat="server" CausesValidation="False" CommandName="Select" Text="Seleccionar" />
+                                        runat="server"
+                                        CssClass="btnBuscarGrid"
+                                        CausesValidation="False" CommandName="Select" Text="Seleccionar" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>

@@ -997,7 +997,7 @@ mso-bidi-font-family:Tahoma"><span style="font-size:9.0pt;line-height:106%;font-
                         <Columns>
                             <asp:TemplateField ShowHeader="False">
                                 <ItemTemplate>
-                                    <asp:Button ID="botonSeleccionar" runat="server" CausesValidation="False" CommandName="Select" Text="Seleccionar" />
+                                    <asp:Button ID="botonSeleccionar" CssClass="btnBuscarGrid" runat="server" CausesValidation="False" CommandName="Select" Text="Seleccionar" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>

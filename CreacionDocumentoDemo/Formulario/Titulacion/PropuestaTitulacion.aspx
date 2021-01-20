@@ -434,7 +434,7 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="
             runat="server" />
         <asp:Label ID="labelEstado" runat="server"></asp:Label>
          <br />
-         <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="221px" Width="849px">
+         <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="304px" Width="849px">
             <asp:TextBox ID="TextBox1" 
                 runat="server"
                 AutoPostBack="false"
@@ -455,7 +455,7 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="
                         <Columns>
                             <asp:TemplateField ShowHeader="False">
                                 <ItemTemplate>
-                                    <asp:Button ID="botonSeleccionar" runat="server" CausesValidation="False" CommandName="Select" Text="Seleccionar" />
+                                    <asp:Button ID="botonSeleccionar" CssClass="btnBuscarGrid" runat="server" CausesValidation="False" CommandName="Select" Text="Seleccionar" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>

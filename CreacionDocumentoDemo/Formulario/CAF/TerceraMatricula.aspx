@@ -471,7 +471,7 @@ font-family:&quot;Cambria&quot;,serif"><p></p>
                         <Columns>
                             <asp:TemplateField ShowHeader="False">
                                 <ItemTemplate>
-                                    <asp:Button ID="botonSeleccionar" runat="server" CausesValidation="False" CommandName="Select" Text="Seleccionar" />
+                                    <asp:Button ID="botonSeleccionar"  CssClass="btnBuscarGrid" runat="server" CausesValidation="False" CommandName="Select" Text="Seleccionar" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
