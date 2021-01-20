@@ -15,8 +15,8 @@
                 <asp:Image ID="escudoLogin" runat="server" 
                     ImageUrl="~/Images/EscudoUTA.png"
                     />
-            <h1>
-                Administrador de Sitio&nbsp;&nbsp;&nbsp;
+            <h1 style="color:#7C4F0E;">
+                Crear Usuarios y Consejos&nbsp;&nbsp;&nbsp;
                 
             </h1>
             <hr />

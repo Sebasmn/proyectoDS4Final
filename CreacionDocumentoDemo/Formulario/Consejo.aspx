@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../Estilos/estilos.css"  type="text/css" />
  
     <style type="text/css">
-        .auto-style1 {
+        .auto-style2 {
             padding: 0.3em 1.2em;
             border-radius: 2em;
             box-sizing: border-box;
@@ -18,7 +18,6 @@
             background-color: #A68970;
             text-align: center;
             transition: all 0.2s;
-            width: auto;
             overflow: hidden;
             font-size: 15px;
             float: right;
@@ -45,15 +44,14 @@
             <asp:Label ID="Label1" runat="server" Text="Consejos"></asp:Label>
          
          
-            <asp:GridView ID="gvResoluciones" runat="server" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" Height="154px" Width="317px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowCommand="GridView1_RowCommand">
-                <AlternatingRowStyle BackColor="White" />
+            <asp:GridView ID="gvResoluciones" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" Height="154px" Width="317px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowCommand="GridView1_RowCommand" CellSpacing="2">
                 <Columns>
                     <asp:TemplateField ShowHeader="False">
                         <ItemTemplate>
                             <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1" 
                                   ConfirmText="Ver la resolucion?"
                                 TargetControlID="Button1" runat="server" />
-                            <asp:Button ID="Button1"  runat="server" CausesValidation="False" CommandName="Select" Text="Ver" />
+                            <asp:Button ID="Button1" CssClass="btnBuscarGrid" runat="server" CausesValidation="False" CommandName="Select" Text="Ver" />
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField ShowHeader="False">
@@ -61,43 +59,42 @@
                             <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender2" 
                                 ConfirmText="Aprobar la resolucion?"
                                 TargetControlID="Button2" runat="server" />
-                            <asp:Button ID="Button2" runat="server" CausesValidation="False" CommandName="Aprobar" Text="Aprobar" />
+                            <asp:Button ID="Button2"  CssClass="btnBuscarGrid" runat="server" CausesValidation="False" CommandName="Aprobar" Text="Aprobar" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
-                <FooterStyle BackColor="#CCCC99" />
-                <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
-                <RowStyle BackColor="#F7F7DE" />
-                <SelectedRowStyle BackColor="#ebc194" Font-Bold="True" ForeColor="#754108" />
-                <SortedAscendingCellStyle BackColor="#FBFBF2" />
-                <SortedAscendingHeaderStyle BackColor="#848384" />
-                <SortedDescendingCellStyle BackColor="#EAEAD3" />
-                <SortedDescendingHeaderStyle BackColor="#575357" />
+                <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+                <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+                <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+                <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+                <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#FFF1D4" />
+                <SortedAscendingHeaderStyle BackColor="#B95C30" />
+                <SortedDescendingCellStyle BackColor="#F1E5CE" />
+                <SortedDescendingHeaderStyle BackColor="#93451F" />
             </asp:GridView>
-            <asp:GridView ID="gvAprobadas" runat="server" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" Height="154px" Width="317px" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" OnRowCommand="GridView2_RowCommand">
-                <AlternatingRowStyle BackColor="White" />
+            <asp:GridView ID="gvAprobadas" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" Height="154px" Width="317px" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" OnRowCommand="GridView2_RowCommand" CellSpacing="2">
                 <Columns>
                     <asp:TemplateField ShowHeader="False">
                         <ItemTemplate>
-                            <asp:Button ID="Button1" runat="server" CausesValidation="False" CommandName="Select" Text="Quitar" />
+                            <asp:Button ID="Button1"  CssClass="btnBuscarGrid" runat="server" CausesValidation="False" CommandName="Select" Text="Quitar" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
-                <FooterStyle BackColor="#CCCC99" />
-                <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
-                <RowStyle BackColor="#F7F7DE" />
-                <SelectedRowStyle BackColor="#ebc194" Font-Bold="True" ForeColor="#754108" />
-                <SortedAscendingCellStyle BackColor="#FBFBF2" />
-                <SortedAscendingHeaderStyle BackColor="#848384" />
-                <SortedDescendingCellStyle BackColor="#EAEAD3" />
-                <SortedDescendingHeaderStyle BackColor="#575357" />
+                <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+                <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+                <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+                <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+                <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#FFF1D4" />
+                <SortedAscendingHeaderStyle BackColor="#B95C30" />
+                <SortedDescendingCellStyle BackColor="#F1E5CE" />
+                <SortedDescendingHeaderStyle BackColor="#93451F" />
             </asp:GridView>
           
-            <asp:Button ID="Button1" runat="server" Text="Terminar y Generar Acta" CssClass="botonesConsejo" OnClick="Button1_Click" Width="200px" />
+            <asp:Button ID="Button1" runat="server" Text="Terminar y Generar Acta" CssClass="auto-style2" OnClick="Button1_Click" Width="206px" BackColor="#87540E" Font-Bold="True" Height="61px" />
            
-            <asp:Button ID="Button2" runat="server" Text="Salir" CssClass="auto-style1" OnClick="Button2_Click" />
+            <asp:Button ID="Button2" runat="server" Text="Salir" CssClass="auto-style2" OnClick="Button2_Click" BackColor="#87540E" Font-Bold="True" Height="42px" Width="209px" />
          
             <br />
             <br />

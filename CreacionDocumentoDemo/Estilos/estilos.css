@@ -278,4 +278,8 @@ hr {
     #cbConsejo{
         font-size:5px;
     }
-   
+
+.btnBuscarGrid {
+    background-color: #D7C5AC;
+    border-radius: 15px;
+}

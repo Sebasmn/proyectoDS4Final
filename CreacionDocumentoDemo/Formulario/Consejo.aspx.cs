@@ -80,12 +80,7 @@ namespace CreacionDocumentoDemo.Formulario
             {
                 //No se ha podido abrir el archivo
             }
-            
-
-           /* Word.Application wordApp = new Word.Application();
-            Word.Document myWordDoc = null;
-            myWordDoc = wordApp.Documents.Open(ref text);*/
-
+          
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
