@@ -8,7 +8,7 @@
     <title>Administrador</title>
     <link rel="icon" type="image/png" href="../Images/EscudoUTA.png"/>
     <link rel="stylesheet" href="../Estilos/inicio.css"  type="text/css" />
-     
+    
 </head>
 <body>
     <form id="form1" runat="server">
@@ -27,6 +27,8 @@
             <asp:ImageButton ID="ImageButton1" runat="server" Height="176px" ImageUrl="~/Images/usuario.png" Width="205px" OnClick="ImageButton1_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:ImageButton ID="ImageButton2" runat="server" Height="176px" ImageUrl="~/Images/consejo.png" Width="205px" OnClick="ImageButton2_Click" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:ImageButton ID="ImageButton3" runat="server" Height="176px" ImageUrl="~/Images/cerrar.png" Width="205px" OnClick="ImageButton3_Click" />
             <br />
             <br />
             <br />

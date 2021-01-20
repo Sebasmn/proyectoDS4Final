@@ -5,8 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Nuevo Usuario</title>
      <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
+   
     <style type="text/css">
         .auto-style1 {
             text-align: left;
@@ -85,7 +86,10 @@
 
                 <h1><strong>
                 <asp:Label ID="Label1" runat="server" Text="Registro de Usuarios" CssClass="auto-style11"></asp:Label>
-                    </strong></h1>
+                <hr />
+                    <asp:Button ID="Button3" runat="server" CssClass="btnBuscar" Text="Salir" OnClick="Button3_Click" Height="68px" Width="168px" />
+                </strong></h1>
+                <p>&nbsp;</p>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
                 <br />
@@ -93,7 +97,14 @@
 
             </div>
             <div>
-                <table style="align-content:center" align="center" class="auto-style15" border="1">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <table style="align-content:center" border="none" align="center" class="auto-style15" >
                
                     <tr>
                         <td class="auto-style20">
@@ -184,7 +195,7 @@
                     </tr>
                     <tr>
                         <td colspan="2" class="auto-style2">
-                            <asp:Label ID="lblMensaje" runat="server" BackColor="#FF9966"></asp:Label>
+                            <asp:Label ID="lblMensaje" runat="server" BackColor="#FFCC66" Font-Italic="True"></asp:Label>
                             <asp:ScriptManager ID="ScriptManager1" runat="server">
                             </asp:ScriptManager>
                         </td>

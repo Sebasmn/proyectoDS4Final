@@ -204,5 +204,11 @@ namespace CreacionDocumentoDemo
                 lblMensaje.Text = "no se pudo eliminar el usuario";
             }
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Inicio/Login.aspx");
+        }
     }
 }

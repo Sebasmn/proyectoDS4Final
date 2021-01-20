@@ -38,13 +38,20 @@ namespace CreacionDocumentoDemo.Inicio
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("../Admin/CrearConsejo.aspx");
-    
+
+            Response.Redirect("../Usuario.aspx");
         }
 
         protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("../Usuario.aspx");
+       
+            Response.Redirect("../Admin/CrearConsejo.aspx");
+        }
+
+        protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
 
         }
     }
