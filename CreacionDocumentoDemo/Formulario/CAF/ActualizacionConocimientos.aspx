@@ -15,6 +15,13 @@
 <body>
     <form id="form1" runat="server">
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+         <asp:Image ID="escudoLogin" runat="server" 
+                    ImageUrl="~/Images/EscudoUTA.png"
+                    />
+            <h1>
+                Resolución para Act. de Conocimientos
+            </h1>
+            <hr />
         <asp:Panel ID="menuOpciones" runat="server">
             <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante"   CssClass="btnBuscar" OnClick="btnBuscar_Click"  />
 
@@ -88,6 +95,8 @@ mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">FACULTAD DE INGENI
                           <p>
                   &nbsp;</p>
                           </span>
+                          <p>
+                          </p>
                           <p>
                           </p>
                       </p>
@@ -203,22 +212,6 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style=
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
                                       <p>&nbsp;</p>
                                       </span>
-                                      <p>
-                                      </p>
-                                      <p class="MsoNormal">
-                                          <span lang="ES" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
-&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
-                                          <p>
-                                              &nbsp;</p>
-                                          </span>
-                                          <p>
-                                          </p>
-                                          <br />
-                                          <p>
-                                          </p>
-                                          <p>
-                                          </p>
-                                      </p>
                                   </p>
                                   </span>
                                   <p class="MsoNormal" style="text-align:justify">
@@ -432,32 +425,6 @@ text-indent:0cm">
                                                                               </p>
                                                                               <p>
                                                                               </p>
-                                                                              <p>
-                                                                              </p>
-                                                                              <p>
-                                                                              </p>
-                                                                              <p>
-                                                                              </p>
-                                                                              <p>
-                                                                              </p>
-                                                                              <p>
-                                                                              </p>
-                                                                              <p>
-                                                                              </p>
-                                                                              <p>
-                                                                              </p>
-                                                                              <p>
-                                                                              </p>
-                                                                              <p>
-                                                                              </p>
-                                                                              <p>
-                                                                              </p>
-                                                                              <p>
-                                                                              </p>
-                                                                              <p>
-                                                                              </p>
-                                                                              <p>
-                                                                              </p>
                                                                           </p>
                                                                       </p>
                                                                   </p>
@@ -492,7 +459,7 @@ text-indent:0cm">
                 AutoPostBack="false"
                  placeholder="Buscar cedula/nombre"
                 OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
-               &nbsp;<asp:Button ID="Button3" runat="server" Text="Cancelar" OnClick="Button3_Click" />
+               &nbsp;<asp:Button ID="Button3" runat="server" Text="X" OnClick="Button3_Click" />
             <asp:UpdatePanel ID="upEstudiante" runat="server" ChildrenAsTriggers="true" UpdateMode="Always">
                 <ContentTemplate>
                  

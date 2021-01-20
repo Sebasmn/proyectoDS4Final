@@ -11,6 +11,9 @@ using System.Reflection;
 using System.IO;
 using CreacionDocumentoDemo.Objetos;
 using CreacionDocumentoDemo.Formulario;
+using System.Net.Mail;
+using System.Net;
+using System.Net.Mime;
 /// <summary>
 /// Descripción breve de ManejoDatos
 /// </summary>
@@ -54,6 +57,38 @@ public class ManejoDatos
                 user.Nombre = reader["NOMBRE"].ToString();
                 user.Tipo = reader["TIPO"].ToString();
                
+            }
+            reader.Close();
+            conn.Close();
+        }
+        catch (Exception)
+        {
+
+        }
+        return user;
+    }
+
+    public ConsejoDir ObtenerLoginConsejo(string usuario, string clave)
+    {
+        ConsejoDir user = new ConsejoDir();
+        try
+        {
+            MySqlConnection conn = this.GetConnectionString();
+            string sql = "SELECT COD_CONSEJO,FECHA  " +
+                          "FROM `CONSEJO`  WHERE COD_CONSEJO = @COD_CONSEJO AND CLAVE=@CLAVE";
+            MySqlCommand command = new MySqlCommand(sql, conn);
+            command.Parameters.AddWithValue("@COD_CONSEJO", usuario);
+            command.Parameters.AddWithValue("@CLAVE", clave);
+            conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+            user = new ConsejoDir();
+            if (reader.Read())
+            {
+
+                user.Codigo = reader["COD_CONSEJO"].ToString();
+                user.Fecha = reader["FECHA"].ToString();
+                //user.Tipo = reader["TIPO"].ToString();
+
             }
             reader.Close();
             conn.Close();
@@ -163,7 +198,7 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
         {
             MySqlConnection conn = this.GetConnectionString();
             string sql = "SELECT * " +
-                          "FROM `RESOLUCIONES`  WHERE IDCONSEJO = " + consejo;
+                          "FROM `RESOLUCIONES`  WHERE ESTADO=0 AND IDCONSEJO = '" + consejo+"'";
 
             MySqlCommand command = new MySqlCommand(sql, conn);
             //command.Parameters.AddWithValue("@CEDULA", cedula);
@@ -176,6 +211,7 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
                 resol.Ubicacion = reader["UBICACION"].ToString();
                 resol.Codigo = reader["CODIGO"].ToString();
                 resol.Consejo = (reader["IDCONSEJO"].ToString());
+                resol.Estudiante = (reader["CEDULA_EST"].ToString());
                 resoluciones.Add(resol);
 
             }
@@ -215,16 +251,64 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
         return detalles;
     }
 
-    public void generarActa(List<Aprobada> aprobadas)
+    public void generarActa(List<Aprobada> aprobadas, string consejo)
     {
-        String plantillaActa = @"D:\Documentos\OficiosPlantilla\plantillaActa22.docx";
-        String nombre = @"D:\Documentos\Actas\actaFinal.docx";
+        String plantillaActa = @"D:\Documentos\OficiosPlantilla\actaModel.docx";
         List<string> Editables = new List<string>();
         List<string> Datos = new List<string>();
         Editables.Add("<encabezado>"); Datos.Add("Encabezado asd");
         Editables.Add("<ordenDia>"); Datos.Add("Orden Del Dia alasdasdkkasd \n kasdk");
+        MySqlConnection myConnection = this.GetConnectionString();
+        myConnection.Open();
+        MySqlTransaction myTrans = myConnection.BeginTransaction();
+        try
+        {
+            foreach (var resolucion in aprobadas)
+            {
+                MySqlCommand myCommand = new MySqlCommand("aprobarResolucion", myConnection, myTrans);
+                myCommand.CommandType = CommandType.StoredProcedure;
+                myCommand.Parameters.AddWithValue("CODIGO", resolucion.Codigo);
+               bool notificado = notificarEstudiante(resolucion.Ubicacion,resolucion.Estudiante, myConnection, myTrans);
+                int n = myCommand.ExecuteNonQuery();
+            }
+            String nombre = @"D:\Documentos\Actas\";
+            string acta = obtenerSiguienteActa();
+            StringBuilder nombreActa = new StringBuilder();
+            StringBuilder codigoActa = new StringBuilder();
+            codigoActa.Append(acta);
+            codigoActa.Append("-UTA-FISEI");
+            nombreActa.Append(nombre);
+            nombreActa.Append(acta);
+            nombreActa.Append("-UTA-FISEI");
+            nombreActa.Append(".docx");
+
+            MySqlCommand comando = new MySqlCommand("guardarActa", myConnection, myTrans);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("CODIGO", codigoActa);
+            comando.Parameters.AddWithValue("UBICACION", nombreActa.ToString());
+            comando.Parameters.AddWithValue("CONSEJO", consejo);
+            int r = comando.ExecuteNonQuery();
+            if (r>0)
+            {
+                contruccionActa(plantillaActa, nombre, Editables, Datos, aprobadas);
+                myTrans.Commit();
+            }
+        }
+        catch (Exception e)
+        {
+            try
+            {
+                myTrans.Rollback();
+            }
+            catch (SqlException ex)
+            {
+            }
+        }
+       
+        //return guardado;
+
+
         
-        contruccionActa(plantillaActa, nombre, Editables, Datos,aprobadas);
     }
     public bool contruccionActa(object filename, object SaveAs, List<string> editables, List<string> datos,List<Aprobada> resoluciones)
     {
@@ -258,8 +342,6 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
             foreach (var item in resoluciones)
             {
                 myWordDoc.Content.InsertParagraphAfter();
-                //  myWordDoc.Content.Text += "RESOLUCION 456-UTA-CF-2020";
-              //  myWordDoc.Content.Text += "RESOLUCION " + item.Codigo;
                 myWordDoc.Content.InsertAfter("RESOLUCION " + item.Codigo);
                 myWordDoc.Content.InsertParagraphAfter();
                 //myWordDoc.Content.Ins
@@ -268,7 +350,6 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
                 myWordDoc.Content.InsertAfter(sb.ToString());
                 myWordDoc.Range().Find.ClearFormatting();
             }
-
             myWordDoc.Range().Find.ClearFormatting();
 
             guardado = true;
@@ -506,15 +587,41 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
         }
         return estudiante;
     }
+    public string obtenerSiguienteResolución()
+    {
+        int NUMERO = 0;
+        try
+        {
+            MySqlConnection conn = this.GetConnectionString();
 
-    public  string obtenerSiguienteResolución()
+            MySqlCommand command = new MySqlCommand("obtenerResolucion", conn);
+            command.CommandType = CommandType.StoredProcedure;
+            conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                NUMERO = Convert.ToInt32(reader["NUMERO"]);
+
+            }
+            reader.Close();
+            conn.Close();
+        }
+        catch (Exception)
+        {
+
+        }
+
+        string salida = String.Format("{0:D4}", NUMERO + 1);
+        return salida;
+    }
+    public  string obtenerSiguienteActa()
     {
         int NUMERO=0;
         try
         {
             MySqlConnection conn = this.GetConnectionString();
             
-            MySqlCommand command = new MySqlCommand("obtenerResolucion", conn);
+            MySqlCommand command = new MySqlCommand("obtenerActa", conn);
             command.CommandType = CommandType.StoredProcedure;
             conn.Open();
             MySqlDataReader reader = command.ExecuteReader();
@@ -555,8 +662,9 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
             myCommand.CommandText = "guardarGenerador";
             myCommand.Parameters.Clear();
             myCommand.ExecuteNonQuery();
-            CreateWordDocument(resolucion.Plantilla, resolucion.Ubicacion,resolucion.Editables,resolucion.Datos);
+            CreateWordDocument(resolucion.Plantilla, resolucion.Ubicacion, resolucion.Editables, resolucion.Datos);
             myTrans.Commit();
+          
             guardado = true;
         }
         catch (Exception e)
@@ -571,6 +679,105 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
         }
         return guardado;
     }
+
+    public bool verificarDatos(List<string> editables,List<string> datos)
+    {
+        bool verificado = false;
+        if (editables.Count==datos.Count)
+        {
+            foreach (var item in datos)
+            {
+                if (item.Equals(""))
+                {
+                    return false;
+                }
+                
+            }
+            return true;
+        }
+
+        return verificado;
+    }
+    public bool notificarEstudiante(string ubicacion,string cedula, MySqlConnection myConnection, MySqlTransaction trans)
+    {
+        bool notificado = false;
+        try
+        {
+            
+            string sql = "SELECT CORREOUTA  " +
+                          "FROM  `Estudiantes`  WHERE CEDULA = @CEDULA ";
+
+            MySqlCommand command = new MySqlCommand(sql, myConnection,trans);
+            command.Parameters.AddWithValue("@CEDULA", cedula);
+           // conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+            Estudiante encontrado = new Estudiante();
+            if (reader.Read())
+            {
+                encontrado.CorreoUTA = reader["CORREOUTA"].ToString();
+               /* encontrado.Nombres = reader["NOMBRES"].ToString();
+                encontrado.Apellidos = reader["APELLIDOS"].ToString();*/
+            }
+            reader.Close();
+            //conn.Close();
+            if (encontrado.CorreoUTA!=null)
+            {
+                notificado = enviarCorreo(encontrado.CorreoUTA,ubicacion);
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+        return notificado;
+    }
+
+    private bool enviarCorreo(string correoUTA, string ubicacion)
+    {
+        bool enviado = false;
+        if (File.Exists((string)ubicacion))
+        {
+            try
+            {
+                MailMessage message = new MailMessage();
+                SmtpClient smtp = new SmtpClient();
+                message.From = new MailAddress("francisclquishpe@hotmail.com");
+                message.To.Add(new MailAddress(correoUTA));
+                message.Subject = "Test";
+                message.IsBodyHtml = true; //to make message body as html  
+                message.Body = "Aprobación de Resolución";
+                smtp.Port = 587;
+                smtp.Host = "smtp.live.com"; //for gmail host  
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("francisclquishpe@hotmail.com", "2420541");
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                var attachmentFilename = ubicacion;
+                //
+
+                Attachment attachment = new Attachment(attachmentFilename, MediaTypeNames.Application.Octet);
+                ContentDisposition disposition = attachment.ContentDisposition;
+                disposition.CreationDate = File.GetCreationTime(attachmentFilename);
+                disposition.ModificationDate = File.GetLastWriteTime(attachmentFilename);
+                disposition.ReadDate = File.GetLastAccessTime(attachmentFilename);
+                disposition.FileName = Path.GetFileName(attachmentFilename);
+                disposition.Size = new FileInfo(attachmentFilename).Length;
+                disposition.DispositionType = DispositionTypeNames.Attachment;
+                message.Attachments.Add(attachment);
+
+                //
+                smtp.Send(message);
+                enviado = true;
+            }
+            catch (Exception ex)
+            {
+               // MessageBox.Show(ex.Message);
+            }
+          
+        }
+        return enviado;
+    }
+
     public  bool CreateWordDocument(object filename, object SaveAs,List<string> editables, List<string> datos)
     {
         Word.Application wordApp = new Word.Application();

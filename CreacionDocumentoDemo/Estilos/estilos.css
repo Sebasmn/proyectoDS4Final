@@ -84,10 +84,10 @@ hr {
     background-color: #D8C99B;
     margin: auto;
     text-align:center;
-    width: 600px;
-    padding: 15px;
-    height: 221px;
-    width: 900px;
+    width: auto;
+    padding:15px;
+    height: 350px;
+    width: 950px;
 }
 
     #panelModalBusquedaEst > #Button3 {
@@ -192,6 +192,8 @@ hr {
     margin-right: 20px;
     background-color: #C5AB90;
     padding: 30px;
+    height:auto;
+    padding-bottom:30px;
     min-height: 100px;
     overflow: hidden;
 }
@@ -273,4 +275,7 @@ hr {
         background-color: #865919;
     }
 
+    #cbConsejo{
+        font-size:5px;
+    }
    

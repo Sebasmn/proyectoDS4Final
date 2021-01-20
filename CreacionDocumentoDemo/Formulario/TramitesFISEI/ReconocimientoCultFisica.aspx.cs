@@ -25,7 +25,9 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             List<string> carreras = new ManejoDatos().getCarreras();
             ddlCarreras.DataSource = carreras;
             ddlCarreras.DataBind();
-                List<String> datos = new List<string>();
+            ddlCarreras0.DataSource = carreras;
+            ddlCarreras0.DataBind();
+            List<String> datos = new List<string>();
                 datos.Add("lunes");
                 datos.Add("martes");
                 datos.Add("miércoles");
@@ -157,6 +159,8 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             editables.Add("<cedula>"); datos.Add(txtCedula.Text);
             editables.Add("<carrera>"); datos.Add(txtCarrera1.Text);
 
+            editables.Add("<carreraGuardado>"); datos.Add(ddlCarreras0.SelectedValue.ToString());
+
             editables.Add("<carrera1>"); datos.Add(txtCarrera2.Text);
             editables.Add("<facultad>"); datos.Add(txtFacultad.Text);
             editables.Add("<presidente1>"); datos.Add(txtPresidente1.Text);
@@ -189,11 +193,24 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             resol.IDConsejo = txtCodigoConsejoDestino.Text;
             resol.Estudiante = txtCedula.Text;
             resol.Secretaria = ((UsuariosSW)Session["USUARIOSW"]).Cedula;
-            bool guardado = mysql.guardarResolucion(resol);
-
-            if (guardado)
+            bool verificado = mysql.verificarDatos(editables, datos);
+            if (verificado)
             {
-                Label2.Text = "Documento Generado y Guardado";
+                bool guardado = mysql.guardarResolucion(resol);
+                if (guardado)
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Resolucion creada !')", true);
+                    // Label2.Text = "Documento Generado y Guardado";
+                }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha producido un error en los datos')", true);
+                    // Label2.Text = "Ha ocurrido un error en los datos";
+                }
+            }
+            else
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Llenar TODOS los campos correctamente')", true);
             }
 
         }

@@ -33,13 +33,13 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
-        /// Control btnBuscar.
+        /// Control escudoLogin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscar;
+        protected global::System.Web.UI.WebControls.Image escudoLogin;
 
         /// <summary>
         /// Control menuOpciones.
@@ -49,6 +49,15 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel menuOpciones;
+
+        /// <summary>
+        /// Control btnBuscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
 
         /// <summary>
         /// Control btnNumeroResolucion.
@@ -114,13 +123,13 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
         protected global::System.Web.UI.WebControls.TextBox txtAnio2;
 
         /// <summary>
-        /// Control ddlCoordinador.
+        /// Control txtCoordinador0.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCoordinador;
+        protected global::System.Web.UI.WebControls.TextBox txtCoordinador0;
 
         /// <summary>
         /// Control ddlSesion.

@@ -15,6 +15,13 @@
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:Image ID="escudoLogin" runat="server" 
+                    ImageUrl="~/Images/EscudoUTA.png"
+                    />
+            <h1>
+              Resolución para rReingreso a Carrera  
+            </h1>
+            <hr />
         <asp:Panel ID="menuOpciones" runat="server">
             <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante"   CssClass="btnBuscar" OnClick="btnBuscar_Click"  />
 
