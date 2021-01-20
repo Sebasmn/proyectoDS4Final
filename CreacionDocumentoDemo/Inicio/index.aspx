@@ -26,8 +26,9 @@
             <asp:Panel ID="panelResoluciones" runat="server" Height="342px">
                 <asp:LinkButton ID="LinkButton1" runat="server" CssClass="resoluciones" 
                     OnClick="LinkButton1_Click" style="height: 19px">&gt; Actualización de Conocimientos</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton7" runat="server" CssClass="resoluciones" OnClick="LinkButton2_Click">&gt; Aprobación Carta de Compromiso</asp:LinkButton>
                 &nbsp;<asp:LinkButton 
-                    ID="LinkButton2"  runat="server" CssClass="resoluciones" OnClick="LinkButton2_Click">&gt; Aprobación Carta de Compromiso</asp:LinkButton>
+                    ID="LinkButton2"  runat="server" CssClass="resoluciones" OnClick="LinkButton2_Click1" >&gt; Tercera Matrícula</asp:LinkButton>
                 <br />
                 <br />
                 <br />

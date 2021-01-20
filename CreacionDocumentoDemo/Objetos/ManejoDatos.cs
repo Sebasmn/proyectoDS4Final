@@ -68,6 +68,90 @@ public class ManejoDatos
         return user;
     }
 
+    public bool crearConsejo(string fecha, string cedula, string clave, string creador,string reunion)
+    {
+        bool guardado = false;
+        MySqlConnection myConnection = this.GetConnectionString();
+        //myConnection.Open();
+        myConnection.Open();
+        MySqlTransaction myTrans = myConnection.BeginTransaction();
+        try
+        {          
+            MySqlCommand comando = new MySqlCommand("obtenerConsejo", myConnection, myTrans);
+            comando.CommandType = CommandType.StoredProcedure;
+            MySqlDataReader reader = comando.ExecuteReader();
+            int numero=0;
+            if (reader.Read())
+            {
+                numero= Convert.ToInt32(reader["NUMERO"].ToString());
+            }
+            reader.Close();
+            string salida = String.Format("{0:D4}", numero + 1);
+            //Construir codigo
+            StringBuilder sb = new StringBuilder();
+            sb.Append("CD").Append(salida).Append("2021");
+            String codigoNuevo = sb.ToString();
+
+            //
+            string Sqlstr = @"INSERT INTO CONSEJO (COD_CONSEJO,FECHA,CED_CREDOR,CEDULA_ENCARGADO,CLAVE,SESION) 
+                            values(@COD_CONSEJO,@FECHA,@CED_CREDOR,@CEDULA_ENCARGADO,@CLAVE,@SESION)";
+            MySqlCommand insert = new MySqlCommand(Sqlstr, myConnection,myTrans);
+            insert.Parameters.AddWithValue("@COD_CONSEJO", codigoNuevo);
+            insert.Parameters.AddWithValue("@FECHA", fecha);
+            insert.Parameters.AddWithValue("@CED_CREDOR", creador);
+            insert.Parameters.AddWithValue("@CEDULA_ENCARGADO", cedula);
+            insert.Parameters.AddWithValue("@CLAVE", clave);
+            insert.Parameters.AddWithValue("@SESION", reunion);
+            int afectadas = insert.ExecuteNonQuery();
+            MySqlCommand select = new MySqlCommand("SELECT CORREO FROM USUARIOS_SW WHERE CEDULA=@CEDULA", myConnection, myTrans);
+            select.Parameters.AddWithValue("@CEDULA", cedula);
+            MySqlDataReader rd = select.ExecuteReader();
+            //int numero = 0;
+            string mail="";
+            if (rd.Read())
+            {
+                mail = rd["CORREO"].ToString();
+            }
+            rd.Close();
+            if (afectadas>0)
+            {
+
+                String update = "INSERT INTO GENERADOR_CONSEJOS VALUES(0)";
+                MySqlCommand actualizar = new MySqlCommand(update, myConnection, myTrans);
+                int actualizado = actualizar.ExecuteNonQuery();
+                if (actualizado>0)
+                {
+                    bool exito = notificarConsejo(codigoNuevo, clave, mail);
+                    if (exito)
+                    {
+                     
+                       
+                        myTrans.Commit();
+                        myConnection.Close();
+                        guardado = true;
+                    }
+                }
+            }
+            else
+            {
+                myTrans.Rollback();
+            }
+
+        }
+        catch (Exception ex)
+        {
+            try
+            {
+                myTrans.Rollback();
+            }
+            catch(Exception ex2)
+            {
+
+            }
+        }
+        return guardado;
+    }
+
     public ConsejoDir ObtenerLoginConsejo(string usuario, string clave)
     {
         ConsejoDir user = new ConsejoDir();
@@ -777,7 +861,34 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
         }
         return enviado;
     }
-
+    private bool notificarConsejo(string Codigo, string clave , string mail)
+    {
+        bool enviado = false;
+            try
+            {
+                MailMessage message = new MailMessage();
+                SmtpClient smtp = new SmtpClient();
+                message.From = new MailAddress("francisclquishpe@hotmail.com");
+                message.To.Add(new MailAddress(mail));
+                message.Subject = "Test";
+                message.IsBodyHtml = true; //to make message body as html  
+                message.Body = "Se le ha asignado para un consejo: \n Código: "+Codigo + " \n Clave de Acceso: "+clave;
+                smtp.Port = 587;
+                smtp.Host = "smtp.live.com"; //for gmail host  
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("francisclquishpe@hotmail.com", "2420541");
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Send(message);
+                enviado = true;
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show(ex.Message);
+            }
+        return enviado;
+        
+    }
     public  bool CreateWordDocument(object filename, object SaveAs,List<string> editables, List<string> datos)
     {
         Word.Application wordApp = new Word.Application();

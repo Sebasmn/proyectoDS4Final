@@ -67,7 +67,7 @@ namespace CreacionDocumentoDemo.Inicio
                 if (tipo.Tipo != null)
                 {
                     char userTipo = Convert.ToChar(tipo.Tipo);
-                    Session["USUARIOSW"] = tipo;
+                    Session["USUARIOSW"] = tipo;//UsuariosSW
                     switch (userTipo)
                     {
                         case 'S': //Secretaria --> Menu Resoluciones

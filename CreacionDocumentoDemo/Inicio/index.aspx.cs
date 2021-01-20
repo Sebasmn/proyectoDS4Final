@@ -77,5 +77,12 @@ namespace CreacionDocumentoDemo.Inicio
      this.GetType(),
      "OpenWindow", "window.open('../Formulario/CAF/Homologacion.aspx','_newtab');", true);
         }
+
+        protected void LinkButton2_Click1(object sender, EventArgs e)
+        {
+            Page.ClientScript.RegisterStartupScript(
+            this.GetType(),
+            "OpenWindow", "window.open('../Formulario/TramitesFISEI/TerceraMatrícula.aspx','_newtab');", true);
+        }
     }
 }

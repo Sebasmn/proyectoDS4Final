@@ -8,10 +8,32 @@
     <title>Administrador</title>
     <link rel="icon" type="image/png" href="../Images/EscudoUTA.png"/>
     <link rel="stylesheet" href="../Estilos/inicio.css"  type="text/css" />
+     
 </head>
 <body>
     <form id="form1" runat="server">
+                <asp:Image ID="escudoLogin" runat="server" 
+                    ImageUrl="~/Images/EscudoUTA.png"
+                    />
+            <h1>
+                Administrador de Sitio&nbsp;&nbsp;&nbsp;
+                
+            </h1>
+            <hr />
         <div id="contenedor">
+            <br />
+            <br />
+            <br />
+            <asp:ImageButton ID="ImageButton1" runat="server" Height="176px" ImageUrl="~/Images/usuario.png" Width="205px" OnClick="ImageButton1_Click" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:ImageButton ID="ImageButton2" runat="server" Height="176px" ImageUrl="~/Images/consejo.png" Width="205px" OnClick="ImageButton2_Click" />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
     </form>
 </body>
