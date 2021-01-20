@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace CreacionDocumentoDemo.Formulario.Titulacion
 {
-    public partial class ProrrogaPagada : System.Web.UI.Page
+    public partial class ProrrogaPagadaN : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,6 +20,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
                 cargarDatos();
             }
         }
+
         private void ManejarUsuario()
         {
             if (
@@ -47,63 +48,50 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
 
             //Carreras
             var X = datos.ObtenerCarrerasDB();
-            ddlCarreras.DataSource = X;
+            List<string> carrerasC = datos.GetCarrerasBanner();
+            var y = datos.GetCarrerasMinuscula();
+            ddlCarrerasCoor.DataSource = carrerasC;
+            ddlCarrerasCoor.DataBind();
+            ddlCarreras.DataSource = y;
             ddlCarreras.DataBind();
             ddlCarreras0.DataSource = X;
             ddlCarreras0.DataBind();
 
             //Dias
-            ddlNombreDia.DataSource = datos.ObtenerDiasSemana() ;
+            ddlNombreDia.DataSource = datos.ObtenerDiasSemana();
             ddlNombreDia.DataBind();
 
 
             //Dias del mes
-          
+
             ddlDiaNum.DataSource = datos.ObtenerDiasMes();
             ddlDiaNum.DataBind();
 
             ddlDiaNum0.DataSource = datos.ObtenerDiasMes();
             ddlDiaNum0.DataBind();
 
+            ddlDiaNum1.DataSource = datos.ObtenerDiasMes();
+            ddlDiaNum1.DataBind();
+            ddlDiaNum2.DataSource = datos.ObtenerDiasMes();
+            ddlDiaNum2.DataBind();
+            ddlDiaNum3.DataSource = datos.ObtenerDiasMes();
+            ddlDiaNum3.DataBind();
+
 
             ddlCarrerasCoor.DataSource = datos.ObtenerCarrerasCoord();
             ddlCarrerasCoor.DataBind();
-            ddlOpcionesSecre.DataSource = datos.DetallesSecretaria();
-            ddlOpcionesSecre.DataBind();
 
-
-            
-            /*ddlDiaNum1.DataSource = numeros;
-            ddlDiaNum1.DataBind();
-
-            ddlDiaNum2.DataSource = numeros;
-            ddlDiaNum2.DataBind();*/
-
-           
-
+            //Mes
             ddlMes.DataSource = datos.ObtenerMeses();
             ddlMes.DataBind();
             ddlMes0.DataSource = datos.ObtenerMeses();
             ddlMes0.DataBind();
-
-            List<string> nivel = new List<string>();
-            nivel.Add("DECIMO");
-            nivel.Add("NOVENO");
-            nivel.Add("OCTAVO");
-            ddlNivel.DataSource = nivel;
-            ddlNivel.DataBind();
-           // ddlSecretarias.DataSource = datos.DetallesSecretaria();
-
-        }
-
-        protected void txtPresidente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void txtFecha_TextChanged(object sender, EventArgs e)
-        {
-
+            ddlMes1.DataSource = datos.ObtenerMeses();
+            ddlMes1.DataBind();
+            ddlMes2.DataSource = datos.ObtenerMeses();
+            ddlMes2.DataBind();
+            ddlMes3.DataSource = datos.ObtenerMeses();
+            ddlMes3.DataBind();
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -121,6 +109,42 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             string resolucion = mysql.obtenerSiguienteResolución();
             txtSecuencia.Text = resolucion;
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            panelModalBusquedaEst.Visible = true;
+            ModalPopupExtender1.Show();
+            Label1.Text = "Buscando";
+            ManejoDatos datos = new ManejoDatos();
+            // List<Estudiante> listado =  
+            var bs1 = new BindingSource();
+            bs1.DataSource = datos.getEstudiantesBusqueda(TextBox1.Text);
+            GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
+            GridView1.DataBind();
+            Label1.Text = "Correcto";
+        }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ManejoDatos datos = new ManejoDatos();
+            var bs1 = new System.Windows.Forms.BindingSource();
+            bs1.DataSource = datos.getEstudiantesBusqueda(TextBox1.Text);
+            GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
+            GridView1.PageIndex = e.NewPageIndex;
+            GridView1.DataBind();
+            Label1.Text = "Correcto";
+
+            GridView1.DataBind();
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtNombreEstu1.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
+            txtNombreEstu2.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
+            txtNombreEstu3.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
+            ViewState["CEDULA_EST"] = GridView1.SelectedRow.Cells[1].Text;
+        }
+
         protected void Button4_Click(object sender, EventArgs e)
         {
             /*Editables Y Datos*/
@@ -134,50 +158,62 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             editables.Add("<coordinador>"); datos.Add(txtCoordinador.Text);
             editables.Add("<carrerasCoor>"); datos.Add(ddlCarrerasCoor.SelectedValue.ToString());
             editables.Add("<sesion>"); datos.Add(ddlSesion.SelectedValue.ToString());
-
-
-
             editables.Add("<nombreDia>"); datos.Add(ddlNombreDia.SelectedValue.ToString());
+
+
             editables.Add("<numeroDia>"); datos.Add(ddlDiaNum.SelectedValue.ToString());
             editables.Add("<nombreMes>"); datos.Add(ddlMes.SelectedValue.ToString());
-
             editables.Add("<anio1>"); datos.Add(txtAnio1.Text);
+
             editables.Add("<acuerdo>"); datos.Add(txtAcuerdo.Text);
             editables.Add("<nombreMes1>"); datos.Add(ddlMes0.SelectedValue.ToString());
-
-
             editables.Add("<numeroDia1>"); datos.Add(ddlDiaNum0.SelectedValue.ToString());
+
+
             editables.Add("<anio2>"); datos.Add(txtAnio2.Text);
             editables.Add("<presiUnidad>"); datos.Add(txtPresiConsejo.Text);
-
             editables.Add("<estudiante>"); datos.Add(txtNombreEstu1.Text);
-           // editables.Add("<cedula>"); datos.Add(txtCedula.Text);
-            editables.Add("<carrera>"); datos.Add(ddlCarreras.SelectedValue.ToString());
 
+            editables.Add("<carrera>"); datos.Add(ddlCarreras.SelectedValue.ToString());
             editables.Add("<periodo>"); datos.Add(txtPeriodo.Text);
-            editables.Add("<periodo2>"); datos.Add(txtPeriodo2.Text);
-            editables.Add("<trabajoTitulacion>"); datos.Add(txtTrabajo.Text);
+            editables.Add("<estudiante1>"); datos.Add(txtNombreEstu2.Text);
+            editables.Add("<periodo2>"); datos.Add(txtPeriodo0.Text);
+            editables.Add("<carrera1>"); datos.Add(ddlCarreras0.SelectedValue.ToString());
+
+            editables.Add("<trabajoTitulacion>"); datos.Add(txtTema.Text);
+            editables.Add("<resolucion>"); datos.Add(txtResolucion.Text);
+            editables.Add("<nombreMes2>"); datos.Add(ddlMes1.SelectedValue.ToString());
+            editables.Add("<numeroDia2>"); datos.Add(ddlDiaNum1.SelectedValue.ToString());
+            editables.Add("<anio3>"); datos.Add(txtAnio3.Text);
+            editables.Add("<memorando>"); datos.Add(txtMemorando.Text);
+            editables.Add("<numeroDia3>"); datos.Add(ddlDiaNum2.Text);
+            editables.Add("<nombreMes3>"); datos.Add(ddlMes2.SelectedValue.ToString());
+            editables.Add("<anio4>"); datos.Add(txtAnio4.Text);
             editables.Add("<tutor>"); datos.Add(txtTutor.Text);
-            editables.Add("<nivel>"); datos.Add(ddlNivel.SelectedValue.ToString());
-            editables.Add("<secretarias>"); datos.Add(ddlOpcionesSecre.SelectedValue.ToString());
-          
+            editables.Add("<estudiante2>"); datos.Add(txtNombreEstu3.Text);
+            editables.Add("<secretarias>"); datos.Add(ddlCarreras1.SelectedValue.ToString());
+            editables.Add("<resolucion2>"); datos.Add(txtResolucion0.Text);
+            editables.Add("<nombreMes4>"); datos.Add(ddlMes3.Text);
+            editables.Add("<numeroDia4>"); datos.Add(ddlDiaNum3.Text);
+            editables.Add("<anio5>"); datos.Add(txtAnio5.Text);
             editables.Add("<presidente>"); datos.Add(txtPresidente.Text);
-            editables.Add("<presiTitula>"); datos.Add(txtPresiTitula.Text);
+            editables.Add("<presiTitula>"); datos.Add(txtPresidente0.Text);
+            editables.Add("<tutor1>"); datos.Add(txtTutor0.Text);
             /**/
             StringBuilder sb1 = new StringBuilder();
             sb1.Append(@"D:\Documentos\Pruebas\");
             StringBuilder sb2 = new StringBuilder();
             sb2.Append("Resolucion");
 
-            sb2.Append(txtSecuencia.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio1.Text);
+            sb2.Append(txtSecuencia.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio.Text);
             StringBuilder codigo = new StringBuilder();
-            codigo.Append(txtSecuencia.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio1.Text);
+            codigo.Append(txtSecuencia.Text).Append("-P-CD-FISEI-UTA-").Append(txtAnio.Text);
             sb1.Append(sb2.ToString());
             sb1.Append(".docx");
             string resolucion = codigo.ToString();
             string ruta = sb1.ToString();
 
-            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\ProrrogaPagada.docx";
+            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\Titulacion\ProrrogaGratuita.docx";
             ManejoDatos mysql = new ManejoDatos();
             Resolucion resol = new Resolucion();
             resol.Ubicacion = ruta;
@@ -195,56 +231,6 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             {
                 labelEstado.Text = "Documento Generado y Guardado";
             }
-        }
-
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            panelModalBusquedaEst.Visible = true;
-            ModalPopupExtender1.Show();
-            Label1.Text = "Buscando";
-            ManejoDatos datos = new ManejoDatos();
-            // List<Estudiante> listado =  
-            var bs1 = new BindingSource();
-            bs1.DataSource = datos.getEstudiantesBusqueda(TextBox1.Text);
-            GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
-            GridView1.DataBind();
-            Label1.Text = "Correcto";
-        }
-
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtNombreEstu1.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
-            txtNombreEstu2.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
-            ViewState["CEDULA_EST"] = GridView1.SelectedRow.Cells[1].Text;
-        }
-
-        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            ManejoDatos datos = new ManejoDatos();
-            // List<Estudiante> listado =  
-            var bs1 = new System.Windows.Forms.BindingSource();
-            bs1.DataSource = datos.getEstudiantesBusqueda(TextBox1.Text);
-            GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
-            GridView1.PageIndex = e.NewPageIndex;
-            GridView1.DataBind();
-            Label1.Text = "Correcto";
-
-            GridView1.DataBind();
-        }
-
-        protected void txtCodigoConsejoDestino_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
