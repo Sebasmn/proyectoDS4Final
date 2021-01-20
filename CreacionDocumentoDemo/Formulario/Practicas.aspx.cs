@@ -368,5 +368,11 @@ namespace CreacionDocumentoDemo.Formulario
             string resolucion= mysql.obtenerSiguienteResolución();
             txtSecuencia.Text = resolucion;
         }
+
+        protected void botonLogin_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("../../Inicio/Login.aspx");
+        }
     }
 }

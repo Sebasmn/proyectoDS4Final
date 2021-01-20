@@ -224,14 +224,14 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
         {
             panelModalBusquedaEst.Visible = true;
             ModalPopupExtender1.Show();
-            Label1.Text = "Buscando";
+            //Label1.Text = "Buscando";
             ManejoDatos datos = new ManejoDatos();
             // List<Estudiante> listado =  
             var bs1 = new BindingSource();
             bs1.DataSource = datos.getEstudiantesBusqueda(TextBox1.Text);
             GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
             GridView1.DataBind();
-            Label1.Text = "Correcto";
+          //  Label1.Text = "Correcto";
         }
 
         protected void GridView1_PageIndexChanged(object sender, EventArgs e)
@@ -247,7 +247,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
             GridView1.PageIndex = e.NewPageIndex;
             GridView1.DataBind();
-            Label1.Text = "Correcto";
+            //Label1.Text = "Correcto";
 
             GridView1.DataBind();
         }

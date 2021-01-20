@@ -438,15 +438,6 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
         protected global::AjaxControlToolkit.ConfirmButtonExtender ConfirmButtonExtender1;
 
         /// <summary>
-        /// Control labelEstado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelEstado;
-
-        /// <summary>
         /// Control panelModalBusquedaEst.
         /// </summary>
         /// <remarks>
@@ -499,15 +490,6 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-
-        /// <summary>
-        /// Control Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
         /// Control ModalPopupExtender1.

@@ -436,7 +436,6 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="
          <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
             TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
             runat="server" />
-        <asp:Label ID="labelEstado" runat="server"></asp:Label>
          <br />
          <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="304px" Width="849px">
             <asp:TextBox ID="TextBox1" 
@@ -473,7 +472,6 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="
                         <SortedDescendingCellStyle BackColor="#F1E5CE" />
                         <SortedDescendingHeaderStyle BackColor="#93451F" />
                     </asp:GridView>
-                    <asp:Label ID="Label1" runat="server" Text="Correcto"></asp:Label>
                 </ContentTemplate>
                  <Triggers>
                          <asp:AsyncPostBackTrigger ControlID="GridView1" 

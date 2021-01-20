@@ -45,11 +45,14 @@
             <br />
 
             <asp:Label ID="labelTituloIndex" runat="server" Text="RESOLUCIONES FISEI 2021"></asp:Label>
-
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
              <br />
              <br />
             <asp:Button ID="botonLogin" runat="server" CssClass="auto-style3" Text="Salir" OnClick="botonLogin_Click" Height="39px" Width="112px" />
-             <br />
+           <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1" 
+                TargetControlID="botonLogin" ConfirmText="Terminar sesión"
+                runat="server" />
+            <br />
             <br />
             <asp:Label ID="labelResol" runat="server" Text="Resoluciones Disponibles" CssClass="labelResol"></asp:Label>
             <br />
@@ -132,9 +135,7 @@
                 
             
             </asp:Panel>
-            <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1" 
-                TargetControlID="botonLogin" ConfirmText="Terminar sesión"
-                runat="server" />
+            
                 <br />
                 <br />
         </div>

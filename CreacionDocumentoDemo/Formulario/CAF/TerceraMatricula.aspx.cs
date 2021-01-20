@@ -265,5 +265,11 @@ namespace CreacionDocumentoDemo.Formulario.CAF
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Llenar TODOS los campos correctamente')", true);
             }
         }
+
+        protected void botonLogin_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("../../Inicio/Login.aspx");
+        }
     }
 }

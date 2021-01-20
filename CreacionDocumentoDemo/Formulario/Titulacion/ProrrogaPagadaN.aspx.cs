@@ -124,14 +124,14 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
         {
             panelModalBusquedaEst.Visible = true;
             ModalPopupExtender1.Show();
-            Label1.Text = "Buscando";
+         //   Label1.Text = "Buscando";
             ManejoDatos datos = new ManejoDatos();
             // List<Estudiante> listado =  
             var bs1 = new BindingSource();
             bs1.DataSource = datos.getEstudiantesBusqueda(TextBox1.Text);
             GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
             GridView1.DataBind();
-            Label1.Text = "Correcto";
+          //  Label1.Text = "Correcto";
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -142,7 +142,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
             GridView1.PageIndex = e.NewPageIndex;
             GridView1.DataBind();
-            Label1.Text = "Correcto";
+       //     Label1.Text = "Correcto";
 
             GridView1.DataBind();
         }
@@ -253,6 +253,12 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Llenar TODOS los campos correctamente')", true);
             }
+        }
+
+        protected void botonLogin_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("../../Inicio/Login.aspx");
         }
     }
 }

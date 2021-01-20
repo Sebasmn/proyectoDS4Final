@@ -42,6 +42,15 @@ namespace CreacionDocumentoDemo.Inicio
         protected global::System.Web.UI.WebControls.Label labelTituloIndex;
 
         /// <summary>
+        /// Control ScriptManager1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
         /// Control botonLogin.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace CreacionDocumentoDemo.Inicio
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button botonLogin;
+
+        /// <summary>
+        /// Control ConfirmButtonExtender1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ConfirmButtonExtender ConfirmButtonExtender1;
 
         /// <summary>
         /// Control labelResol.
@@ -211,14 +229,5 @@ namespace CreacionDocumentoDemo.Inicio
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton14;
-
-        /// <summary>
-        /// Control ConfirmButtonExtender1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ConfirmButtonExtender ConfirmButtonExtender1;
     }
 }
