@@ -6,16 +6,69 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+     <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            left: -3px;
+            top: 0px;
+        }
+        .auto-style7 {
+            width: 1632px;
+            margin-left: 0px;
+        }
+        .auto-style8 {
+            background-color: rgba(112, 72, 14,0.8);
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            background-color: #7C4F0E;
+            color: #DAD4CB;
+            font-weight: 700;
+            border-radius: 10px;
+        }
+        .auto-style9 {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:Label ID="lblUploadFile" runat="server" Text="Label"></asp:Label>
-        <br />
-            <asp:FileUpload ID="userFileUpload" runat="server" />
+          <br />
+        <div class="auto-style7" >
             <br />
-            <asp:Button ID="UploadButton" runat="server" Text="upload" OnClick="UploadButton_Click" />
-            <asp:Button ID="SaveData" runat="server" Text="ejecutar" OnClick="SaveData_Click" />
+            <table class="auto-style9">
+                <tr>
+                    <td>
+                        <br />
+          <asp:Image ID="escudoLogin" runat="server" 
+                    ImageUrl="~/Images/EscudoUTA.png" CssClass="auto-style1"
+                    />
+            <h1>
+                Importar datos 
+                
+            </h1>
+                        <br />
+                        <br />
+            <asp:Label ID="lblUploadFile" runat="server" BackColor="#FF9933"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+            <asp:FileUpload ID="userFileUpload" runat="server" BorderStyle="Double" CssClass="auto-style8" Height="59px" Width="342px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+            <asp:Button ID="UploadButton"  CssClass="btnBuscar" runat="server" Text="Leer Datos" OnClick="UploadButton_Click" />
+          
+            <asp:Button ID="SaveData" runat="server" Text="Importar" CssClass="btnBuscar" OnClick="SaveData_Click" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+        <br />
+            <br />
+            <br />
         </div>
     </form>
 </body>

@@ -5,8 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Nuevo Usuario</title>
-    
+    <title></title>
+     <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
     <style type="text/css">
         .auto-style1 {
             text-align: left;
@@ -22,8 +22,8 @@
             text-align: justify;
         }
         .auto-style9 {
-            width: 221px;
-            text-align: center;
+            width: 255px;
+            text-align: justify;
         }
         .auto-style10 {
             margin-bottom: 0px;
@@ -40,44 +40,80 @@
             height: 44px;
         }
         .auto-style15 {
-            height: 309px;
+            height: 541px;
+            width: 405px;
+        }
+        .auto-style16 {
+            width: 118px;
+            text-align: justify;
+            height: 48px;
+        }
+        .auto-style17 {
+            width: 255px;
+            text-align: justify;
+            height: 48px;
+        }
+        .auto-style18 {
+            width: 118px;
+            text-align: justify;
+            height: 34px;
+        }
+        .auto-style19 {
+            width: 255px;
+            text-align: justify;
+            height: 34px;
+        }
+        .auto-style20 {
+            width: 118px;
+            text-align: justify;
+            height: 30px;
+        }
+        .auto-style21 {
+            width: 255px;
+            text-align: justify;
+            height: 30px;
         }
     </style>
 </head>
 <body style="height: 686px">
     <form id="form1" runat="server">
+         <asp:Image ID="escudoLogin" runat="server" 
+                    ImageUrl="~/Images/EscudoUTA.png" CssClass="auto-style1"
+                    />
         <div class="auto-style1">
             <div class="auto-style14">
 
                 <h1><strong>
                 <asp:Label ID="Label1" runat="server" Text="Registro de Usuarios" CssClass="auto-style11"></asp:Label>
                     </strong></h1>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
                 <br />
                 <br />
 
             </div>
             <div>
-                <table style="align-content:center" align="center" class="auto-style15">
+                <table style="align-content:center" align="center" class="auto-style15" border="1">
                
                     <tr>
-                        <td class="auto-style8">
+                        <td class="auto-style20">
 
                             <asp:Label ID="Label2" runat="server" Text="Cédula: "></asp:Label>
 
                         </td>
-                        <td class="auto-style9">
+                        <td class="auto-style21">
 
-                            <asp:TextBox ID="txtCedula" runat="server" CssClass="auto-style10" Height="19px" Width="123px" MaxLength="10"></asp:TextBox>
+                            <asp:TextBox ID="txtCedula" runat="server" CssClass="auto-style10" Height="16px" Width="160px" MaxLength="10"></asp:TextBox>
 
                         </td>
                     </tr>
                     <tr>
-                        <td class="auto-style8">
+                        <td class="auto-style16">
 
                             <asp:Label ID="Label3" runat="server" Text="Primer nombres: "></asp:Label>
 
                         </td>
-                        <td class="auto-style9">
+                        <td class="auto-style17">
 
                 <asp:TextBox ID="txtNombreUno" runat="server" CssClass="auto-style3"></asp:TextBox>
 
@@ -114,11 +150,11 @@
                             </td>
                     </tr>
                     <tr>
-                        <td class="auto-style8">
+                        <td class="auto-style18">
                 <asp:Label ID="Label5" runat="server" Text="Rol: "></asp:Label>
                             </td>
-                        <td class="auto-style9">
-                            <asp:DropDownList ID="ddlRol" runat="server" CssClass="auto-style13" Height="19px" Width="134px" OnSelectedIndexChanged="ddlRol_SelectedIndexChanged">
+                        <td class="auto-style19">
+                            <asp:DropDownList ID="ddlRol" runat="server" CssClass="auto-style13" Height="20px" Width="177px" OnSelectedIndexChanged="ddlRol_SelectedIndexChanged">
                             </asp:DropDownList>
                             </td>
                     </tr>
@@ -155,22 +191,22 @@
                     </tr>
                     <tr>
                         <td colspan="2" class="auto-style2">
-                            <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
-                            <asp:Button ID="btnEditar" runat="server" Text="Editar" OnClick="btnEditar_Click" />
-                            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" />
-                            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
+                            <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click"  CssClass="btnBuscar"/>
+                            <asp:Button ID="btnEditar" runat="server" Text="Editar" OnClick="btnEditar_Click"  CssClass="btnBuscar"/>
+                            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" CssClass="btnBuscar"/>
+                            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btnBuscar"/>
                         </td>
                     </tr>
                 </table>
                 <br />
-                 <asp:Panel ID="Panel1" runat="server" Height="316px" Width="322px">
+                 <asp:Panel ID="Panel1" runat="server" Height="376px" Width="597px">
                     <strong>
                     <asp:Label ID="Label11" runat="server" CssClass="auto-style11" Text="Listado Usuarios"></asp:Label>
                     <br />
                     <br />
                     </strong>
                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Buscar" Width="61px" />
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Buscar" Width="130px" Height="33px" CssClass="btnBuscar"/>
                     <br />
                     <br />
                     <strong>
