@@ -167,7 +167,7 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
 
             //
             StringBuilder sb1 = new StringBuilder();
-            sb1.Append(@"D:\Documentos\Pruebas\");
+            sb1.Append(@"Y:\Documentos\Pruebas\");
             StringBuilder sb2 = new StringBuilder();
             sb2.Append("Resolucion");
 
@@ -180,7 +180,7 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             string ruta = sb1.ToString();
             //
 
-            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\CulturaFisica.docx";
+            String plantilla = @"Y:\Documentos\OficiosPlantilla\Sistemas\CulturaFisica.docx";
             //continuar = CreateWordDocument(plantilla, sb1.ToString());
             ManejoDatos mysql = new ManejoDatos();
             Resolucion resol = new Resolucion();

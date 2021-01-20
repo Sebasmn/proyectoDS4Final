@@ -9,7 +9,16 @@
        <link rel="stylesheet" href="../../Estilos/estilos.css"  type="text/css" />
            
     <style type="text/css">
-  
+  .btnBuscar {
+    border-radius: 2em;
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: #6B3906;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 13px;
+}
     </style>
 </head>
 <body>
@@ -21,6 +30,10 @@
             <h1>
                 Resolución para Act. de Conocimientos
             </h1>
+            <p>
+                <asp:Button ID="botonLogin" runat="server" CssClass="btnBuscar" Height="39px" OnClick="botonLogin_Click" Text="Salir" Width="112px" />
+                <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender2" runat="server" ConfirmText="Terminar sesión" TargetControlID="botonLogin" />
+            </p>
             <hr />
         <asp:Panel ID="menuOpciones" runat="server">
             <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante"   CssClass="btnBuscar" OnClick="btnBuscar_Click"  />

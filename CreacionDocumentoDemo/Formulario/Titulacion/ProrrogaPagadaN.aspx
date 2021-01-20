@@ -10,75 +10,19 @@
     <link rel="stylesheet" href="../../Estilos/estilos.css"  type="text/css" />
 
     <style type="text/css">
-        .auto-style1 {
-            text-align: justify;
-            line-height: 115%;
-            font-size: 10.0pt;
-            font-family: "Times New Roman", serif;
-            margin: 0cm;
-        }
-        .auto-style2 {
-            text-align: justify;
-            text-indent: 18.0pt;
-            line-height: 115%;
-            font-size: 12.0pt;
-            font-family: "Times New Roman", serif;
-            margin-left: 18.0pt;
-            margin-right: 0cm;
-            margin-top: 0cm;
-            margin-bottom: 0cm;
-        }
+       
+    
         .auto-style3 {
-            text-indent: .05pt;
-            line-height: 105%;
-            font-size: 11.0pt;
-            font-family: Calibri, sans-serif;
-            margin-left: 0cm;
-            margin-right: 0cm;
-            margin-top: 0cm;
-            margin-bottom: 6.0pt;
+            background-color: rgba(112, 72, 14,0.8);
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            background-color: #7C4F0E;
+            color: #DAD4CB;
+            font-weight: 700;
+            border-radius: 10px;
         }
-        .auto-style4 {
-            text-align: justify;
-            text-indent: .05pt;
-            line-height: 115%;
-            font-size: 11.0pt;
-            font-family: Calibri, sans-serif;
-            margin: 0cm;
-        }
-        .auto-style5 {
-            border-collapse: collapse;
-            line-height: 107%;
-            font-size: 11.0pt;
-            font-family: Calibri, sans-serif;
-        }
-        .auto-style6 {
-            text-align: justify;
-            line-height: 115%;
-            font-size: 11.0pt;
-            font-family: Calibri, sans-serif;
-            margin: 0cm;
-        }
-        .auto-style7 {
-            -webkit-appearance: none;
-            text-align: left;
-            font-size: 8px;
-            font-weight: bold;
-            padding-left: 2px;
-            padding-right: 2px;
-            background-color: #E7E1DB;
-            box-shadow: none;
-            border-bottom: 1px solid #795B3B;
-            border-left-style: none;
-            border-left-color: inherit;
-            border-left-width: 0px;
-            border-right-style: none;
-            border-right-color: inherit;
-            border-right-width: 0px;
-            border-top-style: none;
-            border-top-color: inherit;
-            border-top-width: 0px;
-        }
+    
     </style>
 
 </head>
@@ -89,6 +33,10 @@
             <br />
             <asp:Image ID="escudoLogin" runat="server" ImageUrl="~/Images/EscudoUTA.png" />
             <h1>Resolución para Prorroga Pagada</h1>
+            <p>
+                <asp:Button ID="botonLogin0" runat="server" CssClass="btnBuscar" Height="39px" OnClick="botonLogin_Click" Text="Salir" Width="112px" />
+                <ajaxToolkit:ConfirmButtonExtender ID="botonLogin0_ConfirmButtonExtender" runat="server" ConfirmText="Terminar sesión" TargetControlID="botonLogin0" />
+            </p>
             <hr />
             <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante"   CssClass="btnBuscar" OnClick="btnBuscar_Click" />
 

@@ -139,5 +139,11 @@ this.GetType(),
             Session.Clear();
             Response.Redirect("Login.aspx");
         }
+
+        protected void botonLogin_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
+        }
     }
 }

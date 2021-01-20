@@ -27,6 +27,11 @@
               Resolución para Act. de Conocimientos
                 
             </h1>
+             <p>
+                <asp:Button ID="botonLogin" runat="server" CssClass="btnBuscar" Height="39px" OnClick="botonLogin_Click" Text="Salir" Width="112px" />
+                <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender2" runat="server" ConfirmText="Terminar sesión" TargetControlID="botonLogin" />
+                
+            </p>
             <hr />
         <br />
          <asp:Panel ID="menuOpciones" runat="server">

@@ -8,7 +8,7 @@
     <title>Proyecto Investigacion</title>
      <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
 
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
         &nbsp;&nbsp;&nbsp;
@@ -17,6 +17,10 @@
         <asp:Panel ID="menuOpciones" runat="server">
             <asp:Image ID="escudoLogin" runat="server" ImageUrl="~/Images/EscudoUTA.png" />
             <h1>Resolución para Proyecto de Investigación</h1>
+            <p>
+                <asp:Button ID="botonLogin0" runat="server" CssClass="btnBuscar" Height="39px" OnClick="botonLogin_Click" Text="Salir" Width="112px" />
+                <ajaxToolkit:ConfirmButtonExtender ID="botonLogin0_ConfirmButtonExtender" runat="server" ConfirmText="Terminar sesión" TargetControlID="botonLogin0" />
+            </p>
             <hr />
             <asp:Button ID="btnBuscar" runat="server" CssClass="btnBuscar" OnClick="btnBuscar_Click" Text="Buscar Estudiante" />
             &nbsp;<asp:Button ID="btnNumeroResolucion" runat="server" CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click" Text="Generar Número Resolución" />
@@ -424,6 +428,7 @@ mso-bidi-font-weight:bold">PRESIDENTA<p></p>
             CancelControlID="Button3"
             PopupControlID="panelModalBusquedaEst" 
             runat="server"></ajaxToolkit:ModalPopupExtender>
+
         <br />
     </form>
 </body>

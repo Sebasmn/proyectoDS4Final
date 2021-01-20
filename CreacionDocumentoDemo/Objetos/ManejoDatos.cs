@@ -14,6 +14,7 @@ using CreacionDocumentoDemo.Formulario;
 using System.Net.Mail;
 using System.Net;
 using System.Net.Mime;
+using System.Diagnostics;
 /// <summary>
 /// Descripción breve de ManejoDatos
 /// </summary>
@@ -338,7 +339,7 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
     public bool generarActa(List<Aprobada> aprobadas, string consejo)
     {
         bool guardado = false;
-        String plantillaActa = @"D:\Documentos\OficiosPlantilla\actaModel.docx";
+        String plantillaActa = @"Y:\Documentos\OficiosPlantilla\actaModel.docx";
         List<string> Editables = new List<string>();
         List<string> Datos = new List<string>();
        /* Editables.Add("<encabezado>"); Datos.Add("Encabezado asd");*/
@@ -356,7 +357,7 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
                bool notificado = notificarEstudiante(resolucion.Ubicacion,resolucion.Estudiante, myConnection, myTrans);
                 int n = myCommand.ExecuteNonQuery();
             }
-            String nombre = @"D:\Documentos\Actas\";
+            String nombre = @"Y:\Documentos\Actas\";
             string acta = obtenerSiguienteActa();
             Editables.Add("<acta>"); Datos.Add(acta);
           
@@ -378,6 +379,9 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
             if (r>0)
             {
                 contruccionActa(plantillaActa, nombreActa.ToString(), Editables, Datos, aprobadas);
+                
+                    Process.Start(nombreActa.ToString());
+             
                 myTrans.Commit();
                 guardado = true;
             }
@@ -751,8 +755,9 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
             myCommand.Parameters.Clear();
             myCommand.ExecuteNonQuery();
             CreateWordDocument(resolucion.Plantilla, resolucion.Ubicacion, resolucion.Editables, resolucion.Datos);
+            Process.Start(resolucion.Ubicacion);
             myTrans.Commit();
-          
+           
             guardado = true;
         }
         catch (Exception e)

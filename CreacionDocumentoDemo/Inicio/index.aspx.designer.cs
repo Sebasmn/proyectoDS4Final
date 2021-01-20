@@ -42,6 +42,15 @@ namespace CreacionDocumentoDemo.Inicio
         protected global::System.Web.UI.WebControls.Label labelTituloIndex;
 
         /// <summary>
+        /// Control botonLogin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button botonLogin;
+
+        /// <summary>
         /// Control labelResol.
         /// </summary>
         /// <remarks>
@@ -204,12 +213,12 @@ namespace CreacionDocumentoDemo.Inicio
         protected global::System.Web.UI.WebControls.LinkButton LinkButton14;
 
         /// <summary>
-        /// Control ImageButton1.
+        /// Control ConfirmButtonExtender1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        protected global::AjaxControlToolkit.ConfirmButtonExtender ConfirmButtonExtender1;
     }
 }

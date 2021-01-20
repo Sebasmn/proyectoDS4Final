@@ -9,6 +9,23 @@
     <title>Propuesta Titulación con Prorroga</title>
      <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
 
+    <style type="text/css">
+
+
+
+        .auto-style3 {
+            background-color: rgba(112, 72, 14,0.8);
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            background-color: #7C4F0E;
+            color: #DAD4CB;
+            font-weight: 700;
+            border-radius: 10px;
+        }
+    
+    </style>
+
 </head>
 <body>
     <form id="form2" runat="server">
@@ -16,6 +33,10 @@
         <asp:Panel ID="menuOpciones" runat="server">
             <asp:Image ID="escudoLogin" runat="server" ImageUrl="~/Images/EscudoUTA.png" />
             <h1>Resolución para Propuesta de Titulación con Prorroga</h1>
+            <p>
+                <asp:Button ID="botonLogin0" runat="server" CssClass="btnBuscar" Height="39px" OnClick="botonLogin_Click" Text="Salir" Width="112px" />
+                <ajaxToolkit:ConfirmButtonExtender ID="botonLogin0_ConfirmButtonExtender" runat="server" ConfirmText="Terminar sesión" TargetControlID="botonLogin0" />
+            </p>
             <hr />
             <asp:Button ID="btnBuscar" runat="server" CssClass="btnBuscar" OnClick="btnBuscar_Click" Text="Buscar Estudiante" />
             &nbsp;<asp:Button ID="btnNumeroResolucion" runat="server" CssClass="btnBuscar" OnClick="btnNumeroResolucion_Click" Text="Generar Número Resolución" />
@@ -28,7 +49,7 @@
             <ContentTemplate>
                 <div id="documento">
                     <p class="MsoBodyText">
-                        <asp:TextBox ID="txtFecha" runat="server" CssClass="auto-style6" placeholder="Ambato,15 de Enero del 2021" Height="16px" Width="191px"></asp:TextBox>
+                        <asp:TextBox ID="txtFecha" runat="server" CssClass="noBorder" placeholder="Ambato,15 de Enero del 2021" Height="16px" Width="191px"></asp:TextBox>
                     </p>
                     <p class="MsoBodyText">
                         <span lang="ES-EC" style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
@@ -521,6 +542,7 @@ font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma"><span style="
             CancelControlID="Button3"
             PopupControlID="panelModalBusquedaEst" 
             runat="server"></ajaxToolkit:ModalPopupExtender>
+
         <br />
     </form>
 </body>

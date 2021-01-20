@@ -9,12 +9,31 @@
     <title>Artículo Académico</title>
      <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
 
+    <style type="text/css">
+
+        .auto-style3 {
+            background-color: rgba(112, 72, 14,0.8);
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            background-color: #7C4F0E;
+            color: #DAD4CB;
+            font-weight: 700;
+            border-radius: 10px;
+        }
+    
+    </style>
+
 </head>
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager> 
         <asp:Image ID="escudoLogin" runat="server" ImageUrl="~/Images/EscudoUTA.png" />
         <h1>Resolución para Artículo Académico </h1>
+        <p>
+                <asp:Button ID="botonLogin" runat="server" CssClass="btnBuscar" Height="39px" OnClick="botonLogin_Click" Text="Salir" Width="112px" />
+                <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender2" runat="server" ConfirmText="Terminar sesión" TargetControlID="botonLogin" />
+        </p>
             <hr />
         <asp:Panel ID="menuOpciones" runat="server">
             <asp:Button ID="btnBuscar" runat="server" Text="Buscar Estudiante"   CssClass="btnBuscar" OnClick="btnBuscar_Click"  />
@@ -343,11 +362,10 @@ mso-bidi-font-size:11.0pt;line-height:106%;font-family:&quot;Tahoma&quot;,sans-s
            <asp:Button ID="Button4"
                       runat="server" Height="49px" 
                       Text="Generar Documento"
-                      Width="172px" OnClick="Button4_Click" />
+                      Width="172px" OnClick="Button4_Click" CssClass="auto-style3" />
          <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
             TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
             runat="server" />
-        <asp:Label ID="labelEstado" runat="server"></asp:Label>
          <br />
         <br />
          <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="221px" Width="849px">
@@ -401,6 +419,7 @@ mso-bidi-font-size:11.0pt;line-height:106%;font-family:&quot;Tahoma&quot;,sans-s
             CancelControlID="Button3"
             PopupControlID="panelModalBusquedaEst" 
             runat="server"></ajaxToolkit:ModalPopupExtender>
+
         <br />
     </form>
 </body>

@@ -152,7 +152,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             editables.Add("<carrera2>"); datos.Add(ddlCarreras.SelectedValue.ToString());
             /**/
             StringBuilder sb1 = new StringBuilder();
-            sb1.Append(@"D:\Documentos\Pruebas\");
+            sb1.Append(@"Y:\Documentos\Pruebas\");
             StringBuilder sb2 = new StringBuilder();
             sb2.Append("Resolucion");
 
@@ -164,7 +164,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             string resolucion = codigo.ToString();
             string ruta = sb1.ToString();
 
-            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\Titulacion\AprobacionModalidadArticuloAcademico.docx";
+            String plantilla = @"Y:\Documentos\OficiosPlantilla\Sistemas\Titulacion\AprobacionModalidadArticuloAcademico.docx";
             ManejoDatos mysql = new ManejoDatos();
             Resolucion resol = new Resolucion();
             resol.Ubicacion = ruta;
@@ -250,6 +250,12 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             Label1.Text = "Correcto";
 
             GridView1.DataBind();
+        }
+
+        protected void botonLogin_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("../../Inicio/Login.aspx");
         }
     }
 }

@@ -9,75 +9,12 @@
      <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
    
     <style type="text/css">
-        .auto-style1 {
-            text-align: left;
-        }
-        .auto-style2 {
-            text-align: center;
-        }
-        .auto-style3 {
-            margin-bottom: 0px;
-        }
-        .auto-style8 {
-            width: 118px;
-            text-align: justify;
-        }
-        .auto-style9 {
-            width: 255px;
-            text-align: justify;
-        }
-        .auto-style10 {
-            margin-bottom: 0px;
-            margin-left: 0px;
-        }
-        .auto-style11 {
-            font-size: xx-large;
-        }
-        .auto-style13 {
-            margin-left: 0px;
-        }
-        .auto-style14 {
-            text-align: center;
-            height: 44px;
-        }
-        .auto-style15 {
-            height: 541px;
-            width: 405px;
-        }
-        .auto-style16 {
-            width: 118px;
-            text-align: justify;
-            height: 48px;
-        }
-        .auto-style17 {
-            width: 255px;
-            text-align: justify;
-            height: 48px;
-        }
-        .auto-style18 {
-            width: 118px;
-            text-align: justify;
-            height: 34px;
-        }
-        .auto-style19 {
-            width: 255px;
-            text-align: justify;
-            height: 34px;
-        }
-        .auto-style20 {
-            width: 118px;
-            text-align: justify;
-            height: 30px;
-        }
-        .auto-style21 {
-            width: 255px;
-            text-align: justify;
-            height: 30px;
-        }
+       
     </style>
 </head>
 <body style="height: 686px">
     <form id="form1" runat="server">
+         &nbsp;&nbsp;&nbsp;
          <asp:Image ID="escudoLogin" runat="server" 
                     ImageUrl="~/Images/EscudoUTA.png" CssClass="auto-style1"
                     />
@@ -88,110 +25,82 @@
                 <asp:Label ID="Label1" runat="server" Text="Registro de Usuarios" CssClass="auto-style11"></asp:Label>
                 <hr />
                     <asp:Button ID="Button3" runat="server" CssClass="btnBuscar" Text="Salir" OnClick="Button3_Click" Height="68px" Width="168px" />
-                </strong></h1>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
+                </strong>
                 <br />
                 <br />
-
-            </div>
-            <div>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-
-                <table style="align-content:center" border="none" align="center" class="auto-style15" >
-               
+                <table  align="center" class="tablaDatos" >
                     <tr>
-                        <td class="auto-style20">
-
+                        <td >
                             <asp:Label ID="Label2" runat="server" Text="Cédula: "></asp:Label>
-
                         </td>
-                        <td class="auto-style21">
-
+                        <td >
                             <asp:TextBox ID="txtCedula" runat="server" CssClass="auto-style10" Height="16px" Width="160px" MaxLength="10"></asp:TextBox>
-
                         </td>
                     </tr>
                     <tr>
-                        <td class="auto-style16">
-
+                        <td >
                             <asp:Label ID="Label3" runat="server" Text="Primer nombres: "></asp:Label>
-
                         </td>
-                        <td class="auto-style17">
-
-                <asp:TextBox ID="txtNombreUno" runat="server" CssClass="auto-style3"></asp:TextBox>
-
+                        <td >
+                            <asp:TextBox ID="txtNombreUno" runat="server" CssClass="auto-style3"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
-                        <td class="auto-style8">
-
+                        <td>
                             <asp:Label ID="Label9" runat="server" Text="Segundo nombre: "></asp:Label>
-
                         </td>
-                        <td class="auto-style9">
-
-                <asp:TextBox ID="txtNombreDos" runat="server" CssClass="auto-style3"></asp:TextBox>
-
+                        <td >
+                            <asp:TextBox ID="txtNombreDos" runat="server" CssClass="auto-style3"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
-                        <td class="auto-style8">
-                <asp:Label ID="Label4" runat="server" Text="Apellido paterno: "></asp:Label>
-                            </td>
-                        <td class="auto-style9">
-                <asp:TextBox ID="txtApellidoP" runat="server" CssClass="auto-style3"></asp:TextBox>
-                            </td>
+                        <td >
+                            <asp:Label ID="Label4" runat="server" Text="Apellido paterno: "></asp:Label>
+                        </td>
+                        <td >
+                            <asp:TextBox ID="txtApellidoP" runat="server" CssClass="auto-style3"></asp:TextBox>
+                        </td>
                     </tr>
                     <tr>
-                        <td class="auto-style8">
-                <asp:Label ID="Label10" runat="server" Text="Apellido materno: "></asp:Label>
-                            </td>
+                        <td>
+                            <asp:Label ID="Label10" runat="server" Text="Apellido materno: "></asp:Label>
+                        </td>
                         <td class="auto-style9">
-
-                <asp:TextBox ID="txtApellidoM" runat="server" CssClass="auto-style3"></asp:TextBox>
-
-                            </td>
+                            <asp:TextBox ID="txtApellidoM" runat="server" CssClass="auto-style3"></asp:TextBox>
+                        </td>
                     </tr>
                     <tr>
                         <td class="auto-style18">
-                <asp:Label ID="Label5" runat="server" Text="Rol: "></asp:Label>
-                            </td>
+                            <asp:Label ID="Label5" runat="server" Text="Rol: "></asp:Label>
+                        </td>
                         <td class="auto-style19">
                             <asp:DropDownList ID="ddlRol" runat="server" CssClass="auto-style13" Height="20px" Width="177px" OnSelectedIndexChanged="ddlRol_SelectedIndexChanged">
                             </asp:DropDownList>
-                            </td>
+                        </td>
                     </tr>
                     <tr>
                         <td class="auto-style8">
-                <asp:Label ID="Label6" runat="server" Text="Clave: "></asp:Label>
-                            </td>
+                            <asp:Label ID="Label6" runat="server" Text="Clave: "></asp:Label>
+                        </td>
                         <td class="auto-style9">
-                <asp:TextBox ID="txtClave" runat="server" CssClass="auto-style3"></asp:TextBox>
-                            </td>
+                            <asp:TextBox ID="txtClave" runat="server" CssClass="auto-style3"></asp:TextBox>
+                        </td>
                     </tr>
                     <tr>
                         <td class="auto-style8">
-                <asp:Label ID="Label7" runat="server" Text="Repetir clave: "></asp:Label>
-                            </td>
+                            <asp:Label ID="Label7" runat="server" Text="Repetir clave: "></asp:Label>
+                        </td>
                         <td class="auto-style9">
                             <asp:TextBox ID="txtConfirmacionClave" runat="server" CssClass="auto-style3"></asp:TextBox>
-                            </td>
+                        </td>
                     </tr>
                     <tr>
                         <td class="auto-style8">
-                <asp:Label ID="Label8" runat="server" Text="Correo:  "></asp:Label>
-                            </td>
+                            <asp:Label ID="Label8" runat="server" Text="Correo:  "></asp:Label>
+                        </td>
                         <td class="auto-style9">
                             <asp:TextBox ID="txtEmail" runat="server"  CssClass="auto-style3"></asp:TextBox>
-                            </td>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2" class="auto-style2">
@@ -210,7 +119,7 @@
                     </tr>
                 </table>
                 <br />
-                 <asp:Panel ID="Panel1" runat="server" Height="376px" Width="597px">
+                <asp:Panel ID="Panel1" runat="server" Height="376px" Width="597px">
                     <strong>
                     <asp:Label ID="Label11" runat="server" CssClass="auto-style11" Text="Listado Usuarios"></asp:Label>
                     <br />
@@ -243,15 +152,14 @@
                         <SortedDescendingCellStyle BackColor="#F1E5CE" />
                         <SortedDescendingHeaderStyle BackColor="#93451F" />
                     </asp:GridView>
-
                     <br />
-                   
                 </asp:Panel>
                 <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1"
                     TargetControlID="btnEditar"
                     CancelControlID="Button2"
                     PopupControlID="Panel1" 
-                    runat="server"></ajaxToolkit:ModalPopupExtender>
+                    runat="server">
+                </ajaxToolkit:ModalPopupExtender>
 
             </div>
 
