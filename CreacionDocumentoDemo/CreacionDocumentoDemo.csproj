@@ -91,6 +91,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\CrearConsejo.aspx" />
+    <Content Include="Admin\ImportarDatosExcel.aspx" />
     <Content Include="Estilos\estilos.css" />
     <Content Include="Estilos\inicio.css" />
     <Content Include="Formulario\CAF\ActualizacionConocimientos.aspx" />
@@ -119,6 +121,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\CrearConsejo.aspx.cs">
+      <DependentUpon>CrearConsejo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CrearConsejo.aspx.designer.cs">
+      <DependentUpon>CrearConsejo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ImportarDatosExcel.aspx.cs">
+      <DependentUpon>ImportarDatosExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ImportarDatosExcel.aspx.designer.cs">
+      <DependentUpon>ImportarDatosExcel.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\CAF\ActualizacionConocimientos.aspx.cs">
       <DependentUpon>ActualizacionConocimientos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -287,6 +303,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Formulario\Principal.Master" />
+    <Content Include="Objetos\.editorconfig" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
