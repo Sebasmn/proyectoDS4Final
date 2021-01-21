@@ -570,7 +570,10 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
         {
             MySqlConnection conn = this.GetConnectionString();
             string sql = "SELECT * " +
-                          "FROM `Estudiantes` WHERE CEDULA LIKE '%" + cedula+"%'";
+                          "FROM `Estudiantes` WHERE " +
+                           " NOMBRES LIKE '%" + cedula + "%' OR " +
+                          " APELLIDOS LIKE '%" + cedula + "%' OR " +
+                             "CEDULA LIKE '%" + cedula+"%'";
 
             MySqlCommand command = new MySqlCommand(sql, conn);
             //command.Parameters.AddWithValue("@CEDULA", cedula);
