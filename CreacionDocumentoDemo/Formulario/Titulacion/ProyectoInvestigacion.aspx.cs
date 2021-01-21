@@ -183,7 +183,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             editables.Add("<carrera2>"); datos.Add(ddlCarreras.SelectedValue.ToString());
             /**/
             StringBuilder sb1 = new StringBuilder();
-            sb1.Append(@"Y:\Documentos\Pruebas\");
+            sb1.Append(@"D:\Documentos\Pruebas\");
             StringBuilder sb2 = new StringBuilder();
             sb2.Append("Resolucion");
 
@@ -195,7 +195,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             string resolucion = codigo.ToString();
             string ruta = sb1.ToString();
 
-            String plantilla = @"Y:\Documentos\OficiosPlantilla\Sistemas\Titulacion\AprobacionModalidadProyectoInvestigacion.docx";
+            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\Titulacion\AprobacionModalidadProyectoInvestigacion.docx";
             ManejoDatos mysql = new ManejoDatos();
             Resolucion resol = new Resolucion();
             resol.Ubicacion = ruta;

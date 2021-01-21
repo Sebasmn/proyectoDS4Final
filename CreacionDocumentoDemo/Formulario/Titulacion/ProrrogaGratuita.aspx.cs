@@ -168,7 +168,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             editables.Add("<tutor>"); datos.Add(txtTutor0.Text);
             /**/
             StringBuilder sb1 = new StringBuilder();
-            sb1.Append(@"Y:\Documentos\Pruebas\");
+            sb1.Append(@"D:\Documentos\Pruebas\");
             StringBuilder sb2 = new StringBuilder();
             sb2.Append("Resolucion");
 
@@ -180,7 +180,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             string resolucion = codigo.ToString();
             string ruta = sb1.ToString();
 
-            String plantilla = @"Y:\Documentos\OficiosPlantilla\Sistemas\Titulacion\ProrrogaGratuita.docx";
+            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\Titulacion\ProrrogaGratuita.docx";
             ManejoDatos mysql = new ManejoDatos();
             Resolucion resol = new Resolucion();
             resol.Ubicacion = ruta;
