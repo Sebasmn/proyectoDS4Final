@@ -32,6 +32,7 @@
                 <tr>
                     <td>
                         <br />
+                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
           <asp:Image ID="escudoLogin" runat="server" 
                     ImageUrl="~/Images/EscudoUTA.png" CssClass="auto-style1" Height="120px" Width="120px"
                     />

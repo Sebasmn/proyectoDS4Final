@@ -89,7 +89,11 @@ namespace CreacionDocumentoDemo
 
         protected void SaveData_Click(object sender, EventArgs e)
         {
-            leerExcel();
+            if (Session["name"]!=null)
+            {
+                leerExcel();
+            }
+         
         }
         
         void leerExcel()

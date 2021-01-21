@@ -912,8 +912,11 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
         Word.Application wordApp = new Word.Application();
         object missing = Missing.Value;
         Word.Document myWordDoc = null;
+       // string ruta = System.Web.HttpContext.Current.Server.MapPath(filename.ToString());
         bool guardado = false;
-        if (File.Exists((string)filename.ToString()))
+        if (
+         // File.Exists(System.Web.HttpContext.Current.Server.MapPath(filename.ToString())) )
+          File.Exists((string)filename.ToString()))
         {
             object readOnly = false;
             object isVisible = false;

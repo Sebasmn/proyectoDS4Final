@@ -212,6 +212,8 @@ namespace CreacionDocumentoDemo.Formulario.CAF
             string resolucion = codigo.ToString();
             string ruta = sb1.ToString();
 
+            //   var plantilla = @"\\40.84.223.115\formatos\Documentos\OficiosPlantilla\Sistemas\actualizacionConocimientos.docx";
+            //  var plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\actualizacionConocimientos.docx";
             var plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\actualizacionConocimientos.docx";
             ManejoDatos mysql = new ManejoDatos();
             Resolucion resol = new Resolucion();
