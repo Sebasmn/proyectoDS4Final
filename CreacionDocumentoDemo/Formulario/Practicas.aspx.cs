@@ -127,12 +127,6 @@ namespace CreacionDocumentoDemo.Formulario
             txtNombreEstu1.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             txtNombreEstu2.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             ViewState["CEDULA_EST"] = GridView1.SelectedRow.Cells[1].Text;
-            if (GridView1.SelectedRow.Cells[10].Text.Equals("SIST"))
-            {
-                //txtCarrera1.Text = "INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS";
-              //txtCarrera2.Text = "INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS";
-              //  txtCarrera3.Text = "INGENIERÍA EN SISTEMAS COMPUTACIONALES E INFORMÁTICOS";
-            }
             ViewState["CorreoUTA"] = GridView1.SelectedRow.Cells[6].Text;
         }
 
@@ -172,7 +166,7 @@ namespace CreacionDocumentoDemo.Formulario
 
 
             StringBuilder sb1 = new StringBuilder();
-            sb1.Append(@"D:\Documentos\Pruebas\");
+            sb1.Append(@"Y:\Documentos\Pruebas\");
             StringBuilder sb2 = new StringBuilder();
             sb2.Append("Resolucion");
 
@@ -184,7 +178,7 @@ namespace CreacionDocumentoDemo.Formulario
             string resolucion = codigo.ToString();
             string  ruta = sb1.ToString();
             
-            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\practicas.docx";
+            String plantilla = @"Y:\Documentos\OficiosPlantilla\Sistemas\practicas.docx";
             //continuar = CreateWordDocument(plantilla, sb1.ToString());
              ManejoDatos mysql = new ManejoDatos();
             Resolucion resol = new Resolucion();
@@ -372,12 +366,12 @@ namespace CreacionDocumentoDemo.Formulario
         protected void botonLogin_Click(object sender, EventArgs e)
         {
             Session.Clear();
-            Response.Redirect("../../Inicio/Login.aspx");
+            Response.Redirect(".../Inicio/Login.aspx");
         }
 
         protected void botonLogin0_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../../Inicio/Login.aspx");
+            Response.Redirect("../Inicio/Login.aspx");
         }
     }
 }

@@ -82,7 +82,7 @@ namespace CreacionDocumentoDemo.Inicio
         {
             Page.ClientScript.RegisterStartupScript(
             this.GetType(),
-            "OpenWindow", "window.open('../Formulario/TramitesFISEI/TerceraMatricula.aspx','_newtab');", true);
+            "OpenWindow", "window.open('../Formulario/CAF/TerceraMatricula.aspx','_newtab');", true);
         }
 
         protected void LinkButton8_Click(object sender, EventArgs e)

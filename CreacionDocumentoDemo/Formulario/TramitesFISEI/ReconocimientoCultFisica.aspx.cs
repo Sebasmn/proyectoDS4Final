@@ -16,10 +16,29 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
         {
             if (!IsPostBack)
             {
+                ManejarUsuario();
                 cargarDatos();
             }
         }
 
+        private void ManejarUsuario()
+        {
+            if (
+                 Session["USUARIOSW"] != null
+                )
+            {
+                UsuariosSW tipo = (UsuariosSW)Session["USUARIOSW"];
+                char userTipo = Convert.ToChar(tipo.Tipo);
+                if (userTipo != 'S')
+                {
+                    Response.Redirect("../../Inicio/Login.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("../../Inicio/Login.aspx");
+            }
+        }
         private void cargarDatos()
         {
             List<string> carreras = new ManejoDatos().getCarreras();

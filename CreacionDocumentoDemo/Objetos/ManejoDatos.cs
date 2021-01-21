@@ -379,9 +379,7 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
             if (r>0)
             {
                 contruccionActa(plantillaActa, nombreActa.ToString(), Editables, Datos, aprobadas);
-                
-                    Process.Start(nombreActa.ToString());
-             
+                Process.Start(nombreActa.ToString());
                 myTrans.Commit();
                 guardado = true;
             }
@@ -1208,7 +1206,8 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
         MySqlTransaction myTrans = myConnection.BeginTransaction();
         try
         {
-            string sql = "INSERT INTO USUARIOS_SW (CEDULA,NOMBRES,APELLIDOS,TIPO,CLAVE,CORREO) VALUES (@cedula,@nombres,@apellidos,@tipo,@clave,@correo)";
+            string sql = @"INSERT INTO USUARIOS_SW 
+            (CEDULA,NOMBRES,APELLIDOS,TIPO,CLAVE,CORREO) VALUES (@cedula,@nombres,@apellidos,@tipo,@clave,@correo)";
             MySqlCommand myCommand = new MySqlCommand(sql, myConnection, myTrans);
             myCommand.CommandType = CommandType.Text;
             myCommand.Parameters.AddWithValue("cedula", usuario.Cedula);

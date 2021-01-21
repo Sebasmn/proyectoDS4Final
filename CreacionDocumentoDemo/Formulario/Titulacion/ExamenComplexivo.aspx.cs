@@ -118,7 +118,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             bs1.DataSource = datos.getEstudiantesBusqueda(TextBox1.Text);
             GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
             GridView1.DataBind();
-          //  Label1.Text = "Correcto";
+            //  Label1.Text = "Correcto";
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -129,7 +129,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
             GridView1.PageIndex = e.NewPageIndex;
             GridView1.DataBind();
-          //  Label1.Text = "Correcto";
+            //  Label1.Text = "Correcto";
 
             GridView1.DataBind();
         }
@@ -235,4 +235,5 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
         {
             Response.Redirect("../../Inicio/Login.aspx");
         }
+    }
 }

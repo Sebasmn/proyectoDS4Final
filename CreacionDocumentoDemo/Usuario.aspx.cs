@@ -17,6 +17,7 @@ namespace CreacionDocumentoDemo
         {
             if (!IsPostBack)
             {
+                ManejarUsuario();
                 cargarTabla();
                 cargarCombo();
             }
@@ -25,7 +26,24 @@ namespace CreacionDocumentoDemo
 
             
         }
+        private void ManejarUsuario()
+        {
 
+
+            if (Session["USUARIOSW"] != null)
+            {
+                UsuariosSW tipo = (UsuariosSW)Session["USUARIOSW"];
+                if (tipo.Tipo != "A")
+                {
+                    Response.Redirect("../Inicio/Login.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("../Inicio/Login.aspx");
+            }
+
+        }
         protected void gvUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtCedula.Text = gvUsuarios.SelectedRow.Cells[1].Text;
@@ -101,6 +119,14 @@ namespace CreacionDocumentoDemo
                     usuar.Apellidos = (txtApellidoP.Text + " " + txtApellidoM.Text).ToUpper();
                     usuar.Clave = txtClave.Text.ToUpper();
                     usuar.Correo = txtEmail.Text.ToUpper();
+                    if (ddlRol.SelectedIndex==1)
+                    {
+                        id = 'S';
+                    }
+                    else
+                    {
+                        id = 'A';
+                    }
                     usuar.Tipo = id.ToString().ToUpper();
                     ManejoDatos mn = new ManejoDatos();
                     bool result=mn.guardarDatosUsuario(usuar);
@@ -112,7 +138,7 @@ namespace CreacionDocumentoDemo
                     }
                     else
                     {
-                        lblMensaje.Text = "No se pudeo insertar el usuario";
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('No se pudo insertar.. !')", true);
                     }
                 }
             }
@@ -225,7 +251,7 @@ namespace CreacionDocumentoDemo
                 => 
             usuario.Cedula.Contains(TextBox1.Text)||
              usuario.Nombres.Contains(TextBox1.Text) ||
-              usuario.Ap.Contains(TextBox1.Text) 
+              usuario.Apellidos.Contains(TextBox1.Text) 
             );
             gvUsuarios.DataBind();
           //  updatePanelUsers.Update();

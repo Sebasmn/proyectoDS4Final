@@ -33,6 +33,24 @@ namespace CreacionDocumentoDemo.Admin
         protected global::System.Web.UI.WebControls.Image escudoLogin;
 
         /// <summary>
+        /// Control botonLogin0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button botonLogin0;
+
+        /// <summary>
+        /// Control btnCrear0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCrear0;
+
+        /// <summary>
         /// Control Label7.
         /// </summary>
         /// <remarks>
@@ -112,14 +130,5 @@ namespace CreacionDocumentoDemo.Admin
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBuscar;
-
-        /// <summary>
-        /// Control btnCrear0.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCrear0;
     }
 }

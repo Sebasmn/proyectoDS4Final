@@ -50,6 +50,7 @@ namespace CreacionDocumentoDemo.Formulario.CAF
         }
         private void cargarDatos()
         {
+            
             //Sesion
             List<string> sesion = new List<string>();
             sesion.Add("Ordinaria");
@@ -114,6 +115,8 @@ namespace CreacionDocumentoDemo.Formulario.CAF
             //Carreras
             ManejoDatos datos = new ManejoDatos();
             List<string> modelo = datos.getCarreras();
+            ddlIndex.DataSource = datos.GetCarrerasBanner();
+            ddlIndex.DataBind();
             ddlCarreras.DataSource = modelo;
             ddlCarreras.DataBind();
             ddlCarreras0.DataSource = modelo;

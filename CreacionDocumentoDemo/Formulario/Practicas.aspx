@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Prácticas Prepofesionales</title>
      <link rel="stylesheet" href="../Estilos/estilos.css"  type="text/css" />
+    
     <script type="text/javascript">
      function RefreshUpdatePanel() {
         __doPostBack('<%= TextBox1.ClientID %>', '');
@@ -37,7 +38,7 @@
                 <asp:Button ID="botonLogin1" runat="server" CssClass="btnBuscar"
                     Height="39px"
                     Text="MENU PRINCIPAL" Width="145px" OnClick="botonLogin0_Click" />
-                <ajaxToolkit:ConfirmButtonExtender ID="botonLogin1_ConfirmButtonExtender" runat="server" ConfirmText="Terminar sesión" TargetControlID="botonLogin1" />
+                <ajaxToolkit:ConfirmButtonExtender ID="botonLogin1_ConfirmButtonExtender" runat="server" ConfirmText="Regresar ?" TargetControlID="botonLogin1" />
             &nbsp;&nbsp;&nbsp;
                 <asp:Button ID="botonLogin" runat="server" CssClass="btnBuscar" Height="39px" OnClick="botonLogin_Click" Text="Salir" Width="112px" />
                 <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender2" runat="server" ConfirmText="Terminar sesión" TargetControlID="botonLogin" />
@@ -298,6 +299,24 @@ mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"
                                                                                 </p>
                                                                                 <p>
                                                                                 </p>
+                                                                                <p>
+                                                                                </p>
+                                                                                <p>
+                                                                                </p>
+                                                                                <p>
+                                                                                </p>
+                                                                                <p>
+                                                                                </p>
+                                                                                <p>
+                                                                                </p>
+                                                                                <p>
+                                                                                </p>
+                                                                                <p>
+                                                                                </p>
+                                                                                <p>
+                                                                                </p>
+                                                                                <p>
+                                                                                </p>
                                                                             </p>
                                                                         </p>
                                                                     </p>
@@ -308,6 +327,22 @@ mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"
                                                 </p>
                                             </p>
                                             </span>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
                                             <p>
                                             </p>
                                             <p>
@@ -340,13 +375,12 @@ mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"
                       Text="Generar Documento"
                      OnClick="Button4_Click" CssClass="btnBuscar" />
 
-                   <asp:Label ID="Label2" runat="server" Text="Bienvenido:"></asp:Label>
                   <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender1"
             TargetControlID="Button4" ConfirmText="Desea generar la resolución?"
             runat="server" />
                    </ContentTemplate>
         </asp:UpdatePanel>
-        <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="221px" Width="849px">
+        <asp:Panel ID="panelModalBusquedaEst" runat="server" Height="315px" Width="880px">
             <asp:TextBox ID="TextBox1" 
                 runat="server"
                 AutoPostBack="false"
