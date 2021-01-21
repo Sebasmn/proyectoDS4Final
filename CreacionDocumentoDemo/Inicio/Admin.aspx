@@ -8,14 +8,35 @@
     <title>Administrador</title>
     <link rel="icon" type="image/png" href="../Images/EscudoUTA.png"/>
     <link rel="stylesheet" href="../Estilos/inicio.css"  type="text/css" />
+
+
+
     <style>
+        body{
+            text-align:center;
+            margin:auto;
+        }
         #opcionesLabel{
             float:left;
             margin-left:10px;
         }
         .labels{
-            float:left;
-            width:320px;
+            text-align:center;
+            font-size:30px;
+            color:#7D4307;
+        }
+        #tablaOpcionesAdmin{
+            width:100%;
+        }
+        .auto-style1 {
+            background-color: rgba(112, 72, 14,0.8);
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            background-color: #7C4F0E;
+            color: #DAD4CB;
+            font-weight: 700;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -25,7 +46,13 @@
                     ImageUrl="~/Images/EscudoUTA.png"
                     />
             <h1 style="color:#7C4F0E;">
-                Crear Usuarios y Consejos&nbsp;&nbsp;&nbsp;
+                Crear Usuarios y Consejos</h1>
+                <h1 style="color:#7C4F0E;">
+            <asp:Button ID="botonLogin" 
+                runat="server" 
+                CssClass="auto-style1"
+                Text="Salir" OnClick="botonLogin_Click" Font-Size="Medium" Height="44px" Width="148px"  />
+                    &nbsp;&nbsp;&nbsp;
                 
             </h1>
             <hr />
@@ -33,23 +60,24 @@
             <br />
             <br />
             <br />
-            <asp:ImageButton ID="ImageButton1" runat="server" Height="176px" ImageUrl="~/Images/usuario.png" Width="205px" OnClick="ImageButton1_Click" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:ImageButton ID="ImageButton2" runat="server" Height="176px" ImageUrl="~/Images/consejo.png" Width="205px" OnClick="ImageButton2_Click" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:ImageButton ID="ImageButton3" runat="server" Height="176px" ImageUrl="~/Images/cerrar.png" Width="205px" OnClick="ImageButton3_Click" />
-            <br />
-            <br />
-            <div id="opcionesLabel">
-                <asp:Label ID="Label1"       CssClass="labels"   runat="server" Text="Usuarios"></asp:Label>
-                <asp:Label ID="Label2" CssClass="labels" runat="server" Text="Crear Consejos"></asp:Label>
-                <asp:Label ID="Label3" CssClass="labels" runat="server" Text="Cerrar Sesión"></asp:Label>
-            </div>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+
+            <table id="tablaOpcionesAdmin">
+                <tr>
+                    <td>    <asp:ImageButton ID="ImageButton1" 
+                runat="server" Height="176px" ImageUrl="~/Images/usuario.png" Width="205px" OnClick="ImageButton1_Click" /></td>
+                      <td> <asp:ImageButton ID="ImageButton2"
+                runat="server" Height="176px"
+                ImageUrl="~/Images/consejo.png" Width="205px" OnClick="ImageButton2_Click" /></td>
+                      <td> <asp:ImageButton ID="ImageButton3" 
+            runat="server" Height="176px" ImageUrl="~/Images/data.png" Width="205px" OnClick="ImageButton3_Click" /></td>
+                </tr>
+                <tr>
+                    <td> <asp:Label ID="Label1"       CssClass="labels"   runat="server" Text="Usuarios"></asp:Label></td>
+                     <td> <asp:Label ID="Label2" CssClass="labels" runat="server" Text="Crear Consejos"></asp:Label></td>
+                     <td> <asp:Label ID="Label3" CssClass="labels" runat="server" Text="Cerrar Sesión"></asp:Label></td>
+                </tr>
+            </table>
+         
         </div>
     </form>
 </body>

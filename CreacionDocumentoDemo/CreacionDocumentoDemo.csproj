@@ -118,6 +118,7 @@
     <Content Include="Formulario\ValidacionDatos.aspx" />
     <Content Include="Images\cerrar.png" />
     <Content Include="Images\consejo.png" />
+    <Content Include="Images\data.png" />
     <Content Include="Images\EscudoUTA.jpg" />
     <Content Include="Images\EscudoUTA.png" />
     <Content Include="Images\salir.png" />

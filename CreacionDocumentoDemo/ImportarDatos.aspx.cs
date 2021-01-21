@@ -1,4 +1,5 @@
 ﻿
+using CreacionDocumentoDemo.Objetos;
 using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
@@ -19,9 +20,29 @@ namespace CreacionDocumentoDemo
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                ManejarUsuario();
+            }
         }
+        private void ManejarUsuario()
+        {
+          
 
+            if (  Session["USUARIOSW"] != null)
+            {
+                UsuariosSW tipo = (UsuariosSW)Session["USUARIOSW"];
+                if (tipo.Tipo !="A")
+                {
+                    Response.Redirect("../Inicio/Login.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("../Inicio/Login.aspx");
+            }
+          
+        }
         protected void UploadButton_Click(object sender, EventArgs e)
         {
             string file_name = Path.GetFileName(userFileUpload.PostedFile.FileName);

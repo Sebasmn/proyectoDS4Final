@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"   CodeBehind="Consejo.aspx.cs" Inherits="CreacionDocumentoDemo.Formulario.Consejo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" 
+    CodeBehind="Consejo.aspx.cs" Inherits="CreacionDocumentoDemo.Formulario.Consejo" %>
              
 <!DOCTYPE html>
 

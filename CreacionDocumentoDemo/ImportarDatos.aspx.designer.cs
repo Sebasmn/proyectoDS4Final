@@ -33,6 +33,24 @@ namespace CreacionDocumentoDemo
         protected global::System.Web.UI.WebControls.Image escudoLogin;
 
         /// <summary>
+        /// Control botonLogin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button botonLogin;
+
+        /// <summary>
+        /// Control ConfirmButtonExtender2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ConfirmButtonExtender ConfirmButtonExtender2;
+
+        /// <summary>
         /// Control lblUploadFile.
         /// </summary>
         /// <remarks>

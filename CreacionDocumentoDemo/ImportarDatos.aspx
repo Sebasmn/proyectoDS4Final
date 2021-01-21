@@ -47,14 +47,19 @@
                 Importar datos 
                 
             </h1>
+                <asp:Button ID="botonLogin" runat="server" CssClass="btnBuscar" Height="39px" OnClick="botonLogin_Click" Text="Salir" Width="112px" />
+                <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender2" runat="server" ConfirmText="Terminar sesión" TargetControlID="botonLogin" />
+                
                         <br />
                         <br />
-            <asp:Label ID="lblUploadFile" runat="server" BackColor="#FF9933"></asp:Label>
+                        <br />
+                        <br />
+            <asp:Label ID="lblUploadFile" runat="server" BackColor="#FFF3EE"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td>
-            <asp:FileUpload ID="userFileUpload" runat="server" BorderStyle="Double" CssClass="auto-style8" Height="59px" Width="342px" />
+            <asp:FileUpload ID="userFileUpload" runat="server" BorderStyle="Double" Height="59px" Width="342px" BackColor="#FFF2E6" />
                     </td>
                 </tr>
                 <tr>

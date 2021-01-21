@@ -11,39 +11,56 @@
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     width: 90%;
+    text-align:center;
     height: auto;
     margin-right: 50px;
     margin-left: 50px;
-    padding: 22px;
-    padding-top: 5px;
 }
 
 #labelTituloIndex {
-    font-size: 35px;
+    font-size: 40px;
     color: #784715;
+    display:block;
 }
 
 .panelResoluciones {
     float:left;
     padding: 5px;
+    width:30%;
 }
 .labelResol {
-    float: left;
-    font-size: 26px;
+  margin:auto;
+    font-size: 31px;
     color: #643B11;
-    margin-left: 30px;
+    
 }
 
 .resoluciones {
+    text-decoration: none;
     float: left;
-    text-decoration:none;
-    width: 270px;
-    text-align: left;
-    color: #A6621F;
-    font-size: 17px;
-    margin-left: 10px;
+    color: #975109;
+    font-size: 21px;
 }
     .resoluciones:hover {
-        color: darkred;
-      
+        color: #6E3C08;
     }
+#label1 {
+    margin-left: 250px;
+    
+}
+td {
+    text-align: center;
+   height:55px;
+}
+table {
+    border: none;
+    margin: auto;
+}
+table * {
+    text-align: center;
+    border: none;
+   
+}
+tr:nth-child(even) {
+    background-color: rgba(184, 101, 18,0.12);
+}

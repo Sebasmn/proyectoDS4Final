@@ -50,9 +50,14 @@ namespace CreacionDocumentoDemo.Inicio
 
         protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
         {
+            Response.Redirect("../ImportarDatos.aspx");
+
+        }
+
+        protected void botonLogin_Click(object sender, EventArgs e)
+        {
             Session.Clear();
             Response.Redirect("Login.aspx");
-
         }
     }
 }
