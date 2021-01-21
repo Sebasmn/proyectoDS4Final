@@ -15,6 +15,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Net.Mime;
 using System.Diagnostics;
+using System.Web.UI;
 /// <summary>
 /// Descripción breve de ManejoDatos
 /// </summary>
@@ -376,6 +377,11 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
             int r = comando.ExecuteNonQuery();
             if (r>0)
             {
+                String update = "INSERT INTO GENERADOR_ACTAS  VALUES(0,NOW())";
+                MySqlCommand actualizar = new MySqlCommand(update, myConnection, myTrans);
+                int actualizado = actualizar.ExecuteNonQuery();
+
+                comando = new MySqlCommand("guardarActa", myConnection, myTrans);
                 contruccionActa(plantillaActa, nombreActa.ToString(), Editables, Datos, aprobadas);
                 Process.Start(nombreActa.ToString());
                 myTrans.Commit();
@@ -758,6 +764,8 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
         }
         catch (Exception e)
         {
+            string msj = "console.log(' " + e.Message + " ')";
+          //  ScriptManager.RegisterClientScriptBlock(new Page(), new Page().GetType(), "alertMessage", msj, true);
             try
             {
                 myTrans.Rollback();
