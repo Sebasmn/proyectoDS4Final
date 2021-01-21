@@ -74,7 +74,7 @@
                 <tr>
                     <td> <asp:Label ID="Label1"       CssClass="labels"   runat="server" Text="Usuarios"></asp:Label></td>
                      <td> <asp:Label ID="Label2" CssClass="labels" runat="server" Text="Crear Consejos"></asp:Label></td>
-                     <td> <asp:Label ID="Label3" CssClass="labels" runat="server" Text="Cerrar Sesión"></asp:Label></td>
+                     <td> <asp:Label ID="Label3" CssClass="labels" runat="server" Text="Cargar Datos"></asp:Label></td>
                 </tr>
             </table>
          

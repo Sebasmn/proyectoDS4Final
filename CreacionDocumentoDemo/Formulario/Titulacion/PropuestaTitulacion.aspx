@@ -17,6 +17,9 @@
             <asp:Image ID="escudoLogin" runat="server" ImageUrl="~/Images/EscudoUTA.png" />
             <h1>Resolución para Propuesta de Titulación</h1>
             <p>
+                <asp:Button ID="botonLogin1" runat="server" CssClass="btnBuscar" Height="39px" OnClick="botonLogin0_Click" Text="MENU PRINCIPAL" Width="145px" />
+                <ajaxToolkit:ConfirmButtonExtender ID="botonLogin1_ConfirmButtonExtender" runat="server" ConfirmText="Terminar sesión" TargetControlID="botonLogin1" />
+                &nbsp;
                 <asp:Button ID="botonLogin0" runat="server" CssClass="btnBuscar" Height="39px" OnClick="botonLogin_Click" Text="Salir" Width="112px" />
                 <ajaxToolkit:ConfirmButtonExtender ID="botonLogin0_ConfirmButtonExtender" runat="server" ConfirmText="Terminar sesión" TargetControlID="botonLogin0" />
             </p>

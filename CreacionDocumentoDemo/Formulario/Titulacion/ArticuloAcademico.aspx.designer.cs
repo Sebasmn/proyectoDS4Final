@@ -42,6 +42,24 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
         protected global::System.Web.UI.WebControls.Image escudoLogin;
 
         /// <summary>
+        /// Control botonLogin0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button botonLogin0;
+
+        /// <summary>
+        /// Control botonLogin0_ConfirmButtonExtender.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ConfirmButtonExtender botonLogin0_ConfirmButtonExtender;
+
+        /// <summary>
         /// Control botonLogin.
         /// </summary>
         /// <remarks>

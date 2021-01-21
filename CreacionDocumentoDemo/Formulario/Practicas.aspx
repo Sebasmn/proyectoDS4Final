@@ -34,6 +34,11 @@
                 Resolución para Prácticas Preprofesionales
             </h1>
         <p>
+                <asp:Button ID="botonLogin1" runat="server" CssClass="btnBuscar"
+                    Height="39px"
+                    Text="MENU PRINCIPAL" Width="145px" OnClick="botonLogin0_Click" />
+                <ajaxToolkit:ConfirmButtonExtender ID="botonLogin1_ConfirmButtonExtender" runat="server" ConfirmText="Terminar sesión" TargetControlID="botonLogin1" />
+            &nbsp;&nbsp;&nbsp;
                 <asp:Button ID="botonLogin" runat="server" CssClass="btnBuscar" Height="39px" OnClick="botonLogin_Click" Text="Salir" Width="112px" />
                 <ajaxToolkit:ConfirmButtonExtender ID="ConfirmButtonExtender2" runat="server" ConfirmText="Terminar sesión" TargetControlID="botonLogin" />
             </p>

@@ -5,6 +5,7 @@ using System.Web;
 
 namespace CreacionDocumentoDemo.Objetos
 {
+   [Serializable]
     public class UsuarioEntity
     {
         public string Cedula { get; set; }

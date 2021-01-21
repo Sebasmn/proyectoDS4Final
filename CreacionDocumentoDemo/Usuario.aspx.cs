@@ -15,11 +15,15 @@ namespace CreacionDocumentoDemo
         char id= ' ';
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!IsPostBack)
+            {
+                cargarTabla();
+                cargarCombo();
+            }
             btnActualizar.Visible = false;
             btnEliminar.Visible = false;
 
-            cargarCombo();
+            
         }
 
         protected void gvUsuarios_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,40 +44,29 @@ namespace CreacionDocumentoDemo
 
         protected void gvUsuarios_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            ManejoDatos datos = new ManejoDatos();
-            // List<Estudiante> listado =  
-            var bs1 = new BindingSource();
-            bs1.DataSource = datos.getEstudiantesBusqueda(TextBox1.Text);
-            gvUsuarios.DataSource = bs1; //<-- notes it takes the entire bindingSource
+            gvUsuarios.DataSource = ((List<UsuarioEntity>)ViewState["USERS"]) ;
             gvUsuarios.PageIndex = e.NewPageIndex;
-            gvUsuarios.DataBind();
-            //Label1.Text = "Correcto";
-
             gvUsuarios.DataBind();
         }
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-            
-           
+
+            modalUsuarios.Show();
+            Panel1.Visible = true;
         }
 
         void cargarTabla()
         {
             ManejoDatos datos = new ManejoDatos();
-            
-            gvUsuarios.DataSource = datos.getUsuarios();
-            gvUsuarios.DataBind();
-           
+            List<UsuarioEntity> lista = datos.getUsuarios();
+            ViewState["USERS"] = lista;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            Panel1.Visible = true;
-            ModalPopupExtender1.Show();
-            
-            cargarTabla();
+          
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
@@ -90,28 +83,31 @@ namespace CreacionDocumentoDemo
                 txtApellidoM.Text.Length==0 || txtApellidoP.Text.Length==0 || txtClave.Text.Length==0 || 
                 txtConfirmacionClave.Text.Length==0 || txtEmail.Text.Length==0 || ddlRol.SelectedIndex==-1)
             {
-                lblMensaje.Text = "Datos incompletos, porfavor complete todos los campos del formulario";
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Llenar todos los campos.. !')", true);
+               // lblMensaje.Text = "Datos incompletos, porfavor complete todos los campos del formulario";
             }
             else
             {
                 if (!txtClave.Text.Equals(txtConfirmacionClave.Text))
                 {
-                    lblMensaje.Text = "Las contraseñas no coincide";
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Llenar todos los campos.. !')", true);
+                   // lblMensaje.Text = "Las contraseñas no coincide";
                 }
                 else {
 
                     UsuarioEntity usuar= new UsuarioEntity();
                     usuar.Cedula = txtCedula.Text;
-                    usuar.Nombres = txtNombreUno.Text + " " + txtNombreDos.Text;
-                    usuar.Apellidos = txtApellidoP.Text + " " + txtApellidoM.Text;
-                    usuar.Clave = txtClave.Text;
-                    usuar.Correo = txtEmail.Text;
-                    usuar.Tipo = id.ToString();
+                    usuar.Nombres = (txtNombreUno.Text + " " + txtNombreDos.Text).ToUpper();
+                    usuar.Apellidos = (txtApellidoP.Text + " " + txtApellidoM.Text).ToUpper();
+                    usuar.Clave = txtClave.Text.ToUpper();
+                    usuar.Correo = txtEmail.Text.ToUpper();
+                    usuar.Tipo = id.ToString().ToUpper();
                     ManejoDatos mn = new ManejoDatos();
                     bool result=mn.guardarDatosUsuario(usuar);
                     if (result==true)
                     {
-                        lblMensaje.Text = "Usuario insertado con exito";
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Usuario insertado.. !')", true);
+                     //   lblMensaje.Text = "Usuario insertado con exito";
 
                     }
                     else
@@ -182,12 +178,13 @@ namespace CreacionDocumentoDemo
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            lblMensaje.Text = "";
             AgragarUsuario();
         }
 
         protected void ddlRol_SelectedIndexChanged(object sender, EventArgs e)
         {
-            id =char.Parse(tipos.ElementAt(ddlRol.SelectedIndex));
+          //  id =char.Parse(tipos.ElementAt(ddlRol.SelectedIndex));
 
         }
 
@@ -205,9 +202,47 @@ namespace CreacionDocumentoDemo
             }
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
+        protected void botonLogin_Click(object sender, EventArgs e)
         {
             Session.Clear();
+            Response.Redirect("Inicio/Login.aspx");
+        }
+
+        protected void btnGuardar0_Click(object sender, EventArgs e)
+        {
+         /*   Panel1.Visible = true;
+            ModalPopupExtender1.Show();
+            ManejoDatos datos = new ManejoDatos();
+           // datos.getAllUsers();
+            gvUsuarios.DataSource = datos.getUsuarios();
+            gvUsuarios.DataBind();
+            cargarTabla();*/
+        }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            gvUsuarios.DataSource = ((List<UsuarioEntity>)ViewState["USERS"]).FindAll(usuario 
+                => 
+            usuario.Cedula.Contains(TextBox1.Text)||
+             usuario.Nombres.Contains(TextBox1.Text) ||
+              usuario.Ap.Contains(TextBox1.Text) 
+            );
+            gvUsuarios.DataBind();
+          //  updatePanelUsers.Update();
+        }
+
+        protected void gvUsuarios_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            foreach (TableCell myCell in e.Row.Cells)
+            {
+                myCell.Style.Add("word-break", "break-all");
+                myCell.Width = 60;
+                myCell.Width = 30;
+            }
+        }
+
+        protected void botonLogin0_Click(object sender, EventArgs e)
+        {
             Response.Redirect("Inicio/Login.aspx");
         }
     }

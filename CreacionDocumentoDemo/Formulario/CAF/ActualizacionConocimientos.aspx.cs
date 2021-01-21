@@ -312,5 +312,10 @@ namespace CreacionDocumentoDemo.Formulario.CAF
             Session.Clear();
             Response.Redirect("../../Inicio/Login.aspx");
         }
+
+        protected void botonLogin0_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../../Inicio/Login.aspx");
+        }
     }
 }

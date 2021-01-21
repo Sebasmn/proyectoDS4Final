@@ -11,20 +11,12 @@
         .auto-style1 {
             left: -3px;
             top: 0px;
+            width: 110px;
+            height: 101px;
         }
         .auto-style7 {
             width: 1632px;
             margin-left: 0px;
-        }
-        .auto-style8 {
-            background-color: rgba(112, 72, 14,0.8);
-            border-style: none;
-            border-color: inherit;
-            border-width: medium;
-            background-color: #7C4F0E;
-            color: #DAD4CB;
-            font-weight: 700;
-            border-radius: 10px;
         }
         .auto-style9 {
             width: 100%;
@@ -41,7 +33,7 @@
                     <td>
                         <br />
           <asp:Image ID="escudoLogin" runat="server" 
-                    ImageUrl="~/Images/EscudoUTA.png" CssClass="auto-style1"
+                    ImageUrl="~/Images/EscudoUTA.png" CssClass="auto-style1" Height="120px" Width="120px"
                     />
             <h1>
                 Importar datos 

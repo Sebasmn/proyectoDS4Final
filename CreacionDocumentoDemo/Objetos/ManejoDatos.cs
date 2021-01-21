@@ -1168,12 +1168,12 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
         {
             MySqlConnection conn = this.GetConnectionString();
             string sql = "SELECT * " +
-                          "FROM `Usuarios_SW` ";
+                          "FROM `USUARIOS_SW` ";
 
             MySqlCommand command = new MySqlCommand(sql, conn);
             //command.Parameters.AddWithValue("@CEDULA", cedula);
             conn.Open();
-            MySqlDataReader reader = command.ExecuteReader();
+                MySqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
@@ -1184,6 +1184,7 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
                 usuario1.Correo = reader["Correo"].ToString();
                 usuario1.Tipo = reader["Tipo"].ToString();
                 usuario1.Clave = reader["Clave"].ToString();
+                usuario1.Clave = "*******";
                 usuario1.Correo = reader["Correo"].ToString();
                 usuarios.Add(usuario1);
 
@@ -1192,7 +1193,7 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
             reader.Close();
             conn.Close();
         }
-        catch (Exception)
+        catch (Exception ex)
         {
 
         }

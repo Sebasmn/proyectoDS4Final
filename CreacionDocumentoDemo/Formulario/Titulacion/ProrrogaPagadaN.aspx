@@ -9,23 +9,7 @@
     <title>Prorroga Pagada</title>
     <link rel="stylesheet" href="../../Estilos/estilos.css"  type="text/css" />
 
-    <style type="text/css">
-       
-    
-        .auto-style3 {
-            background-color: rgba(112, 72, 14,0.8);
-            border-style: none;
-            border-color: inherit;
-            border-width: medium;
-            background-color: #7C4F0E;
-            color: #DAD4CB;
-            font-weight: 700;
-            border-radius: 10px;
-        }
-    
-    </style>
-
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
           <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -34,6 +18,9 @@
             <asp:Image ID="escudoLogin" runat="server" ImageUrl="~/Images/EscudoUTA.png" />
             <h1>Resolución para Prorroga Pagada</h1>
             <p>
+                <asp:Button ID="botonLogin1" runat="server" CssClass="btnBuscar" Height="39px" OnClick="botonLogin0_Click" Text="MENU PRINCIPAL" Width="145px" />
+                <ajaxToolkit:ConfirmButtonExtender ID="botonLogin1_ConfirmButtonExtender" runat="server" ConfirmText="Terminar sesión" TargetControlID="botonLogin1" />
+                &nbsp;&nbsp;
                 <asp:Button ID="botonLogin0" runat="server" CssClass="btnBuscar" Height="39px" OnClick="botonLogin_Click" Text="Salir" Width="112px" />
                 <ajaxToolkit:ConfirmButtonExtender ID="botonLogin0_ConfirmButtonExtender" runat="server" ConfirmText="Terminar sesión" TargetControlID="botonLogin0" />
             </p>

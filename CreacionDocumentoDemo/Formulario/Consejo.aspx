@@ -94,6 +94,8 @@
           
             <asp:Button ID="Button1" runat="server" Text="Terminar y Generar Acta" CssClass="auto-style2" OnClick="Button1_Click" Width="206px" BackColor="#87540E" Font-Bold="True" Height="61px" />
            
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           
             <asp:Button ID="Button2" runat="server" Text="Salir" CssClass="auto-style2" OnClick="Button2_Click" BackColor="#87540E" Font-Bold="True" Height="42px" Width="209px" />
          
             <br />

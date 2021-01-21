@@ -10,6 +10,20 @@
     <link rel="stylesheet" href="../Estilos/estilos.css"  type="text/css" />
 
 
+    <style type="text/css">
+        .auto-style1 {
+            background-color: rgba(112, 72, 14,0.8);
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            background-color: #7C4F0E;
+            color: #DAD4CB;
+            font-weight: 700;
+            border-radius: 10px;
+        }
+    </style>
+
+
 </head>
 <body id="bodyLogin">
     <form id="form1" runat="server">
@@ -33,10 +47,10 @@
             <asp:TextBox ID="TextBox2" runat="server" required="true" placeholder="*********" CssClass="inputLogin" TextMode="Password"></asp:TextBox>
             <br />
             <br />
-            <asp:CheckBox ID="cbConsejo" runat="server" Font-Italic="True" Font-Size="9pt" OnCheckedChanged="cbConsejo_CheckedChanged" Text="Ingresar como consejo" />
+            <asp:CheckBox ID="cbConsejo" runat="server" Font-Italic="True" Font-Size="10pt" OnCheckedChanged="cbConsejo_CheckedChanged" Text="Ingresar como consejo" />
             <br />
             <br />
-            <asp:Button ID="botonLogin" runat="server" CssClass="botonLogin" Text="Ingresar" OnClick="botonLogin_Click" />
+            <asp:Button ID="botonLogin" runat="server" CssClass="auto-style1" Text="Ingresar" OnClick="botonLogin_Click" Height="33px" Width="112px" />
         </div>
     </form>
 </body>
