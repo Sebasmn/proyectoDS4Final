@@ -200,7 +200,7 @@ namespace CreacionDocumentoDemo.Formulario.CAF
 
             /**/
             StringBuilder sb1 = new StringBuilder();
-            sb1.Append(@"C:\Documentos\Pruebas\");
+            sb1.Append(@"D:\Documentos\Pruebas\");
             StringBuilder sb2 = new StringBuilder();
             sb2.Append("Resolucion");
 
