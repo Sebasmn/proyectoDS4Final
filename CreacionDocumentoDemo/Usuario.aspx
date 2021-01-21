@@ -141,7 +141,7 @@
                             <asp:Label ID="Label6" runat="server" Text="Clave: " CssClass="labelIngreso"></asp:Label>
                         </td>
                         <td class="auto-style9">
-                            <asp:TextBox ID="txtClave" runat="server" CssClass="auto-style3"></asp:TextBox>
+                            <asp:TextBox ID="txtClave" runat="server" TextMode="Password" CssClass="auto-style3"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -149,7 +149,7 @@
                             <asp:Label ID="Label7" runat="server" Text="Repetir clave: " CssClass="labelIngreso"></asp:Label>
                         </td>
                         <td class="auto-style9">
-                            <asp:TextBox ID="txtConfirmacionClave" runat="server" CssClass="auto-style3"></asp:TextBox>
+                            <asp:TextBox ID="txtConfirmacionClave" runat="server" TextMode="Password" CssClass="auto-style3"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>

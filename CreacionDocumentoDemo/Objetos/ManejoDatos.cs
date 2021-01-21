@@ -122,11 +122,9 @@ public class ManejoDatos
                 int actualizado = actualizar.ExecuteNonQuery();
                 if (actualizado>0)
                 {
-                    bool exito = notificarConsejo(codigoNuevo, clave, mail);
+                    bool exito = notificarConsejo(codigoNuevo, clave, mail,fecha);
                     if (exito)
-                    {
-                     
-                       
+                    {  
                         myTrans.Commit();
                         myConnection.Close();
                         guardado = true;
@@ -833,15 +831,17 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
                 MailMessage message = new MailMessage();
                 SmtpClient smtp = new SmtpClient();
                 message.From = new MailAddress("francisclquishpe@hotmail.com");
+               // message.From = new MailAddress("docsfisei@outlook.com");
                 message.To.Add(new MailAddress(correoUTA));
-                message.Subject = "Test";
+                message.Subject = "Resolución Aprobada";
                 message.IsBodyHtml = true; //to make message body as html  
                 message.Body = "Aprobación de Resolución";
                 smtp.Port = 587;
                 smtp.Host = "smtp.live.com"; //for gmail host  
                 smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential("francisclquishpe@hotmail.com", "2420541");
+               // smtp.Credentials = new NetworkCredential("docsfisei@outlook.com", "Kenny08**");
+               smtp.Credentials = new NetworkCredential("francisclquishpe@hotmail.com", "2420541");
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 var attachmentFilename = ubicacion;
                 //
@@ -868,23 +868,25 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
         }
         return enviado;
     }
-    private bool notificarConsejo(string Codigo, string clave , string mail)
+    private bool notificarConsejo(string Codigo, string clave , string mail,string fecha)
     {
         bool enviado = false;
             try
             {
                 MailMessage message = new MailMessage();
                 SmtpClient smtp = new SmtpClient();
-                message.From = new MailAddress("francisclquishpe@hotmail.com");
-                message.To.Add(new MailAddress(mail));
-                message.Subject = "Test";
+                message.From = new MailAddress("docsfisei@outlook.com");
+            message.From = new MailAddress("francisclquishpe@hotmail.com");
+            message.To.Add(new MailAddress(mail));
+                message.Subject = "CONSEJO FISEI";
                 message.IsBodyHtml = true; //to make message body as html  
-                message.Body = "Se le ha asignado para un consejo: \n Código: "+Codigo + " \n Clave de Acceso: "+clave;
+                message.Body = "Se le ha asignado para un consejo: \n Código: "+Codigo + " \n Clave de Acceso: "+clave + " Fecha: "+fecha; 
                 smtp.Port = 587;
                 smtp.Host = "smtp.live.com"; //for gmail host  
                 smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential("francisclquishpe@hotmail.com", "2420541");
+            smtp.Credentials = new NetworkCredential("docsfisei@outlook.com", "Kenny08**");
+            smtp.Credentials = new NetworkCredential("francisclquishpe@hotmail.com", "2420541");
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(message);
                 enviado = true;
@@ -925,7 +927,7 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
             guardado = true;
         }
         else
-        {
+            {
 
         }
 

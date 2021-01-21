@@ -25,6 +25,8 @@ namespace CreacionDocumentoDemo
                 ManejarUsuario();
             }
         }
+
+
         private void ManejarUsuario()
         {
           
@@ -140,6 +142,11 @@ namespace CreacionDocumentoDemo
 
             xlWorkbook.Close();
             xlApp.Quit();
+        }
+
+        protected void botonLogin_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

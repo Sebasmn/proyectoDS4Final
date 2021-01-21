@@ -10,24 +10,7 @@
     <link rel="stylesheet" href="../Estilos/estilos.css"  type="text/css" />
  
     <style type="text/css">
-        .auto-style2 {
-            padding: 0.3em 1.2em;
-            border-radius: 2em;
-            box-sizing: border-box;
-            text-decoration: none;
-            color: whitesmoke;
-            background-color: #A68970;
-            text-align: center;
-            transition: all 0.2s;
-            overflow: hidden;
-            font-size: 15px;
-            float: right;
-            margin-right: 50px;
-            display: block;
-            margin-left: 0;
-            margin-top: 0;
-            margin-bottom: 0.3em;
-        }
+     
     </style>
  
 </head>
@@ -73,6 +56,7 @@
                 <SortedDescendingCellStyle BackColor="#F1E5CE" />
                 <SortedDescendingHeaderStyle BackColor="#93451F" />
             </asp:GridView>
+            <br />
             <asp:GridView ID="gvAprobadas" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" Height="154px" Width="317px" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" OnRowCommand="GridView2_RowCommand" CellSpacing="2">
                 <Columns>
                     <asp:TemplateField ShowHeader="False">
@@ -92,11 +76,11 @@
                 <SortedDescendingHeaderStyle BackColor="#93451F" />
             </asp:GridView>
           
-            <asp:Button ID="Button1" runat="server" Text="Terminar y Generar Acta" CssClass="auto-style2" OnClick="Button1_Click" Width="206px" BackColor="#87540E" Font-Bold="True" Height="61px" />
+            <asp:Button ID="Button1" runat="server" Text="Terminar y Generar Acta" CssClass="auto-style2" OnClick="Button1_Click" Width="206px" BackColor="#87540E" Font-Bold="True" Height="61px" ForeColor="White" />
            
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
            
-            <asp:Button ID="Button2" runat="server" Text="Salir" CssClass="auto-style2" OnClick="Button2_Click" BackColor="#87540E" Font-Bold="True" Height="42px" Width="209px" />
+            <asp:Button ID="Button2" runat="server" Text="Salir" CssClass="auto-style2" OnClick="Button2_Click" BackColor="#87540E" Font-Bold="True" Height="60px" Width="227px" ForeColor="White" />
          
             <br />
             <br />
