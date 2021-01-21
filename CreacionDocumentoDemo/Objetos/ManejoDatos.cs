@@ -337,7 +337,7 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
     public bool generarActa(List<Aprobada> aprobadas, string consejo)
     {
         bool guardado = false;
-        String plantillaActa = @"Y:\Documentos\OficiosPlantilla\actaModel.docx";
+        String plantillaActa = @"D:\Documentos\OficiosPlantilla\actaModel.docx";
         List<string> Editables = new List<string>();
         List<string> Datos = new List<string>();
        /* Editables.Add("<encabezado>"); Datos.Add("Encabezado asd");*/
@@ -355,7 +355,7 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
                bool notificado = notificarEstudiante(resolucion.Ubicacion,resolucion.Estudiante, myConnection, myTrans);
                 int n = myCommand.ExecuteNonQuery();
             }
-            String nombre = @"Y:\Documentos\Actas\";
+            String nombre = @"D:\Documentos\Actas\";
             string acta = obtenerSiguienteActa();
             Editables.Add("<acta>"); Datos.Add(acta);
           
@@ -900,11 +900,12 @@ LAS CARRERAS DE INGENIERÍA INDUSTRIAL EN PROCESOS DE AUTOMATIZACIÓN E INGENIER
     }
     public  bool CreateWordDocument(object filename, object SaveAs,List<string> editables, List<string> datos)
     {
+
         Word.Application wordApp = new Word.Application();
         object missing = Missing.Value;
         Word.Document myWordDoc = null;
         bool guardado = false;
-        if (File.Exists((string)filename))
+        if (File.Exists((string)filename.ToString()))
         {
             object readOnly = false;
             object isVisible = false;
