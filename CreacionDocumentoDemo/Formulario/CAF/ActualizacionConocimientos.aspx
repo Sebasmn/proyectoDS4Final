@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Actualización Conocimientos</title>
        <link rel="stylesheet" href="../../Estilos/estilos.css"  type="text/css" />
-           
+             <link rel="icon" type="image/png" href="../../Images/EscudoUTA.png"/>
     <style type="text/css">
   .btnBuscar {
     border-radius: 2em;
@@ -94,7 +94,11 @@ Tahoma;color:black;mso-themecolor:text1"></span><p class="MsoNormal" style="text
                       <b style="mso-bidi-font-weight:
 normal"><span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-fareast-font-family:&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma;
-color:black;mso-themecolor:text1">COORDINADOR DE</span><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;
+color:black;mso-themecolor:text1">COORDINADOR</span><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-fareast-font-family:&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma;
+color:black;mso-themecolor:text1">/A</span><span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;
+mso-fareast-font-family:&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma;
+color:black;mso-themecolor:text1"> DE</span><span style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-fareast-font-family:&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma;
 color:black;mso-themecolor:text1"> LAS CARRERAS DE </span><span lang="ES" style="font-size:10.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-fareast-font-family:&quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma;
@@ -115,6 +119,8 @@ mso-bidi-font-family:Tahoma;color:black;mso-themecolor:text1">FACULTAD DE INGENI
                           <p>
                   &nbsp;</p>
                           </span>
+                          <p>
+                          </p>
                           <p>
                           </p>
                           <p>
@@ -232,6 +238,8 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style=
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
                                       <p>&nbsp;</p>
                                       </span>
+                                      <p>
+                                      </p>
                                   </p>
                                   </span>
                                   <p class="MsoNormal" style="text-align:justify">
@@ -434,10 +442,44 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style=
 font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
                                                                               <asp:TextBox ID="txtPresiConsejo1" runat="server" CssClass="noBorder" EnableViewState="true" Height="16px" placeholder="Ing. Pilar Urrutia U., Mg." ToolTip="Busque un estudiante" Width="132px"></asp:TextBox>
                                                                               </span></span></span></b></span><span lang="ES" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
-Tahoma">- Presidente de Consejo Académico de Facultad</span><p class="MsoBodyTextFirstIndent2" style="margin:0cm;text-align:justify;
+Tahoma">- Presidente</span><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma">/a </span><span lang="ES" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Tahoma">&nbsp;de Consejo Académico de Facultad</span><p class="MsoBodyTextFirstIndent2" style="margin:0cm;text-align:justify;
 text-indent:0cm">
                                                                                   <span style="font-size:9.0pt;line-height:106%;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma;mso-bidi-font-weight:bold"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Estudiante </span>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
+                                                                              </p>
+                                                                              <p>
                                                                               </p>
                                                                               <p>
                                                                               </p>

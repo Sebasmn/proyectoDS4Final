@@ -6,6 +6,11 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Nuevo Usuario</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="Content/bootstrap.css"/>
+    <link rel="stylesheet" href="Content/bootstrap-grid.css"/>
+    <link rel="stylesheet" href="Content/bootstrap.min.css"/>
+
     <script type="text/javascript">
         function RefreshUpdatePanel() {
             __doPostBack('<%= TextBox1.ClientID %>', '');
@@ -13,256 +18,198 @@
 
         };
     </script>
-     <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
-   
-    <style type="text/css">
-           .botonLogin {
-    width: 100px;
-    height: 30px;
-    border: none;
-    background-color: rgba(112, 72, 14,0.8);
-    background-color: #7C4F0E;
-    color: #DAD4CB;
-    font-weight: 700;
-    border-radius: 10px;
-}
-           #btnEliminar,#btnGuardar,#btnEditar,#btnActualizar:hover{
-               border:2px solid #5D442A;
-           }
-      .labelIngreso{
-          font-size:16px;
-          color:#824E18;
-          float:right;
-          padding-right:10px;
-        padding-top:13px;
-          }
-      td{
-          margin:auto;
-
-      }
-
-      #Panel1{
-          background-color:#D3B999;
-          border-radius:30px;
-          width:800px;
-          height:auto;
-          margin:auto;
-          border:2px double #61370B ;
-          padding:20px;
-      }
-      #gvUsuarios{
-          width:100px;
-          height:100px;
-      }
-        .auto-style1 {
-            position: static;
-        }
-    </style>
+ 
+     <!-- <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" /> -->
+    <link rel="icon" type="image/png" href="Images/EscudoUTA.png"/>
 </head>
-<body style="height: 686px">
+    <style>
+              body {
+    background-color: #D8C99B;
+}
+        #contenedorMain{
+            border:2px solid ;
+            border-color:#704C1C;
+            margin-left:20%;
+            border-radius:10px;
+            margin-right:20%;
+            padding:25px;
+            background-color:#F9E8D1;
+        }
+        #botonLogin,#botonLogin0{
+         
+        }
+    .cabecera{
+        width:100%;
+        text-align:center;
+    }
+    #Panel1{
+        height:370px;
+            width:600px;
+          background-color:#E9D0A6;
+          margin:auto;
+          padding:20px;
+          text-align:center;
+          border: 6px groove rgba(163, 87, 32,0.2);
+    }
+     
+    </style>
+<body >
     <form id="form1" runat="server">
-         <asp:Image ID="escudoLogin" runat="server" 
-                    ImageUrl="~/Images/EscudoUTA.png" CssClass="auto-style1"
-                    />
-        <div class="auto-style1">
-            <div class="auto-style14">
-
-                <h1><strong>
-                <asp:Label ID="Label1" runat="server" Text="Registro de Usuarios" CssClass="auto-style11"></asp:Label>
-                <hr />
-                    <asp:Button ID="botonLogin0" 
-                runat="server" 
-                CssClass="botonLogin"
-                Text="Menú Principal"  Font-Size="Medium" Height="35px" Width="160px" OnClick="botonLogin0_Click"  />
-
-                &nbsp;&nbsp;&nbsp;
+        <div class="cabecera">
+              <asp:Image ID="escudoLogin" runat="server" ImageUrl="~/Images/EscudoUTA.png" />
+                <br />
+              <br />
+                <asp:Label ID="Label1" 
+                    runat="server" Text="Registro de Usuarios" Font-Size="XX-Large" ForeColor="#754106"></asp:Label>
+              <br />
+              <br />
+        </div>
+       
+        <div id="contenedorMain">
+            <div class="cabecera">
+                   <asp:Button ID="botonLogin0" 
+                runat="server"   class="btn btn-primary"
+               
+                Text="Menú Principal"  
+                        Font-Size="Medium" Height="35px" Width="160px" OnClick="botonLogin0_Click"  />
                     <asp:Button ID="botonLogin" 
-                runat="server" 
-                CssClass="botonLogin"
-                Text="Salir" OnClick="botonLogin_Click" Font-Size="Medium" Height="35px" Width="120px"  />
-
-                <br />
-                </strong>
-                <br />
-                <table class="ingreso" align="center"  >
-                    <tr>
-                        <td >
-                            <asp:Label ID="Label2" runat="server" Text="Cédula: " CssClass="labelIngreso"></asp:Label>
-                        </td>
-                        <td >
-                            <asp:TextBox ID="txtCedula" runat="server"  Height="16px" Width="160px" MaxLength="10"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <asp:Label ID="Label3" runat="server" Text="Primer nombres: " CssClass="labelIngreso"></asp:Label>
-                        </td>
-                        <td >
-                            <asp:TextBox ID="txtNombreUno" runat="server" ></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="Label9" runat="server" Text="Segundo nombre: " CssClass="labelIngreso"></asp:Label>
-                        </td>
-                        <td >
-                            <asp:TextBox ID="txtNombreDos" runat="server" ></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <asp:Label ID="Label4" runat="server" Text="Apellido paterno: " CssClass="labelIngreso"></asp:Label>
-                        </td>
-                        <td >
-                            <asp:TextBox ID="txtApellidoP" runat="server" ></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Label ID="Label10" runat="server" Text="Apellido materno: " CssClass="labelIngreso"></asp:Label>
-                        </td>
-                        <td >
-                            <asp:TextBox ID="txtApellidoM" runat="server" ></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            <asp:Label ID="Label5" runat="server" Text="Rol: " CssClass="labelIngreso"></asp:Label>
-                        </td>
-                        <td >
-                            <asp:DropDownList ID="ddlRol" 
-                                runat="server" 
-                                Height="20px" Width="177px" OnSelectedIndexChanged="ddlRol_SelectedIndexChanged">
+                runat="server"   class="btn btn-primary"
+                Text="Salir" OnClick="botonLogin_Click" 
+                        Font-Size="Medium" Height="35px" Width="120px"  />
+            </div>
+                 
+            <br />
+             <br />
+                <div class="form-group ">
+                                    <asp:Label ID="Label2"  CssClass="form-label" for="txtCedula" runat="server" Font-Bold="False" ForeColor="#74420A" >Cédula</asp:Label>
+                                    <asp:TextBox ID="txtCedula" runat="server"   CssClass="form-control" 
+                                       placeholder="Cédula"  MinLength="10"></asp:TextBox>
+                 </div>    
+                    <div class="form-row">
+                                        <div class="form-group col-md-5">
+                                        <asp:Label ID="Label3" runat="server"   for="txtNombreUno" Text="Primer nombre: " CssClass="form-label" Font-Bold="False" ForeColor="#74420A"></asp:Label>
+                                         <asp:TextBox ID="txtNombreUno" placeholder="Fernando" class="form-control" runat="server" ></asp:TextBox>
+                                          </div>
+                                        <div class="form-group col-md-5">
+                                        <asp:Label ID="Label9"    for="txtNombreDos" runat="server" Text="Segundo nombre: " CssClass="form-label" Font-Bold="False" ForeColor="#74420A"></asp:Label>
+                                         <asp:TextBox ID="txtNombreDos" placeholder="Javier" class="form-control" runat="server" ></asp:TextBox>
+                                        </div>
+                    </div>
+                         
+                         <div class="form-row">
+                               <div class="form-group col-md-5">
+                            <asp:Label ID="Label4" runat="server"   CssClass="form-label"   for="txtApellidoP"   Text="Apellido paterno: " Font-Bold="False" ForeColor="#74420A"></asp:Label>
+                            <asp:TextBox ID="txtApellidoP" placeholder="Rodríguez"   class="form-control" runat="server" ></asp:TextBox>
+                            </div>
+                             <div class="form-group col-md-5">
+                            <asp:Label ID="Label10" runat="server" for="txtApellidoM" Text="Apellido materno: " Font-Bold="False" ForeColor="#74420A" ></asp:Label>
+                            <asp:TextBox ID="txtApellidoM" placeholder="Pérez" class="form-control" runat="server" ></asp:TextBox>
+                             </div>
+                      </div>      
+                    <div class="form-group ">
+                            <asp:Label ID="Label8" runat="server" Text="Correo:  " CssClass="form-label" Font-Bold="False" ForeColor="#74420A"></asp:Label>
+                            <asp:TextBox ID="txtEmail" runat="server" 
+                                type="email" class="form-control"
+                                placeholder="usuario55@gmail.com" 
+                                ></asp:TextBox>
+                         </div>
+                            <div class="form-group">
+                            <asp:Label ID="Label5" runat="server"  Text="Rol: "  
+                                for="ddlRol" CssClass="form-label" Font-Bold="False" ForeColor="#74420A" ></asp:Label>
+                            &nbsp;
+                            <asp:DropDownList ID="ddlRol" Font-Size="14px"
+                                runat="server"   OnSelectedIndexChanged="ddlRol_SelectedIndexChanged">
                             </asp:DropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style8">
-                            <asp:Label ID="Label6" runat="server" Text="Clave: " CssClass="labelIngreso"></asp:Label>
-                        </td>
-                        <td class="auto-style9">
-                            <asp:TextBox ID="txtClave" runat="server" TextMode="Password" CssClass="auto-style3"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style8">
-                            <asp:Label ID="Label7" runat="server" Text="Repetir clave: " CssClass="labelIngreso"></asp:Label>
-                        </td>
-                        <td class="auto-style9">
-                            <asp:TextBox ID="txtConfirmacionClave" runat="server" TextMode="Password" CssClass="auto-style3"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style8">
-                            <asp:Label ID="Label8" runat="server" Text="Correo:  " CssClass="labelIngreso"></asp:Label>
-                        </td>
-                        <td class="auto-style9">
-                            <asp:TextBox ID="txtEmail" runat="server"  CssClass="auto-style3"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="auto-style2">
+                        </div>  
+                            <div class="form-row ">
+                                 <div class="form-group col-md-5">
+                                     <asp:Label ID="Label6" runat="server" Text="Clave: " CssClass="form-label" Font-Bold="False" ForeColor="#74420A"></asp:Label>
+                                    <asp:TextBox ID="txtClave" runat="server" TextMode="Password" CssClass="form-control" ></asp:TextBox>
+                                        </div>
+                                       <div class="form-group col-md-5">
+                                   <asp:Label ID="Label7" runat="server" Text="Repetir clave: " CssClass="form-label" Font-Bold="False" ForeColor="#74420A"></asp:Label>
+                                    <asp:TextBox ID="txtConfirmacionClave" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                                    </div>    
+                               </div>
+                           
+                        
+                          <asp:Button ID="btnGuardar" class="btn btn-primary" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
+                            &nbsp;
+                            <asp:Button ID="btnEditar" class="btn btn-primary"  runat="server" Text="Buscar" OnClick="btnEditar_Click" Visible="True"/>
+                            <br />
+                            <asp:Button ID="btnActualizar" class="btn btn-primary" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" />
+                            &nbsp;
+                            <asp:Button ID="btnEliminar" class="btn btn-primary"  runat="server" Text="Eliminar" Visible="False"/>
+                           
+                            <asp:Label ID="lblMensaje" class="form-form" runat="server" ForeColor="#74420A"></asp:Label>
+
+                        </div>
                             <asp:ScriptManager ID="ScriptManager1" runat="server">
                             </asp:ScriptManager>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="auto-style2">
-                            <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click"  CssClass="botonLogin"/>
-                            &nbsp;
-                            <asp:Button ID="btnEditar" runat="server" Text="Buscar" OnClick="btnEditar_Click"  CssClass="botonLogin" Visible="True"/>
-                            <br />
-                            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" CssClass="botonLogin"/>
-                            &nbsp;
-                            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="botonLogin" Visible="False"/>
-                            <br />
-                            <strong>
-                            <br />
-                            <br />
-                            <asp:Label ID="lblMensaje" runat="server" ForeColor="#753A00"></asp:Label>
-                            <br />
-                            <br />
-                </strong>
-                        </td>
-                    </tr>
-                </table>
+                        
+                       
+                          
+                            
+               
                 
-            </div>
-        </div>
-
-           <asp:Panel ID="Panel1" runat="server" >
-                    <strong>
+          
+   
+           <asp:Panel ID="Panel1" runat="server" Height="451px"  >
+  
                     <asp:Label ID="lblMensaje0" runat="server" 
-                        Font-Size="X-Large"
+                        Font-Size="X-Large" class="modal-title"
                         ForeColor="#753A00">Usuarios Actuales</asp:Label>
+                    
                     <br />
+                    
                     <br />
-                    </strong>
-                    <asp:TextBox ID="TextBox1" runat="server" 
+                    <div class="form-group">
+                         <asp:TextBox ID="TextBox1" runat="server" 
                          AutoPostBack="True"
+                        class="'form-control"
                     placeholder="Buscar cedula/nombre"
                     onkeyup="RefreshUpdatePanel();"
                         OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
-                    &nbsp;<br />
-                    <br />
+                    </div>
                    
-                    <asp:UpdatePanel ID="updatePanelUsers" 
-                        updatemode="Always"   
-                        ChildrenAsTriggers="true"
-                        runat="server">
-                        <ContentTemplate>
-                             <asp:GridView ID="gvUsuarios" runat="server" 
-                                 AllowSorting="True"
-                                  EnableSortingAndPagingCallbacks="false"
-                                 BackColor="#DEBA84" 
-                                 BorderColor="#A84F11" 
-                                 BorderStyle="None" 
-                                 BorderWidth="1px" CellPadding="3" 
-                                 CellSpacing="2"
-                                 OnPageIndexChanging="gvUsuarios_PageIndexChanging" 
-                                 OnSelectedIndexChanged="gvUsuarios_SelectedIndexChanged"
-                                 AllowPaging="True" PageSize="4" 
-                                 Height="200px" OnRowDataBound="gvUsuarios_RowDataBound" Width="806px" CssClass="auto-style1" >
-                        <Columns>
-                            <asp:TemplateField>
-                                <ItemTemplate>
-                                    <asp:Button ID="btnSeleccionar" runat="server" 
-                                        CommandName="Select"
-                                        BackColor="#D9BFA7"
-                                        Style="padding:10px; border-radius: 25px"
-                                        BorderColor="#BCA794"
-                                        Font-Bold="true"
-                                       ForeColor="#6C3A0A"
-                                        Text="SELECCIONAR"  />
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                        </Columns>
-                        <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
-                        <HeaderStyle BackColor="#694922" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle ForeColor="#643B0A" Font-Size="Large"  
-                            BackColor="#E4D4C1"
-                            Font-Bold="True"
-                            HorizontalAlign="Center" />
-                        <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
-                        <SelectedRowStyle BackColor="#EAD9C4" Font-Bold="True" ForeColor="#6B4313" />
-                        <SortedAscendingCellStyle BackColor="#FFF1D4" />
-                        <SortedAscendingHeaderStyle BackColor="#B95C30" />
-                        <SortedDescendingCellStyle BackColor="#F1E5CE" />
-                        <SortedDescendingHeaderStyle BackColor="#93451F" />
-                    </asp:GridView>
-                        </ContentTemplate>
-                         <Triggers>
-                        <asp:AsyncPostBackTrigger controlid="TextBox1"  />
-                         <asp:AsyncPostBackTrigger ControlID="gvUsuarios" />
-                         </Triggers>
-                    </asp:UpdatePanel>
-               
+          
                     <br />
-                    <asp:Button ID="btnGuardar0" runat="server" CssClass="botonLogin" OnClick="btnGuardar0_Click" Text="Salir" />
-               
+                    <asp:UpdatePanel ID="updatePanelUsers" runat="server" ChildrenAsTriggers="true" updatemode="Always">
+                        <ContentTemplate>
+                            <asp:GridView ID="gvUsuarios" runat="server" AllowPaging="True" AllowSorting="True" BackColor="#DEBA84" BorderStyle="None" BorderWidth="0px" CellPadding="1" CellSpacing="1" Font-Size="Small" Height="50px" OnPageIndexChanging="gvUsuarios_PageIndexChanging" OnRowDataBound="gvUsuarios_RowDataBound" OnSelectedIndexChanged="gvUsuarios_SelectedIndexChanged" PageSize="3" Width="550px">
+                                <Columns>
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:Button ID="btnSeleccionar" runat="server" BackColor="#D9BFA7" BorderColor="#BCA794" CommandName="Select" Font-Bold="true" ForeColor="#6C3A0A" Style="padding:0px; 
+                                        width: 80px;
+                                        border-radius: 15px" Text="Seleccionar" />
+                                        </ItemTemplate>
+                                        <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="10px" />
+                                    </asp:TemplateField>
+                                </Columns>
+                                <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+                                <HeaderStyle BackColor="#694922" Font-Bold="True" ForeColor="White" Width="10px" />
+                                <PagerStyle BackColor="#E4D4C1" Font-Bold="True" Font-Size="Small" ForeColor="#643B0A" HorizontalAlign="Center" />
+                                <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+                                <SelectedRowStyle BackColor="#5D3D28" Font-Bold="True" ForeColor="White" />
+                                <SortedAscendingCellStyle BackColor="#FFF1D4" />
+                                <SortedAscendingHeaderStyle BackColor="#B95C30" />
+                                <SortedDescendingCellStyle BackColor="#F1E5CE" />
+                                <SortedDescendingHeaderStyle BackColor="#93451F" />
+                            </asp:GridView>
+                            <br />
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger controlid="TextBox1" />
+                            <asp:AsyncPostBackTrigger ControlID="gvUsuarios" />
+                        </Triggers>
+                    </asp:UpdatePanel>
+
+                    <asp:Button ID="btnGuardar0" runat="server"   class="btn btn-primary"  OnClick="btnGuardar0_Click" Text="Salir" />
+             
                     <br />
                 </asp:Panel>
-
+       
 
          <ajaxToolkit:ModalPopupExtender 
                         ID="modalUsuarios" 
@@ -272,5 +219,16 @@
                         TargetControlID="btnEditar">
                     </ajaxToolkit:ModalPopupExtender>
     </form>
+    <!-- JavaScript Bundle with Popper -->
+   <script src="Scripts/jquery-3.0.0.min.js"></script>
+       <script src="Scripts/bootstrap.min.js"></script>
+           <script src="Scripts/popper.min.js"></script>
+    <script src="Scripts/popper.js"></script>
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+
 </body>
+        
 </html>

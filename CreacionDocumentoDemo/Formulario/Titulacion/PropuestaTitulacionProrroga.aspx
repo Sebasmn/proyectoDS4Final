@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Propuesta Titulación con Prorroga</title>
      <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
-
+    <link rel="icon" type="image/png" href="../../Images/EscudoUTA.png"/>
     <style type="text/css">
 
 

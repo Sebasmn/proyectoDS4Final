@@ -200,7 +200,10 @@ namespace CreacionDocumentoDemo.Formulario.CAF
 
             /**/
             StringBuilder sb1 = new StringBuilder();
-            sb1.Append(@"D:\Documentos\Pruebas\");
+            //sb1.Append(@"D:\Documentos\Pruebas\");
+            //  sb1.Append(@"\\40.84.223.115\formatos\Documentos\Pruebas\");
+              sb1.Append(@"Y:\Documentos\Pruebas\");
+
             StringBuilder sb2 = new StringBuilder();
             sb2.Append("Resolucion");
 
@@ -214,7 +217,10 @@ namespace CreacionDocumentoDemo.Formulario.CAF
 
             //   var plantilla = @"\\40.84.223.115\formatos\Documentos\OficiosPlantilla\Sistemas\actualizacionConocimientos.docx";
             //  var plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\actualizacionConocimientos.docx";
-            var plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\actualizacionConocimientos.docx";
+         //  var plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\actualizacionConocimientos.docx";
+           // var plantilla = @"\\40.84.223.115\formatos\Documentos\OficiosPlantilla\Sistemas\actualizacionConocimientos.docx";
+            var plantilla = @"Y:\Documentos\OficiosPlantilla\Sistemas\actualizacionConocimientos.docx";
+
             ManejoDatos mysql = new ManejoDatos();
             Resolucion resol = new Resolucion();
             resol.Ubicacion = ruta;

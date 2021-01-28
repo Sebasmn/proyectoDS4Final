@@ -67,7 +67,7 @@ namespace CreacionDocumentoDemo
                         userFileUpload.SaveAs(Server.MapPath("~/UserUploadedExcelFiles/" + "\\" + fname));
                         Session["name"] = fname;
 
-                        lblUploadFile.Text = "Archivo subido exitosamente";
+                        lblUploadFile.Text = Session["name"].ToString() + "   /  Archivo subido exitosamente";
                         lblUploadFile.ForeColor = System.Drawing.Color.Green;
                         SaveData.Visible = true;
                         UploadButton.Visible = false;
@@ -91,7 +91,15 @@ namespace CreacionDocumentoDemo
         {
             if (Session["name"]!=null)
             {
-                leerExcel();
+                try
+                {
+                    leerExcel();
+                }
+                catch (Exception ex)
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + ex.Message + "  !')", true);
+                }
+               
             }
          
         }
@@ -107,15 +115,17 @@ namespace CreacionDocumentoDemo
             Excel.Range range = xlWorksheet.UsedRange;
             int filas = range.Rows.Count;
             int colum = range.Columns.Count;
-            Estudiante estudiante;
+            Estudiante estudiante = new Estudiante(); ;
             ManejoDatos mn = new ManejoDatos();
+           // lblUploadFile.Text= range.Cells[2, 1].Value2;
+            //estudiante.Cedula = range.Cells[2, 1].Value2;
             for (int i=2; i<=filas;i++)
             {
-                estudiante = new Estudiante();
-                estudiante.Cedula= range.Cells[i, 1].Value2.ToString();
-                estudiante.Apellidos= range.Cells[i, 2].Value2.ToString();
-                estudiante.Nombres = range.Cells[i, 3].Value2.ToString();
-                estudiante.Telefono = range.Cells[i, 8].Value2.ToString();
+                //estudiante = 
+               estudiante.Cedula= Convert.ToString(range.Cells[i, 1].Value2);
+                estudiante.Apellidos= Convert.ToString(range.Cells[i, 2].Value2);
+                estudiante.Nombres = Convert.ToString(range.Cells[i, 3].Value2);
+                estudiante.Telefono = Convert.ToString(range.Cells[i, 8].Value2);
                 if (estudiante.Telefono.Length == 0)
                 {
                     estudiante.Telefono= "S/N";
@@ -126,12 +136,12 @@ namespace CreacionDocumentoDemo
                     celular = "S/N";
                 }
                
-                estudiante.Correo = range.Cells[i, 10].Value2.ToString();
-                estudiante.CorreoUTA = range.Cells[i, 11].Value2.ToString();
-                string fecha= range.Cells[i, 12].Value2.ToString();
-                estudiante.Matricula = range.Cells[i, 18].Value2.ToString();
-                estudiante.Folio = range.Cells[i, 19].Value2.ToString();
-                estudiante.Carrera = range.Cells[i, 24].Value2.ToString();
+                estudiante.Correo = Convert.ToString(range.Cells[i, 10].Value2);
+                estudiante.CorreoUTA = Convert.ToString(range.Cells[i, 11].Value2);
+                string fecha= Convert.ToString(range.Cells[i, 12].Value2);
+                estudiante.Matricula = Convert.ToString(range.Cells[i, 18].Value2);
+                estudiante.Folio = Convert.ToString(range.Cells[i, 19].Value2);
+                estudiante.Carrera = Convert.ToString(range.Cells[i, 24].Value2);
                 if (estudiante.Carrera == "Tecnologías de la Información")
                 {
                     estudiante.Carrera = "TI";
@@ -150,7 +160,8 @@ namespace CreacionDocumentoDemo
 
         protected void botonLogin_Click(object sender, EventArgs e)
         {
-
+            Session.Clear();
+            Response.Redirect("../Inicio/Login.aspx");
         }
     }
 }

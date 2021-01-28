@@ -7,20 +7,31 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>FISEI</title>
-    <link rel="stylesheet" href="../Estilos/estilos.css"  type="text/css" />
-
-
+   <!-- <link rel="stylesheet" href="../Estilos/estilos.css"  type="text/css" /> -->
+     <link rel="icon" type="image/png" href="../Images/EscudoUTA.png"/>
+        <link rel="stylesheet" href="../Content/bootstrap.css"/>
+    <link rel="stylesheet" href="../Content/bootstrap-grid.css"/>
+    <link rel="stylesheet" href="../Content/bootstrap.min.css"/>
     <style type="text/css">
-        .auto-style1 {
-            background-color: rgba(112, 72, 14,0.8);
-            border-style: none;
-            border-color: inherit;
-            border-width: medium;
-            background-color: #7C4F0E;
-            color: #DAD4CB;
-            font-weight: 700;
-            border-radius: 10px;
+        body{
+            text-align:center;
+            background-color: #D8C99B;
         }
+    #formularioLogin{
+        width:400px;
+        height:250px;
+        margin:auto;
+
+    }
+    #contenedor{
+        
+        width:100%;
+        float:left;
+        padding-left:10px;
+    }
+    h1{
+        color:#613A09;
+    }
     </style>
 
 
@@ -33,25 +44,48 @@
                     />
             <h1>
                 Ingreso de Usuario
-                
             </h1>
-            <hr />
-            <br />
-            <br />
             <asp:Label ID="Label1" runat="server" Font-Italic="True" Font-Names="Calisto MT" Font-Size="Medium" ForeColor="#785E37" Text="Digite su cédula y clave"></asp:Label>
+                    <hr />
+            <div id="contenedor">
+                <div class="form-group">
+            <asp:Label ID="Label5" runat="server"  Text="Contraseña: " for="TextBox1" CssClass="form-label" 
+                 style="float:left; margin-bottom:8px;"
+                Font-Bold="False" ForeColor="#74420A" ></asp:Label>
+            <asp:TextBox ID="TextBox1" runat="server" required="true" 
+                class="form-control"
+                placeholder="Ejm: 1804156112" ></asp:TextBox>
+                </div>
+             <div class="form-group">
+                    <asp:Label ID="Label2" runat="server"  Text="Cédula: "  for="TextBox2" 
+                        CssClass="form-label"
+                         style="float:left; margin-bottom:6px;"
+                        Font-Bold="False" ForeColor="#74420A" ></asp:Label>
+            <asp:TextBox ID="TextBox2" 
+                runat="server" required="true" placeholder="*********"  class="form-control"  
+                TextMode="Password"></asp:TextBox>
+            </div>
+            
+                 <asp:CheckBox ID="cbConsejo" 
+                runat="server" Font-Italic="True" Font-Size="12pt" 
+                      style="float:left"
+                OnCheckedChanged="cbConsejo_CheckedChanged" Text="Ingresar como consejo" ForeColor="#663300" />
+                
+                  <asp:Button ID="botonLogin" runat="server" 
+                CssClass="btn btn-primary"  style="float:right" Text="Ingresar" OnClick="botonLogin_Click"  />
+            </div>
+            
+            <br />
+       
             <br />
             <br />
-            <asp:TextBox ID="TextBox1" runat="server" required="true" placeholder="Ejm: 1804156112" CssClass="inputLogin"></asp:TextBox>
-            <br />
-            <br />
-            <asp:TextBox ID="TextBox2" runat="server" required="true" placeholder="*********" CssClass="inputLogin" TextMode="Password"></asp:TextBox>
-            <br />
-            <br />
-            <asp:CheckBox ID="cbConsejo" runat="server" Font-Italic="True" Font-Size="10pt" OnCheckedChanged="cbConsejo_CheckedChanged" Text="Ingresar como consejo" />
-            <br />
-            <br />
-            <asp:Button ID="botonLogin" runat="server" CssClass="auto-style1" Text="Ingresar" OnClick="botonLogin_Click" Height="33px" Width="112px" />
+          
         </div>
     </form>
+        <!-- JavaScript Bundle with Popper -->
+   <script src="Scripts/jquery-3.0.0.min.js"></script>
+       <script src="Scripts/bootstrap.min.js"></script>
+           <script src="Scripts/popper.min.js"></script>
+    <script src="Scripts/popper.js"></script>
 </body>
 </html>

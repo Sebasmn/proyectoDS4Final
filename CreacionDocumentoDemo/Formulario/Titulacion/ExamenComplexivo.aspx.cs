@@ -140,6 +140,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             txtNombreEstu0.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             txtNombreEstu1.Text = GridView1.SelectedRow.Cells[3].Text + " " + GridView1.SelectedRow.Cells[2].Text;
             ViewState["CEDULA_EST"] = GridView1.SelectedRow.Cells[1].Text;
+            
         }
 
         protected void Button4_Click(object sender, EventArgs e)
@@ -181,7 +182,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             editables.Add("<carreras>"); datos.Add(ddlCarreras.SelectedValue.ToString());
             /**/
             StringBuilder sb1 = new StringBuilder();
-            sb1.Append(@"D:\Documentos\Pruebas\");
+            sb1.Append(@"Y:\Documentos\Pruebas\");
             StringBuilder sb2 = new StringBuilder();
             sb2.Append("Resolucion");
 
@@ -193,7 +194,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             string resolucion = codigo.ToString();
             string ruta = sb1.ToString();
 
-            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\Titulacion\AprobacionModalidadExamenComplexivo.docx";
+            String plantilla = @"Y:\Documentos\OficiosPlantilla\Sistemas\Titulacion\AprobacionModalidadExamenComplexivo.docx";
             ManejoDatos mysql = new ManejoDatos();
             Resolucion resol = new Resolucion();
             resol.Ubicacion = ruta;
@@ -202,10 +203,14 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             resol.Codigo = resolucion;
             resol.Plantilla = plantilla;
             resol.IDConsejo = txtCodigoConsejoDestino.Text;
-            resol.Estudiante = ViewState["CEDULA_EST"].ToString();
+            if (ViewState["CEDULA_EST"]!=null)
+            {
+                resol.Estudiante = ViewState["CEDULA_EST"].ToString();
+            }
+         
             resol.Secretaria = ((UsuariosSW)Session["USUARIOSW"]).Cedula;
             bool verificado = mysql.verificarDatos(editables, datos);
-            if (verificado)
+            if (verificado && resol.Estudiante!=null)
             {
                 bool guardado = mysql.guardarResolucion(resol);
                 if (guardado)

@@ -17,7 +17,7 @@ namespace CreacionDocumentoDemo
         {
             if (!IsPostBack)
             {
-                ManejarUsuario();
+                  ManejarUsuario();
                 cargarTabla();
                 cargarCombo();
             }
@@ -270,6 +270,11 @@ namespace CreacionDocumentoDemo
         protected void botonLogin0_Click(object sender, EventArgs e)
         {
             Response.Redirect("Inicio/Login.aspx");
+        }
+
+        protected void txtClave_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

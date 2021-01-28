@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Tercera Matrícula</title>
      <link rel="stylesheet" href="../../Estilos/estilos.css"  type="text/css" />
+    <link rel="icon" type="image/png" href="../../Images/EscudoUTA.png"/>
     <style type="text/css">
 
 
@@ -81,7 +82,7 @@ line-height:106%;font-family:&quot;Cambria&quot;,serif"><o:p>&nbsp;</o:p></span>
 line-height:106%;font-family:&quot;Cambria&quot;,serif"><o:p>&nbsp;</o:p></span></p>
             <p class="MsoNormal">
                 <span style="font-size:10.0pt;
-line-height:106%;font-family:&quot;Cambria&quot;,serif">Ingeniero, Mg.<o:p></o:p></span></p>
+line-height:106%;font-family:&quot;Cambria&quot;,serif">Ingeniero/a, Mg.<o:p></o:p></span></p>
             <p class="MsoNormal">
                       <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma">
@@ -346,7 +347,7 @@ font-style:normal">&nbsp;EN LAS ASIGNATURAS DE:<b style="mso-bidi-font-weight:no
 Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
 mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif"><span lang="ES-TRAD" style="font-size:9.0pt;font-family:
 &quot;Cambria&quot;,serif;mso-bidi-font-family:Tahoma">
-                                  <asp:TextBox ID="txtAsignaturas0" runat="server" CssClass="noBorder" placeholder="Ing. Edisson Patricio Jordán" Width="100%"></asp:TextBox>
+                                  <asp:TextBox ID="txtAsignaturas0" runat="server" CssClass="noBorder" placeholder="Cálculo y Algebra" Width="100%"></asp:TextBox>
                                   </span></span></span></span></b></span></span></span></span></span></span></span><span style="font-size: 10.0pt; line-height: 106%; font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma"><span style="font-family: &quot;Cambria&quot;,serif; mso-bidi-font-family: Tahoma; font-style: normal"><span style="mso-spacerun: yes"><span style="font-size: 10.0pt; line-height: 106%; font-family: &quot;Cambria&quot;,serif; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-bidi-font-family: Tahoma; mso-ansi-language: ES-EC; mso-fareast-language: EN-US; mso-bidi-language: AR-SA"> <span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-fareast-font-family:
 &quot;Arial Unicode MS&quot;;mso-bidi-font-family:Tahoma"><b style="mso-bidi-font-weight:normal"><span style="font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
 Tahoma"><span style="font-size:9.0pt;font-family:&quot;Cambria&quot;,serif;
@@ -441,10 +442,16 @@ mso-bidi-font-family:Tahoma;mso-ansi-language:ES-EC"><span lang="ES-TRAD" style=
 Tahoma;mso-bidi-font-weight:bold"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Estudiante</span><span style="font-size:9.0pt;
 font-family:&quot;Cambria&quot;,serif"><p></p>
                             </span>
+                            <p>
+                            </p>
                         </p>
                         </span></span></span>
+                        <p>
+                        </p>
                     </p>
                     </span>
+                    <p>
+                    </p>
                 </p>
 
         </div>

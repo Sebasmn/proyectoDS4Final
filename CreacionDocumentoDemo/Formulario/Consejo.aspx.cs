@@ -8,6 +8,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 
 namespace CreacionDocumentoDemo.Formulario
 {
@@ -46,6 +48,14 @@ namespace CreacionDocumentoDemo.Formulario
                 {
                     Response.Redirect("../Inicio/Login.aspx");
                 }
+                else
+                {
+                    Label3.Text = "Bienvenido \n  Consejo:  " + consejo.Codigo + " del " +consejo.Fecha;
+                }
+                if(consejo.Completado.Equals("1"))
+                {
+                    botonLogin.Enabled = false;
+                }
             }
             else
             {
@@ -57,7 +67,9 @@ namespace CreacionDocumentoDemo.Formulario
             ManejoDatos datos = new ManejoDatos();
             //   string idConsejo = Session["CONSEJO"].ToString();
             string idConsejo = ((ConsejoDir)Session["CONSEJO"]).Codigo;
+            
             List<ResolucionVista> resoluciones =datos.ObtenerResolucionesVista(idConsejo);
+            ViewState["RESOLUCIONES"] = resoluciones;
             var bs1 = new BindingSource();
             bs1.DataSource = resoluciones;
             gvResoluciones.DataSource = bs1; //<-- notes it takes the entire bindingSource
@@ -66,22 +78,50 @@ namespace CreacionDocumentoDemo.Formulario
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            abrirDocumento(gvResoluciones.SelectedRow.Cells[2].Text);
-
+      //    var  plantilla = @"D:\Documentos\Pruebas\Resolucion0009-P-CD-FISEI-UTA-sd.docx";
+          abrirDocumento(gvResoluciones.SelectedRow.Cells[2].Text);
+          //  abrirDocumento(plantilla);
         }
 
         private void abrirDocumento(object text)
         {
             try
             {
-                Process.Start(text.ToString());
+                Word.Application wordApp = new Word.Application();
+                object missing = Missing.Value;
+                Word.Document myWordDoc = null;
+                if (
+                    true
+                //File.Exists(text.ToString())
+
+                    )
+                {
+                    // Button1.Text = "ECONTRADO;";
+                    object readOnly = false;
+                    object isVisible = true;
+                    wordApp.Visible = true;
+
+                    myWordDoc = wordApp.Documents.Open(ref text, ref missing, ref readOnly,
+                                            ref missing, ref missing, ref missing,
+                                            ref missing, ref missing, ref missing,
+                                            ref missing, ref missing, ref missing,
+                                            ref missing, ref missing, ref missing, ref missing);
+
+                }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('No se encuentra el archivo !')", true);
+                }
             }
-            catch (Exception ex)
+            catch (Exception exx)
             {
-                //No se ha podido abrir el archivo
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('"+exx.Message+" !')", true);
             }
+              
+            
           
-        }
+           
+            }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -145,38 +185,67 @@ namespace CreacionDocumentoDemo.Formulario
                 var x = gvAprobadas.SelectedRow.Cells[1].Text;
                 ((List<Aprobada>)Session["ResolucionesAprobadas"]).RemoveAll(x1 => x1.Codigo.Equals(x));
                 actualizarAprobadas();
+            
             }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (Session["ResolucionesAprobadas"]!=null)
+          
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        protected void botonLogin_Click(object sender, EventArgs e)
+        {
+            if (Session["ResolucionesAprobadas"] != null)
             {
                 if (
-                     ((List<Aprobada>)Session["ResolucionesAprobadas"]).Count>0
+                     ((List<Aprobada>)Session["ResolucionesAprobadas"]).Count > 0
                     )
                 {
-                     List<Aprobada> aprobadas = ((List<Aprobada>)Session["ResolucionesAprobadas"]);
+                    List<Aprobada> aprobadas = ((List<Aprobada>)Session["ResolucionesAprobadas"]);
                     ManejoDatos datos = new ManejoDatos();
-                    bool guardado =  datos.generarActa(aprobadas,((ConsejoDir)Session["CONSEJO"]).Codigo);
-                    if (guardado)
+               //     bool guardado = datos.generarActa(aprobadas, ((ConsejoDir)Session["CONSEJO"]).Codigo);
+                    Resultado guardado = datos.generarActa1(aprobadas, ((ConsejoDir)Session["CONSEJO"]).Codigo);
+                    
+                    if (guardado.Completo)
                     {
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Resolucion creada !')", true);
+                        ((ConsejoDir)Session["CONSEJO"]).Completado = "1";
+                        ManejarUsuario();
                         cargarResoluciones();
+                        abrirDocumento(guardado.Ruta);
                     }
                     else
                     {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Se ha producido un erro !')", true);
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('"+guardado.Error+"  !')", true);
 
                     }
                 }
             }
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void botonLogin0_Click(object sender, EventArgs e)
         {
             Session.Clear();
             Response.Redirect("../Inicio/Login.aspx");
+        }
+
+        protected void gvResoluciones_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            if (ViewState["RESOLUCIONES"]!=null)
+            {
+                var bs1 = new BindingSource();
+                bs1.DataSource = (List<ResolucionVista>)ViewState["RESOLUCIONES"];
+                gvResoluciones.DataSource = bs1; //<-- notes it takes the entire bindingSource
+                gvResoluciones.DataBind();
+            }
+          
+        
         }
     }
 

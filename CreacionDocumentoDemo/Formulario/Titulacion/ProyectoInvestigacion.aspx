@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Proyecto Investigacion</title>
      <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
-
+    <link rel="icon" type="image/png" href="../../Images/EscudoUTA.png"/>
     </head>
 <body>
     <form id="form1" runat="server">

@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Artículo Académico</title>
      <link rel="stylesheet" href="~/Estilos/estilos.css"  type="text/css" />
-
+    <link rel="icon" type="image/png" href="../../Images/EscudoUTA.png"/>
     <style type="text/css">
 
         .auto-style3 {

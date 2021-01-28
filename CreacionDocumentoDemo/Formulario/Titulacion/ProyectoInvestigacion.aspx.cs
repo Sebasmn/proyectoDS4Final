@@ -183,7 +183,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             editables.Add("<carrera2>"); datos.Add(ddlCarreras.SelectedValue.ToString());
             /**/
             StringBuilder sb1 = new StringBuilder();
-            sb1.Append(@"D:\Documentos\Pruebas\");
+            sb1.Append(@"Y:\Documentos\Pruebas\");
             StringBuilder sb2 = new StringBuilder();
             sb2.Append("Resolucion");
 
@@ -195,7 +195,7 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             string resolucion = codigo.ToString();
             string ruta = sb1.ToString();
 
-            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\Titulacion\AprobacionModalidadProyectoInvestigacion.docx";
+            String plantilla = @"Y:\Documentos\OficiosPlantilla\Sistemas\Titulacion\AprobacionModalidadProyectoInvestigacion.docx";
             ManejoDatos mysql = new ManejoDatos();
             Resolucion resol = new Resolucion();
             resol.Ubicacion = ruta;
@@ -204,10 +204,15 @@ namespace CreacionDocumentoDemo.Formulario.Titulacion
             resol.Codigo = resolucion;
             resol.Plantilla = plantilla;
             resol.IDConsejo = txtCodigoConsejoDestino.Text;
-            resol.Estudiante = ViewState["CEDULA_EST"].ToString();
+            if (ViewState["CEDULA_EST"]!=null)
+            {
+                resol.Estudiante = ViewState["CEDULA_EST"].ToString();
+
+            }
+            
             resol.Secretaria = ((UsuariosSW)Session["USUARIOSW"]).Cedula;
             bool verificado = mysql.verificarDatos(editables, datos);
-            if (verificado)
+            if (verificado && resol.Estudiante!=null)
             {
                 bool guardado = mysql.guardarResolucion(resol);
                 if (guardado)

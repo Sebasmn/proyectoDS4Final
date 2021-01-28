@@ -386,7 +386,7 @@ mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"
                 AutoPostBack="false"
                  placeholder="Buscar cedula/nombre"
                 OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
-               &nbsp;<asp:Button ID="Button3" runat="server" Text="Cancelar" />
+               &nbsp;<asp:Button ID="Button3" runat="server" Text="X" />
             <asp:UpdatePanel ID="upEstudiante" runat="server" ChildrenAsTriggers="true" UpdateMode="Always">
                 <ContentTemplate>
                  
@@ -417,7 +417,6 @@ mso-bidi-font-size:9.0pt;line-height:106%;font-family:&quot;Cambria&quot;,serif"
                         <SortedDescendingCellStyle BackColor="#F1E5CE" />
                         <SortedDescendingHeaderStyle BackColor="#93451F" />
                     </asp:GridView>
-                    <asp:Label ID="Label1" runat="server" Text="Correcto"></asp:Label>
                 </ContentTemplate>
                  <Triggers>
                          <asp:AsyncPostBackTrigger ControlID="GridView1" 

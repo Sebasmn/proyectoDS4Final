@@ -6,8 +6,9 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Actualización Conocimientos</title>
+      <link rel="icon" type="image/png" href="../Images/EscudoUTA.png"/>
        <link rel="stylesheet" href="../Estilos/inicio.css"  type="text/css" />
-         
+    
     <style type="text/css">
        
         .auto-style5 {
@@ -65,10 +66,12 @@
                     <td>
             <asp:Label ID="Label7" runat="server" Font-Italic="True" 
                      Font-Names="Sitka Text" Font-Size="Medium" 
-                 ForeColor="#785E37" Text="Tipo Reunión"></asp:Label>
+                 ForeColor="#7B4518" Text="Tipo Reunión"></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:DropDownList ID="DropDownList1" 
+                             CssClass="inputLogin" Height="34px" Width="177px"
+                            runat="server">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -85,7 +88,7 @@
                         <td class="auto-style4">
             <asp:Label ID="Label6" runat="server" Font-Italic="True" 
                 Font-Names="Sitka Text" Font-Size="Medium" 
-                ForeColor="#785E37" Text="Ingrese la fecha del consejo:"></asp:Label>
+                ForeColor="#7B4518" Text="Ingrese la fecha del consejo:"></asp:Label>
                     </td>
                      <td class="auto-style4">
             <asp:TextBox ID="txtFecha" runat="server" textmode="Date" required="true" 
@@ -99,19 +102,21 @@
                 <tr>
                     <td class="auto-style6">
             <asp:Label ID="Label3" runat="server"
-                Font-Italic="True" Font-Names="Sitka Text" Font-Size="Medium" ForeColor="#785E37" Text="Ingrese cédula de persona encargada:"></asp:Label>
+                Font-Italic="True" Font-Names="Sitka Text" Font-Size="Medium" ForeColor="#7B4518" Text="Ingrese cédula de persona encargada:"></asp:Label>
                     </td>
                     <td class="auto-style6">
-            <asp:TextBox ID="txtCedula" runat="server"
-                required="true" placeholder="Ejm: 1804156112" CssClass="inputLogin" Height="35px" Width="179px"></asp:TextBox>
+            <asp:TextBox ID="txtCedula" runat="server" MaxLength="10" MinLength="10" CssClass="inputLogin" Height="34px" Width="177px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style5">
-            <asp:Label ID="Label4" runat="server" Font-Italic="True" Font-Names="Sitka Text" Font-Size="Medium" ForeColor="#785E37" Text="Ingrese clave:"></asp:Label>
+            <asp:Label ID="Label4" runat="server" Font-Italic="True" Font-Names="Sitka Text" Font-Size="Medium" ForeColor="#7B4518" Text="Ingrese clave:"></asp:Label>
                     </td>
                     <td class="auto-style5">
-            <asp:TextBox ID="txtClave" runat="server" required="true" placeholder="*********" CssClass="inputLogin" Height="35px" Width="179px" TextMode="Password"></asp:TextBox>
+            <asp:TextBox ID="txtClave" 
+                type="password"  CssClass="inputLogin" Height="34px" Width="177px"
+                runat="server" required="true" placeholder="*********" 
+                  ></asp:TextBox>
                     </td>
                 </tr>
             </table>

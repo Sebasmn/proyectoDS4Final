@@ -65,19 +65,24 @@ namespace CreacionDocumentoDemo.Admin
                 UsuariosSW admin = ((UsuariosSW)Session["USUARIOSW"]) ;//UsuariosSW
                 string cedulaUser = admin.Cedula;
                 ManejoDatos datos = new ManejoDatos();
-                bool guardado = datos.crearConsejo(
+                Resultado generado= datos.crearConsejo(
                     txtFecha.Text, txtCedula.Text, txtClave.Text
                     , cedulaUser, reunion
                     );
-                if (guardado)
+                if (generado.Completo==true)
                 {
                     ScriptManager.RegisterClientScriptBlock(this,
                     this.GetType(), "alertMessage", "alert('Consejo creado !')", true);
                 }
+                else if (!generado.Error.Equals(""))
+                {
+                    ScriptManager.RegisterClientScriptBlock(this,
+                   this.GetType(), "alertMessage", "alert('"+generado.Error+" !')", true);
+                }
                 else
                 {
                     ScriptManager.RegisterClientScriptBlock(this,
-                   this.GetType(), "alertMessage", "alert('Error en los datos !')", true);
+                 this.GetType(), "alertMessage", "alert('Error en el procedimiento !')", true);
                 }
 
                 

@@ -177,7 +177,7 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             editables.Add("<presidente>"); datos.Add(txtPresidente.Text);
             //
             StringBuilder sb1 = new StringBuilder();
-            sb1.Append(@"D:\Documentos\Pruebas\");
+            sb1.Append(@"Y:\Documentos\Pruebas\");
             StringBuilder sb2 = new StringBuilder();
             sb2.Append("Resolucion");
 
@@ -189,7 +189,7 @@ namespace CreacionDocumentoDemo.Formulario.TramitesFISEI
             string resolucion = codigo.ToString();
             string ruta = sb1.ToString();
 
-            String plantilla = @"D:\Documentos\OficiosPlantilla\Sistemas\aprobacioncdc.docx";
+            String plantilla = @"Y:\Documentos\OficiosPlantilla\Sistemas\aprobacioncdc.docx";
             //continuar = CreateWordDocument(plantilla, sb1.ToString());
             ManejoDatos mysql = new ManejoDatos();
             Resolucion resol = new Resolucion();

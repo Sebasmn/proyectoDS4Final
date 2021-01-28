@@ -102,7 +102,7 @@ namespace CreacionDocumentoDemo.Formulario
             GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
             GridView1.PageIndex = e.NewPageIndex;
             GridView1.DataBind();
-            Label1.Text = "Correcto";
+        //    Label1.Text = "Correcto";
            
             GridView1.DataBind();
         }
@@ -111,14 +111,14 @@ namespace CreacionDocumentoDemo.Formulario
         {
             panelModalBusquedaEst.Visible = true;
             ModalPopupExtender1.Show();
-            Label1.Text = "Buscando";
+          //  Label1.Text = "Buscando";
             ManejoDatos datos = new ManejoDatos();
             // List<Estudiante> listado =  
             var bs1 = new BindingSource();
             bs1.DataSource = datos.getEstudiantesBusqueda(TextBox1.Text);
             GridView1.DataSource = bs1; //<-- notes it takes the entire bindingSource
             GridView1.DataBind();
-            Label1.Text = "Correcto";
+          //  Label1.Text = "Correcto";
             
         }
 
@@ -166,7 +166,7 @@ namespace CreacionDocumentoDemo.Formulario
 
 
             StringBuilder sb1 = new StringBuilder();
-            sb1.Append(@"C:\Documentos\Pruebas\");
+            sb1.Append(@"Y:\Documentos\Pruebas\");
             StringBuilder sb2 = new StringBuilder();
             sb2.Append("Resolucion");
 
@@ -178,7 +178,7 @@ namespace CreacionDocumentoDemo.Formulario
             string resolucion = codigo.ToString();
             string  ruta = sb1.ToString();
             
-            String plantilla = @"C:\Documentos\OficiosPlantilla\Sistemas\practicas.docx";
+            String plantilla = @"Y:\Documentos\OficiosPlantilla\Sistemas\practicas.docx";
             //continuar = CreateWordDocument(plantilla, sb1.ToString());
              ManejoDatos mysql = new ManejoDatos();
             Resolucion resol = new Resolucion();
